@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @var \Mageplaza\GiftCard\Block\Test\Test $block
+ */
+?>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+    }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<table>
+    <tr>
+        <th class="giftcard-id">Id</th>
+        <th class="code">Code</th>
+        <th>Balance</th>
+        <th>Amount Used</th>
+        <th>Create From</th>
+        <th>Create At</th>
+        <th>Add</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <?php
+        foreach ($block->getPostCollection() as $key=>$post) {
+            ?>
+            <tr>
+                <td><?php echo $post->getGiftcardId();?></td>
+                <td><?php echo $post->getCode();?></td>
+                <td><?php echo $post->getBalance();?></td>
+                <td><?php echo $post->getAmountUsed();?></td>
+                <td><?php echo $post->getCreateFrom();?></td>
+                <td><?php echo $post->getCreateAt();?></td>
+                <td><a href="<?= $block->getUrl('giftcard/index/add')?>" type="button">Add</a></td>
+                <td><a href="<?= $block->getUrl('giftcard/index/update',['module'=>'updategc','giftcard_id'=>$post->getGiftcardId()]); ?>" type="button">Update</a></td>
+                <td><a href="<?= $block->getUrl('giftcard/index/delete',['module'=>'deletegc','giftcard_id'=>$post->getGiftcardId()]);?>" type="button">Delete</a></td>
+
+            </tr>
+
+            <?php
+        }
+    ?>
+</table>
+

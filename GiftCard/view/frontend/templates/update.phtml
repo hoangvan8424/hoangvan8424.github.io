@@ -1,0 +1,50 @@
+<?php
+/**
+ * @var \Mageplaza\GiftCard\Block\Test\Update $block
+ */
+
+?>
+<style>
+    .form-test {
+        width: 100%;
+    }
+    div.input-test {
+        width: 70%;
+        margin: 0 auto;
+        padding-left: 100px;
+    }
+    .form-test label {
+        margin-right: 40px;
+        width: 120px;
+        display: inline-block;
+    }
+    .form-test input {
+        width: 50%!important;
+        margin-top: 20px;
+    }
+    .btn-test {
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    .btn-test button {
+        width: 150px;
+        margin-right: 25px;
+    }
+</style>
+<form action="" method="post" class="form-test" enctype="multipart/form-data">
+    <div class="input-test">
+        <label>Gift Card Id</label><input type="number" name="id" disabled/><br>
+        <label>Code</label><input type="text" name="code"/><br>
+        <label>Balance</label><input type="number" name="balance" required/><br>
+        <label>Amount Used</label><input type="number" name="amount_used" placeholder="0" disabled/><br>
+        <label>Create From</label><input type="text" name="create" placeholder="Admin" disabled/><br>
+    </div>
+
+    <div class="btn-test">
+        <button type="submit" name="add">Add</button>
+        <button type="submit" name="update">Update</button>
+        <button type="submit" name="delete">Delete</button>
+    </div>
+
+</form>

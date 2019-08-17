@@ -1,0 +1,82 @@
+
+<?php
+    echo "<h2>Gift Card Information</h2>";
+    echo "<hr>";
+    $customerId = $block->getCustomerID();
+    $result = $block->getJoinData($customerId);
+    $redeemValue = $block->getRedeemValue();
+
+//    echo "<pre>";
+//    print_r($result);
+//    echo "</pre>";
+//    die();
+?>
+    <form action="<?= $block->getUrl('giftcard/customer/redeem'); ?>" enctype="multipart/form-data" method="POST">
+    <?php
+        $balance = 0;
+        $amount = 0;
+        foreach ($result as $_giftcardrecord):
+            $balance = $_giftcardrecord['giftcard_balance'];
+        endforeach;
+
+    ?>
+        <div style="display: flex;justify-content: space-between;margin-bottom: 80px;">
+            <div>
+                <p><b>Balance</b></p>
+                <span><?php echo $block->getFormatedPrice($balance); ?></span>
+            </div>
+        <?php if($redeemValue==1): ?>
+            <div>
+                <p><b>Redeem</b></p>
+                <div style="display: flex">
+                    <input type="text" placeholder="Enter gift card code" name="code" required="true">
+                    <button type="submit" style="background: rgb(26, 115, 232);color: #fff;">Redeem</button>
+                </div>
+
+            </div>
+        <?php else: ?>
+            <div>
+                <p><b>Redeem</b></p>
+                <div style="display: flex">
+                    <input type="text" placeholder="Enter gift card code" name="code" required="true" disabled="true">
+                    <button type="submit" style="background: rgb(26, 115, 232);color: #fff;" disabled="true">Redeem</button>
+                </div>
+            </div>
+        <?php endif ?>
+        </div>
+
+    </form>
+
+<?php if ($result && count($result)): ?>
+    <div class="table-wrapper giftcard-history">
+        <h2>History</h2>
+        <table class="data table table-order-items history" id="my-giftcard-table">
+            <caption class="table-caption"><?php echo __('History') ?></caption>
+            <thead>
+            <tr>
+                <th scope="col" class="col date"><?php echo __('Date') ?></th>
+                <th scope="col" class="col code"><?php echo __('Code') ?></th>
+                <th scope="col" class="col amount"><?php echo __('Amount') ?></th>
+                <th scope="col" class="col action"><?php echo __('Action') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php  // read collection as magento1.x and display in list
+            foreach ($result as $_giftcardrecord): ?>
+                <tr>
+                    <td class="col date"><?php echo $block->formatDate($_giftcardrecord['action_time']) ?></td>
+                    <td class="col code"><?php echo $_giftcardrecord['code'] ?></td>
+                    <td class="col amount"><?php echo $block->getFormatedPrice($_giftcardrecord['amount']) ?></td>
+                    <td class="col action"><?php echo $_giftcardrecord['action'] ?></td>
+
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); // for display pager block which we create in block file.   ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('grid records not available.'); ?></span></div>
+<?php endif ?>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_model_service_quote_submit_success">
+        <observer name="addGiftCard" instance="Mageplaza\GiftCard\Observer\AddGiftCard" />
+    </event>
+<!--    to execute an observer before the home page controller dispatching -->
+    <event name="controller_action_predispatch_checkout_cart_couponPost">
+        <observer name="applyGiftCard" instance="Mageplaza\GiftCard\Observer\ApplyGiftCard" />
+    </event>
+</config>
