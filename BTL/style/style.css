@@ -1,0 +1,644 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+a:hover{
+	text-decoration: none;
+}
+#header {
+	height: 270px;
+	overflow: hidden;	
+}
+#header .tieu-de {
+	background-image: url("/BTL/img/1.jpg");
+	background-position: center;
+	background-size: cover;
+	border-radius: 0;
+}
+#footer {
+	border-radius: 0;
+}
+#gio-hang a i span {
+	position: relative;
+	top: -10px;
+	font-size: 1.25rem;
+	background: none;
+
+}
+.gh-dn-hd {
+	display: flex;
+}
+.fas.fa-file-invoice-dollar {
+	font-size: 25px;
+	color: #fff;
+	margin-right: 15px;
+}
+.mn-mt {
+	
+	text-align: center;
+}
+.mn-mt form {
+	flex-direction: row;
+    flex-wrap: unset;
+}
+.mn-mt form input {
+	border-radius: 0;
+}
+.mn-mt form button {
+	border-radius: 0;
+}
+.sub-menu {
+	background: #343A40;
+	margin-top: 6px;
+	border: 0;
+	border-radius: 0;
+}
+.sub-menu a {
+	color: #fff;
+}
+
+a.dn-dk {
+	color: #fff!important;;
+	margin-right: 20px;
+	font-size: 16px;
+	cursor: pointer;
+
+}
+#dang-xuat {
+	
+	background: #343A40;
+    top: 35px;
+    left: -40px;
+    text-align: center;
+    border-radius: 0;
+    border-color: transparent;
+    width: 200px;
+    
+}
+#dang-xuat li {
+	height: 35px;
+	line-height: 35px;
+	border-bottom: 1px solid #FFF;
+}
+#dang-xuat li:last-child {
+	border-bottom: 0;
+}
+#dang-xuat li a {
+	color: #FFF;
+	display: block;
+}
+#dang-xuat li:hover {
+	background: #CCC;
+}
+#dang-xuat li:hover a {
+	color: #000;
+}
+.gh {
+	color: #fff;
+	font-size: 20px;
+	text-decoration: none;
+}
+nav.nav.nv-mt-tcsp {
+	justify-content: space-between;
+}
+.form-group.row i {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 36px;
+	height: 36px;
+	background-color: #F0F3F5;
+	font-size: 22px;
+	line-height: 36px;
+	padding-left: 7px;
+	margin-left: 30px;
+}
+
+a.btn-facebook, a.btn-gg {
+	position: relative;
+	box-sizing: border-box;
+
+}
+a.btn-facebook i { 	
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size:28px;
+	padding: 5px;
+}
+a.btn-gg i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size:28px;
+	padding: 5px;
+}
+.bt-dn {
+	color: #9EA4A9;
+	padding: 0.5rem 2rem;
+	
+	border-radius: 0;
+}
+.bt-dn:hover {
+	text-decoration: none;
+	color: #1BA8FF;
+}
+.li-chung {
+	margin-left: 1rem;
+}
+.li-chung:hover {
+	border-bottom: 3px solid #1BA8FF; 
+}
+#dn-1, #dk-2{
+	color: #1BA8FF;
+}
+.li-dn {
+	border-bottom: 3px solid #1BA8FF; 
+}
+button.close {
+	position: absolute;
+	z-index: 2;
+	top: 2px;
+	right: 2px;
+	width: 40px;
+	height: 40px;
+	opacity: 1; 
+}
+button.close:hover {
+	color: #ff4343;
+}
+.ip-dk {
+	width: 80%!important;
+}
+.ngay-sinh {
+	display: flex;
+	width: 91%;
+
+}
+.ngay-sinh select {
+	border-radius: 0;
+}
+
+/*Nội dung Máy tính*/ 
+.may-tinh .card-block {
+	position: relative;
+	width: 100%;
+	height: 125px;
+	line-height: 0.75;
+
+}
+
+.may-tinh .card-block a {
+	color: #000;
+}
+.may-tinh .card-block>a:last-child {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-radius: 0;
+	background: #0D8632;
+	border-color: #0D8632;
+	color: #FFF;
+	cursor: pointer;
+}
+.may-tinh .card-block a>p {
+	
+} 
+.col-sm-8.may-tinh .card-deck-wrapper .card-deck .card.card-mt {
+	min-width: 15rem;
+	max-width: 18rem;
+	margin-right: 15px;
+	border: 0;
+	border-radius: 0;
+}
+
+.col-sm-8.cmr .card-deck-wrapper .card-deck .card.camera.card-cam{
+	min-width: 15rem;
+	max-width: 18rem;
+	margin-right: 15px;
+	border-radius: 0;
+	border: 0;
+	cursor: pointer;
+
+}
+
+.mt-header {
+	border-bottom: 3px solid #0D8632;
+	background-color: transparent;
+}
+.logo-mt {
+	height: 3.5rem;
+	line-height: 3.5rem;
+	padding: 0 1rem;
+	background-color: #0D8632;
+	color: #FFF;
+}
+.menu-mt {
+	
+
+}
+#mtNavbar .menu-mt li a {
+	color: #000000;
+	font-weight: bold;
+}
+#mtNavbar .menu-mt li:first-child a{
+	color: #0D8632;
+}
+/*.menu-mt li a:visited{
+	color: #0D8632;
+}*/
+#mtNavbar .menu-mt li:hover a {
+	cursor: pointer;
+	color: #0D8632;
+}
+
+/*Máy ảnh-content*/
+.ma-header {
+	border-bottom: 3px solid #769EC1;
+}
+.logo-ma{
+	height: 3.5rem;
+	line-height: 3.5rem;
+	padding: 0 1rem;
+	background-color: #769EC1;
+	color: #FFF;
+}
+
+button.m-nb {
+	color: #000;
+	border-radius: 0;
+}
+#maNavbar .menu-mt li a {
+	color: #000000;
+	font-weight: bold;
+}
+#maNavbar .menu-mt li:first-child a{
+	color: #769EC1;
+}
+/*.menu-mt li a:visited{
+	color: #0D8632;
+}*/
+#maNavbar .menu-mt li:hover a {
+	cursor: pointer;
+	color: #769EC1;
+}
+#may-tinh-moi {
+	display: none;
+}
+/*hết máy ảnh*/
+
+.m-nb:hover {
+	text-decoration: none;
+}
+
+.menu-nb li:first-child button {
+	border-bottom: 2px solid #007BFF;
+	text-decoration: none;
+	color: #007BFF;
+}
+#may-anh-moi ul li:first-child button {
+	border-bottom: 0;
+	color: #000;
+}
+#may-anh-moi ul li:first-child button:hover {
+	border-bottom: 2px solid #007BFF;
+	color: #007BFF
+}
+.menu-nb.menu-moi li:first-child button {
+	border-bottom: 0;
+	color: #000;
+}
+.menu-nb.menu-moi li:last-child button {
+	border-bottom: 2px solid #007BFF;
+	text-decoration: none;
+	color: #007BFF;
+}
+.menu-nb li button:hover {
+	color: #007BFF;
+	border-bottom: 2px solid #007BFF;
+}
+
+/*máy ảnh*/
+.ma-header ul li:first-child a {
+	color: #769EC1;
+}
+.ma-header ul li:hover a {
+	color: #769EC1;
+}
+
+/*Máy tính 1*/
+.card.card-mt .layer-1 {
+	position: relative;
+	height: 250px;
+	
+}
+.anh-1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 250px;
+	z-index: 1;
+	border-bottom: 1px solid #CCC;
+
+}
+.nen {
+	position: absolute;
+	width: 100%;
+	height: 250px;
+	background-color: rgba(255,255,255,0.4);
+	background: -webkit-linear-gradient(top, #00968854 0%, #8bc34a4f 100%);
+	border-bottom: 3px solid #0D8632;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	opacity: 0;
+}
+.card.card-mt:hover .layer-1 .nen {
+	opacity: 1;
+	transition: 0.5s;
+}
+
+
+.layer-1 .icon {
+
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 40%;
+	z-index: 3;
+	transform: scale(0);		
+}
+.layer-1 .icon i {
+	box-sizing: border-box;
+	width: 40px;
+	height: 35px;
+	line-height: 30px;
+	background: #FFF;
+	font-size: 20px;		
+	margin: 0 1rem;
+	padding: 5px;
+	color: #000;
+}
+
+
+.card.card-mt:hover .layer-1 .icon {
+	transition: 0.5s;
+	transform: scale(1);
+}
+.card.card-mt:hover .layer-1 .icon a i {
+	background: #0D8632;
+	color: #FFF;
+	transition: 0.4s;
+}
+
+.link-mt p{
+	line-height: 1rem;
+}
+
+/*Máy tính nổi bật*/
+
+.mt-nb {
+	border-radius: 0;
+	border: 1px solid #ccc;
+}
+
+.mt-nb-1 {
+	width: 100%;
+	height: 22rem;
+	overflow: hidden;
+	cursor: pointer;
+}
+.mt-nb-1 .anh-mt-nb {
+	width: 80%;
+	height: 18rem;
+	border-bottom: 1px solid #ccc;
+	margin-left: 2rem;
+}
+.mt-nb-1 .tieu-de-mt-nb {
+	width: 100%;
+    height: 4rem;
+    padding: 0.5rem 0;
+    margin-top: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+.mt-nb-1 .tieu-de-mt-nb .gia {
+	position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    z-index: 1;
+}
+.mt-nb-1 .tieu-de-mt-nb .gia h6 {
+	line-height: 0.75rem;
+}
+.mt-nb-1 .tieu-de-mt-nb .gia p {
+	line-height: 0.75rem;
+}
+.mt-nb-1 .tieu-de-mt-nb a.btn-mn{
+	position: absolute;
+    top: 2rem;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    color: #FFF;
+}
+.card.mt-nb:hover .gia{
+	margin-top: -4rem;
+	transition: 0.5s;
+}
+.card.mt-nb:hover a.btn-mn{
+	opacity: 1;
+	transition: 0.5s;
+	top: 1rem;
+	left: 0;
+}
+.card.mt-nb:hover .anh-mt-nb{
+	transform: scale(1.2);
+	transition: 2s;
+}
+/*máy ảnh nổi bật*/
+.ma-nb-1 {
+	width: 100%;
+	height: 22rem;
+	overflow: hidden;
+	cursor: pointer;
+}
+.ma-1 {
+	border-radius: 0;
+	border: 1px solid #ccc;
+}
+.anh-ma-1 {
+	width: 80%;
+	height: 80%;
+	height: 18rem;
+	border-bottom: 1px solid #ccc;
+	margin-left: 2rem;
+}
+
+.tieu-de-ma-nb {
+	width: 100%;
+	height: 4rem;
+	padding: 0.5rem 0;
+	margin-top: .5rem;
+	position: relative;
+	overflow: hidden;
+}
+.tieu-de-ma-nb .gia {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 0.5rem;
+	margin-left: 2rem;
+	z-index: 1;
+}
+.tieu-de-ma-nb a.bt-mn {
+	position: absolute;
+	top: 2rem;
+	left: 0;	
+	opacity: 0;
+	z-index: 2;
+	color: #FFF;
+}
+.tieu-de-ma-nb a.bt-mn:hover {
+	color: #fff;
+}
+.gia h6 {
+	line-height: .75rem;
+}
+.gia p {
+	line-height: 0.75rem;
+}
+.ma-1:hover .gia {
+	margin-top: -4rem;
+	transition: 0.5s;
+}
+.ma-1:hover a {
+	opacity: 1;
+	transition: 0.5s;
+	top: 1rem;
+	left: 0;
+
+}
+.ma-1:hover img {
+	transform: scale(1.2);
+	transition: 2s;
+}
+/*hết máy ảnh nổi bật*/
+
+/*máy ảnh*/
+.layer-1-ma {
+	position: relative;
+	width: 100%;
+	height: 250px;
+}
+.layer-1-ma .cam-1 {
+	width: 100%;
+	height: 250px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	border-bottom: 1px solid #CCC;
+}
+.layer-1-ma .nen-ma {
+	width: 100%;
+	height: 250px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background-color: rgba(255,255,255,0.5);
+	background: -webkit-linear-gradient(left, #bef40359 0%, #4a6fc34a 100%);
+	border-bottom: 4px solid #769EC1;
+	opacity: 0;
+}
+.camera:hover .layer-1-ma .nen-ma {
+	opacity: 1;
+	transition: .5s;
+}
+.layer-1-ma .icon-ma {
+	position: absolute;
+	top: 0;
+	right: 0.5rem;
+	z-index: 3;
+	opacity: 0;
+}
+.layer-1-ma .icon-ma a {
+	display: block;
+	margin-top: .5rem;
+}
+.layer-1-ma .icon-ma i {
+	width: 35px;
+	height: 35px;
+	line-height: 35px;	
+	font-size: 20px;	
+	color: #000;
+	background: #FFF;
+}
+.camera:hover .layer-1-ma .icon-ma {
+	opacity: 1;
+	transition: 0.4s;
+}
+.camera .layer-1-ma .icon-ma a:hover i {
+	background: #769EC1;
+	color: #FFF;
+}
+.ma-gia {
+	line-height: 0.75rem;
+	width: 100%;
+	height: 120px;
+	position: relative;
+
+}
+.ma-gia a {
+	color: #000;
+}
+.ma-gia p:first-child {
+	line-height: 1.254;
+}
+.ma-gia>a:last-child {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #769EC1;
+	border-color: #769EC1;
+	border-radius: 0;
+	color: #FFF;
+}
+.ma-gia>a:last-child:hover {
+	background: #769EC1;
+	border-color: #769EC1;
+}
+/*Trang chi tiết sản phẩm*/
+/*tìm kiếm*/
+
+.td-tk {
+	border-bottom: 1px solid #ccc;
+}
+.td-tk a:hover .ten-sp-tk p {
+	color: green;
+	font-weight: 600;
+}
+.td-tk a .anh-tk {
+	height: 80px;
+	float: left;
+}
+.ten-sp-tk {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+}
+.ten-sp-tk p {
+	margin: 0;
+
+}

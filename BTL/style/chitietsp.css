@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+}
+div.anh-sp {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+div.anh-sp div.anh-nho img{
+	width: 100px;
+	display: block;
+	opacity: 0.6;
+	cursor: pointer;
+	margin: 0 30px;
+}
+div.anh-sp div.anh-nho img:hover {
+	opacity: 1;
+}
+div.anh-sp div.anh-nho {
+	float: left;
+}
+
+div.anh-sp div.anh-lon img {
+	width: 450px;
+}
+div.anh-sp div.anh-lon {
+	float: left;
+}
+
+/*Nội dung-cột bên phải*/
+div.noi-dung h1 {
+	font-size: 2rem;
+	font-weight: 400;
+}
+div.thong-tin {
+	border-bottom: 1px solid #ccc;
+}
+p.gia {
+	
+}
+p.gia span {
+	color: #179a94;
+	font-size: 20px;
+	font-weight: 400;
+}
+p.gia span:last-child {
+	margin-left: 40%;
+}
+div.button {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+}
+div.button button, div.button a {
+	width: 40%;
+	border-radius: 0;
+	line-height: 2;
+}
+div.button input.so-luong {
+	width: 10%;
+	text-align: center;
+	height: 46px;
+	color: #848484;
+	border-right: 0;
+	border: 0;
+	border: 1px solid #343A40;
+}
+/*Nội dung*/
+ul.nav.nav-tabs.menu-ct {
+	border-bottom: 0;
+	justify-content: center;
+
+}
+ul.nav.nav-tabs.menu-ct li {
+	cursor: pointer;
+	border-bottom: 3px solid #000;
+	opacity: 0.3;
+	margin-left: 2rem;
+}
+ul.nav.nav-tabs.menu-ct li a {
+	font-size: 20px;
+	font-weight: 600;
+	color: #000;
+}
+ul.nav.nav-tabs.menu-ct li:first-child {
+	opacity: 1;
+}
+ul.nav.nav-tabs.menu-ct li:hover a {
+	border: 0;
+	
+}
+ul.nav.nav-tabs.menu-ct li:hover {
+	opacity: 1;
+}
+#thong-so-kt {
+	display: none;
+}
+#thong-so-kt label {
+	width: 150px;
+	font-weight: bold;
+}
+#thong-so-kt .manhinh, #thong-so-kt .cpu {
+	border-bottom: 1px solid #ccc;
+}

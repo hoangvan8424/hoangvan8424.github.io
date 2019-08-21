@@ -1,0 +1,387 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	box-sizing: border-box;
+}
+a:hover {
+	cursor: pointer;
+}
+#row-gio-hang {
+	display: block;
+}
+#row-gio-hang .ptb{
+	text-align: center;
+	font-size: 25px;
+	margin-top: 50px;
+}
+#row-gio-hang .atb {
+	display: block;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin-left: 40%;
+	font-size: 18px;
+	background: transparent;
+	border: 1px solid #218838;
+	color: #000;
+
+
+}
+#row-gio-hang .atb:hover {
+	background: #218838;
+	color: #FFF;
+}
+#row-gio-hang form {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	
+}
+
+#sp-trong-gio {
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1px solid #ccc;
+}
+.trai {
+	
+}
+
+.trai img{
+	
+	height: 120px;
+}
+
+.phai {
+	display: flex;
+	
+	align-items: center;
+	
+
+	
+}
+/*.phai div {
+	padding-top: 20px;
+}*/
+.phai .ten-sp {
+	width: 350px;
+
+	
+}
+.ten-sp a:first-child {
+	display: block;
+}
+.ten-sp a:last-child {
+	
+	margin-top: 10px;
+}
+
+.gia {
+	width: 150px;
+	
+}
+.gia-goc span {
+	border-left: 1px solid #000;
+	padding-left: 3px;
+}
+.so-luong {
+	
+	display: flex;
+
+}
+.so-luong input{
+	width: 4rem;
+	height: 2rem;
+}
+.so-luong span button.btn-tru {
+	border: 1px solid #A9A9A9;
+	height: 2rem;
+	border-radius: 0;
+	border-right: 0;
+	line-height: 1rem;
+}
+.so-luong span button.btn-cong {
+	border: 1px solid #A9A9A9;
+	height: 2rem;
+	border-radius: 0;
+	border-left: 0;
+	line-height: 1rem;
+}
+
+div.dat-hang {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-left: 1px solid #CCC;
+}
+div.dat-hang .tong-tien {
+	margin-bottom: 2rem;
+}
+div.dat-hang .tong-tien strong {
+	margin-left: 3rem;
+	font-size: 25px;
+}
+
+p.thong-bao {
+	text-align: center;
+	font-size: 25px;
+	margin-top: 200px;
+}
+/*thanh trạng thái*/
+div.row.thanh-toan {
+	flex-direction: column;
+}
+.thanh-tt{
+	margin: 20px auto;
+}
+.thanh-tt ul{
+	text-align: center;
+	list-style-type: none;
+}
+
+.thanh-tt ul li{
+	position: relative;
+	display: inline-block;
+	width: 300px;
+}
+.thanh-tt ul li p{
+	
+}
+
+.thanh-tt ul li i{
+	background: #ccc;
+	width: 24px;
+	height: 24px;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	display: inline-block;
+	font-style: normal;
+}
+.thanh-tt ul li i::after{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 305px;
+	height: 5px;
+	background: #ccc;
+	left: 0;
+	top: 15%;
+	z-index: -10;
+}
+.thanh-tt ul li:nth-child(1) i,
+.thanh-tt ul li:nth-child(2) i,
+.thanh-tt ul li:nth-child(3) i{
+	background: #CCC;
+}
+.thanh-tt ul li:first-child i::after{
+	width: 155px;
+	left: 150px;
+
+}
+.thanh-tt ul li:last-child i::after{
+	width: 155px;
+
+}
+.thanh-tt ul li:nth-child(1) i::after,
+.thanh-tt ul li:nth-child(2) i::after{
+	background: #CCC;
+}
+.thanh-tt ul li:last-child i::after{
+	background: #CCC;
+}
+/*button sản phẩm*/
+.btn-sp {
+	display: flex;
+	flex-direction: column;
+}
+
+.btn-sp .div-btn-2 {
+	display: flex;
+	justify-content: space-evenly;
+}
+.btn-sp .div-btn-2 button{
+	width: 40%;
+	border-radius: 0;
+}
+.btn-sp a {
+	width: 40%;
+	border-radius: 0;
+	color: #FFF!important;
+}
+
+/*bước 1*/
+
+#buoc-1 {
+	width: 50%;
+	margin: 0 auto;
+	display: none;
+
+
+}
+#buoc-1 #dang-nhap-01 {
+	border: 1px solid #CCC;
+}
+#buoc-1 form div{
+	padding: 0 20px;
+}
+#buoc-1 #dang-ky-01 {
+	border: 1px solid #CCC;
+	display: none;
+
+}
+
+/*bước 2*/
+.buoc-2 {
+	width: 50%;
+	margin: 0 auto;
+}
+div.hinh-thuc-nh {
+	border: 1px solid #CCC;
+	
+}
+div.hinh-thuc-nh .nhan-tai-cua-hang{
+	padding: 10px 20px;
+}
+div.hinh-thuc-nh .nhan-tai-nha {
+	padding: 0 20px;
+}
+div.dia-diem {
+	border-bottom: 1px solid #CCC;
+	padding: 10px 15px;
+}
+
+div.dia-diem span>input{
+	width: 20px;
+	height: 20px;
+	top: 4px;
+	position: relative;
+}
+div.dia-diem span>label {
+	margin-left: 10px;
+}
+div.dia-diem span:last-child {
+	position: relative;
+	left: 30%;
+}
+div.buoc-2 .nhan-tai-nha select {
+	width: 250px;
+	height: 40px;
+	padding: 0 10px;
+}
+
+.sn-hn, .sn-hcm{
+	width: 100%;
+	height: 40px;
+	padding-left: 10px;
+
+} 
+div.hinh-thuc-nh .chon-tp-nh select{
+	width: 250px;
+	height: 40px;
+	padding: 0 10px;
+}
+/*nhận tại cửa hàng*/
+div.nhan-tai-cua-hang {
+
+}
+div.nhan-tai-cua-hang input {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 4px;
+}
+div.nhan-tai-cua-hang label {
+	margin-left: 10px;
+}
+/*Thông tin cá nhân*/
+.thong-tin-nh {
+	padding: 20px;
+	padding-top: 0;
+	border: 1px solid #CCC;
+}
+.thong-tin-nh input {
+	width: 100%;
+	height: 40px;
+	padding: 0 10px;
+}
+.buoc-2>.btn.btn-tiep-theo {
+	float: right;
+	width: 150px;
+	border-radius: 0;
+}
+.buoc-2>.btn.btn-tiep-theo i {
+	font-size: 1.5rem;
+}
+#ha-noi select {
+	float: left;
+}
+#ha-noi select:nth-child(3) {
+	display: none;
+}
+/*thành phố hcm*/
+#tp-hcm select{
+	float: left;
+}
+select.xa-hcm.cu-chi {
+	display: none;
+}
+/*bước 3*/
+.buoc-3 {
+	margin: 0 30%;
+	display: none;
+}
+.khung-tt {
+	border: 1px solid #CCC;
+	padding: 10px 20px 20px 20px;
+}
+.buoc-3 .truc-tiep, .buoc-3 .the-visa, .buoc-3 .atm {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #CCC;
+	padding: 10px;
+}
+.buoc-3 .truc-tiep {
+	padding-top: 0;
+	height: 35px
+}
+.buoc-3 .atm {
+	border-bottom: 0;
+	padding-bottom: 0;
+	height: 35px;
+}
+.buoc-3 .atm label {
+	color: #CCC;
+}
+.khung-tt div input {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 4px;
+}
+.khung-tt div label {
+	margin-left: 10px;
+}
+.buoc-3>.btn.btn-hoan-tat {
+	float: right;
+	width: 150px;
+	border-radius: 0;
+}
+.buoc-3>.btn.btn-hoan-tat i {
+	font-size: 1.5rem;
+}
+div.cntt-gh {
+	display: flex;
+	justify-content: space-around;
+	background: lightgoldenrodyellow;
+	height: 60px;
+}
+div.cntt-gh h5 {
+	line-height: 60px;
+	text-transform: uppercase;
+}

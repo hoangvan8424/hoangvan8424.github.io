@@ -1,0 +1,125 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+}
+.card.card-nd-mt {
+	min-width: 20rem;
+	max-width: 20rem;
+	margin-right: -9px;
+	border-radius: 0;
+	cursor: pointer;
+}
+.card.card-nd-mt img {
+	width: 80%;
+	margin-left: 7%;
+	height: 220px;
+}
+/*nội dung trang máy tính*/
+
+/*Bộ lọc*/
+/*lọc theo giá*/
+.bo-loc .row {
+	padding: 0 15px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+.bo-loc .row:first-child h6{
+	text-transform: uppercase;
+}
+.bo-loc .row h6 {
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+}
+.l-gia {
+	width: 100%;
+}
+/*lọc theo cỡ màn hình*/
+.l-man {
+	width: 100%;
+}
+/*lọc them ram*/
+.l-ram {
+	width: 100%;
+}
+.l-cpu {
+	width: 100%;
+}
+.l-man input, .l-ram input, .l-cpu input  {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+.form-l-gia, .form-l-manhinh, .form-l-ram {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #000;
+}
+
+/*Nội dung máy tính*/
+.thong-tin ul{
+	list-style-type: none;
+}
+.thong-tin ul li label {
+	width: 50%;
+}
+.gia {
+	display: flex;
+	justify-content: space-between;
+}
+.ten-sp, .gia, .thong-tin {
+	padding: 0 0.5rem;
+}
+.ten-sp p{
+	color: #000;
+    font-size: 18px;
+}
+
+/*nơi hiển thị bộ lọc*/
+.dm-loc {
+	list-style-type: none;
+	margin-top: 1rem;
+	display: flex;
+}
+.loc-trai {
+	display: flex;
+	justify-content: flex-start;
+}
+.dm-loc li {
+
+
+	height: 30px;
+	background: #FFFBC6;
+	box-sizing: border-box;
+	margin-right: 1rem;
+
+}
+.loc {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.25rem;
+
+}
+.loc i {
+	line-height: 25px;
+	margin-left: 0.5rem;
+
+	
+}
+.loc p {
+	line-height: 20px;
+	
+}
+
+.card-block.cd-bl {
+	position: relative;
+	height: 260px;
+}
+.btn-mua-ngay {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.btn-mua-ngay button {
+	border-radius: 0;
+}

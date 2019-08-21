@@ -1,0 +1,266 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Karla,Arial,Helvetica,sans-serif;
+	
+}
+ul.nav.nav-pills.menu-danhmuc {
+	flex-direction: column;
+	height: 100%;
+	background: #343A40;
+
+}
+
+ul.nav.nav-pills.menu-danhmuc >li {
+	height: 3.5rem;
+	line-height: 2rem;
+	padding: 2px;
+
+}
+
+ul.nav.nav-pills.menu-danhmuc li:nth-child(2) a {
+	border-radius: 0;
+}
+ul.nav.nav-pills.menu-danhmuc li:hover {
+	background:#4992BF;
+	
+	cursor: pointer;
+}
+ul.nav.nav-pills.menu-danhmuc li a {
+	color: #FFF;
+	
+}
+ul.nav.nav-pills.menu-danhmuc li a i {
+	font-size: 18px;
+	margin-top: 2px;
+}
+ul.nav.nav-pills.menu-danhmuc li a span {
+	margin-left: 10px;
+	font-size: 15px;
+	font-weight: 400;
+}
+#target1 {
+	
+}
+#target1 ul {
+	display: block;
+	background: #FFF;
+	margin: 0 6px;
+	
+}
+#target1 ul li {
+
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px solid #ccc;
+	
+}
+#target1 ul li i {
+	font-size: 12px;
+	color: #000;
+}
+#target1 ul li span {
+	color: #000;
+}
+
+#target2 ul, #target3 ul {
+	color: #000;
+	background: #ccc;
+}
+#target2 ul li, #target3 ul li{
+	text-align: left;
+    /*padding-left: 32px;*/
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    border-bottom: 0;
+    
+}
+#target2 ul li i, #target3 ul li i {
+	position: relative;
+	bottom: 3px;
+}
+div.user-name {
+	height: 8rem;
+	color: #fff;
+	display: flex;
+	padding-left: 5px;
+	border-bottom: 1px solid #FFF;
+	border-top: 1px solid #FFF;
+	/* display: flex; */
+	flex-direction: column;
+	
+}
+div.user-name i,h5 {
+	line-height: 5rem;
+}
+div.user-name i {
+	font-size: 35px;
+	margin-right: 10px;
+}
+div.user-name span:last-child {
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 700;
+	width: 100%;
+	position: relative;
+	bottom: 18px;
+	left: 0;
+	text-align: center;
+	text-overflow: ellipsis;
+    overflow: hidden;
+}
+.anh-sp {
+	width: 65px;
+	height: 65px;
+}
+
+#ql-nguoidung, #ql-nhacc, #ql-danhmuc-sp, #ql-sp a {
+	cursor: pointer;
+}
+#ql-nguoidung a i, #ql-nhacc a i, #ql-danhmuc-sp a i, #ql-sanpham a i {
+	color: #FFF;
+}
+.modal-them-nd div.modal-header h5 {
+	text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1;
+}
+.modal-them-nd div.modal-content {
+	border-radius: 0;	
+}
+.modal-them-nd form {
+	margin: 0 15px;
+}
+
+.modal-them-nd form label {
+	width: 100px;
+	font-weight: 600;
+
+	
+}
+.modal-them-nd form label:first-child {
+	margin-top: -20px;
+
+}
+.modal-them-nd form input.ip {
+	width: 300px;
+	
+}
+.modal-them-nd form input.ip:first-child {
+	margin-top: -20px;
+}
+.modal-them-nd form input.gt {
+	width: 100px;
+}
+.modal-them-nd form span {
+	margin-left: -30px;
+}
+.modal-them-nd form select {
+	width: 300px;
+	margin-left: -4px;
+}
+.modal-them-nd form div.button {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+.modal-them-nd form div.button button {
+	width: 40%;
+}
+ /*modal thêm sản phẩm*/
+ h5.h-cnsp, .h-themnd {
+ 	line-height: 2;
+ 	text-transform: uppercase;
+ 	font-weight: 700;
+ }
+form.them-sp{
+ 	/*margin: 0 30px;*/
+ }
+form.them-sp label, form.them-nd label {
+	width: 30%;
+	margin: 0;
+	font-weight: 600;
+}
+form.them-sp input,form.them-nd input{
+	width: 50%;
+	height: 33px;
+}
+form.them-sp textarea {
+	width: 50%;
+	height: 80px;	
+}
+form.them-sp select, form.them-nd select {
+	width: 50%;
+	height: 33px;
+}
+label.ghchu{
+	position: relative;
+	bottom: 34px;
+
+}
+.ghi-chu, .mh, .cpu, .ram, .bcb, .mhma, .dpg {
+	position: relative;
+	bottom: 20px;
+}
+
+#target-mt, #target-ma {
+	display: none;
+}
+/*nhà cung cấp input*/
+#ncc3, #ncc4 {
+	display: none;
+}
+
+.button-cnsp, .btn-tnd {
+
+	width: 80%;
+	display: flex;
+	justify-content: flex-end;
+}
+.button-cnsp button, .btn-tnd button{
+	width: 200px;
+	height: 40px;
+	border-radius: 0;
+}
+.btn-tnd a, .button-cnsp a {
+	width: 200px;
+	height: 40px;
+	border-radius: 0;
+	line-height: 30px;
+	color: #FFF!important;
+	cursor: pointer;
+}
+.gt {
+	width: 20px!important;
+	position: relative;
+	top: 10px;
+	margin-right: 10px;
+}
+.ntns {
+	display: flex;
+}
+.ntns div {
+	width: 50%;
+}
+.ntns select {
+	border-radius: 0;
+}
+
+/*trang thông số kỹ thuật*/
+#manhinh label, #cpu label, #ketnoi label, #ram label, .ma-tskt label{
+	width: 30%;
+	font-weight: 600;
+}
+#manhinh input, #cpu input, #ketnoi input, #ram input, .ma-tskt input{
+	width: 70%;
+	height: 33px;
+}
+#ketnoi textarea, .ma-tskt textarea {
+	width: 70%;
+	height: 100px;
+}
