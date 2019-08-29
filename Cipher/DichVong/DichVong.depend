@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1566937657 source:d:\codeblock\dichvong\main.cpp
+	<stdio.h>
+	<conio.h>
+	<string.h>
+

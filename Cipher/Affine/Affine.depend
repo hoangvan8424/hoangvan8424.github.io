@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1567024688 source:d:\codeblock\affine\main.cpp
+	<iostream>
+	<string.h>
+	<stdlib.h>
+
