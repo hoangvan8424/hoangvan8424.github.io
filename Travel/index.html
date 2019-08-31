@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+	<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
+</head>
+<body>
+<!--Start Menu-->
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="#">Yourtravel.com</a>
+		<!-- Links -->
+
+		<div class="collapse navbar-collapse justify-content-evenly" id="collapsibleNavbar">
+			<ul class="navbar-nav menu">
+				<li class="nav-item ml-5">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item ml-4">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item ml-4">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item dropdown ml-4">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						Dropdown link
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Link 1</a>
+						<a class="dropdown-item" href="#">Link 2</a>
+						<a class="dropdown-item" href="#">Link 3</a>
+					</div>
+				</li>
+				<li class="nav-item ml-5">
+					<form class="form-inline justify-content-center search" action="">
+						<input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm">
+						<button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+					</form>
+				</li>
+			</ul>
+		</div>
+		<div class="right">
+			<a href="#" class="mr-4"><img src="image/user-s.png"></a>
+			<a href="#" class="mr-2"><img src="image/i-cart.png"></a>
+		</div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+<!--End Menu-->
+
+<!--Start Slide-->
+	<div id="slide" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ul class="carousel-indicators">
+			<li data-target="#slide" data-slide-to="0" class="active"></li>
+			<li data-target="#slide" data-slide-to="1"></li>
+			<li data-target="#slide" data-slide-to="2"></li>
+		</ul>
+		<!-- The slideshow -->
+		<div class="carousel-inner bg-info">
+			<div class="carousel-item active">
+				<div class="d-flex align-items-center justify-content-center min-vh-100">
+<!--					<img src="image/pexels-photo-1536431.jpeg" alt="Los Angeles">-->
+					<h1>SLIDE 1</h1>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="d-flex align-items-center justify-content-center min-vh-100">
+<!--					<img src="image/chicago.jpg" alt="Chicago">-->
+					<h1>SLIDE 2</h1>
+				</div>
+
+			</div>
+			<div class="carousel-item">
+				<div class="d-flex align-items-center justify-content-center min-vh-100">
+<!--					<img src="image/ny.jpg" alt="New York">-->
+					<h1>SLIDE 3</h1>
+				</div>
+			</div>
+		</div>
+		<!-- Left and right controls -->
+		<a class="carousel-control-prev" href="#slide" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#slide" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
+	</div>
+<!--End Slide-->
+
+<!--Start Container-->
+	<div class="container">
+		<div class="row">
+		<!--Bắt đầu địa điểm nổi bật-->
+			<div id="noi-bat">
+				<h4>Địa điểm nổi bật</h4>
+				<div class="card-columns">
+					<div class="card-group d-block">
+						<div class="card bg-primary">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-warning">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the second card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-success">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the third card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-danger">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the fourth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-light">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the fifth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-info">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the sixth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--Kết thúc địa điểm nổi bật-->
+
+		<!--Bắt đầu điểm đến yêu thích-->
+			<div id="yeu-thich">
+				<h4>Điểm đến yêu thích</h4>
+				<div class="card-columns">
+					<div class="card-group d-block">
+						<div class="card bg-primary">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-warning">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the second card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-success">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the third card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-danger">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the fourth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-light">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the fifth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-info">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the sixth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--Kết thúc điểm đến yêu thích-->
+
+		<!--Bắt đầu gợi ý-->
+			<div id="goi-y">
+				<h4>Địa điểm gợi ý</h4>
+				<div class="card-columns">
+					<div class="card-group d-block">
+						<div class="card bg-primary">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-warning">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the second card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-success">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the third card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-danger">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the fourth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-light">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the fifth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+						<div class="card bg-info">
+							<div class="card-body text-center">
+								<p class="card-text">Some text inside the sixth card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+								<p class="card-text">Some text inside the first card</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--Kết thúc gợi ý-->
+		</div>
+	</div>
+<!--End Container-->
+
+<!--Start Footer-->
+	<div id="footer" class="jumbotron text-center mb-0 mt-3" style="color: #fff; background: #343A40;">
+		<h2>Yourtravel.com</h2>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-sm-4 text-left">
+					<h4 style="text-transform: uppercase;"><span style="display: inline-block;border-bottom: 3px solid #FFF;">Về ch</span>úng tôi</h4>
+					<h6>Yourtravel.com được phát triển bởi</h6>
+					<p>Hoàng Văn Thái</p>
+					<p>Nguyễn Khắc Linh</p>
+					<p>Phạm Đức Hậu</p>
+				</div>
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4 text-left">
+					<h4 style="text-transform: uppercase;"><span style="display: inline-block;border-bottom: 3px solid #FFF;">Địa ch</span>ỉ liên lạc</h4>
+					<p><i class="fas fa-map-marker-alt mr-2"></i>Học viện kỹ thuật mật mã</p>
+					<p><i class="fas fa-location-arrow" style="margin-right: 0.75rem;"></i>Số 141 đường Chiến Thắng, Tân Triều, Thanh Trì, Hà Nội</p>
+					<p><i class="fas fa-mobile-alt" style="margin-right: 0.75rem;"></i>0393724111</p>
+					<p><i class="far fa-envelope mr-2"></i>hoangvan181198@gmail.com</p>
+					<p>Mọi sự góp ý của các bạn sẽ là động lực để chúng tôi phát triển!</p>
+				</div>
+			</div>
+		</div>
+		<p><i class="far fa-copyright">2019 Công ty cổ phần Yourtravle.com</i></p>
+	</div>
+<!--End Footer-->
+</body>
+</html>
