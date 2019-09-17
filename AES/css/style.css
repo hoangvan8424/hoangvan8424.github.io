@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/*body*/
+body {
+    font-weight: 400;
+}
+.form {
+    background-color: #F5F5F5;
+    width: 1000px;
+    height: 550px;
+    margin: 0 auto;
+}
+.button button {
+    border-radius: 0;
+    width: 150px;
+}
