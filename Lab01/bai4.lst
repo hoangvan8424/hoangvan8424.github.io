@@ -1,0 +1,96 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; Viet chuong trinh tinh tong cac <= N chia het cho 5
+    2 00000000         ; Y tuong: Moi lan tang bien len 5 roi them vao Sum neu 
+                       bien >N thi dung.
+    3 00000000         
+    4 00000000         ;Khai bao doan du lieu
+    5 00000000                 AREA             RESET, DATA, READONLY
+    6 00000000 20001000        DCD              0x20001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    7 00000004 00000000        DCD              Start       ; reset vector
+    8 00000008         
+    9 00000008         ; Khai bao doan ma lenh
+   10 00000008                 AREA             HOANG, CODE, READONLY
+   11 00000000                 ENTRY                        ;Khai bao diem vao 
+                                                            chuong trinh
+   12 00000000         
+   13 00000000         Start
+   14 00000000         ;Tong <=N chia het cho 5
+   15 00000000 F04F 0200       MOV              R2, #0      ;Sum = 0
+   16 00000004 F04F 0305       MOV              R3, #5      ; i = 5
+   17 00000008         LOOP
+   18 00000008 2B0A            CMP              R3, #10     ; N=5
+   19 0000000A DC03            BGT              STOP
+   20 0000000C 441A            ADD              R2, R3
+   21 0000000E F103 0305       ADD              R3, #5
+   22 00000012 E7F9            B                LOOP
+   23 00000014         
+   24 00000014 E7FE    STOP    B                STOP
+   25 00000016         
+   26 00000016                 END                          ; ket thuc chuong t
+                                                            rinh
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\bai4.d
+ -o.\bai4.o -IE:\KeilC\ARM\RV31\INC -IE:\KeilC\ARM\CMSIS\Include -IE:\KeilC\ARM
+\Inc\ST\STM32F10x --list=.\bai4.lst bai4.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 5 in file bai4.s
+   Uses
+      None
+Comment: RESET unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HOANG 00000000
+
+Symbol: HOANG
+   Definitions
+      At line 10 in file bai4.s
+   Uses
+      None
+Comment: HOANG unused
+LOOP 00000008
+
+Symbol: LOOP
+   Definitions
+      At line 17 in file bai4.s
+   Uses
+      At line 22 in file bai4.s
+Comment: LOOP used once
+STOP 00000014
+
+Symbol: STOP
+   Definitions
+      At line 24 in file bai4.s
+   Uses
+      At line 19 in file bai4.s
+      At line 24 in file bai4.s
+
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 13 in file bai4.s
+   Uses
+      At line 7 in file bai4.s
+Comment: Start used once
+4 symbols
+335 symbols in table

@@ -1,0 +1,153 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Ket qua UCLN luu R1
+    2 00000000         ;Thuc hien theo thuat toan Euclid tim UCLN 
+    3 00000000         ;while(b != 0)
+    4 00000000         ;temp = a%b
+    5 00000000         ;a = b     
+    6 00000000         ;b =temp
+    7 00000000         ;return a
+    8 00000000         
+    9 00000000         ;Khai bao doan du lieu
+   10 00000000                 AREA             RESET, DATA, READONLY
+   11 00000000 20001000        DCD              0x20001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+   12 00000004 00000000        DCD              Start       ; reset vector
+   13 00000008         
+   14 00000008 0000000C 
+                       bienA   DCD              12
+   15 0000000C 00000008 
+                       bienB   DCD              8
+   16 00000010         
+   17 00000010         ;Khai bao doan ma lenh
+   18 00000010                 AREA             HOANG, CODE, READONLY
+   19 00000000                 ENTRY                        ;Khai bao diem vao 
+                                                            chuong trinh
+   20 00000000                 EXPORT           Start
+   21 00000000         Start
+   22 00000000         
+   23 00000000         ;Bat dau doan code (Diem vao chuong trinh)
+   24 00000000         
+   25 00000000 F85F 1004       LDR              R1, bienA
+   26 00000004 F85F 2004       LDR              R2, bienB
+   27 00000008 F04F 0300       MOV              R3, #0      ; bien temp
+   28 0000000C         
+   29 0000000C         TimUCLN
+   30 0000000C E005            B                phanDu
+   31 0000000E         tiepTuc
+   32 0000000E 460B            MOV              R3, R1      ; gan temp = phan d
+                                                            u
+   33 00000010 4611            MOV              R1, R2
+   34 00000012 461A            MOV              R2, R3
+   35 00000014 2A00            CMP              R2, #0
+   36 00000016 D1F9            BNE              TimUCLN
+   37 00000018 E004            B                STOP
+   38 0000001A         
+   39 0000001A         phanDu
+   40 0000001A EBA1 0102       SUB              R1, R2
+   41 0000001E 4291            CMP              R1, R2
+   42 00000020 D2FB            BHS              phanDu
+   43 00000022 E7F4            B                tiepTuc
+   44 00000024         
+   45 00000024 E7FE    STOP    B                STOP
+   46 00000026         
+   47 00000026                 END                          ; ket thuc chuong t
+                                                            rinh
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\bai7.d
+ -o.\bai7.o -IE:\KeilC\ARM\RV31\INC -IE:\KeilC\ARM\CMSIS\Include -IE:\KeilC\ARM
+\Inc\ST\STM32F10x --list=.\bai7.lst bai7.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 10 in file bai7.s
+   Uses
+      None
+Comment: RESET unused
+bienA 00000008
+
+Symbol: bienA
+   Definitions
+      At line 14 in file bai7.s
+   Uses
+      At line 25 in file bai7.s
+Comment: bienA used once
+bienB 0000000C
+
+Symbol: bienB
+   Definitions
+      At line 15 in file bai7.s
+   Uses
+      At line 26 in file bai7.s
+Comment: bienB used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HOANG 00000000
+
+Symbol: HOANG
+   Definitions
+      At line 18 in file bai7.s
+   Uses
+      None
+Comment: HOANG unused
+STOP 00000024
+
+Symbol: STOP
+   Definitions
+      At line 45 in file bai7.s
+   Uses
+      At line 37 in file bai7.s
+      At line 45 in file bai7.s
+
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 21 in file bai7.s
+   Uses
+      At line 12 in file bai7.s
+      At line 20 in file bai7.s
+
+TimUCLN 0000000C
+
+Symbol: TimUCLN
+   Definitions
+      At line 29 in file bai7.s
+   Uses
+      At line 36 in file bai7.s
+Comment: TimUCLN used once
+phanDu 0000001A
+
+Symbol: phanDu
+   Definitions
+      At line 39 in file bai7.s
+   Uses
+      At line 30 in file bai7.s
+      At line 42 in file bai7.s
+
+tiepTuc 0000000E
+
+Symbol: tiepTuc
+   Definitions
+      At line 31 in file bai7.s
+   Uses
+      At line 43 in file bai7.s
+Comment: tiepTuc used once
+6 symbols
+339 symbols in table

@@ -1,0 +1,49 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\lab01.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\lab01.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Sep 20 08:21:33 2019
+<BR><P>
+<H3>Maximum Stack Usage =          0 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+
+<P>
+<H3>
+Functions with no stack information
+</H3><UL>
+ <LI><a href="#[1]">Batdau</a>
+</UL>
+</UL>
+<P>
+<H3>
+Mutually Recursive functions
+</H3> <LI><a href="#[2]">TinhGT</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[2]">TinhGT</a><BR>
+</UL>
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[1]">Batdau</a> from bai3.o(DOANMA) referenced from bai3.o(RESET)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3><P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[1]"></a>Batdau</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, bai3.o(DOANMA))
+<BR><BR>[Calls]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TinhGT
+</UL>
+
+<P><STRONG><a name="[2]"></a>TinhGT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, bai3.o(DOANMA))
+<BR><BR>[Calls]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TinhGT
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TinhGT
+<LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Batdau
+</UL>
+<P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>

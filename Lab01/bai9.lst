@@ -1,0 +1,177 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Tim UCLN 2 so trc, luu o R1
+    2 00000000         ;BCNN = (A x B) chia UCLN
+    3 00000000         ;Ket qua BCNN luu o R7
+    4 00000000         
+    5 00000000         ;Khai bao doan du lieu
+    6 00000000                 AREA             RESET, DATA, READONLY
+    7 00000000 20001000        DCD              0x20001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    8 00000004 00000000        DCD              Start       ; reset vector
+    9 00000008         
+   10 00000008 0000000C 
+                       bienA   DCD              12
+   11 0000000C 00000008 
+                       bienB   DCD              8
+   12 00000010         
+   13 00000010         ;Khai bao doan ma lenh
+   14 00000010                 AREA             HOANG, CODE, READONLY
+   15 00000000                 ENTRY                        ;Khai bao diem vao 
+                                                            chuong trinh
+   16 00000000                 EXPORT           Start
+   17 00000000         
+   18 00000000         Start
+   19 00000000         ;Bat dau doan code (Diem vao chuong trinh)
+   20 00000000 F85F 1004       LDR              R1, bienA
+   21 00000004 F85F 2004       LDR              R2, bienB
+   22 00000008 F04F 0300       MOV              R3, #0      ; bien temp
+   23 0000000C         
+   24 0000000C         TimUCLN
+   25 0000000C E005            B                tinhPhanDu
+   26 0000000E         tiepTuc
+   27 0000000E 460B            MOV              R3, R1      ; gan temp = phan d
+                                                            u
+   28 00000010 4611            MOV              R1, R2
+   29 00000012 461A            MOV              R2, R3
+   30 00000014 2A00            CMP              R2, #0
+   31 00000016 D1F9            BNE              TimUCLN
+   32 00000018 E004            B                TinhBCNN
+   33 0000001A         
+   34 0000001A         tinhPhanDu
+   35 0000001A EBA1 0102       SUB              R1, R2
+   36 0000001E 4291            CMP              R1, R2
+   37 00000020 D2FB            BHS              tinhPhanDu
+   38 00000022 E7F4            B                tiepTuc
+   39 00000024         
+   40 00000024         TinhBCNN
+   41 00000024 F85F 4004       LDR              R4, bienA   ; lay lai gia tri b
+                                                            ien A
+   42 00000028 F85F 5004       LDR              R5, bienB   ; lay lai gia tri b
+                                                            ien B
+   43 0000002C FB04 F605       MUL              R6, R4, R5  ; R6 = R4 x R5
+   44 00000030 FB96 F7F1       SDIV             R7, R6, R1  ; R7 = R6/R1
+   45 00000034         
+   46 00000034 E7FE    STOP    B                STOP
+   47 00000036         
+   48 00000036                 END                          ; ket thuc chuong t
+                                                            rinh
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\bai9.d
+ -o.\bai9.o -IE:\KeilC\ARM\RV31\INC -IE:\KeilC\ARM\CMSIS\Include -IE:\KeilC\ARM
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+\Inc\ST\STM32F10x --list=.\bai9.lst bai9.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 6 in file bai9.s
+   Uses
+      None
+Comment: RESET unused
+bienA 00000008
+
+Symbol: bienA
+   Definitions
+      At line 10 in file bai9.s
+   Uses
+      At line 20 in file bai9.s
+      At line 41 in file bai9.s
+
+bienB 0000000C
+
+Symbol: bienB
+   Definitions
+      At line 11 in file bai9.s
+   Uses
+      At line 21 in file bai9.s
+      At line 42 in file bai9.s
+
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HOANG 00000000
+
+Symbol: HOANG
+   Definitions
+      At line 14 in file bai9.s
+   Uses
+      None
+Comment: HOANG unused
+STOP 00000034
+
+Symbol: STOP
+   Definitions
+      At line 46 in file bai9.s
+   Uses
+      At line 46 in file bai9.s
+Comment: STOP used once
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 18 in file bai9.s
+   Uses
+      At line 8 in file bai9.s
+      At line 16 in file bai9.s
+
+TimUCLN 0000000C
+
+Symbol: TimUCLN
+   Definitions
+      At line 24 in file bai9.s
+   Uses
+      At line 31 in file bai9.s
+Comment: TimUCLN used once
+TinhBCNN 00000024
+
+Symbol: TinhBCNN
+   Definitions
+      At line 40 in file bai9.s
+   Uses
+      At line 32 in file bai9.s
+Comment: TinhBCNN used once
+tiepTuc 0000000E
+
+Symbol: tiepTuc
+   Definitions
+      At line 26 in file bai9.s
+   Uses
+      At line 38 in file bai9.s
+Comment: tiepTuc used once
+tinhPhanDu 0000001A
+
+Symbol: tinhPhanDu
+   Definitions
+      At line 34 in file bai9.s
+   Uses
+      At line 25 in file bai9.s
+      At line 37 in file bai9.s
+
+7 symbols
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+340 symbols in table
