@@ -4106,6 +4106,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-bottom: 1px solid #dcdcdc;
   margin-bottom: 20px;
   padding-bottom: 20px;
+    margin-top: 10px;
 }
 .sidebar-title h4 {
   border-left: 2px solid #606060;
