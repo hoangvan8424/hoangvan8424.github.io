@@ -1,0 +1,29 @@
+a.icon {
+    text-decoration: none;
+    cursor: pointer;
+}
+a.icon:hover {
+    text-decoration: none;
+}
+a.icon i {
+    font-size: 18px;
+    padding: 5px;
+
+}
+a.icon i.delete {
+    margin-left: 10px;
+    color: red;
+}
+a {
+    text-decoration: none!important;
+}
+.navbar-inverse .navbar-brand {
+    color: #fff!important;
+}
+.icon-check {
+    margin-right: 5px;
+    font-size: 25px;
+    position: relative;
+    top: 2px;
+    color: #2b542c;
+}
