@@ -4110,8 +4110,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .sidebar-title h4 {
   border-left: 2px solid #606060;
   color: #333333;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   line-height: 14px;
   margin: 0;
   padding-left: 17px;
