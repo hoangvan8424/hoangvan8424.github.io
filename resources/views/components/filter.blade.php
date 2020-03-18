@@ -32,6 +32,7 @@
             <ul>
                 <li><a href="#">Table</a></li>
                 <li><a href="#">Lamp</a></li>
+                <li><a href="#">Asus</a></li>
                 <li><a href="#">Tops</a></li>
                 <li><a href="#">Watch</a></li>
                 <li><a href="#">T-shirt</a></li>

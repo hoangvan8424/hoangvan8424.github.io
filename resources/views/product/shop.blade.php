@@ -63,14 +63,7 @@
 					<div class="shop-top-bar text-center col-xs-12 pt-20">
 						<!-- Product Pagination -->
 						<div class="pagination -align-center">
-							<ul>
-								<li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
-							</ul>
+                            {!! $product->links() !!}
 						</div>
 					</div>
 				</div>

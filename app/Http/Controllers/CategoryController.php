@@ -14,10 +14,10 @@ class CategoryController extends FrontendController
         $url = preg_split('/(-)/', $request->segment(2));
         if($id = array_pop($url))
         {
-            $product = DB::table('products')->where([
+            $product = Product::where([
                 ['pro_category_id', '=', $id],
                 ['pro_active', '=', Product::PUBLIC_STATUS]
-            ])->orderByDesc('id')->paginate(10);
+            ])->orderByDesc('id')->paginate(12);
             return view('product.shop', compact('product', 'id'));
         }
         return view('404');

@@ -4068,7 +4068,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #909090;
   display: block;
   height: 35px;
-  line-height: 33px;
+  /*line-height: 33px;*/
   text-align: center;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
