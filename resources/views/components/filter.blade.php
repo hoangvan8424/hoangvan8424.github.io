@@ -1,64 +1,39 @@
 <div class="single-sidebar">
-    <div class="sidebar-title"><h4>Danh mục</h4></div>
-    <ul class="cat-treeview">
-        <li class="closed"><a href="#">furniture</a>
-            <ul>
-                <li><a href="#">Table</a></li>
-                <li><a href="#">Lamp</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">T-shirt</a></li>
-            </ul>
-        </li>
-        <li class="open"><a href="#">Chair</a>
-            <ul>
-                <li><a href="#">Table</a></li>
-                <li><a href="#">Lamp</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">T-shirt</a></li>
-            </ul>
-        </li>
-        <li class="closed"><a href="#">Accessories</a>
-            <ul>
-                <li><a href="#">Table</a></li>
-                <li><a href="#">Lamp</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">T-shirt</a></li>
-            </ul>
-        </li>
-        <li class="closed"><a href="#">Top Brands</a>
-            <ul>
-                <li><a href="#">Table</a></li>
-                <li><a href="#">Lamp</a></li>
-                <li><a href="#">Asus</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">T-shirt</a></li>
-            </ul>
-        </li>
-        <li class="closed"><a href="#">sofa</a>
-            <ul>
-                <li><a href="#">Table</a></li>
-                <li><a href="#">Lamp</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">T-shirt</a></li>
-            </ul>
-        </li>
+    <div class="sidebar-title">
+        <h4>Thương hiệu</h4>
+    </div>
+    <ul>
+        <li><a href="#">Dell</a></li>
+        <li><a href="#">Asus</a></li>
+        <li><a href="#">Lenovo</a></li>
+        <li><a href="#">Apple</a></li>
+        <li><a href="#">HP</a></li>
     </ul>
 </div>
 <div class="single-sidebar">
     <div class="sidebar-title"><h4>Giá</h4></div>
-    <div class="price-slider-wrap">
-        <div id="slider-range"></div>
-        <div id ="amount">
-            <input type ="text" name ="first_price" class="first_price" />
-            <span></span>
-            <input type ="text" name ="last_price" class="last_price"/>
-        </div>
-    </div>
+    <ul>
+        <li>
+            <a href="?price=1" title="Dưới 5 triệu" >
+                <input type="checkbox"><span>Dưới 5 triệu</span>
+            </a>
+        </li>
+        <li>
+            <a href="?price=5">
+                <input type="checkbox" value=""><span>Từ 5.000.000 - 7.000.000đ</span>
+            </a>
+        </li>
+        <li>
+            <a href="?price=7">
+                <input type="checkbox" value=""><span>Từ 7.000.000 - 10.000.000đ</span>
+            </a>
+        </li>
+        <li>
+            <a href="?price=10">
+                <input type="checkbox" value=""><span>Trên 10.000.000đ</span>
+            </a>
+        </li>
+    </ul>
 </div>
 <div class="single-sidebar">
     <div class="sidebar-title"><h4>Size</h4></div>

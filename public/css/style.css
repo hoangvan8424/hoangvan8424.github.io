@@ -4161,9 +4161,22 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: block;
   line-height: 40px;
   padding: 0 20px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+.single-sidebar ul li a input {
+    position: relative;
+    top: 2px;
+    width: 17px;
+    height: 17px;
+}
+.single-sidebar ul li a span {
+    margin-left: 7px;
+}
+.single-sidebar ul li a label span {
+    margin-left: 7px;
 }
 .single-sidebar li a:hover {
   color: #ec4445;

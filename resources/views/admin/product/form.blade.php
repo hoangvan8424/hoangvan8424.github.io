@@ -97,7 +97,7 @@
                 <input type="number" class="form-control" name="pro_sale" placeholder="0" value="{{ isset($product->pro_sale)?old('pro_sale', $product->pro_sale):'' }}">
             </div>
             <div class="checkbox">
-                <label for="hot"><input type="checkbox" name="hot" value="1" {{ old('hot', isset($product->hot) ? $product->hot : '' == 1 ? 'checked' : '') }} >Nổi bật</label>
+                <label><input type="checkbox" name="hot" value="1" {{ old('hot', isset($product->hot) ? $product->hot : '' == 1 ? 'checked' : '') }} >Nổi bật</label>
             </div>
         </div>
 

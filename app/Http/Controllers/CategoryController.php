@@ -17,7 +17,24 @@ class CategoryController extends FrontendController
             $product = Product::where([
                 ['pro_category_id', '=', $id],
                 ['pro_active', '=', Product::PUBLIC_STATUS]
-            ])->orderByDesc('id')->paginate(12);
+            ]);
+
+            if($request->price) {
+                $price = $request->price;
+                switch ($price)
+                {
+                    case 1: $product = $product->where('pro_price', '<', '5000000');
+                        break;
+                    case 5: $product = $product->whereBetween('pro_price', [5000000, 7000000]);
+                        break;
+                    case 7: $product = $product->whereBetween('pro_price', [7000000, 10000000]);
+                        break;
+                    case 10: $product = $product->where('pro_price', '>', '10000000');
+                        break;
+                }
+            }
+
+            $product = $product->orderByDesc('id')->paginate(12);
             return view('product.shop', compact('product', 'id'));
         }
         return view('404');
