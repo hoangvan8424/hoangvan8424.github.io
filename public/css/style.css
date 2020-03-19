@@ -4095,7 +4095,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .sidebar-wrapper{}
 /* Single Sidebar */
 .single-sidebar {
-  margin-bottom: 40px;
+  /*margin-bottom: 40px;*/
   overflow: hidden;
 }
 .single-sidebar:last-child {
@@ -4103,10 +4103,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 /* Sidebar Title */
 .sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   border-bottom: 1px solid #dcdcdc;
   margin-bottom: 20px;
   padding-bottom: 20px;
     margin-top: 10px;
+}
+.sidebar-title .extend-button {
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 700;
 }
 .sidebar-title h4 {
   border-left: 2px solid #606060;
@@ -4161,7 +4169,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: block;
   line-height: 40px;
   padding: 0 20px;
-  /*text-transform: uppercase;*/
+  text-transform: uppercase;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }

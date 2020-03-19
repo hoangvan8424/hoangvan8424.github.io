@@ -1,42 +1,56 @@
 <div class="single-sidebar">
     <div class="sidebar-title">
-        <h4>Thương hiệu</h4>
+        <h4 class="closed">Thương hiệu</h4>
+        <span class="extend-button">+</span>
     </div>
-    <ul>
-        <li><a href="#">Dell</a></li>
-        <li><a href="#">Asus</a></li>
-        <li><a href="#">Lenovo</a></li>
-        <li><a href="#">Apple</a></li>
-        <li><a href="#">HP</a></li>
-    </ul>
+        <ul>
+            <li><a href="#">Table</a></li>
+            <li><a href="#">Lamp</a></li>
+            <li><a href="#">Tops</a></li>
+            <li><a href="#">Watch</a></li>
+            <li><a href="#">T-shirt</a></li>
+        </ul>
+
 </div>
 <div class="single-sidebar">
-    <div class="sidebar-title"><h4>Giá</h4></div>
+    <div class="sidebar-title">
+        <h4>Giá</h4>
+        <span class="extend-button">+</span>
+    </div>
     <ul>
         <li>
-            <a href="?price=1" title="Dưới 5 triệu" >
-                <input type="checkbox"><span>Dưới 5 triệu</span>
+            <a href="?price=1" title="Dưới 5 triệu">
+                <label><input type="checkbox"><span>Dưới 5 triệu</span></label>
             </a>
         </li>
         <li>
             <a href="?price=5">
-                <input type="checkbox" value=""><span>Từ 5.000.000 - 7.000.000đ</span>
+                <label>
+                    <input type="checkbox" value=""><span>Từ 5.000.000 - 7.000.000đ</span>
+                </label>
             </a>
         </li>
         <li>
             <a href="?price=7">
-                <input type="checkbox" value=""><span>Từ 7.000.000 - 10.000.000đ</span>
+                <label>
+                    <input type="checkbox" value=""><span>Từ 7.000.000 - 10.000.000đ</span>
+                </label>
             </a>
         </li>
         <li>
             <a href="?price=10">
-                <input type="checkbox" value=""><span>Trên 10.000.000đ</span>
+                <label>
+                    <input type="checkbox" value=""><span>Trên 10.000.000đ</span>
+                </label>
             </a>
         </li>
     </ul>
 </div>
 <div class="single-sidebar">
-    <div class="sidebar-title"><h4>Size</h4></div>
+    <div class="sidebar-title">
+        <h4>Size</h4>
+        <span class="extend-button">+</span>
+    </div>
     <div class="size-wrap">
         <a href="#">s</a>
         <a href="#">m</a>
