@@ -4164,6 +4164,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   position: relative;
 }
 .single-sidebar ul li a {
+    font-weight: 400;
   border-bottom: 1px solid #e7e7e7;
   color: #333333;
   display: block;
@@ -4173,7 +4174,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-
+.single-sidebar ul li a label {
+    font-weight: 400!important;
+}
 .single-sidebar ul li a input {
     position: relative;
     top: 2px;

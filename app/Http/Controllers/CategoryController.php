@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -33,9 +34,12 @@ class CategoryController extends FrontendController
                         break;
                 }
             }
-
+            $brand = Brand::select('brand_name')->where([
+                ['c_id', '=', $id],
+                ['brand_status', '=', Brand::BRAND_DISPLAY]
+            ])->get();
             $product = $product->orderByDesc('id')->paginate(12);
-            return view('product.shop', compact('product', 'id'));
+            return view('product.shop', compact('product', 'id', 'brand'));
         }
         return view('404');
     }
