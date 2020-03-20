@@ -300,16 +300,16 @@ ul{
 /* Section Title */
 .section-title{}
 .section-title h2 {
-  background: rgba(0, 0, 0, 0) url("/img/title-bg.png") no-repeat scroll center bottom;
   display: inline-block;
   font-size: 20px;
   font-weight: 700;
   line-height: 18px;
   margin: 0;
-  padding-bottom: 15px;
+  padding: 5px;
   text-transform: uppercase;
   vertical-align: top;
-  color: #ec4445
+  color: #ec4445;
+    border-left: 4px solid #ec4445;
 }
 .section-title.white h2 {
   color: #fff;

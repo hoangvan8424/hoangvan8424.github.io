@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('product')
-    <div class="single-product-area pb-90 pt-90">
+    <div class="single-product-area pt-90">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 mt-50">
@@ -8,8 +8,8 @@
                         <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
                         <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            @if($detail -> pro_category_id==1) {{ 'Máy tính' }}
-                            @elseif($detail -> pro_category_id==1) {{ 'Điện thoại' }}
+                            @if($productDetail -> pro_category_id==1) {{ 'Máy tính' }}
+                            @elseif($productDetail -> pro_category_id==1) {{ 'Điện thoại' }}
                             @endif
                         </li>
                     </ol>
@@ -19,36 +19,24 @@
                     <div class="single-product-wrap">
                         <div class="single-product-image">
                             <div class="pro-thumb float-left">
-                                <div class="sin-item"><a href="#pro-img-1" data-toggle="tab"><img src="/img/single-product/1.1.jpg" alt="" /></a></div>
-                                <div class="sin-item"><a href="#pro-img-2" data-toggle="tab"><img src="/img/single-product/2.1.jpg" alt="" /></a></div>
-                                <div class="sin-item"><a class="active" href="#pro-img-3" data-toggle="tab"><img src="/img/product/{{ $detail->pro_avatar }}" alt="" /></a></div>
-                                <div class="sin-item"><a href="#pro-img-4" data-toggle="tab"><img src="/img/single-product/4.1.jpg" alt="" /></a></div>
+{{--                                <div class="sin-item"><a href="#pro-img-1" data-toggle="tab"><img src="/img/single-product/1.1.jpg" alt="" /></a></div>--}}
+{{--                                <div class="sin-item"><a href="#pro-img-2" data-toggle="tab"><img src="/img/single-product/2.1.jpg" alt="" /></a></div>--}}
+                                <div class="sin-item"><a class="active" href="#pro-img-3" data-toggle="tab"><img src="/img/product/{{ $productDetail->pro_avatar }}" alt="" /></a></div>
+{{--                                <div class="sin-item"><a href="#pro-img-4" data-toggle="tab"><img src="/img/single-product/4.1.jpg" alt="" /></a></div>--}}
                             </div>
                             <div class="product-big-image product-big-image-2 tab-content float-left">
-                                <div class="tab-pane" id="pro-img-1">
-                                    <img src="/img/single-product/1.jpg" alt="" />
-                                    <a class="pro-img-popup" href="/img/single-product/1.jpg"><i class="zmdi zmdi-search"></i></a>
-                                </div>
-                                <div class="tab-pane" id="pro-img-2">
-                                    <img src="/img/single-product/2.jpg" alt="" />
-                                    <a class="pro-img-popup" href="/img/single-product/2.jpg"><i class="zmdi zmdi-search"></i></a>
-                                </div>
                                 <div class="tab-pane active pro-details-img" id="pro-img-3">
-                                    <img src="/img/product/{{ $detail->pro_avatar }}" alt="" />
+                                    <img src="/img/product/{{ $productDetail->pro_avatar }}" alt="" />
                                     <a class="pro-img-popup" href="/img/single-product/3.jpg"><i class="zmdi zmdi-search"></i></a>
-                                </div>
-                                <div class="tab-pane" id="pro-img-4">
-                                    <img src="/img/single-product/4.jpg" alt="" />
-                                    <a class="pro-img-popup" href="/img/single-product/4.jpg"><i class="zmdi zmdi-search"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="single-product-content fix">
-                            <h3 class="single-pro-title">{{ $detail -> pro_name }}</h3>
+                            <h3 class="single-pro-title">{{ $productDetail -> pro_name }}</h3>
                             <div class="single-product-price-ratting fix">
                                 <h3 class="single-pro-price float-left">
-                                    <span class="new">{{ number_format($detail->pro_price, 0, '', '.') }}đ</span>
-                                    <span class="old">{{ number_format($detail->pro_price/(1-$detail->pro_sale/100),0,'','.') }}đ</span>
+                                    <span class="new">{{ number_format($productDetail->pro_price, 0, '', '.') }}đ</span>
+                                    <span class="old">{{ number_format($productDetail->pro_price/(1-$productDetail->pro_sale/100),0,'','.') }}đ</span>
                                 </h3>
                                 <p class="single-pro-ratting float-right">
                                     <i class="zmdi zmdi-star"></i>
@@ -59,7 +47,7 @@
                                     <span>(24)</span>
                                 </p>
                             </div>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered and  at alteration in some form, by injected humou or randomised words which donot look even slightly humou if a believable. If you are going to use a passage Lorem Ipsum.Ipsum available.</p>
+                            <p>{{ $productDetail->pro_description }}</p>
 
                             <div class="single-product-action-quantity fix">
                                 <div class="pro-qty-wrap-2 float-left">
@@ -216,248 +204,156 @@
             </div>
         </div>
     </div>
-    <!-- Related Product Area
-    ============================================ -->
-    <div class="related-product-area  pb-75 fix container">
+
+    <!-- Sản phẩm liên quan -->
+    <div class="related-product-area fix container">
         <div class="section-title text-left mb-35 col-xs-12 mt-10">
-            <h2 class="active">Sản phẩm tương tự</h2>
+            <h2 class="active">Sản phẩm liên quan</h2>
         </div>
         <div class="product-slider product-slider-6 plr-60">
             <div class="col-xs-12">
-                <div class="sin-product">
-                    <span class="pro-label">new</span>
-                    <div class="pro-image fix">
-                        <a href="product-details-1.html" class="image"><img src="/img/product/2.jpg" alt="" /></a>
-                        <div class="pro-action">
-                            <a href="cart.html" class="action-btn cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                            <a href="wishlist.html" class="action-btn wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                            <a href="#" data-toggle="modal"  data-target="#productModal" class="action-btn quick-view"><i class="zmdi zmdi-eye"></i></a>
+                <a href="#">
+                    <div class="sin-product">
+                        <span class="pro-label">sale</span>
+                        <div class="pro-image">
+                            <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
                         </div>
-                    </div>
-                    <div class="pro-details text-center">
-                        <div class="top fix">
-                            <p class="pro-cat float-left">chair</p>
-                            <p class="pro-ratting float-right">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <span>(24)</span>
+                        <div class="pro-details">
+                            <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
+                            <p class="pro-price">
+                                <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
+                                <span class="price-sale">-{{ 12 }}%</span>
+                                <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
                             </p>
                         </div>
-                        <a href="product-details-1.html" class="pro-title">Wooden Furniture Chair</a>
-                        <h3 class="pro-price">
-                            <span class="new">$40.00</span>
-                        </h3>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-12">
-                <div class="sin-product">
-                    <div class="pro-image fix">
-                        <a href="product-details-1.html" class="image"><img src="/img/product/6.jpg" alt="" /></a>
-                        <div class="pro-action">
-                            <a href="cart.html" class="action-btn cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                            <a href="wishlist.html" class="action-btn wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                            <a href="#" data-toggle="modal"  data-target="#productModal" class="action-btn quick-view"><i class="zmdi zmdi-eye"></i></a>
+                <a href="#">
+                    <div class="sin-product">
+                        <span class="pro-label">sale</span>
+                        <div class="pro-image">
+                            <img src="/img/product/ae7804aff708e7197488e34a819f85db.jpg" alt="" class="img"/>
                         </div>
-                    </div>
-                    <div class="pro-details text-center">
-                        <div class="top fix">
-                            <p class="pro-cat float-left">chair</p>
-                            <p class="pro-ratting float-right">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <span>(24)</span>
+                        <div class="pro-details">
+                            <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
+                            <p class="pro-price">
+                                <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
+                                <span class="price-sale">-{{ 12 }}%</span>
+                                <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
                             </p>
                         </div>
-                        <a href="product-details-1.html" class="pro-title">Wooden Furniture Chair</a>
-                        <h3 class="pro-price">
-                            <span class="new">$40.00</span>
-                        </h3>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-12">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image fix">
-                        <a href="product-details-1.html" class="image"><img src="/img/product/4.jpg" alt="" /></a>
-                        <div class="pro-action">
-                            <a href="cart.html" class="action-btn cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                            <a href="wishlist.html" class="action-btn wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                            <a href="#" data-toggle="modal"  data-target="#productModal" class="action-btn quick-view"><i class="zmdi zmdi-eye"></i></a>
+                <a href="#">
+                    <div class="sin-product">
+                        <span class="pro-label">sale</span>
+                        <div class="pro-image">
+                            <img src="/img/product/71c6a96cec117c905c563755d7968163.jpg" alt="" class="img"/>
                         </div>
-                    </div>
-                    <div class="pro-details text-center">
-                        <div class="top fix">
-                            <p class="pro-cat float-left">chair</p>
-                            <p class="pro-ratting float-right">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <span>(24)</span>
+                        <div class="pro-details">
+                            <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
+                            <p class="pro-price">
+                                <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
+                                <span class="price-sale">-{{ 12 }}%</span>
+                                <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
                             </p>
                         </div>
-                        <a href="product-details-1.html" class="pro-title">Wooden Furniture Chair</a>
-                        <h3 class="pro-price">
-                            <span class="new">$40.00</span>
-                        </h3>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-12">
-                <div class="sin-product">
-                    <span class="pro-label">new</span>
-                    <div class="pro-image fix">
-                        <a href="product-details-1.html" class="image"><img src="/img/product/5.jpg" alt="" /></a>
-                        <div class="pro-action">
-                            <a href="cart.html" class="action-btn cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                            <a href="wishlist.html" class="action-btn wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                            <a href="#" data-toggle="modal"  data-target="#productModal" class="action-btn quick-view"><i class="zmdi zmdi-eye"></i></a>
+                <a href="#">
+                    <div class="sin-product">
+                        <span class="pro-label">sale</span>
+                        <div class="pro-image">
+                            <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
                         </div>
-                    </div>
-                    <div class="pro-details text-center">
-                        <div class="top fix">
-                            <p class="pro-cat float-left">chair</p>
-                            <p class="pro-ratting float-right">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <span>(24)</span>
+                        <div class="pro-details">
+                            <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
+                            <p class="pro-price">
+                                <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
+                                <span class="price-sale">-{{ 12 }}%</span>
+                                <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
                             </p>
                         </div>
-                        <a href="product-details-1.html" class="pro-title">Wooden Furniture Chair</a>
-                        <h3 class="pro-price">
-                            <span class="new">$40.00</span>
-                        </h3>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-12">
-                <div class="sin-product">
-                    <div class="pro-image fix">
-                        <a href="product-details-1.html" class="image"><img src="/img/product/6.jpg" alt="" /></a>
-                        <div class="pro-action">
-                            <a href="cart.html" class="action-btn cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                            <a href="wishlist.html" class="action-btn wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                            <a href="#" data-toggle="modal"  data-target="#productModal" class="action-btn quick-view"><i class="zmdi zmdi-eye"></i></a>
+                <a href="#">
+                    <div class="sin-product">
+                        <span class="pro-label">sale</span>
+                        <div class="pro-image">
+                            <img src="/img/product/0b50dcd1e3bda923d1558b4ad96f3f9a.jpg" alt="" class="img"/>
                         </div>
-                    </div>
-                    <div class="pro-details text-center">
-                        <div class="top fix">
-                            <p class="pro-cat float-left">chair</p>
-                            <p class="pro-ratting float-right">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <span>(24)</span>
+                        <div class="pro-details">
+                            <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
+                            <p class="pro-price">
+                                <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
+                                <span class="price-sale">-{{ 12 }}%</span>
+                                <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
                             </p>
                         </div>
-                        <a href="product-details-1.html" class="pro-title">Wooden Furniture Chair</a>
-                        <h3 class="pro-price">
-                            <span class="new">$40.00</span>
-                        </h3>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-12">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image fix">
-                        <a href="product-details-1.html" class="image"><img src="/img/product/7.jpg" alt="" /></a>
-                        <div class="pro-action">
-                            <a href="cart.html" class="action-btn cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                            <a href="wishlist.html" class="action-btn wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                            <a href="#" data-toggle="modal"  data-target="#productModal" class="action-btn quick-view"><i class="zmdi zmdi-eye"></i></a>
+                <a href="#">
+                    <div class="sin-product">
+                        <span class="pro-label">sale</span>
+                        <div class="pro-image">
+                            <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
                         </div>
-                    </div>
-                    <div class="pro-details text-center">
-                        <div class="top fix">
-                            <p class="pro-cat float-left">chair</p>
-                            <p class="pro-ratting float-right">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <span>(24)</span>
+                        <div class="pro-details">
+                            <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
+                            <p class="pro-price">
+                                <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
+                                <span class="price-sale">-{{ 12 }}%</span>
+                                <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
                             </p>
                         </div>
-                        <a href="product-details-1.html" class="pro-title">Wooden Furniture Chair</a>
-                        <h3 class="pro-price">
-                            <span class="new">$40.00</span>
-                        </h3>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-12">
-                <div class="sin-product">
-                    <div class="pro-image fix">
-                        <a href="product-details-1.html" class="image"><img src="/img/product/8.jpg" alt="" /></a>
-                        <div class="pro-action">
-                            <a href="cart.html" class="action-btn cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                            <a href="wishlist.html" class="action-btn wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                            <a href="#" data-toggle="modal"  data-target="#productModal" class="action-btn quick-view"><i class="zmdi zmdi-eye"></i></a>
+                <a href="#">
+                    <div class="sin-product">
+                        <span class="pro-label">sale</span>
+                        <div class="pro-image">
+                            <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
                         </div>
-                    </div>
-                    <div class="pro-details text-center">
-                        <div class="top fix">
-                            <p class="pro-cat float-left">chair</p>
-                            <p class="pro-ratting float-right">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <span>(24)</span>
+                        <div class="pro-details">
+                            <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
+                            <p class="pro-price">
+                                <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
+                                <span class="price-sale">-{{ 12 }}%</span>
+                                <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
                             </p>
                         </div>
-                        <a href="product-details-1.html" class="pro-title">Wooden Furniture Chair</a>
-                        <h3 class="pro-price">
-                            <span class="new">$40.00</span>
-                        </h3>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-12">
-                <div class="sin-product">
-                    <div class="pro-image fix">
-                        <a href="product-details-1.html" class="image"><img src="/img/product/1.jpg" alt="" /></a>
-                        <div class="pro-action">
-                            <a href="cart.html" class="action-btn cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                            <a href="wishlist.html" class="action-btn wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                            <a href="#" data-toggle="modal"  data-target="#productModal" class="action-btn quick-view"><i class="zmdi zmdi-eye"></i></a>
+                <a href="#">
+                    <div class="sin-product">
+                        <span class="pro-label">sale</span>
+                        <div class="pro-image">
+                            <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
                         </div>
-                    </div>
-                    <div class="pro-details text-center">
-                        <div class="top fix">
-                            <p class="pro-cat float-left">chair</p>
-                            <p class="pro-ratting float-right">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-half"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <span>(24)</span>
+                        <div class="pro-details">
+                            <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
+                            <p class="pro-price">
+                                <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
+                                <span class="price-sale">-{{ 12 }}%</span>
+                                <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
                             </p>
                         </div>
-                        <a href="product-details-1.html" class="pro-title">Wooden Furniture Chair</a>
-                        <h3 class="pro-price">
-                            <span class="new">$40.00</span>
-                        </h3>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

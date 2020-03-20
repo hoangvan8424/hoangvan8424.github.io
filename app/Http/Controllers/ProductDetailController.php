@@ -14,16 +14,11 @@ class ProductDetailController extends FrontendController
         $id = array_pop($url);
         if($id!=null) {
             $productDetail = DB::table('products')
-                ->select('pro_name', 'pro_category_id', 'pro_avatar', 'pro_price', 'pro_sale')
-                                        ->where([
-                                            ['id', '=', $id],
-                                            ['pro_active', '=', Product::PUBLIC_STATUS]])
-                                        ->paginate(12);
-            foreach ($productDetail as $detail) {
-                return view('product.product-details', compact('detail'));
-            }
-
+                ->where([
+                    ['id', '=', $id],
+                    ['pro_active', '=', Product::PUBLIC_STATUS]])->first();
+            return view('product.product-details', compact('productDetail'));
         }
-
+        return view('404');
     }
 }
