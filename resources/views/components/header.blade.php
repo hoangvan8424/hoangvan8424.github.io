@@ -49,10 +49,10 @@
                     </li>
                 @else
                     <li>
-                        <a href="#">Đăng nhập</a>
+                        <a href="{{ route('get.login') }}">Đăng nhập</a>
                     </li>
                     <li>
-                        <a href="#">Đăng ký</a>
+                        <a href="{{ route('get.register') }}">Đăng ký</a>
                     </li>
                 @endif
             </ul>

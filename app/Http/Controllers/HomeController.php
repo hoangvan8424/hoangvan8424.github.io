@@ -27,7 +27,7 @@ class HomeController extends FrontendController
         ])->limit(5)->get();
         $viewData = [
             'computerProduct' => $computerProduct,
-            'phoneProduct' =>$phoneProduct
+            'phoneProduct' => $phoneProduct
         ];
         return view('home.index', $viewData);
     }

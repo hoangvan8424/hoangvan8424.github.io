@@ -206,6 +206,7 @@ ul{
 .pt-110{padding-top: 110px;}
 .pt-130{padding-top: 130px;}
 .pt-150{padding-top: 150px;}
+.pt-200{padding-top: 200px;}
 
 .pb-0{padding-bottom: 0px;}
 .pb-5{padding-bottom: 5px;}
@@ -6077,16 +6078,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .my-account-menu-2 a { background: #434343;}
 .my-account .panel-body { padding: 0;}
 .account-area input[type="text"], input[type="password"] {
-  background: #fff none repeat scroll 0 0;
-  border: medium none;
-  box-shadow: none;
-  color: #999;
-  height: 40px;
-  margin-bottom: 15px;
-  outline: medium none;
-  padding: 0 20px;
-  transition: all 0.5s ease 0s;
-  width: 100%;
+    background: #fff none repeat scroll 0 0;
+    border: medium none;
+    box-shadow: none;
+    color: #999;
+    height: 40px;
+    margin-bottom: 15px;
+    outline: medium none;
+    padding: 0 20px;
+    transition: all 0.5s ease 0s;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 400;
 }
 .custom-textarea {
   background: #fff none repeat scroll 0 0;
@@ -6399,3 +6402,10 @@ h3.widget-title-modal {
 .page-area .container {
     padding: 30px 0;
 }
+
+@media (min-width: 992px) {
+    .register {
+        left: 18%!important;
+    }
+}
+

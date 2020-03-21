@@ -6,12 +6,14 @@
                 <div class="col-xs-12 mt-50">
                     <ol class="breadcrumb float-left">
                         <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            @if($productDetail -> pro_category_id==1) {{ 'Máy tính' }}
-                            @elseif($productDetail -> pro_category_id==1) {{ 'Điện thoại' }}
+                            @if($productDetail -> pro_category_id==1)
+                                <a href="#">{{ 'Máy tính' }}</a>
+                            @elseif($productDetail -> pro_category_id==1)
+                                <a href="#">{{ 'Điện thoại' }}</a>
                             @endif
                         </li>
+                        <li class="breadcrumb-item"><a href="#">{{ $productDetail -> pro_name }}</a></li>
                     </ol>
                 </div>
 
@@ -64,7 +66,7 @@
                                 </div>
                             </div>
                             <div class="product-share fix">
-                                <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                <a href="#" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
                                 <a href="#"><i class="zmdi zmdi-instagram"></i></a>
                                 <a href="#"><i class="zmdi zmdi-rss"></i></a>
                                 <a href="#"><i class="zmdi zmdi-twitter"></i></a>

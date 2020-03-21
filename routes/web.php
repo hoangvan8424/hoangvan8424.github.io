@@ -11,6 +11,7 @@
 |
 */
 
+// trang admin
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.home');
 
@@ -48,8 +49,17 @@ Route::prefix('admin')->group(function() {
 
     });
 });
+// kết thúc trang admin
 
 Auth::routes();
+
+Route::group(['namespace' => 'Auth'], function () {
+    Route::get('dang-ky', 'RegisterController@getRegister')->name('get.register');
+    Route::post('dang-ky', 'RegisterController@postRegister');
+
+    Route::get('dang-nhap', 'LoginController@getLogin')->name('get.login');
+    Route::post('dang-nhap', 'LoginController@postLogin');
+});
 
 Route::get('/', 'HomeController@index')->name('home');
 

@@ -24,7 +24,7 @@
                             @if(isset($computerProduct))
                                 @foreach($computerProduct as $computer)
                                     <div class="col-md-3 col-sm-6 col-xs-12 computer">
-                                        <a href="#">
+                                        <a href="{{ route('get.detail.product', [$computer->pro_slug, $computer->id]) }}">
                                             <div class="sin-product">
                                                 <div class="pro-image">
                                                     <img src="img/product/{{ $computer->pro_avatar}}" alt="{{ $computer->pro_name }}" class="img"/>
