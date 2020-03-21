@@ -10,10 +10,28 @@
                             <div class="col-md-8 col-xs-12 login">
                                 <div class="customer-login text-left">
                                     <h4 class="title-1 title-border text-uppercase mb-30">Đăng nhập</h4>
-                                    <label>Email</label><input type="text" placeholder="Nhập email ..." name="email">
-                                    <label>Mật khẩu</label><input type="password" placeholder="Nhập mật khẩu ...">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input class="form-control" type="text" placeholder="Nhập email ..." name="email">
+                                        @if($errors->has('email'))
+                                            <span class="error-text">
+                                            {{ $errors->first('email') }}
+                                            </span>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Mật khẩu</label>
+                                        <input class="form-control" type="password" placeholder="Nhập mật khẩu ...">
+                                        @if($errors->has('password'))
+                                            <span class="error-text">
+                                            {{ $errors->first('password') }}
+                                            </span>
+                                        @endif
+                                    </div>
+
                                     <p><a href="#" class="text-gray">Quên mật khẩu?</a></p>
-                                    <button type="submit" data-text="Đăng nhập" class="button-one submit-button mt-15">Đăng nhập</button>
+                                    <button type="submit" data-text="Đăng  nhập" class="button-one submit-button mt-15">Đăng  nhập</button>
                                 </div>
                             </div>
                         </div>

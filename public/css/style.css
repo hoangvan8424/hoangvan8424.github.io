@@ -6078,16 +6078,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .my-account-menu-2 a { background: #434343;}
 .my-account .panel-body { padding: 0;}
 .account-area input[type="text"], input[type="password"] {
-    background: #fff none repeat scroll 0 0;
-    border: medium none;
-    box-shadow: none;
-    color: #999;
+    /*background: #fff none repeat scroll 0 0;*/
+    /*border: medium none;*/
+    /*box-shadow: none;*/
+    /*color: #999;*/
     height: 45px;
-    margin-bottom: 15px;
-    outline: medium none;
-    padding: 0 20px;
-    transition: all 0.5s ease 0s;
-    width: 100%;
+    /*margin-bottom: 15px;*/
+    /*outline: medium none;*/
+    /*padding: 0 20px;*/
+    /*transition: all 0.5s ease 0s;*/
+    /*width: 100%;*/
     font-size: 16px;
     font-weight: 400;
 }
@@ -6095,6 +6095,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-weight: 400;
     font-size: 15px;
 }
+
 .custom-textarea {
   background: #fff none repeat scroll 0 0;
   border: medium none;
@@ -6423,5 +6424,8 @@ h3.widget-title-modal {
     .login {
         left: 18%!important;
     }
+}
+.error-text {
+    color: red;
 }
 
