@@ -6091,6 +6091,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-size: 16px;
     font-weight: 400;
 }
+.account-area input::placeholder {
+    font-weight: 400;
+    font-size: 15px;
+}
 .custom-textarea {
   background: #fff none repeat scroll 0 0;
   border: medium none;
@@ -6154,6 +6158,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 700;
   line-height: 28px;
   position: relative;
+}
+.customer-login label {
+    font-size: 16px;
+    font-weight: 500;
 }
 .customer-login .title-border::before {
   background: #ec4445 none repeat scroll 0 0;
