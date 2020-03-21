@@ -6082,13 +6082,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     border: medium none;
     box-shadow: none;
     color: #999;
-    height: 40px;
+    height: 45px;
     margin-bottom: 15px;
     outline: medium none;
     padding: 0 20px;
     transition: all 0.5s ease 0s;
     width: 100%;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
 }
 .custom-textarea {
@@ -6156,13 +6156,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   position: relative;
 }
 .customer-login .title-border::before {
-  background: #ddd none repeat scroll 0 0;
+  background: #ec4445 none repeat scroll 0 0;
   bottom: -5px;
   content: "";
   height: 2px;
   left: 0;
   position: absolute;
   width: 50px;
+}
+.customer-login p {
+    font-size: 15px;
+    color: #ec4445;
+    font-weight: 500;
 }
 .my-account .panel-group {
   margin-bottom: 0;
@@ -6405,6 +6410,9 @@ h3.widget-title-modal {
 
 @media (min-width: 992px) {
     .register {
+        left: 18%!important;
+    }
+    .login {
         left: 18%!important;
     }
 }
