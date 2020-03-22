@@ -19,7 +19,8 @@
                             @endif
                         @endforeach
                     </div>
-                    <form action="#">
+                    <form method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                             <div class="col-md-8 col-xs-12 login">
                                 <div class="customer-login text-left">
@@ -36,7 +37,7 @@
 
                                     <div class="form-group">
                                         <label>Mật khẩu</label>
-                                        <input class="form-control" type="password" placeholder="Nhập mật khẩu ...">
+                                        <input class="form-control" type="password" placeholder="Nhập mật khẩu ..." name="password">
                                         @if($errors->has('password'))
                                             <span class="error-text">
                                             {{ $errors->first('password') }}
@@ -44,7 +45,9 @@
                                         @endif
                                     </div>
 
-                                    <p><a href="#" class="text-gray">Quên mật khẩu?</a></p>
+                                    <p>
+                                        <a href="#" class="text-gray">Quên mật khẩu?</a>
+                                    </p>
                                     <button type="submit" data-text="Đăng  nhập" class="button-one submit-button mt-15">Đăng  nhập</button>
                                 </div>
                             </div>

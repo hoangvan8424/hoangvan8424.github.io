@@ -45,7 +45,7 @@
                         <a href="#">D/s yêu thích</a>
                     </li>
                     <li>
-                        <a href="#">Đăng xuất</a>
+                        <a href="{{ route('get.logout') }}">Đăng xuất</a>
                     </li>
                 @else
                     <li>

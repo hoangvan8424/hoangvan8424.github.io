@@ -59,6 +59,8 @@ Route::group(['namespace' => 'Auth'], function () {
 
     Route::get('dang-nhap', 'LoginController@getLogin')->name('get.login');
     Route::post('dang-nhap', 'LoginController@postLogin');
+
+    Route::get('dang-xuat', 'LoginController@logout')->name('get.logout');
 });
 
 Route::get('/', 'HomeController@index')->name('home');

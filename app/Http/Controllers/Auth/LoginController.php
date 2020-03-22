@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\FrontendController;
-use App\Http\Requests\RequestRegister;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Http\Requests\RequestLogin;
 
 class LoginController extends FrontendController
 {
@@ -15,9 +13,19 @@ class LoginController extends FrontendController
         return view('auth.login');
     }
 
-    public function postLogin(RequestRegister $requestRegister)
+    public function postLogin(RequestLogin $requestLogin)
     {
-        dd($requestRegister->all());
+        $credentials = $requestLogin->only('email', 'password');
+
+        if (\Auth::attempt($credentials)) {
+            return redirect()->route('home')->with('alert-success', 'Đăng nhập thành công! Chào mừng "'.$requestLogin->email.'" đến với PRIYOSHOP');
+        }
+    }
+
+    public function logout()
+    {
+        \Auth::logout();
+        return redirect()->route('get.login')->with('alert-success', 'Đăng xuất thành công!');
     }
 
 }
