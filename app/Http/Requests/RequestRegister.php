@@ -37,8 +37,8 @@ class RequestRegister extends FormRequest
             'name.string' => 'Tên phải bắt đầu bằng ký tự.',
             'name.max' => 'Tên không được vượt quá 255 ký tự.',
             'email.required' => 'Email không được để trống.',
-            'email.string' => 'Email không hợp lệ.',
-            'email.email' => 'Email không hợp lệ',
+            'email.string' => 'Email không đúng định dạng.',
+            'email.email' => 'Email không đúng định dạng',
             'email.max' => 'Email không được vượt quá 255 ký tự.',
             'email.unique' => 'Email đã tồn tại.',
             'password.required' => 'Mật khẩu không được để trống.',
@@ -49,7 +49,6 @@ class RequestRegister extends FormRequest
 
             're_password.required' => 'Nhập lại mật khẩu không được để trống.',
             're_password.same' => 'Nhập lại mật khẩu và mật khẩu không trùng nhau.',
-
         ];
     }
 

@@ -3,8 +3,19 @@
 @section('product')
     <div class="account-area">
         <div class="container">
-            <div class="login-area pb-90 pt-200">
+            <div class="login-area pb-90 pt-100">
                 <div class="container">
+                    <div class="flash-message">
+                        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                            @if(session()->has('alert-' . $msg))
+                                <p class="alert alert-{{ $msg }}">
+                                    <i class="fas fa-check icon-check"></i>
+                                    <span class="font-weight-bold">{{ session()->get('alert-' . $msg) }}</span>
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                </p>
+                            @endif
+                        @endforeach
+                    </div>
                     <form method="post" action="" enctype="multipart/form-data">
                         @csrf
                         <div class="row">

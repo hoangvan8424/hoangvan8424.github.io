@@ -89,7 +89,7 @@
                         <p class="alert alert-{{ $msg }}"><i class="fas fa-check icon-check"></i>{{ session()->get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
                     @endif
                 @endforeach
-            </div> <!-- end .flash-message -->
+            </div>
             @yield('content')
 
         </div>
