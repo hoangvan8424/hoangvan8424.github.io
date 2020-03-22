@@ -12,7 +12,7 @@
                                 <div class="customer-login text-left">
                                     <h4 class="title-1 title-border text-uppercase mb-30">Đăng ký</h4>
                                     <div class="form-group">
-                                        <label>Họ tên</label>
+                                        <label>Họ tên <span class="text-danger">*</span></label>
                                         <input class="form-control" type="text" placeholder="Nhập tên ..." name="name">
                                         @if($errors->has('name'))
                                             <span class="error-text">
@@ -22,7 +22,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Email</label>
+                                        <label>Email <span class="text-danger">*</span></label>
                                         <input class="form-control" type="text" placeholder="Nhập email ..." name="email">
                                         @if($errors->has('email'))
                                             <span class="error-text">
@@ -32,7 +32,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Mật khẩu</label>
+                                        <label>Mật khẩu <span class="text-danger">*</span></label>
                                         <input class="form-control" type="password" placeholder="Nhập mật khẩu ..." name="password">
                                         @if($errors->has('password'))
                                             <span class="error-text">
@@ -42,7 +42,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Nhập lại mật khẩu</label>
+                                        <label>Nhập lại mật khẩu <span class="text-danger">*</span></label>
                                         <input class="form-control" type="password" placeholder="Nhập lại mật khẩu ..." name="re_password">
                                         @if($errors->has('re_password'))
                                             <span class="error-text">

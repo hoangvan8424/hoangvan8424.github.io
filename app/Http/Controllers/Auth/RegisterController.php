@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Requests\RequestRegister;
+use App\User;
 
 class RegisterController extends FrontendController
 {
@@ -16,7 +17,10 @@ class RegisterController extends FrontendController
 
     public function postRegister(RequestRegister $requestRegister)
     {
-        dd($requestRegister->all());
+        $user = new User();
+        $user->name = $requestRegister->name;
+        $user->email = $requestRegister->email;
+
     }
 
 

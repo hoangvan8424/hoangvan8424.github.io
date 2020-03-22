@@ -6427,5 +6427,6 @@ h3.widget-title-modal {
 }
 .error-text {
     color: red;
+    font-weight: 400;
 }
 
