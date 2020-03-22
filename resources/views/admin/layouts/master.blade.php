@@ -76,8 +76,8 @@
                 <li>
                     <a href="#">Đơn hàng</a>
                 </li>
-                <li>
-                    <a href="#">Người dùng</a>
+                <li class="{{ Request::is('admin/user') || Request::is('admin/user/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.get.list.user') }}">Người dùng</a>
                 </li>
             </ul>
 

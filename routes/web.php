@@ -14,7 +14,7 @@
 // trang admin
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.home');
-
+// quản lý danh mục
     Route::group(['prefix' => 'category'], function() {
         Route::get('/', 'AdminCategoryController@index')->name('admin.get.list.category');
         Route::get('/insert', 'AdminCategoryController@create')->name('admin.get.create.category');
@@ -26,6 +26,7 @@ Route::prefix('admin')->group(function() {
 
     });
 
+//   Quản lý sản phẩm
     Route::group(['prefix' => 'product'], function () {
         Route::get('/', 'AdminProductController@index')->name('admin.get.list.product');
         Route::get('/insert', 'AdminProductController@create')->name('admin.get.create.product');
@@ -38,6 +39,7 @@ Route::prefix('admin')->group(function() {
 
     });
 
+//  Quản lý thương hiệu
     Route::group(['prefix' => 'brand'], function() {
         Route::get('/', 'AdminBrandController@index')->name('admin.get.list.brand');
         Route::get('/insert', 'AdminBrandController@create')->name('admin.get.create.brand');
@@ -48,6 +50,16 @@ Route::prefix('admin')->group(function() {
         Route::get('/active/{id}', 'AdminBrandController@changeStatus')->name('admin.get.status.brand');
 
     });
+
+    Route::group(['prefix' => 'user'], function() {
+        Route::get('/', 'AdminUserController@index')->name('admin.get.list.user');
+//        Route::get('/update/{id}', 'AdminUserController@update')->name('admin.get.update.user');
+//        Route::post('/update/{id}', 'AdminUserController@edit');
+//        Route::get('delete/{id}', 'AdminUserController@delete')->name('admin.get.delete.user');
+//        Route::get('/active/{id}', 'AdminUserController@changeStatus')->name('admin.get.status.user');
+
+    });
+
 });
 // kết thúc trang admin
 
