@@ -16,10 +16,12 @@ class LoginController extends FrontendController
     public function postLogin(RequestLogin $requestLogin)
     {
         $credentials = $requestLogin->only('email', 'password');
-
-        if (\Auth::attempt($credentials)) {
+        $email = $requestLogin->email;
+        $password = $requestLogin->password;
+        if (\Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1])) {
             return redirect()->route('home')->with('alert-success', 'Đăng nhập thành công! Chào mừng "'.$requestLogin->email.'" đến với PRIYOSHOP');
         }
+        return redirect()->back()->with('alert-danger', 'Đăng nhập không thành công. Hãy thử lại!');
     }
 
     public function logout()
