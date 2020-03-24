@@ -1,9 +1,10 @@
-a.icon {
+a{
     text-decoration: none;
     cursor: pointer;
 }
-a.icon:hover {
+a:hover {
     text-decoration: none;
+    cursor: pointer;
 }
 a.icon i {
     font-size: 18px;

@@ -11,10 +11,13 @@
 |
 */
 
-// trang admin
+// Admin
 Route::prefix('admin')->group(function() {
+
+//  Trang admin-home
     Route::get('/', 'AdminController@index')->name('admin.home');
-// quản lý danh mục
+
+//  Quản lý danh mục
     Route::group(['prefix' => 'category'], function() {
         Route::get('/', 'AdminCategoryController@index')->name('admin.get.list.category');
         Route::get('/insert', 'AdminCategoryController@create')->name('admin.get.create.category');
@@ -51,20 +54,20 @@ Route::prefix('admin')->group(function() {
 
     });
 
+//  Quản lý người dùng
     Route::group(['prefix' => 'user'], function() {
         Route::get('/', 'AdminUserController@index')->name('admin.get.list.user');
-//        Route::get('/update/{id}', 'AdminUserController@update')->name('admin.get.update.user');
-//        Route::post('/update/{id}', 'AdminUserController@edit');
-//        Route::get('delete/{id}', 'AdminUserController@delete')->name('admin.get.delete.user');
-//        Route::get('/active/{id}', 'AdminUserController@changeStatus')->name('admin.get.status.user');
+        Route::get('/update/{id}', 'AdminUserController@update')->name('admin.get.update.user');
+        Route::post('/update/{id}', 'AdminUserController@edit');
+        Route::get('delete/{id}', 'AdminUserController@delete')->name('admin.get.delete.user');
+        Route::get('/active/{id}', 'AdminUserController@changeStatus')->name('admin.get.status.user');
 
     });
 
 });
-// kết thúc trang admin
+//  Kết thúc trang admin
 
-Auth::routes();
-
+//  Xử lý đăng nhập, đăng ký
 Route::group(['namespace' => 'Auth'], function () {
     Route::get('dang-ky', 'RegisterController@getRegister')->name('get.register');
     Route::post('dang-ky', 'RegisterController@postRegister');
@@ -74,9 +77,13 @@ Route::group(['namespace' => 'Auth'], function () {
 
     Route::get('dang-xuat', 'LoginController@logout')->name('get.logout');
 });
+//  Kết thúc xử lý đăng nhập, đăng ký
 
+//  Trang chủ
 Route::get('/', 'HomeController@index')->name('home');
 
+//  Hiển thị sản phẩm theo danh mục
 Route::get('danh-muc/{slug}-{id}', 'CategoryController@getListProduct')->name('get.list.product');
 
+//  Hiển thị chi tiết sản phẩm
 Route::get('san-pham/{slug}-{id}', 'ProductDetailController@productDetail')->name('get.detail.product');

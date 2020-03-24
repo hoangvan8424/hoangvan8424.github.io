@@ -82,11 +82,11 @@ class AdminProductController extends Controller
         $product->pro_slug = str_slug($requestProduct->pro_name);
         $product->brand_id = $requestProduct->brand_id;
 
-        if($requestProduct->file('pro_avatar')!=null) {
-            $fileName = $requestProduct->file('pro_avatar')
-                ->getClientOriginalName();
+        if($requestProduct->hasFile('pro_avatar')) {
+            $img = $requestProduct->file('pro_avatar');
+            $fileName = $img->getClientOriginalName();
             $imagePath = public_path('') .'/img/product';
-            $requestProduct->file('pro_avatar')->move($imagePath, $fileName);
+            $img->move($imagePath, $fileName);
         }
         else {
             $fileName = $requestProduct->pro_avatar_update;
