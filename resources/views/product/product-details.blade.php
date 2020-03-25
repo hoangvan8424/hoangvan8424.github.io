@@ -56,7 +56,7 @@
                             </div>
 							<div class="pro-details-action float-left">
 								<button class="pro-details-act-btn btn-text active">
-                                    <i class="zmdi zmdi-shopping-cart"></i>Thêm vào giỏ
+                                    <i class="zmdi zmdi-shopping-cart"></i>Thêm vào giỏ hàng
                                 </button>
 								<button class="pro-details-act-btn btn-icon">
                                     <i class="zmdi zmdi-favorite-outline"></i>
