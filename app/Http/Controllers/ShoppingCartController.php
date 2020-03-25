@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
 
-class ShoppingCartController extends Controller
+class ShoppingCartController extends FrontendController
 {
     public function index() {
         return view('product.cart');
@@ -33,7 +32,7 @@ class ShoppingCartController extends Controller
                 ]
             ];
             session()->put('cart', $cart);
-            return redirect()->back()->with('success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
+            return redirect()->back()->with('alert-success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
         }
 
 //  Nếu giỏ hàng không trống và đã tồn tại sản phẩm đó, tăng số lượng lên 1
@@ -41,7 +40,7 @@ class ShoppingCartController extends Controller
         {
             $cart[$id]['quantity']++;
             session()->put('cart', $cart);
-            return redirect()->back()->with('success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
+            return redirect()->back()->with('alert-success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
         }
 
 //  Nếu giỏ hàng không trống và sản phẩm không tồn tại trong giỏ hàng, thì số lượng là 1
@@ -53,6 +52,6 @@ class ShoppingCartController extends Controller
             "photo" => $product->pro_avatar
         ];
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
+        return redirect()->back()->with('alert-success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
     }
 }

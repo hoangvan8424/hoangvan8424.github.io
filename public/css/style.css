@@ -777,7 +777,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .header-area {
     /*background-color: #fff;*/
     left: 0;
-    position: absolute;
+    position: relative;
     right: 0;
     top: 0;
     z-index: 9999999;
@@ -1965,7 +1965,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /*----------------------------------------*/
 /* slider area */
 .slider-wrapper {
-    margin-top: 130px;
+    /*margin-top: 130px;*/
     /*padding-bottom: 50px;*/
     position: relative;
 }
@@ -2070,7 +2070,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .main-slider-one.slider-area {
     display: block;
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: relative;
 }
 
@@ -8039,3 +8039,20 @@ h3.widget-title-modal {
     font-weight: 400;
 }
 
+.flash-message p.alert i span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.flash-message p.alert i {
+    font-size: 30px;
+    position: relative;
+    top: 4px;
+    color: #03842d;
+    margin-right: 5px;
+}
+
+.flash-message p.alert i a {
+    position: relative;
+    top: 4px;
+}

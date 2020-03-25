@@ -2,7 +2,7 @@
 @section('product')
 <!-- Single Product Area
 ============================================ -->
-<div class="single-product-area pt-150">
+<div class="single-product-area">
 	<div class="container">
 		<div class="row">
             <!-- breadcrumb -->
@@ -54,7 +54,7 @@
 						<div class="single-product-action-quantity fix">
                             <h5 class="d-inline-block float-left">Số lượng:</h5>
                             <div class="pro-qty float-left">
-                                <input value="0" name="qtybutton" class="cart-plus-minus-box" type="text">
+                                <input value="1" name="qtybutton" class="cart-plus-minus-box" type="text">
                             </div>
 							<div class="pro-details-action float-left">
 								<a href="{{ route('add.cart', $product->id) }}" class="pro-details-act-btn btn-text active" title="Thêm vào giỏ hàng">

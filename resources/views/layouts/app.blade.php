@@ -11,7 +11,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
 
-    <!-- CSS -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('theme_admin/fontawesome/css/all.css') }}">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
@@ -37,6 +39,9 @@
 
     <!-- Header 1 -->
     @include('components.header')
+
+    <!-- Message -->
+    @include('components.message-alert')
 
     <!-- Home Slider -->
     @yield('slide')

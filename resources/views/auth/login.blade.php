@@ -1,24 +1,10 @@
 @extends('layouts.app')
 
 @section('product')
-    <div class="flash-message">
-        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-            @if(session()->has('alert-' . $msg))
-                <p class="alert alert-{{ $msg }}"><i class="fas fa-check icon-check"></i>{{ session()->get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
-            @endif
-        @endforeach
-    </div>
     <div class="account-area">
         <div class="container">
-            <div class="login-area pb-90 pt-100">
+            <div class="login-area pb-90">
                 <div class="container">
-                    <div class="flash-message">
-                        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-                            @if(session()->has('alert-' . $msg))
-                                <p class="alert alert-{{ $msg }}"><i class="fas fa-check icon-check"></i>{{ session()->get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
-                            @endif
-                        @endforeach
-                    </div>
                     <form method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
