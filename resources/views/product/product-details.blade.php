@@ -10,13 +10,13 @@
                 <ol class="breadcrumb float-left">
                     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        @if($productDetail -> pro_category_id==1)
+                        @if($product -> pro_category_id==1)
                             <a href="#">{{ 'Máy tính' }}</a>
-                        @elseif($productDetail -> pro_category_id==1)
+                        @elseif($product -> pro_category_id==1)
                             <a href="#">{{ 'Điện thoại' }}</a>
                         @endif
                     </li>
-                    <li class="breadcrumb-item"><a href="#">{{ $productDetail -> pro_name }}</a></li>
+                    <li class="breadcrumb-item"><a href="#">{{ $product -> pro_name }}</a></li>
                 </ol>
             </div>
             <!-- end breadcrumb -->
@@ -26,19 +26,19 @@
 					<div class="single-product-image">
 						<div class="product-big-image tab-content">
 							<div class="tab-pane active" id="pro-img-3">
-                                <img src="/img/product/{{ $productDetail->pro_avatar }}" alt="/img/product/{{ $productDetail->pro_name }}" />
-                                <a class="pro-img-popup" href="/img/product/{{ $productDetail->pro_avatar }}">
+                                <img src="/img/product/{{ $product->pro_avatar }}" alt="/img/product/{{ $product->pro_name }}" />
+                                <a class="pro-img-popup" href="/img/product/{{ $product->pro_avatar }}">
                                     <i class="zmdi zmdi-search"></i>
                                 </a>
 							</div>
 						</div>
 					</div>
 					<div class="single-product-content fix">
-						<h3 class="single-pro-title">{{ $productDetail -> pro_name }}</h3>
+						<h3 class="single-pro-title">{{ $product -> pro_name }}</h3>
 						<div class="single-product-price-ratting fix">
 							<h3 class="single-pro-price float-left">
-                                <span class="new">{{ number_format($productDetail->pro_price, 0, '', '.') }}đ</span>
-                                <span class="old">{{ number_format($productDetail->pro_price/(1-$productDetail->pro_sale/100),0,'','.') }}đ</span>
+                                <span class="new">{{ number_format($product->pro_price, 0, '', '.') }}đ</span>
+                                <span class="old">{{ number_format($product->pro_price/(1-$product->pro_sale/100),0,'','.') }}đ</span>
 							</h3>
 							<p class="single-pro-ratting float-right">
 								<i class="zmdi zmdi-star"></i>
@@ -49,7 +49,7 @@
 								<span>(24)</span>
 							</p>
 						</div>
-                        <p>{{ $productDetail->pro_description }}</p>
+                        <p>{{ $product->pro_description }}</p>
 
 						<div class="single-product-action-quantity fix">
                             <h5 class="d-inline-block float-left">Số lượng:</h5>
@@ -57,9 +57,9 @@
                                 <input value="0" name="qtybutton" class="cart-plus-minus-box" type="text">
                             </div>
 							<div class="pro-details-action float-left">
-								<button class="pro-details-act-btn btn-text active">
+								<a href="{{ route('add.cart', $product->id) }}" class="pro-details-act-btn btn-text active" title="Thêm vào giỏ hàng">
                                     <i class="zmdi zmdi-shopping-cart"></i>Thêm vào giỏ hàng
-                                </button>
+                                </a>
 								<button class="pro-details-act-btn btn-icon">
                                     <i class="zmdi zmdi-favorite-outline"></i>
                                 </button>
@@ -69,7 +69,7 @@
 						<div class="pro-thumb-slider">
 							<div class="sin-item"><a href="#pro-img-1" data-toggle="tab"><img src="/img/single-product/1.1.jpg" alt="" /></a></div>
 							<div class="sin-item"><a href="#pro-img-2" data-toggle="tab"><img src="/img/single-product/2.1.jpg" alt="" /></a></div>
-							<div class="sin-item"><a class="active" href="#pro-img-3" data-toggle="tab"><img src="/img/product/{{ $productDetail->pro_avatar }}" alt="/img/product/{{ $productDetail->pro_name }}" /></a></div>
+							<div class="sin-item"><a class="active" href="#pro-img-3" data-toggle="tab"><img src="/img/product/{{ $product->pro_avatar }}" alt="/img/product/{{ $product->pro_name }}" /></a></div>
 							<div class="sin-item"><a href="#pro-img-4" data-toggle="tab"><img src="/img/single-product/4.1.jpg" alt="" /></a></div>
 							<div class="sin-item"><a href="#pro-img-5" data-toggle="tab"><img src="/img/single-product/2.1.jpg" alt="" /></a></div>
 						</div>

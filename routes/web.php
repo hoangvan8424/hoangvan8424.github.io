@@ -68,7 +68,7 @@ Route::prefix('admin')->group(function() {
 //  Kết thúc trang admin
 
 //  Xử lý đăng nhập, đăng ký
-Route::group(['namespace' => 'Auth'], function () {
+Route::group(['namespace' => 'Auth'], function() {
     Route::get('dang-ky', 'RegisterController@getRegister')->name('get.register');
     Route::post('dang-ky', 'RegisterController@postRegister');
 
@@ -87,3 +87,10 @@ Route::get('danh-muc/{slug}-{id}', 'CategoryController@getListProduct')->name('g
 
 //  Hiển thị chi tiết sản phẩm
 Route::get('san-pham/{slug}-{id}', 'ProductDetailController@productDetail')->name('get.detail.product');
+
+//Thêm vào giỏ hàng
+
+Route::group(['prefix' => 'cart'], function() {
+    Route::get('/', 'ShoppingCartController@index')->name('get.list.cart');
+    Route::get('them-vao-gio/{id}', 'ShoppingCartController@addToCart')->name('add.cart');
+});

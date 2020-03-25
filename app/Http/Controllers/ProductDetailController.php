@@ -13,11 +13,11 @@ class ProductDetailController extends FrontendController
         $url = preg_split('/(-)/', $request->segment(2));
         $id = array_pop($url);
         if($id!=null) {
-            $productDetail = DB::table('products')
+            $product = DB::table('products')
                 ->where([
                     ['id', '=', $id],
                     ['pro_active', '=', Product::PUBLIC_STATUS]])->first();
-            return view('product.product-details', compact('productDetail'));
+            return view('product.product-details', compact('product'));
         }
         return view('404');
     }
