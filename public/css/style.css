@@ -623,6 +623,9 @@ ul {
 
 /* Section Title */
 .section-title {
+    border: 1px solid #f3f3f3;
+    border-bottom: 0;
+    padding: 30px;
 }
 
 .section-title h2 {
@@ -2728,12 +2731,17 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .products-area .container {
     background: #f0f0f0;
+
 }
 
 /* Product Slider */
 .product-slider {
     float: left;
     width: 100%;
+    border: 1px solid #f3f3f3;
+    border-top: 0;
+    padding-bottom: 20px;
+
 }
 
 .product-slider .col-xs-12 {

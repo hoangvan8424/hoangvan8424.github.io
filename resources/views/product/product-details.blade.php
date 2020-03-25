@@ -2,21 +2,23 @@
 @section('product')
 <!-- Single Product Area
 ============================================ -->
-<div class="single-product-area pt-90">
+<div class="single-product-area pt-150">
 	<div class="container">
 		<div class="row">
             <!-- breadcrumb -->
-            <ol class="breadcrumb float-left">
-                <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    @if($productDetail -> pro_category_id==1)
-                        <a href="#">{{ 'Máy tính' }}</a>
-                    @elseif($productDetail -> pro_category_id==1)
-                        <a href="#">{{ 'Điện thoại' }}</a>
-                    @endif
-                </li>
-                <li class="breadcrumb-item"><a href="#">{{ $productDetail -> pro_name }}</a></li>
-            </ol>
+            <div class="col-xs-12">
+                <ol class="breadcrumb float-left">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        @if($productDetail -> pro_category_id==1)
+                            <a href="#">{{ 'Máy tính' }}</a>
+                        @elseif($productDetail -> pro_category_id==1)
+                            <a href="#">{{ 'Điện thoại' }}</a>
+                        @endif
+                    </li>
+                    <li class="breadcrumb-item"><a href="#">{{ $productDetail -> pro_name }}</a></li>
+                </ol>
+            </div>
             <!-- end breadcrumb -->
 
 			<div class="col-xs-12">
@@ -205,8 +207,9 @@
 		</div>
 	</div>
 </div>
+
 <!-- Sản phẩm liên quan -->
-<div class="related-product-area fix container mb-20">
+<div class="related-product-area fix container mb-40 mt-40">
     <div class="section-title text-left col-xs-12 mt-10">
         <h2 class="active">Sản phẩm liên quan</h2>
     </div>
