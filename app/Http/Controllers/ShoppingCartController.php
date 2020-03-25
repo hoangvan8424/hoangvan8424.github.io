@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ShoppingCartController extends FrontendController
 {
@@ -10,9 +11,10 @@ class ShoppingCartController extends FrontendController
         return view('product.cart');
     }
 
-    public function addToCart($id)
+    public function addToCart($id, Request $request)
     {
         $product = Product::find($id);
+
         if(!$product)
         {
             return view('404');
@@ -28,10 +30,12 @@ class ShoppingCartController extends FrontendController
                     "quantity" => 1,
                     "price" => $product->pro_price,
                     "sale" => $product->pro_sale,
-                    "photo" => $product->pro_avatar
+                    "photo" => $product->pro_avatar,
+                    "slug" => $product->pro_slug
                 ]
             ];
             session()->put('cart', $cart);
+//            dd($cart);
             return redirect()->back()->with('alert-success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
         }
 
@@ -52,6 +56,7 @@ class ShoppingCartController extends FrontendController
             "photo" => $product->pro_avatar
         ];
         session()->put('cart', $cart);
+//        $request->session()->flush();
         return redirect()->back()->with('alert-success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
     }
 }

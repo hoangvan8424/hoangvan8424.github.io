@@ -57,6 +57,7 @@
                 @endif
             </ul>
         </div>
+
         <!-- Mini Cart -->
         <div class="mini-cart-wrapper mini-cart-wrapper-1 float-right">
             <a href="#" data-toggle="dropdown" class="mini-cart-btn">
@@ -90,11 +91,13 @@
                         <a href="product-details-1.html" class="title">Child Fashion</a>
                         <p>Color: Black</p>
                         <p>Size: SL</p>
-                        <button class="remove"><i class="zmdi zmdi-close"></i></button>
+                        <button class="remove">
+                            <i class="zmdi zmdi-close"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="mini-cart-checkout text-center">
-                    <a href="#">checkout</a>
+                    <a href="{{ route('get.list.cart') }}" class="btn btn-block">checkout</a>
                 </div>
             </div>
         </div>

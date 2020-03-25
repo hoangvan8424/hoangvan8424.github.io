@@ -1298,7 +1298,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .mini-cart-checkout a {
-    background-color: #ec4445;
+    background-color: #3c763d;;
     border-radius: 3px;
     color: #fff;
     display: inline-block;
@@ -1312,7 +1312,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .mini-cart-checkout a:hover {
-    background-color: #000;
+    background-color: #ec4445;
+    color: #fff
 }
 
 /* Header Search */
@@ -2070,7 +2071,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .main-slider-one.slider-area {
     display: block;
-    /*overflow: hidden;*/
+    overflow: hidden;
     position: relative;
 }
 
@@ -6575,7 +6576,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /*  19.  Cart Area
 /*----------------------------------------*/
 .cart-table {
-    background-color: #f6f6f6;
+    /*background-color: #f6f6f6;*/
     padding: 30px;
 }
 
@@ -6624,6 +6625,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .cart-table tbody {
 }
 
+.cart-table tbody:last-child {
+    padding-bottom: 15px;
+}
+
 .cart-table tbody tr {
 }
 
@@ -6637,6 +6642,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .cart-table tbody tr:first-child td {
     padding-top: 30px;
+    width: 60%;
 }
 
 .cart-table tbody tr:last-child td {
@@ -6645,9 +6651,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .cart-table .cart-product {
+    padding-left: 30px;
 }
 
 .cart-table .cart-product img {
+    border: 1px solid #f3f3f3;
+    display: block;
+    float: left;
+    margin-right: 25px;
+    width: 93px;
+}
+
+.cart-table img {
     border: 1px solid #f3f3f3;
     display: block;
     float: left;
@@ -6829,11 +6844,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     margin-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
-    width: 100%;
+    width: 80%;
 }
 
 .product-coupon form .input-box input {
-    border: 1px solid #eeeeee;
+    /*border: 1px solid #eeeeee;*/
     color: #606060;
     height: 36px;
     padding: 0 14px;
@@ -6841,7 +6856,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .product-coupon form .submit-box {
-    width: 100%;
+    width: 20%;
     margin-bottom: 0;
 }
 
@@ -8055,4 +8070,8 @@ h3.widget-title-modal {
 .flash-message p.alert i a {
     position: relative;
     top: 4px;
+}
+
+.cart-area .container {
+    /*border: 1px solid #f3f3f3;*/
 }
