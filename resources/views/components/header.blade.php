@@ -10,6 +10,7 @@
         <div class="menu menu-1">
             <nav>
                 <ul>
+
                     @if(isset($category))
                         @foreach($category as $categories)
                             <li>
@@ -63,41 +64,48 @@
             <a href="#" data-toggle="dropdown" class="mini-cart-btn">
                 <span>
                     <i class="zmdi zmdi-shopping-cart"></i>
-                    <span class="cart-number">2</span>
+                    <span class="cart-number">
+                        @if(session('cart'))
+                            {{ count(session('cart')) }}
+                        @endif
+                    </span>
                 </span>
             </a>
             <div class="mini-cart dropdown-menu right">
-                <div class="mini-cart-product fix">
-                    <a href="product-details-1.html" class="image"><img src="/img/mini-cart/1.jpg" alt="" /></a>
-                    <div class="content fix">
-                        <a href="product-details-1.html" class="title">Men Fashion</a>
-                        <p>Color: Black</p>
-                        <p>Size: SL</p>
-                        <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                    </div>
-                </div>
-                <div class="mini-cart-product fix">
-                    <a href="product-details-1.html" class="image"><img src="/img/mini-cart/2.jpg" alt="" /></a>
-                    <div class="content fix">
-                        <a href="product-details-1.html" class="title">Women Fashion</a>
-                        <p>Color: Black</p>
-                        <p>Size: SL</p>
-                        <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                    </div>
-                </div>
-                <div class="mini-cart-product fix">
-                    <a href="product-details-1.html" class="image"><img src="/img/mini-cart/3.jpg" alt="" /></a>
-                    <div class="content fix">
-                        <a href="product-details-1.html" class="title">Child Fashion</a>
-                        <p>Color: Black</p>
-                        <p>Size: SL</p>
-                        <button class="remove">
-                            <i class="zmdi zmdi-close"></i>
-                        </button>
-                    </div>
+
+            @php
+                $total = 0;
+            @endphp
+
+            @if(session('cart'))
+                @foreach(session('cart') as $id => $cartDetail)
+                    @php
+                         $total += $cartDetail['price'] * $cartDetail['quantity'];
+                    @endphp
+                    <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
+                        <div class="mini-cart-product fix">
+                            <img src="/img/product/{{ $cartDetail['photo'] }}" alt="{{ $cartDetail['name'] }}" />
+                            <div class="content fix">
+                                <div class="mini-cart-details">
+                                    <p class="title">{{ $cartDetail['name'] }}</p>
+                                    <p>Số lượng: {{ $cartDetail['quantity'] }}</p>
+                                    <p>Giá: {{ number_format($cartDetail['price'], 0, '', '.') }}đ</p>
+                                </div>
+                                <button class="remove">
+                                    <i class="zmdi zmdi-close"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+
+                 @endforeach
+            @endif
+                <div class="mini-cart-total">
+                    <span>Tổng cộng: </span>
+                    <p>{{ number_format($total, 0, '', '.') }}đ</p>
                 </div>
                 <div class="mini-cart-checkout text-center">
-                    <a href="{{ route('get.list.cart') }}" class="btn btn-block">checkout</a>
+                    <a href="{{ route('get.list.cart') }}" class="btn btn-block">Thanh toán</a>
                 </div>
             </div>
         </div>

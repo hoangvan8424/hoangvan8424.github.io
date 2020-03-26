@@ -1211,10 +1211,26 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     visibility: hidden;
-    width: 250px;
+    width: 300px;
     z-index: -99;
 }
+.mini-cart .mini-cart-total {
+    display: flex;
+    justify-content: space-between;
+}
 
+.mini-cart .mini-cart-total span {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+}
+.mini-cart .mini-cart-total p {
+    color: #ffffff;
+    font-weight: 500;
+}
+.mini-cart .mini-cart-details {
+    margin-right: 10px;
+}
 .open .mini-cart {
     margin-top: 0;
     opacity: 1;
@@ -1226,6 +1242,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /* Mini Cart Product */
 .mini-cart-product {
     margin-bottom: 15px;
+}
+
+.mini-cart-product img {
+    float: left;
+    margin-right: 14px;
+    width: 55px;
 }
 
 .mini-cart-product .image {
@@ -1248,7 +1270,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-size: 12px;
     font-weight: 600;
     line-height: 24px;
-    text-transform: uppercase;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    /*text-transform: uppercase;*/
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -6130,9 +6156,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 /* Single Product Quantity */
 .pro-qty {
+    position: relative;
     background-color: #f1f1f1;
     padding: 12px 15px;
     margin: 0 30px;
+    left: 27px;
 }
 
 .cart-plus-minus-box {
@@ -6642,11 +6670,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .cart-table tbody tr:first-child td {
     padding-top: 30px;
-    width: 60%;
+    /*width: 60%;*/
+}
+
+.cart-table tbody tr td:first-child {
+    padding-top: 30px;
+    width: 45%;
 }
 
 .cart-table tbody tr:last-child td {
-    padding-bottom: 0;
+    padding-bottom: 30px;
     border-bottom: none;
 }
 
@@ -6690,8 +6723,20 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .cart-table .cart-product .details p {
-    color: #909090;
-    margin: 0;
+    /*color: #909090;*/
+    /*margin: 0;*/
+}
+.cart-table .cart-product .details p.cart-product-name {
+    color: #606060;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    /*text-transform: uppercase;*/
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.cart-table .cart-product .details p.cart-product-name:hover {
+    color: #ec4445;
 }
 
 .cart-table .cart-price {
@@ -6735,6 +6780,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .cart-table .cart-pro-remove:hover {
     color: #ec4445;
+}
+
+.cart-table .cart-pro-update:hover {
+    color: #04a307d9;
 }
 
 .cart-table .cart-pro-remove i {
@@ -8032,7 +8081,7 @@ h3.widget-title-modal {
 }
 
 .page-area {
-    margin-top: 130px;
+    /*margin-top: 130px;*/
 }
 
 .page-area .container {

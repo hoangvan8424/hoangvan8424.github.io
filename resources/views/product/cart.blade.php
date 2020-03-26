@@ -13,13 +13,14 @@
                                 <th class="price">Giá</th>
                                 <th class="qty">Số lượng</th>
                                 <th>Tổng</th>
-                                <th class="remove">Xóa</th>
+                                <th class="remove">Tùy chọn</th>
                             </tr>
                             </thead>
                             <tbody>
 
                             @php
                                 $total = 0;
+                                $ship = 0;
                             @endphp
                             @if(session('cart'))
                                 @foreach(session('cart') as $id => $cartDetail)
@@ -30,11 +31,13 @@
                             <tr>
                                 <td>
                                     <div class="cart-product text-left fix">
-                                        <img src="img/product/{{ $cartDetail['photo'] }}" alt="" />
+                                        <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
+                                        <img src="/img/product/{{ $cartDetail['photo'] }}" alt="" />
                                         <div class="details fix">
-                                            <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">{{ $cartDetail['name'] }}</a>
-                                            <p>-{{ $cartDetail['sale'] }}%</p>
+                                            <p class="cart-product-name">{{ $cartDetail['name'] }}</p>
+                                            <p class="cart-product-sale">Sale: {{ $cartDetail['sale'] }}%</p>
                                         </div>
+                                        </a>
                                     </div>
                                 </td>
                                 <td>
@@ -42,7 +45,7 @@
                                 </td>
                                 <td>
                                     <div class="cart-pro-quantity">
-                                        <div class="pro-qty float-left" style="width: 100%">
+                                        <div class="pro-qty float-left">
                                             <input value="{{ $cartDetail['quantity'] }}" name="qtybutton" class="cart-plus-minus-box" type="text">
                                         </div>
                                     </div>
@@ -51,6 +54,10 @@
                                     <p>{{ number_format($cartDetail['price']*$cartDetail['quantity'], 0, '', '.') }}đ</p>
                                 </td>
                                 <td>
+                                    <button class="cart-pro-update">
+                                        <i class="fas fa-pen"></i>
+                                    </button>
+
                                     <button class="cart-pro-remove">
                                         <i class="zmdi zmdi-close"></i>
                                     </button>
@@ -84,10 +91,11 @@
                             <span class="name">Sản phẩm</span>
                             <span class="price">{{ number_format($total, 0, '', '.') }}đ</span>
                         </li>
-                        <li><span class="name">Ship</span><span class="price">$ 415.00</span></li>
-                        <li><span class="name">Tổng</span><span class="price">$ 415.00</span></li>
+                        <li><span class="name">Ship</span><span class="price">{{ $ship }}đ</span></li>
+                        <li><span class="name">Tổng</span><span class="price">{{ number_format($total+$ship, 0, '', '.') }}đ</span></li>
                     </ul>
                     <a href="#" class="checkout-link">Thanh toán</a>
+                    <a href="#" class="checkout-link pull-left">Tiếp tục mua sắm</a>
                 </div>
             </div>
         </div>

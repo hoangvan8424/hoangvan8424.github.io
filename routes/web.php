@@ -88,9 +88,10 @@ Route::get('danh-muc/{slug}-{id}', 'CategoryController@getListProduct')->name('g
 //  Hiển thị chi tiết sản phẩm
 Route::get('san-pham/{slug}-{id}', 'ProductDetailController@productDetail')->name('get.detail.product');
 
-//Thêm vào giỏ hàng
-
-Route::group(['prefix' => 'cart'], function() {
+//  Xử lý giỏ hàng
+Route::group(['prefix' => 'gio-hang'], function() {
     Route::get('/', 'ShoppingCartController@index')->name('get.list.cart');
     Route::get('them-vao-gio/{id}', 'ShoppingCartController@addToCart')->name('add.cart');
+    Route::delete('xoa-khoi-gio', 'ShoppingCartController@remove')->name('remove.cart');
+    Route::patch('cap-nhat-gio', 'ShoppingCartController@update')->name('update.cart');
 });
