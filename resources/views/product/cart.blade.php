@@ -55,7 +55,7 @@
                                 </td>
                                 <td>
                                     <button class="cart-pro-update">
-                                        <i class="fas fa-pen"></i>
+                                        <i class="fad fa-pen"></i>
                                     </button>
 
                                     <button class="cart-pro-remove">

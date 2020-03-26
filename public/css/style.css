@@ -6667,7 +6667,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     padding: 20px 0;
     vertical-align: middle;
 }
-
+.cart-table tbody tr td button {
+    /*border: 0;*/
+}
 .cart-table tbody tr:first-child td {
     padding-top: 30px;
     /*width: 60%;*/
