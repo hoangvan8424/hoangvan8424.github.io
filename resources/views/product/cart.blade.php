@@ -28,41 +28,45 @@
                                         $total += $cartDetail['price'] * $cartDetail['quantity'];
                                     @endphp
 
-                            <tr>
-                                <td>
-                                    <div class="cart-product text-left fix">
-                                        <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
-                                        <img src="/img/product/{{ $cartDetail['photo'] }}" alt="" />
-                                        <div class="details fix">
-                                            <p class="cart-product-name">{{ $cartDetail['name'] }}</p>
-                                            <p class="cart-product-sale">Sale: {{ $cartDetail['sale'] }}%</p>
-                                        </div>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="cart-price">{{ number_format($cartDetail['price'], 0, '', '.') }}đ</p>
-                                </td>
-                                <td>
-                                    <div class="cart-pro-quantity">
-                                        <div class="pro-qty float-left">
-                                            <input type="text" value="{{ $cartDetail['quantity'] }}" class="cart-plus-minus-box quantity">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p>{{ number_format($cartDetail['price']*$cartDetail['quantity'], 0, '', '.') }}đ</p>
-                                </td>
-                                <td>
-                                    <button class="btn btn-success cart-pro-update" data-id="{{ $id }}">
-                                        <i class="fad fa-pen"></i>
-                                    </button>
+                                    <tr>
+                                        <td>
+                                            <div class="cart-product text-left fix">
+                                                <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
+                                                    <img src="/img/product/{{ $cartDetail['photo'] }}" alt=""/>
+                                                    <div class="details fix">
+                                                        <p class="cart-product-name">{{ $cartDetail['name'] }}</p>
+                                                        <p class="cart-product-sale">Sale: {{ $cartDetail['sale'] }}
+                                                            %</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="cart-price">{{ number_format($cartDetail['price'], 0, '', '.') }}
+                                                đ</p>
+                                        </td>
+                                        <td>
+                                            <div class="cart-pro-quantity">
+                                                <div class="pro-qty float-left">
+                                                    <input type="text" value="{{ $cartDetail['quantity'] }}"
+                                                           class="cart-plus-minus-box quantity">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p>{{ number_format($cartDetail['price']*$cartDetail['quantity'], 0, '', '.') }}
+                                                đ</p>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success cart-pro-update" data-id="{{ $id }}">
+                                                <i class="fad fa-pen"></i>
+                                            </button>
 
-                                    <button class="btn btn-danger cart-pro-remove" data-id="{{ $id }}">
-                                        <i class="far fa-times"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                                            <button class="btn btn-danger cart-pro-remove" data-id="{{ $id }}">
+                                                <i class="far fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
 
                                 @endforeach
                             @endif
@@ -80,7 +84,7 @@
                             <input type="text" class="form-control"/>
                         </div>
                         <div class="input-box submit-box">
-                            <input type="submit" value="Áp dụng" />
+                            <input type="submit" value="Áp dụng"/>
                         </div>
                     </form>
                 </div>
@@ -92,7 +96,8 @@
                             <span class="price">{{ number_format($total, 0, '', '.') }}đ</span>
                         </li>
                         <li><span class="name">Ship</span><span class="price">{{ $ship }}đ</span></li>
-                        <li><span class="name">Tổng</span><span class="price">{{ number_format($total+$ship, 0, '', '.') }}đ</span></li>
+                        <li><span class="name">Tổng</span><span class="price">{{ number_format($total+$ship, 0, '', '.') }}đ</span>
+                        </li>
                     </ul>
                     <a href="#" class="checkout-link">Thanh toán</a>
                     <a href="#" class="checkout-link pull-left">Tiếp tục mua sắm</a>
@@ -103,29 +108,46 @@
 @endsection
 @section('scripts')
 
-<script type="text/javascript">
-    $('.cart-pro-update').click(function (e) {
-        e.preventDefault();
+    <script type="text/javascript">
+        $('.cart-pro-update').click(function (e) {
+            e.preventDefault();
 
-        var ele = $(this);
-        console.log(ele.attr("data-id"));
-        console.log(ele.parents("tr").find(".quantity").val());
+            var ele = $(this);
 
+            $.ajax({
+                url: '{{ route('update.cart') }}',
+                method: "post",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    product_id: ele.attr("data-id"),
+                    product_quantity: ele.parents("tr").find(".quantity").val()
+                },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        });
 
-        $.ajax({
-            url: '{{ route('update.cart') }}',
-            method: "post",
-            data: {
-                _token: '{{ csrf_token() }}',
-                product_id: ele.attr("data-id"),
-                product_quantity: ele.parents("tr").find(".quantity").val()
-            },
-            success: function (response) {
-                window.location.reload();
+        $('.cart-pro-remove').click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+            if (confirm("Xóa sản phẩm khỏi giỏ hàng?")) {
+                $.ajax({
+                    url: '{{ route('remove.cart') }}',
+                    method: "DELETE",
+                    data: {
+                        _token: '{{  csrf_token() }}',
+                        product_id: ele.attr("data-id"),
+                        success: function (response) {
+                            window.location.reload();
+                        }
+                    }
+                });
             }
         });
-    });
-</script>
+
+    </script>
 
 @endsection
 

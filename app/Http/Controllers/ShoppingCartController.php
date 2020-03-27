@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class ShoppingCartController extends FrontendController
 {
-    public function index() {
+    public function index()
+    {
         return view('product.cart');
     }
 
@@ -15,15 +16,13 @@ class ShoppingCartController extends FrontendController
     {
         $product = Product::find($id);
 
-        if(!$product)
-        {
+        if (!$product) {
             return view('404');
         }
         $cart = session()->get('cart');
 
 //  Nếu giỏ hàng trống, thêm sản phẩm đầu tiên vào giỏ
-        if(!$cart)
-        {
+        if (!$cart) {
             $cart = [
                 $id => [
                     "name" => $product->pro_name,
@@ -40,8 +39,7 @@ class ShoppingCartController extends FrontendController
         }
 
 //  Nếu giỏ hàng không trống và đã tồn tại sản phẩm đó, tăng số lượng lên 1
-        if(isset($cart[$id]))
-        {
+        if (isset($cart[$id])) {
             $cart[$id]['quantity']++;
             session()->put('cart', $cart);
             return redirect()->back()->with('alert-success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
@@ -57,32 +55,29 @@ class ShoppingCartController extends FrontendController
             "slug" => $product->pro_slug
         ];
         session()->put('cart', $cart);
-//        $request->session()->flush();
+//        $request->session()->flush(); //xóa tất cả session
         return redirect()->back()->with('alert-success', 'Sản phẩm đã được thêm vào giỏ hàng thành công!');
-    }
-
-    public function remove(Request $request)
-    {
-        if($request->id)
-        {
-            $cart = session()->get('cart');
-            if(isset($cart[$request->id]))
-            {
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('success', 'Sản phẩm đã được xóa khỏi giỏ hàng!');
-        }
     }
 
     public function update(Request $request)
     {
-        if($request->product_id and $request->product_quantity)
-        {
+        if ($request->product_id and $request->product_quantity) {
             $cart = session()->get('cart');
             $cart[$request->product_id]["quantity"] = $request->product_quantity;
             session()->put('cart', $cart);
             session()->flash('alert-success', 'Cập nhật giỏ hàng thành công!');
+        }
+    }
+
+    public function remove(Request $request)
+    {
+        if ($request->product_id) {
+            $cart = session()->get('cart');
+            if (isset($cart[$request->product_id])) {
+                unset($cart[$request->product_id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('alert-success', 'Sản phẩm đã được xóa khỏi giỏ hàng!');
         }
     }
 }

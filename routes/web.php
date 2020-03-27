@@ -12,13 +12,13 @@
 */
 
 // Admin
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->group(function () {
 
 //  Trang admin-home
     Route::get('/', 'AdminController@index')->name('admin.home');
 
 //  Quản lý danh mục
-    Route::group(['prefix' => 'category'], function() {
+    Route::group(['prefix' => 'category'], function () {
         Route::get('/', 'AdminCategoryController@index')->name('admin.get.list.category');
         Route::get('/insert', 'AdminCategoryController@create')->name('admin.get.create.category');
         Route::post('/insert', 'AdminCategoryController@insert');
@@ -43,7 +43,7 @@ Route::prefix('admin')->group(function() {
     });
 
 //  Quản lý thương hiệu
-    Route::group(['prefix' => 'brand'], function() {
+    Route::group(['prefix' => 'brand'], function () {
         Route::get('/', 'AdminBrandController@index')->name('admin.get.list.brand');
         Route::get('/insert', 'AdminBrandController@create')->name('admin.get.create.brand');
         Route::post('/insert', 'AdminBrandController@insert');
@@ -55,7 +55,7 @@ Route::prefix('admin')->group(function() {
     });
 
 //  Quản lý người dùng
-    Route::group(['prefix' => 'user'], function() {
+    Route::group(['prefix' => 'user'], function () {
         Route::get('/', 'AdminUserController@index')->name('admin.get.list.user');
         Route::get('/update/{id}', 'AdminUserController@update')->name('admin.get.update.user');
         Route::post('/update/{id}', 'AdminUserController@edit');
@@ -68,7 +68,7 @@ Route::prefix('admin')->group(function() {
 //  Kết thúc trang admin
 
 //  Xử lý đăng nhập, đăng ký
-Route::group(['namespace' => 'Auth'], function() {
+Route::group(['namespace' => 'Auth'], function () {
     Route::get('dang-ky', 'RegisterController@getRegister')->name('get.register');
     Route::post('dang-ky', 'RegisterController@postRegister');
 
@@ -89,9 +89,9 @@ Route::get('danh-muc/{slug}-{id}', 'CategoryController@getListProduct')->name('g
 Route::get('san-pham/{slug}-{id}', 'ProductDetailController@productDetail')->name('get.detail.product');
 
 //  Xử lý giỏ hàng
-Route::group(['prefix' => 'gio-hang'], function() {
+Route::group(['prefix' => 'gio-hang'], function () {
     Route::get('/', 'ShoppingCartController@index')->name('get.list.cart');
     Route::get('them-vao-gio/{id}', 'ShoppingCartController@addToCart')->name('add.cart');
-    Route::delete('xoa-khoi-gio', 'ShoppingCartController@remove')->name('remove.cart');
     Route::post('cap-nhat-gio', 'ShoppingCartController@update')->name('update.cart');
+    Route::delete('xoa-khoi-gio', 'ShoppingCartController@remove')->name('remove.cart');
 });
