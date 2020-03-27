@@ -82,7 +82,7 @@ class ShoppingCartController extends FrontendController
             $cart = session()->get('cart');
             $cart[$request->product_id]["quantity"] = $request->product_quantity;
             session()->put('cart', $cart);
-            session()->flash('success', 'Cập nhật giỏ hàng thành công!');
+            session()->flash('alert-success', 'Cập nhật giỏ hàng thành công!');
         }
     }
 }

@@ -2,7 +2,7 @@
     <!-- Header Left 1 -->
     <div class="header-left header-left-1 float-left">
         <a href="{{ route('home') }}" class="logo">
-            <img src="{{ asset('img/logo.png') }}" alt="logo" />
+            <img src="{{ asset('img/logo.png') }}" alt="logo"/>
         </a>
     </div>
     <!-- Menu Wrapper 1 -->
@@ -64,61 +64,58 @@
             <a href="#" data-toggle="dropdown" class="mini-cart-btn">
                 <span>
                     <i class="zmdi zmdi-shopping-cart"></i>
-                    <span class="cart-number">
                         @if(session('cart'))
-                            {{ count(session('cart')) }}
-                        @endif
-                    </span>
+                        <span class="cart-number">{{ count(session('cart')) }}</span>
+                    @endif
                 </span>
             </a>
-            <div class="mini-cart dropdown-menu right">
-
             @php
                 $total = 0;
             @endphp
-
             @if(session('cart'))
-                @foreach(session('cart') as $id => $cartDetail)
-                    @php
-                         $total += $cartDetail['price'] * $cartDetail['quantity'];
-                    @endphp
-                    <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
-                        <div class="mini-cart-product fix">
-                            <img src="/img/product/{{ $cartDetail['photo'] }}" alt="{{ $cartDetail['name'] }}" />
-                            <div class="content fix">
-                                <div class="mini-cart-details">
-                                    <p class="title">{{ $cartDetail['name'] }}</p>
-                                    <p>Số lượng: {{ $cartDetail['quantity'] }}</p>
-                                    <p>Giá: {{ number_format($cartDetail['price'], 0, '', '.') }}đ</p>
+                <div class="mini-cart dropdown-menu right">
+                    @foreach(session('cart') as $id => $cartDetail)
+                        @php
+                            $total += $cartDetail['price'] * $cartDetail['quantity'];
+                        @endphp
+                        <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
+                            <div class="mini-cart-product fix">
+                                <img src="/img/product/{{ $cartDetail['photo'] }}" alt="{{ $cartDetail['name'] }}"/>
+                                <div class="content fix">
+                                    <div class="mini-cart-details">
+                                        <p class="title">{{ $cartDetail['name'] }}</p>
+                                        <p>Số lượng: {{ $cartDetail['quantity'] }}</p>
+                                        <p>Giá: {{ number_format($cartDetail['price'], 0, '', '.') }}đ</p>
+                                    </div>
+                                    <button class="remove">
+                                        <i class="zmdi zmdi-close"></i>
+                                    </button>
                                 </div>
-                                <button class="remove">
-                                    <i class="zmdi zmdi-close"></i>
-                                </button>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
 
-                 @endforeach
+                    <div class="mini-cart-total">
+                        <span>Tổng cộng: </span>
+                        <p>{{ number_format($total, 0, '', '.') }}đ</p>
+                    </div>
+                    <div class="mini-cart-checkout text-center">
+                        <a href="{{ route('get.list.cart') }}" class="btn btn-block">Thanh toán</a>
+                    </div>
+                </div>
             @endif
-                <div class="mini-cart-total">
-                    <span>Tổng cộng: </span>
-                    <p>{{ number_format($total, 0, '', '.') }}đ</p>
-                </div>
-                <div class="mini-cart-checkout text-center">
-                    <a href="{{ route('get.list.cart') }}" class="btn btn-block">Thanh toán</a>
-                </div>
-            </div>
         </div>
+
         <!-- Header Search -->
         <div class="header-search header-search-1 hidden-xs float-right">
             <button data-toggle="dropdown" class="search-toggle">
                 <i class="zmdi zmdi-search"></i>
             </button>
-{{--            <div class="search-dropdown dropdown-menu right">--}}
-{{--                <form action="#">--}}
-{{--                    <input type="text" placeholder="Tên sản phẩm..." />--}}
-{{--                </form>--}}
-{{--            </div>--}}
+            {{--            <div class="search-dropdown dropdown-menu right">--}}
+            {{--                <form action="#">--}}
+            {{--                    <input type="text" placeholder="Tên sản phẩm..." />--}}
+            {{--                </form>--}}
+            {{--            </div>--}}
         </div>
     </div>
 </div>
