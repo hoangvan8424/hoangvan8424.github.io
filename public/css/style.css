@@ -1214,6 +1214,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     width: 300px;
     z-index: -99;
 }
+
 .mini-cart .mini-cart-total {
     display: flex;
     justify-content: space-between;
@@ -1224,13 +1225,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-size: 15px;
     font-weight: 500;
 }
+
 .mini-cart .mini-cart-total p {
     color: #ffffff;
     font-weight: 500;
 }
+
 .mini-cart .mini-cart-details {
     margin-right: 10px;
 }
+
 .open .mini-cart {
     margin-top: 0;
     opacity: 1;
@@ -6667,9 +6671,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     padding: 20px 0;
     vertical-align: middle;
 }
+
 .cart-table tbody tr td button {
     /*border: 0;*/
 }
+
 .cart-table tbody tr:first-child td {
     padding-top: 30px;
     /*width: 60%;*/
@@ -6728,6 +6734,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     /*color: #909090;*/
     /*margin: 0;*/
 }
+
 .cart-table .cart-product .details p.cart-product-name {
     color: #606060;
     font-size: 14px;
@@ -6737,6 +6744,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
+
 .cart-table .cart-product .details p.cart-product-name:hover {
     color: #ec4445;
 }
@@ -8126,4 +8134,15 @@ h3.widget-title-modal {
 
 .cart-area .container {
     /*border: 1px solid #f3f3f3;*/
+}
+
+.cart-area .cart-empty-notification {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cart-area i.cart-empty-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+    color: #ce1111;
 }

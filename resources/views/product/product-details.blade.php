@@ -54,12 +54,12 @@
 						<div class="single-product-action-quantity fix">
                             <h5 class="d-inline-block float-left">Số lượng:</h5>
                             <div class="pro-qty float-left">
-                                <input value="1" name="qtybutton" class="cart-plus-minus-box" type="text">
+                                <input value="1" name="qtybutton" class="cart-plus-minus-box quantity" type="text">
                             </div>
 							<div class="pro-details-action float-left">
-								<a href="{{ route('add.cart', $product->id) }}" class="pro-details-act-btn btn-text active" title="Thêm vào giỏ hàng">
+								<button class="pro-details-act-btn btn-text active" title="Thêm vào giỏ hàng" data-id="{{ $product->id }}">
                                     <i class="zmdi zmdi-shopping-cart"></i>Thêm vào giỏ hàng
-                                </a>
+                                </button>
 								<button class="pro-details-act-btn btn-icon">
                                     <i class="zmdi zmdi-favorite-outline"></i>
                                 </button>
@@ -360,6 +360,31 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+
+    <script type="text/javascript">
+        $('.pro-details-act-btn').click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+            console.log(ele.parents("div").find(".quantity").val());
+            $.ajax({
+                method: "post",
+                url: '{{ route('add.cart') }}',
+                cache: false,
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: ele.attr("data-id"),
+                    quantity: ele.parents("div").find(".quantity").val()
+                },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
 @endsection
 
 

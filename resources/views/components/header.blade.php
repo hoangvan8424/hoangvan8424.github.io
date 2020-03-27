@@ -64,16 +64,21 @@
             <a href="#" data-toggle="dropdown" class="mini-cart-btn">
                 <span>
                     <i class="zmdi zmdi-shopping-cart"></i>
-                        @if(session('cart'))
-                        <span class="cart-number">{{ count(session('cart')) }}</span>
-                    @endif
+
+                        <span class="cart-number">
+                            @if(session('cart')) {{ count(session('cart')) }}
+                            @else {{ 0 }}
+                            @endif
+                        </span>
+
                 </span>
             </a>
-            @php
-                $total = 0;
-            @endphp
-            @if(session('cart'))
+
                 <div class="mini-cart dropdown-menu right">
+                    @php
+                        $total = 0;
+                    @endphp
+                    @if(session('cart'))
                     @foreach(session('cart') as $id => $cartDetail)
                         @php
                             $total += $cartDetail['price'] * $cartDetail['quantity'];
@@ -94,7 +99,7 @@
                             </div>
                         </a>
                     @endforeach
-
+                    @endif
                     <div class="mini-cart-total">
                         <span>Tổng cộng: </span>
                         <p>{{ number_format($total, 0, '', '.') }}đ</p>
@@ -102,8 +107,9 @@
                     <div class="mini-cart-checkout text-center">
                         <a href="{{ route('get.list.cart') }}" class="btn btn-block">Thanh toán</a>
                     </div>
+
                 </div>
-            @endif
+
         </div>
 
         <!-- Header Search -->
