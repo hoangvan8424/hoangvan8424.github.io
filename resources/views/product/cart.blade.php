@@ -46,7 +46,7 @@
                                 <td>
                                     <div class="cart-pro-quantity">
                                         <div class="pro-qty float-left">
-                                            <input value="{{ $cartDetail['quantity'] }}" name="qtybutton" class="cart-plus-minus-box" type="text">
+                                            <input type="text" value="{{ $cartDetail['quantity'] }}" class="cart-plus-minus-box quantity">
                                         </div>
                                     </div>
                                 </td>
@@ -54,12 +54,12 @@
                                     <p>{{ number_format($cartDetail['price']*$cartDetail['quantity'], 0, '', '.') }}đ</p>
                                 </td>
                                 <td>
-                                    <button class="cart-pro-update">
+                                    <button class="btn btn-success cart-pro-update" data-id="{{ $id }}">
                                         <i class="fad fa-pen"></i>
                                     </button>
 
-                                    <button class="cart-pro-remove">
-                                        <i class="zmdi zmdi-close"></i>
+                                    <button class="btn btn-danger cart-pro-remove" data-id="{{ $id }}">
+                                        <i class="far fa-times"></i>
                                     </button>
                                 </td>
                             </tr>
@@ -100,6 +100,32 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+
+<script type="text/javascript">
+    $('.cart-pro-update').click(function (e) {
+        e.preventDefault();
+
+        var ele = $(this);
+        console.log(ele.attr("data-id"));
+        console.log(ele.parents("tr").find(".quantity").val());
+
+
+        $.ajax({
+            url: '{{ route('update.cart') }}',
+            method: "post",
+            data: {
+                _token: '{{ csrf_token() }}',
+                product_id: ele.attr("data-id"),
+                product_quantity: ele.parents("tr").find(".quantity").val()
+            },
+            success: function (response) {
+                window.location.reload();
+            }
+        });
+    });
+</script>
 
 @endsection
 

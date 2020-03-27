@@ -77,10 +77,10 @@ class ShoppingCartController extends FrontendController
 
     public function update(Request $request)
     {
-        if($request->id and $request->quantity)
+        if($request->product_id and $request->product_quantity)
         {
             $cart = session()->get('cart');
-            $cart[$request->id]["quantity"] = $request->quantity;
+            $cart[$request->product_id]["quantity"] = $request->product_quantity;
             session()->put('cart', $cart);
             session()->flash('success', 'Cập nhật giỏ hàng thành công!');
         }

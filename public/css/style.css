@@ -46,7 +46,7 @@
 /*----------------------------------------*/
 
 /* Google Font */
-/*@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 body {
     background-color: #f0f0f0;
@@ -6770,28 +6770,29 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .cart-table .cart-pro-remove {
-    background-color: #fff;
-    border: medium none;
-    border-radius: 3px;
-    color: #606060;
-    height: 30px;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    width: 30px;
+    margin-left: 7px;
+    /*background-color: #fff;*/
+    /*border: medium none;*/
+    /*border-radius: 3px;*/
+    /*color: #606060;*/
+    /*height: 30px;*/
+    /*-webkit-transition: all 0.3s ease 0s;*/
+    /*transition: all 0.3s ease 0s;*/
+    /*width: 30px;*/
 }
 
 .cart-table .cart-pro-remove:hover {
-    color: #ec4445;
+    color: #ffffff;
 }
 
 .cart-table .cart-pro-update:hover {
-    color: #04a307d9;
+    color: #ffffff;
 }
 
 .cart-table .cart-pro-remove i {
-    display: block;
-    font-size: 16px;
-    line-height: 30px;
+    /*display: block;*/
+    /*font-size: 16px;*/
+    /*line-height: 30px;*/
 }
 
 /* Shipping & Tax */
