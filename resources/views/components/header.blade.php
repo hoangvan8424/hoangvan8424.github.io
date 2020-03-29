@@ -79,26 +79,28 @@
                         $total = 0;
                     @endphp
                     @if(session('cart'))
-                    @foreach(session('cart') as $id => $cartDetail)
-                        @php
-                            $total += $cartDetail['price'] * $cartDetail['quantity'];
-                        @endphp
-                        <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
-                            <div class="mini-cart-product fix">
-                                <img src="{{ asset('/img/product').'/'.$cartDetail['photo'] }}" alt="{{ $cartDetail['name'] }}"/>
-                                <div class="content fix">
-                                    <div class="mini-cart-details">
-                                        <p class="title">{{ $cartDetail['name'] }}</p>
-                                        <p>Số lượng: {{ $cartDetail['quantity'] }}</p>
-                                        <p>Giá: {{ number_format($cartDetail['price'], 0, '', '.') }}đ</p>
-                                    </div>
-                                    <button class="remove">
+                        @foreach(session('cart') as $id => $cartDetail)
+                            @php
+                                $total += $cartDetail['price'] * $cartDetail['quantity'];
+                            @endphp
+
+                                <div class="mini-cart-product fix">
+                                    <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
+                                        <img src="{{ asset('/img/product').'/'.$cartDetail['photo'] }}" alt="{{ $cartDetail['name'] }}"/>
+                                        <div class="content fix">
+                                            <div class="mini-cart-details">
+                                                <p class="title">{{ $cartDetail['name'] }}</p>
+                                                <p>Số lượng: {{ $cartDetail['quantity'] }}</p>
+                                                <p>Giá: {{ number_format($cartDetail['price'], 0, '', '.') }}đ</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button class="remove mini-cart-remove" data-product-id="{{ $id }}">
                                         <i class="zmdi zmdi-close"></i>
                                     </button>
                                 </div>
-                            </div>
-                        </a>
-                    @endforeach
+
+                        @endforeach
                     @endif
                     <div class="mini-cart-total">
                         <span>Tổng cộng: </span>
@@ -125,3 +127,26 @@
         </div>
     </div>
 </div>
+@section('scripts')
+    <script>
+        $(".mini-cart-remove").click(function (e) {
+            e.preventDefault();
+            let ele = $(this);
+
+            if (confirm("Xóa sản phẩm khỏi giỏ hàng?")) {
+                $.ajax({
+                    url: '{{ route('remove.cart') }}',
+                    method: "DELETE",
+                    cache: false,
+                    data: {
+                        _token: '{{  csrf_token() }}',
+                        product_id: ele.attr("data-product-id")
+                    },
+                    success: function (data) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+    </script>
+@endsection
