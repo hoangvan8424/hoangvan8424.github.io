@@ -85,7 +85,7 @@
                         @endphp
                         <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
                             <div class="mini-cart-product fix">
-                                <img src="/img/product/{{ $cartDetail['photo'] }}" alt="{{ $cartDetail['name'] }}"/>
+                                <img src="{{ asset('/img/product').'/'.$cartDetail['photo'] }}" alt="{{ $cartDetail['name'] }}"/>
                                 <div class="content fix">
                                     <div class="mini-cart-details">
                                         <p class="title">{{ $cartDetail['name'] }}</p>

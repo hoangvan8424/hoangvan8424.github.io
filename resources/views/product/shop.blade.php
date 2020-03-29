@@ -42,7 +42,7 @@
                                             <div class="sin-product">
                                                 <span class="pro-label">sale</span>
                                                 <div class="pro-image">
-                                                    <img src="/img/product/{{ $products->pro_avatar }}" alt="" class="img"/>
+                                                    <img src="{{ asset('/img/product').'/'.$products->pro_avatar }}" alt="" class="img"/>
                                                 </div>
                                                 <div class="pro-details">
                                                     <p class="pro-title">{{ $products->pro_name }}</p>

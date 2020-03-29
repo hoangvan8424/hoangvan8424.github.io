@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="footer-contact col-md-4 col-sm-6 col-xs-12">
-                <img src="/img/logo-2.png" alt="" />
+                <img src="{{ asset('/img/logo-2.png') }}" alt="" />
                 <div><span>Địa chỉ :</span> <p>Thanh Xuân, <br />Hà Nội</p></div>
                 <div><span>Điện thoại :</span> <p>+4393724111</p></div>
                 <div><span>Email :</span> <a href="#">hoangvan181198@gmail.com</a></div>
@@ -55,11 +55,11 @@
                 <p>Copyright &copy; 2020 <a href="https://devitems.com/" target="_blank">Prioryshop</a>.</p>
             </div>
             <div class="payment-method text-right col-sm-6 col-xs-12">
-                <img src="/img/payment/1.png" alt="payment" />
-                <img src="/img/payment/2.png" alt="payment" />
-                <img src="/img/payment/3.png" alt="payment" />
-                <img src="/img/payment/4.png" alt="payment" />
-                <img src="/img/payment/5.png" alt="payment" />
+                <img src="{{ asset('/img/payment/1.png')}}" alt="payment" />
+                <img src="{{ asset('/img/payment/2.png') }}" alt="payment" />
+                <img src="{{ asset('/img/payment/3.png') }}" alt="payment" />
+                <img src="{{ asset('/img/payment/4.png') }}" alt="payment" />
+                <img src="{{ asset('/img/payment/5.png') }}" alt="payment" />
             </div>
         </div>
     </div>

@@ -42,7 +42,7 @@
                                         <td>
                                             <div class="cart-product text-left fix">
                                                 <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
-                                                    <img src="/img/product/{{ $cartDetail['photo'] }}" alt=""/>
+                                                    <img src="{{ asset('/img/product').'/'.$cartDetail['photo'] }}" alt=""/>
                                                     <div class="details fix">
                                                         <p class="cart-product-name">{{ $cartDetail['name'] }}</p>
                                                         <p class="cart-product-sale">Sale: {{ $cartDetail['sale'] }}%</p>
@@ -131,14 +131,15 @@
 @section('scripts')
 
     <script type="text/javascript">
-        $('.cart-pro-update').click(function (e) {
+        $('.btn.cart-pro-update').click(function (e) {
             e.preventDefault();
 
-            var ele = $(this);
+            let ele = $(this);
 
             $.ajax({
-                url: '{{ route('update.cart') }}',
                 method: "post",
+                url: '{{ route('update.cart') }}',
+                cache: false,
                 data: {
                     _token: '{{ csrf_token() }}',
                     product_id: ele.attr("data-id"),
@@ -153,15 +154,16 @@
         $('.cart-pro-remove').click(function (e) {
             e.preventDefault();
 
-            var ele = $(this);
+            let ele = $(this);
             if (confirm("Xóa sản phẩm khỏi giỏ hàng?")) {
                 $.ajax({
                     url: '{{ route('remove.cart') }}',
                     method: "DELETE",
+                    cache: false,
                     data: {
                         _token: '{{  csrf_token() }}',
                         product_id: ele.attr("data-id"),
-                        success: function (response) {
+                        success: function (data) {
                             window.location.reload();
                         }
                     }

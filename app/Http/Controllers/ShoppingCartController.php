@@ -64,22 +64,25 @@ class ShoppingCartController extends FrontendController
     public function update(Request $request)
     {
         if ($request->product_id and $request->product_quantity) {
-            $cart = session()->get('cart');
+            $cart = $request->session()->get('cart');
             $cart[$request->product_id]["quantity"] = $request->product_quantity;
-            session()->put('cart', $cart);
-            session()->flash('alert-success', 'Cập nhật giỏ hàng thành công!');
+            $request->session()->put('cart', $cart);
+            $request->session()->flash('alert-success', 'Cập nhật giỏ hàng thành công!');
         }
     }
 
     public function remove(Request $request)
     {
-        if ($request->product_id) {
-            $cart = session()->get('cart');
-            if (isset($cart[$request->product_id])) {
-                unset($cart[$request->product_id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('alert-success', 'Sản phẩm đã được xóa khỏi giỏ hàng!');
+
+        if ($id = $request->product_id) {
+            $cart = $request->session()->get('cart');
+                if (isset($cart[$id])) {
+                    unset($cart[$id]);
+                    $request->session()->put('cart', $cart);
+                    $request->session()->flash('alert-success', 'Sản phẩm đã được xóa khỏi giỏ hàng!');
+
+                }
+
         }
     }
 }

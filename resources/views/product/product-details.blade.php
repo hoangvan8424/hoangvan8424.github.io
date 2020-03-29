@@ -26,8 +26,8 @@
 					<div class="single-product-image">
 						<div class="product-big-image tab-content">
 							<div class="tab-pane active" id="pro-img-3">
-                                <img src="/img/product/{{ $product->pro_avatar }}" alt="/img/product/{{ $product->pro_name }}" />
-                                <a class="pro-img-popup" href="/img/product/{{ $product->pro_avatar }}">
+                                <img src="{{ asset('/img/product/').'/'.$product->pro_avatar }}" alt="{{ asset('/img/product/').'/'.$product->pro_name }}" />
+                                <a class="pro-img-popup" href="{{ asset('/img/product/').'/'.$product->pro_avatar }}">
                                     <i class="zmdi zmdi-search"></i>
                                 </a>
 							</div>
@@ -67,11 +67,11 @@
 
 						</div>
 						<div class="pro-thumb-slider">
-							<div class="sin-item"><a href="#pro-img-1" data-toggle="tab"><img src="/img/single-product/1.1.jpg" alt="" /></a></div>
-							<div class="sin-item"><a href="#pro-img-2" data-toggle="tab"><img src="/img/single-product/2.1.jpg" alt="" /></a></div>
-							<div class="sin-item"><a class="active" href="#pro-img-3" data-toggle="tab"><img src="/img/product/{{ $product->pro_avatar }}" alt="/img/product/{{ $product->pro_name }}" /></a></div>
-							<div class="sin-item"><a href="#pro-img-4" data-toggle="tab"><img src="/img/single-product/4.1.jpg" alt="" /></a></div>
-							<div class="sin-item"><a href="#pro-img-5" data-toggle="tab"><img src="/img/single-product/2.1.jpg" alt="" /></a></div>
+							<div class="sin-item"><a href="#pro-img-1" data-toggle="tab"><img src="{{ asset('/img/single-product/1.1.jpg') }}" alt="" /></a></div>
+							<div class="sin-item"><a href="#pro-img-2" data-toggle="tab"><img src="{{ asset('/img/single-product/2.1.jpg') }}" alt="" /></a></div>
+							<div class="sin-item"><a class="active" href="#pro-img-3" data-toggle="tab"><img src="{{ asset('/img/product/').'/'.$product->pro_avatar }}" alt="{{ asset('/img/product').'/'.$product->pro_name }}" /></a></div>
+							<div class="sin-item"><a href="#pro-img-4" data-toggle="tab"><img src="{{ asset('/img/single-product/4.1.jpg') }}" alt="" /></a></div>
+							<div class="sin-item"><a href="#pro-img-5" data-toggle="tab"><img src="{{ asset('/img/single-product/2.1.jpg') }}" alt="" /></a></div>
 						</div>
 					</div>
 				</div>
@@ -106,7 +106,7 @@
                             <div class="review-wrapper fix">
                                 <div class="sin-review">
                                     <div class="review-image">
-                                        <img src="/img/review/1.jpg" alt="" />
+                                        <img src="{{ asset('/img/review/1.jpg') }}" alt="" />
                                     </div>
                                     <div class="review-details fix">
                                         <div class="review-author float-left">
@@ -129,7 +129,7 @@
                                 </div>
                                 <div class="sin-review">
                                     <div class="review-image">
-                                        <img src="/img/review/2.jpg" alt="" />
+                                        <img src="{{ asset('/img/review/2.jpg') }}" alt="" />
                                     </div>
                                     <div class="review-details fix">
                                         <div class="review-author float-left">
@@ -219,7 +219,7 @@
                 <div class="sin-product">
                     <span class="pro-label">sale</span>
                     <div class="pro-image">
-                        <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
+                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
                     </div>
                     <div class="pro-details">
                         <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
@@ -237,7 +237,7 @@
                 <div class="sin-product">
                     <span class="pro-label">sale</span>
                     <div class="pro-image">
-                        <img src="/img/product/ae7804aff708e7197488e34a819f85db.jpg" alt="" class="img"/>
+                        <img src="{{ asset('/img/product/ae7804aff708e7197488e34a819f85db.jpg') }}" alt="" class="img"/>
                     </div>
                     <div class="pro-details">
                         <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
@@ -255,7 +255,7 @@
                 <div class="sin-product">
                     <span class="pro-label">sale</span>
                     <div class="pro-image">
-                        <img src="/img/product/71c6a96cec117c905c563755d7968163.jpg" alt="" class="img"/>
+                        <img src="{{ asset('/img/product/71c6a96cec117c905c563755d7968163.jpg') }}" alt="" class="img"/>
                     </div>
                     <div class="pro-details">
                         <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
@@ -273,7 +273,7 @@
                 <div class="sin-product">
                     <span class="pro-label">sale</span>
                     <div class="pro-image">
-                        <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
+                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
                     </div>
                     <div class="pro-details">
                         <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
@@ -291,7 +291,7 @@
                 <div class="sin-product">
                     <span class="pro-label">sale</span>
                     <div class="pro-image">
-                        <img src="/img/product/0b50dcd1e3bda923d1558b4ad96f3f9a.jpg" alt="" class="img"/>
+                        <img src="{{ asset('/img/product/0b50dcd1e3bda923d1558b4ad96f3f9a.jpg') }}" alt="" class="img"/>
                     </div>
                     <div class="pro-details">
                         <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
@@ -309,7 +309,7 @@
                 <div class="sin-product">
                     <span class="pro-label">sale</span>
                     <div class="pro-image">
-                        <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
+                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
                     </div>
                     <div class="pro-details">
                         <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
@@ -327,7 +327,7 @@
                 <div class="sin-product">
                     <span class="pro-label">sale</span>
                     <div class="pro-image">
-                        <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
+                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
                     </div>
                     <div class="pro-details">
                         <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
@@ -345,7 +345,7 @@
                 <div class="sin-product">
                     <span class="pro-label">sale</span>
                     <div class="pro-image">
-                        <img src="/img/product/a04255c348106f0ee126432d2f680d94.jpg" alt="" class="img"/>
+                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
                     </div>
                     <div class="pro-details">
                         <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
