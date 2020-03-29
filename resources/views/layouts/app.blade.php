@@ -9,28 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/img/favicon.ico') }}">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('theme_admin/fontawesome/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('/theme_admin/fontawesome/css/all.css') }}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 
     <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="{{ asset('css/material-design-iconic-font.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/material-design-iconic-font.min.css') }}">
     <!-- Plugins Import CSS -->
 
-    <link rel="stylesheet" href="{{ asset('css/import.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/import.css') }}">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
     <!-- Responsive CSS -->
 
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/responsive.css') }}">
 
     <!-- Modernizer JS -->
-    <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    <script src="{{ asset('/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 
 </head>
 <body>
@@ -59,14 +59,14 @@
 <!-- JS -->
 
 <!-- jQuery JS -->
-<script src="{{ asset('js/vendor/jquery-1.12.0.min.js') }}"></script>
+<script src="{{ asset('/js/vendor/jquery-1.12.0.min.js') }}"></script>
 <!-- Bootstrap JS -->
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 
 <!-- Plugins JS -->
-<script src="{{ asset('js/plugins.js') }}"></script>
+<script src="{{ asset('/js/plugins.js') }}"></script>
 <!-- Main JS -->
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('/js/main.js') }}"></script>
 
 @yield('scripts')
 

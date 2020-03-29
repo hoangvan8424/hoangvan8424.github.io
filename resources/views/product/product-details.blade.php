@@ -363,13 +363,11 @@
 @endsection
 
 @section('scripts')
-
     <script type="text/javascript">
         $('.pro-details-act-btn').click(function (e) {
             e.preventDefault();
 
             var ele = $(this);
-            console.log(ele.parents("div").find(".quantity").val());
             $.ajax({
                 method: "post",
                 url: '{{ route('add.cart') }}',

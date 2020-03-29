@@ -131,14 +131,15 @@
 @section('scripts')
 
     <script type="text/javascript">
-        $('.btn.cart-pro-update').click(function (e) {
+
+        $(".cart-pro-update").click(function (e) {
             e.preventDefault();
 
             let ele = $(this);
 
             $.ajax({
-                method: "post",
                 url: '{{ route('update.cart') }}',
+                method: "patch",
                 cache: false,
                 data: {
                     _token: '{{ csrf_token() }}',
@@ -151,10 +152,11 @@
             });
         });
 
-        $('.cart-pro-remove').click(function (e) {
+        $(".cart-pro-remove").click(function (e) {
             e.preventDefault();
 
             let ele = $(this);
+
             if (confirm("Xóa sản phẩm khỏi giỏ hàng?")) {
                 $.ajax({
                     url: '{{ route('remove.cart') }}',
@@ -162,14 +164,16 @@
                     cache: false,
                     data: {
                         _token: '{{  csrf_token() }}',
-                        product_id: ele.attr("data-id"),
-                        success: function (data) {
-                            window.location.reload();
-                        }
+                        product_id: ele.attr("data-id")
+                    },
+                    success: function (data) {
+                        window.location.reload();
                     }
                 });
             }
         });
+
+
 
     </script>
 

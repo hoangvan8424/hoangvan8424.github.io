@@ -92,6 +92,6 @@ Route::get('san-pham/{slug}-{id}', 'ProductDetailController@productDetail')->nam
 Route::group(['prefix' => 'gio-hang'], function () {
     Route::get('/', 'ShoppingCartController@index')->name('get.list.cart');
     Route::post('them-vao-gio', 'ShoppingCartController@addToCart')->name('add.cart');
-    Route::post('cap-nhat-gio', 'ShoppingCartController@update')->name('update.cart');
+    Route::patch('cap-nhat-gio', 'ShoppingCartController@update')->name('update.cart');
     Route::delete('xoa-khoi-gio', 'ShoppingCartController@remove')->name('remove.cart');
 });
