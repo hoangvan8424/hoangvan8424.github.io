@@ -2,7 +2,7 @@
     <!-- Header Left 1 -->
     <div class="header-left header-left-1 float-left">
         <a href="{{ route('home') }}" class="logo">
-            <img src="{{ asset('img/logo.png') }}" alt="logo"/>
+            <img src="{{ asset('/img/logo.png') }}" alt="logo"/>
         </a>
     </div>
     <!-- Menu Wrapper 1 -->

@@ -17,11 +17,28 @@
             <div class="footer-account col-md-2 col-sm-6 col-xs-12">
                 <h4>Tài khoản</h4>
                 <ul>
-                    <li><a href="account.html">My Account</a></li>
-                    <li><a href="wishlist.html">My Wishlist</a></li>
-                    <li><a href="cart.html">My Cart</a></li>
-                    <li><a href="login.html">Sign In</a></li>
-                    <li><a href="checkout.html">Check out</a></li>
+                    @if(Auth::check())
+                        <li>
+                            <a href="#">Tài khoản</a>
+                        </li>
+                        <li>
+                            <a href="#">Thanh toán</a>
+                        </li>
+                        <li>
+                            <a href="#">D/s yêu thích</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('get.logout') }}">Đăng xuất</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{ route('get.login') }}">Đăng nhập</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('get.register') }}">Đăng ký</a>
+                        </li>
+
+                    @endif
                 </ul>
             </div>
             <div class="footer-shipping col-md-2 col-sm-6 col-xs-12">
@@ -36,10 +53,10 @@
             </div>
             <div class="footer-newsletter col-md-4 col-sm-6 col-xs-12">
                 <h4>Nhận thông tin sản phẩm mới</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adip isicing elit, sed do eiusmod tempor incididunt.</p>
+                <p>Chúng tôi sẽ liên hệ với bạn khi có thông tin sản phẩm mới, hoặc có chương trình giảm giá.</p>
                 <form id="mc-form" class="mc-form" >
-                    <input id="mc-email" type="email" autocomplete="off" placeholder="Enter Address..." />
-                    <input id="mc-submit" type="submit" value="subscribe" />
+                    <input id="mc-email" type="email" autocomplete="off" placeholder="Email..." />
+                    <input id="mc-submit" type="submit" value="Đăng ký" />
                 </form>
                 <!-- mailchimp-alerts Start -->
                 <div class="mailchimp-alerts text-centre">

@@ -4818,7 +4818,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .footer-newsletter .mc-form input[type="email"] {
-    background-color: #909090;
+    background-color: #f5f5f5;
     border: medium none;
     border-radius: 3px;
     color: #fff;
