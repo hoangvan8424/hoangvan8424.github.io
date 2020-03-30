@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <!-- Body main wrapper start -->
-@section('product')
+@section('content')
 <div class="page-area">
 	<div class="container">
 		<div class="row">

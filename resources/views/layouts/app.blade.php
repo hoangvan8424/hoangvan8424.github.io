@@ -47,7 +47,7 @@
     @yield('slide')
 
     <!-- Products Area -->
-    @yield('product')
+    @yield('content')
 
     <!-- Footer Bottom Area -->
     @include('components.footer')

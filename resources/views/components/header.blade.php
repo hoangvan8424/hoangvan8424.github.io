@@ -20,7 +20,7 @@
                     @endif
 
                     <li>
-                        <a href="#">Liên hệ</a>
+                        <a href="{{ route('get.contact') }}">Liên hệ</a>
                     </li>
                 </ul>
             </nav>

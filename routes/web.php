@@ -95,3 +95,7 @@ Route::group(['prefix' => 'gio-hang'], function () {
     Route::patch('cap-nhat-gio', 'ShoppingCartController@update')->name('update.cart');
     Route::delete('xoa-khoi-gio', 'ShoppingCartController@remove')->name('remove.cart');
 });
+
+//  Xử lý liên hệ
+Route::get('lien-he', 'ContactController@getContact')->name('get.contact');
+Route::post('lien-he', 'ContactController@postContact');

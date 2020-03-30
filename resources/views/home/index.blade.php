@@ -4,7 +4,7 @@
     @include('components.slide')
 @endsection
 
-@section('product')
+@section('content')
     <div class="products-area pb-40 pt-40">
         <div class="container">
             <div class="row" style="background: #ffff">

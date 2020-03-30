@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('product')
+@section('content')
     <!-- Giỏ hàng -->
     <div class="container">
         <div class="row">
@@ -172,8 +172,6 @@
                 });
             }
         });
-
-
 
     </script>
 

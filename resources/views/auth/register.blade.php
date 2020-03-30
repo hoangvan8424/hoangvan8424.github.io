@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('product')
+@section('content')
     <div class="account-area">
         <div class="container">
-            <div class="login-area pb-90 pt-100">
+            <div class="login-area pb-90">
                 <div class="container">
                     <div class="flash-message">
                         @foreach (['danger', 'warning', 'success', 'info'] as $msg)

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('product')
+@section('content')
     <div class="account-area">
         <div class="container">
             <div class="login-area pb-90">

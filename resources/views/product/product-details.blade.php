@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('product')
+@section('content')
 <!-- Single Product Area
 ============================================ -->
 <div class="single-product-area">
