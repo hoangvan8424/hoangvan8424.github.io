@@ -54,9 +54,10 @@
             <div class="footer-newsletter col-md-4 col-sm-6 col-xs-12">
                 <h4>Nhận thông tin sản phẩm mới</h4>
                 <p>Chúng tôi sẽ liên hệ với bạn khi có thông tin sản phẩm mới, hoặc có chương trình giảm giá.</p>
-                <form id="mc-form" class="mc-form" >
+                <form id="mc-form" class="mc-form" enctype="multipart/form-data">
+                    @csrf
                     <input id="mc-email" type="email" autocomplete="off" placeholder="Email..." />
-                    <input id="mc-submit" type="submit" value="Đăng ký" />
+                    <button class="btn btn-danger" id="mc-submit" type="submit">Đăng ký</button>
                 </form>
                 <!-- mailchimp-alerts Start -->
                 <div class="mailchimp-alerts text-centre">

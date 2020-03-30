@@ -70,10 +70,8 @@
                             @else {{ 0 }}
                             @endif
                         </span>
-
                 </span>
             </a>
-
                 <div class="mini-cart dropdown-menu right">
                     @php
                         $total = 0;
@@ -83,7 +81,6 @@
                             @php
                                 $total += $cartDetail['price'] * $cartDetail['quantity'];
                             @endphp
-
                                 <div class="mini-cart-product fix">
                                     <a href="{{ route('get.detail.product', [$cartDetail['slug'], $id]) }}">
                                         <img src="{{ asset('/img/product').'/'.$cartDetail['photo'] }}" alt="{{ $cartDetail['name'] }}"/>
@@ -99,7 +96,6 @@
                                         <i class="zmdi zmdi-close"></i>
                                     </button>
                                 </div>
-
                         @endforeach
                     @endif
                     <div class="mini-cart-total">
@@ -127,26 +123,4 @@
         </div>
     </div>
 </div>
-@section('scripts')
-    <script>
-        $(".mini-cart-remove").click(function (e) {
-            e.preventDefault();
-            let ele = $(this);
 
-            if (confirm("Xóa sản phẩm khỏi giỏ hàng?")) {
-                $.ajax({
-                    url: '{{ route('remove.cart') }}',
-                    method: "DELETE",
-                    cache: false,
-                    data: {
-                        _token: '{{  csrf_token() }}',
-                        product_id: ele.attr("data-product-id")
-                    },
-                    success: function (data) {
-                        window.location.reload();
-                    }
-                });
-            }
-        });
-    </script>
-@endsection

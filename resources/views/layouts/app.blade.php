@@ -68,6 +68,27 @@
 <!-- Main JS -->
 <script src="{{ asset('/js/main.js') }}"></script>
 
+{{-- Xóa sản phẩm khỏi giỏ hàng trên icon giỏ --}}
+<script>
+    $(".mini-cart-remove").click(function (e) {
+        e.preventDefault();
+        var ele = $(this);
+
+            $.ajax({
+                url: '{{ route('remove.cart') }}',
+                method: "DELETE",
+                cache: false,
+                data: {
+                    _token: '{{  csrf_token() }}',
+                    product_id: ele.attr("data-product-id")
+                },
+                success: function (data) {
+                    window.location.reload();
+                }
+            });
+    });
+</script>
+
 @yield('scripts')
 
 </body>
