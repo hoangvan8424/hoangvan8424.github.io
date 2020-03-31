@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Giỏ hàng')
 @section('content')
     <!-- Giỏ hàng -->
     <div class="container">
@@ -107,7 +108,7 @@
                             <li><span class="name">Tổng</span><span class="price">{{ number_format($total+$ship, 0, '', '.') }}đ</span>
                             </li>
                         </ul>
-                        <a href="#" class="checkout-link">Thanh toán</a>
+                        <a href="{{ route('checkout.cart') }}" class="checkout-link">Thanh toán</a>
                         <a href="#" class="checkout-link pull-left">Tiếp tục mua sắm</a>
                     </div>
                 </div>

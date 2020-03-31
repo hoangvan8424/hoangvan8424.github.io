@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', $product->pro_name)
 @section('content')
 <!-- Single Product Area
 ============================================ -->

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Priyoshop</title>
+    <title>@yield('title')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,9 +25,12 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
-    <!-- Responsive CSS -->
 
+    <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('/css/responsive.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="@yield('style')">
 
     <!-- Modernizer JS -->
     <script src="{{ asset('/js/vendor/modernizr-2.8.3.min.js') }}"></script>

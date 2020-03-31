@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Priyoshop')
 @section('slide')
     @include('components.slide')
 @endsection

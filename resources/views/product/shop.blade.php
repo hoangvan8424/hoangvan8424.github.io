@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', $id==1?'Máy tính':'Điện thoại')
 <!-- Body main wrapper start -->
 @section('content')
 <div class="page-area">

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Liên hệ')
 @section('content')
 <!-- Contact Page -->
 <div class="page-area pb-90">
@@ -45,8 +46,8 @@
                             </span>
                         @endif
 					</div>
-					<div class="input-box submit-box fix">
-                        <button type="submit" class="btn btn-success btn-block">Gửi</button>
+					<div class="input-box submit-box fix pull-right">
+                        <button type="submit" class="btn btn-success">Gửi</button>
 					</div>
 				</form>
 			</div>

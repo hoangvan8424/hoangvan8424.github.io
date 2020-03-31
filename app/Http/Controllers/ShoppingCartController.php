@@ -85,4 +85,9 @@ class ShoppingCartController extends FrontendController
 
         }
     }
+
+    public function checkout()
+    {
+        return view('product.checkout');
+    }
 }

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', '404')
 @section('content')
 <div class="page-area pb-90 pt-90">
 	<div class="container">
