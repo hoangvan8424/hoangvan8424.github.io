@@ -108,7 +108,7 @@
                             <li><span class="name">Tổng</span><span class="price">{{ number_format($total+$ship, 0, '', '.') }}đ</span>
                             </li>
                         </ul>
-                        <a href="{{ route('checkout.cart') }}" class="checkout-link">Thanh toán</a>
+                        <a href="{{ route('show.checkout.cart') }}" class="checkout-link">Thanh toán</a>
                         <a href="#" class="checkout-link pull-left">Tiếp tục mua sắm</a>
                     </div>
                 </div>

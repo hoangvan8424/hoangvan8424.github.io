@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RequestTransaction;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ShoppingCartController extends FrontendController
@@ -73,21 +75,50 @@ class ShoppingCartController extends FrontendController
 
     public function remove(Request $request)
     {
-
         if ($id = $request->product_id) {
             $cart = $request->session()->get('cart');
                 if (isset($cart[$id])) {
                     unset($cart[$id]);
                     $request->session()->put('cart', $cart);
                     $request->session()->flash('alert-success', 'Sản phẩm đã được xóa khỏi giỏ hàng!');
-
                 }
-
         }
     }
 
-    public function checkout()
+    public function showFormCheckOut()
     {
-        return view('product.checkout');
+        if(session('cart')) {
+            return view('product.checkout');
+        }
+        return view('404');
+    }
+
+    public function checkOut(RequestTransaction $requestTransaction)
+    {
+
+        $transactionId = DB::table('transactions')->insertGetId([
+            'tr_user_id' => get_data_user('web'),
+            'tr_user_name' => $requestTransaction->name,
+            'tr_user_email' => $requestTransaction->email ? $requestTransaction->email : get_data_user('web', 'email'),
+            'tr_user_phone' => $requestTransaction->phone,
+            'tr_address' => $requestTransaction->address,
+            'tr_total' => $requestTransaction->total,
+            'tr_note' => $requestTransaction->note
+        ]);
+
+        if($transactionId)
+        {
+            foreach (session('cart') as $id => $cartDetail) {
+                DB::table('orders')->insert([
+                   'transaction_id' => $transactionId,
+                    'product_id' => $id,
+                    'or_quantity' => $cartDetail['quantity'],
+                    'or_price' => $cartDetail['price'],
+                    'or_sale' => $cartDetail['sale']
+                ]);
+            }
+            session()->forget('cart');
+            return redirect()->route('home')->with('alert-success', 'Đặt hàng thành công!');
+        }
     }
 }

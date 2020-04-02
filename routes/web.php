@@ -94,7 +94,8 @@ Route::group(['prefix' => 'gio-hang'], function () {
     Route::post('them-vao-gio', 'ShoppingCartController@addToCart')->name('add.cart');
     Route::patch('cap-nhat-gio', 'ShoppingCartController@update')->name('update.cart');
     Route::delete('xoa-khoi-gio', 'ShoppingCartController@remove')->name('remove.cart');
-    Route::get('/checkout', 'ShoppingCartController@checkout')->middleware('checkLogin')->name('checkout.cart');
+    Route::get('/checkout', 'ShoppingCartController@showFormCheckOut')->middleware('checkLogin')->name('show.checkout.cart');
+    Route::post('/checkout', 'ShoppingCartController@checkOut');
 });
 
 //  Xử lý liên hệ

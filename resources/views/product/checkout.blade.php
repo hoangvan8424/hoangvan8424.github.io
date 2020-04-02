@@ -13,19 +13,10 @@
                 </ol>
             </div>
         </div>
-        <div class="row cart-head">
-            <div class="container">
-                <div class="row">
-                    <p></p>
-                </div>
-                <div class="row">
-                    <p></p>
-                </div>
-            </div>
-        </div>
         <div class="row cart-body">
             <form class="form-horizontal" method="post" action="">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+                @csrf
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <!--REVIEW ORDER-->
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -54,6 +45,7 @@
                                         </div>
                                         <div class="col-sm-2 col-xs-2 text-right">
                                             <h6>{{ number_format($cartDetail['price'], 0, '', '.') }}<span>đ</span></h6>
+                                            <h6 class="text-danger">-{{ $cartDetail['sale'] }}%</h6>
                                         </div>
                                     </div>
                                     <div class="form-group"><hr /></div>
@@ -75,6 +67,7 @@
                                     <strong>Tổng cộng</strong>
                                     <div class="pull-right">
                                         <span>{{ number_format($total+$ship, 0, '', '.') }}đ</span>
+                                        <input type="hidden" name="total" value="{{ $total }}">
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +75,7 @@
                     </div>
                     <!--REVIEW ORDER END-->
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <!--SHIPPING METHOD-->
                     <div class="panel panel-info">
                         <div class="panel-heading">Thông tin giao hàng</div>
@@ -91,28 +84,55 @@
                                 <div class="col-md-12">
                                     <strong>Họ tên</strong>
                                     <input type="text" name="name" class="form-control" value="{{ get_data_user('web', 'name') }}" />
+                                    @if($errors->has('name'))
+                                        <span class="error-text">
+                                            {{ $errors->first('name') }}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Địa chỉ*</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="address" class="form-control" value="" />
+                                    <input type="text" name="address" class="form-control" value="{{ old('address') }}" />
+                                    @if($errors->has('address'))
+                                        <span class="error-text">
+                                            {{ $errors->first('address') }}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Số điện thoại*</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="phone" class="form-control" value="" />
+                                    <input type="text" name="phone" class="form-control" value="{{ old('phone') }}" />
+                                    @if($errors->has('phone'))
+                                        <span class="error-text">
+                                            {{ $errors->first('phone') }}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Email</strong></div>
-                                <div class="col-md-12"><input type="text" name="email" class="form-control" value="{{ get_data_user('web', 'email') }}" /></div>
+                                <div class="col-md-12">
+                                    <input type="text" name="email" class="form-control" value="{{ get_data_user('web', 'email') }}" />
+                                    @if($errors->has('email'))
+                                        <span class="error-text">
+                                            {{ $errors->first('email') }}
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <strong>Ghi chú</strong>
-                                    <textarea name="note" id="" cols="30" rows="5" class="form-control"></textarea>
+                                    <textarea name="note" id="" cols="30" rows="5" class="form-control">{{ old('note') }}</textarea>
+                                    @if($errors->has('note'))
+                                        <span class="error-text">
+                                            {{ $errors->first('note') }}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="button-confirm">
