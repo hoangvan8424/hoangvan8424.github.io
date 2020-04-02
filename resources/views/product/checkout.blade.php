@@ -4,6 +4,15 @@
 @section('content')
 
     <div class="container wrapper pt-20 pb-40">
+        <div class="row">
+            <div class="container">
+                <ol class="breadcrumb float-left">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Giỏ hàng</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+                </ol>
+            </div>
+        </div>
         <div class="row cart-head">
             <div class="container">
                 <div class="row">
@@ -25,9 +34,12 @@
                             </div>
                         </div>
                         <div class="panel-body">
+                            @php
+                                $total=0; $ship=0;
+                            @endphp
                             @if(session('cart'))
                                 @foreach(session('cart') as $id => $cartDetail)
-
+                                    @php $total += $cartDetail['price'] * $cartDetail['quantity']; @endphp
                                     <div class="form-group">
                                         <div class="col-sm-3 col-xs-3 pull-left">
                                             <img class="img-responsive" src="{{ asset('/img/product').'/'.$cartDetail['photo'] }}" style="width: 100px; height: 85px;" />
@@ -45,24 +57,25 @@
                                         </div>
                                     </div>
                                     <div class="form-group"><hr /></div>
-
                                 @endforeach
                             @endif
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <strong>Tổng</strong>
-                                    <div class="pull-right"><span>$</span><span>200.00</span></div>
+                                    <strong>Sản phẩm</strong>
+                                    <div class="pull-right"><span>{{ number_format($total, 0, '', '.') }}đ</span></div>
                                 </div>
                                 <div class="col-xs-12">
-                                    <small>Phí vận chuyển</small>
-                                    <div class="pull-right"><span>-</span></div>
+                                    <span>Phí vận chuyển</span>
+                                    <div class="pull-right"><span>{{ number_format($ship, 0, '', '.') }}đ</span></div>
                                 </div>
                             </div>
                             <div class="form-group"><hr /></div>
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <strong>Tổng cộng</strong>
-                                    <div class="pull-right"><span>$</span><span>150.00</span></div>
+                                    <div class="pull-right">
+                                        <span>{{ number_format($total+$ship, 0, '', '.') }}đ</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +90,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <strong>Họ tên</strong>
-                                    <input type="text" name="name" class="form-control" value="" />
+                                    <input type="text" name="name" class="form-control" value="{{ get_data_user('web', 'name') }}" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -94,7 +107,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Email</strong></div>
-                                <div class="col-md-12"><input type="text" name="email" class="form-control" value="" /></div>
+                                <div class="col-md-12"><input type="text" name="email" class="form-control" value="{{ get_data_user('web', 'email') }}" /></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">

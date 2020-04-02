@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Đăng ký')
 @section('content')
     <div class="account-area">
         <div class="container">

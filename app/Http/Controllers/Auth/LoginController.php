@@ -7,9 +7,16 @@ use App\Http\Requests\RequestLogin;
 
 class LoginController extends FrontendController
 {
+    public function redirectTo(){
+        return url()->previous();
+    }
 
     public function getLogin()
     {
+        if(!session()->has('url.intended'))
+        {
+            session(['url.intended' => url()->previous()]);
+        }
         return view('auth.login');
     }
 
