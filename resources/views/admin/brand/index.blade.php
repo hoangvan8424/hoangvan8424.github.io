@@ -1,11 +1,11 @@
 @extends('admin.layouts.master')
-
+@section('title', 'Thương hiệu')
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Admin</a></li>
-            <li class="breadcrumb-item"><a href="{{route('admin.get.list.brand')}}">Danh mục</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Thương hiệu</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.get.list.brand')}}">Thương hiệu</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Danh sách thương hiệu</li>
         </ol>
     </div>
     <h4>Danh sách thương hiệu

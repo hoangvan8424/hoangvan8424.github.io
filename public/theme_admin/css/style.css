@@ -28,3 +28,6 @@ a {
     top: 2px;
     color: #2b542c;
 }
+.table-admin thead > tr th {
+    text-align: center!important;
+}

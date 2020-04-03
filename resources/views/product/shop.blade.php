@@ -53,6 +53,9 @@
                                                         <span class="original">{{ number_format($products->pro_price/(1-$products->pro_sale/100),0,'','.') }}đ</span>
                                                     </p>
                                                 </div>
+{{--                                                <div class="btn-add-to-cart">--}}
+{{--                                                    <button class="btn btn-danger btn-block">Thêm vào giỏ</button>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </a>
                                     </div>

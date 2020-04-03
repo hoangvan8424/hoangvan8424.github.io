@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-
+@section('title', 'Sản phẩm')
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
@@ -74,7 +74,7 @@
                                 </ul>
                             </td>
                             <td>
-                                <img src="/img/product/{{ $products->pro_avatar }}" alt="{{ $products->pro_name }}" height="60" width="70">
+                                <img src="{{ asset('/img/product').'/'.$products->pro_avatar }}" alt="{{ $products->pro_name }}" height="60" width="70">
                             </td>
                             <td>
                                 {{ $products->pro_content }}

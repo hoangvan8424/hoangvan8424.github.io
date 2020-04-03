@@ -5,26 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('img/admin/logo-admin.png') }}">
-    <title>Admin</title>
+    <title>@yield('title')</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('theme_admin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/theme_admin/css/style.css') }}">
 
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="{{ asset('theme_admin/fontawesome/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('/theme_admin/fontawesome/css/all.css') }}">
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('theme_admin/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/theme_admin/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="{{ asset('theme_admin/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+    <link href="{{ asset('/theme_admin/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{ asset('theme_admin/css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('/theme_admin/css/dashboard.css') }}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 
-    <script src="{{ asset('theme_admin/js/ie-emulation-modes-warning.js') }}"></script>
+    <script src="{{ asset('/theme_admin/js/ie-emulation-modes-warning.js') }}"></script>
 
 </head>
 
@@ -72,12 +72,11 @@
                 <li class="{{ Request::is('admin/product') || Request::is('admin/product/*') ? 'active' : '' }}">
                     <a href="{{ route('admin.get.list.product') }}">Sản phẩm</a>
                 </li>
-
-                <li>
-                    <a href="#">Đơn hàng</a>
-                </li>
                 <li class="{{ Request::is('admin/user') || Request::is('admin/user/*') ? 'active' : '' }}">
                     <a href="{{ route('admin.get.list.user') }}">Người dùng</a>
+                </li>
+                <li class="{{ Request::is('admin/transaction') || Request::is('admin/transaction/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.get.list.transaction') }}">Đơn hàng</a>
                 </li>
             </ul>
 
