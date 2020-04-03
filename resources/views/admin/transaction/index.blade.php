@@ -16,7 +16,7 @@
     <div class="table-responsive">
         <table class="table table-striped table-admin text-center">
             <thead>
-            <tr class="danger">
+            <tr class="success">
                 <th>#</th>
                 <th>Tên khách hàng</th>
                 <th>SĐT</th>
@@ -40,12 +40,17 @@
                             <td>{{ number_format($transactions->tr_total, 0, '', '.') }}đ</td>
                             <td>{{ $transactions->tr_note?$transactions->tr_note:'Không' }}</td>
                             <td>
-                                <a href="" class="" title="Thay đổi trạng thái">
-                                    {{ $transactions->tr_status }}
+                                @if($transactions->tr_status==0)
+                                <a href="" class="label label-danger" title="Thay đổi trạng thái">
+                                    Đang chờ xử lý
                                 </a>
+                                @elseif($transactions->tr_status==1)
+                                    <a href="" class="label label-success" title="Thay đổi trạng thái">Đã xử lý</a>
+                                @endif
+
                             </td>
                             <td>
-                                <a href="#">
+                                <a data-toggle="modal" data-target="#myModal" data-id="{{ $transactions->id }}" data-href="{{ route('admin.get.view.order', $transactions->id) }}" class="quick-view-order">
                                     <i class="far fa-eye"></i>
                                 </a>
                             </td>
@@ -57,4 +62,49 @@
         </table>
     </div>
 
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title transaction-id">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="modal-content">
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 @stop
+@section('scripts')
+    <script>
+        $('.quick-view-order').click(function (event) {
+            event.preventDefault();
+            let ele = $(this);
+            let url = ele.attr('data-href');
+            let transactionId = ele.attr('data-id');
+            $('#modal-content').html('');
+            $('.transaction-id').text('Chi tiết đơn hàng #'+transactionId);
+            $.ajax({
+                url: url,
+                cache: false,
+                success: function(result) {
+                    if(result) {
+                        $('#modal-content').append(result);
+                    }
+                }
+            });
+        });
+    </script>
+@endsection

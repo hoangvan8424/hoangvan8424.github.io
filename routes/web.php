@@ -66,6 +66,7 @@ Route::prefix('admin')->group(function () {
 //  Quản lý đơn hàng
     Route::group(['prefix' => 'transaction'], function () {
         Route::get('/', 'AdminTransactionController@index')->name('admin.get.list.transaction');
+        Route::get('/view/{id}', 'AdminTransactionController@viewDetailOrder')->name('admin.get.view.order');
 //        Route::get('/update/{id}', 'AdminUserController@update')->name('admin.get.update.user');
 //        Route::post('/update/{id}', 'AdminUserController@edit');
 //        Route::get('delete/{id}', 'AdminUserController@delete')->name('admin.get.delete.user');

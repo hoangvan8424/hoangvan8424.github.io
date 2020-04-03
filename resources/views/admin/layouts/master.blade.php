@@ -98,11 +98,15 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="{{asset('theme_admin/js/jquery.min.js')}}"></script>
-<script src="{{asset('theme_admin/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/theme_admin/js/jquery.min.js')}}"></script>
+<script src="{{asset('/theme_admin/js/bootstrap.min.js')}}"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="{{asset('theme_admin/js/holder.min.js')}}"></script>
+<script src="{{asset('/theme_admin/js/holder.min.js')}}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="{{asset('theme_admin/js/ie10-viewport-bug-workaround.js')}}"></script>
+<script src="{{asset('/theme_admin/js/ie10-viewport-bug-workaround.js')}}"></script>
+
+<script src="{{ asset('/theme_admin/js/popper.min.js') }}"></script>
+@yield('scripts')
+
 </body>
 </html>
