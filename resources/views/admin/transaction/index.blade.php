@@ -52,7 +52,7 @@
 
                             </td>
                             <td>
-                                <a data-toggle="modal" data-target="#myModal" data-id="{{ $transactions->id }}" data-href="{{ route('admin.get.view.order', $transactions->id) }}" class="quick-view-order">
+                                <a data-toggle="modal" data-target="#myModal" data-id="{{ $transactions->id }}" data-href="{{ route('admin.get.view.order', $transactions->id) }}" class="quick-view-order" type="button">
                                     <i class="far fa-eye"></i>
                                 </a>
                             </td>
@@ -71,14 +71,11 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title transaction-id">Modal Heading</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-
                 <!-- Modal body -->
                 <div class="modal-body" id="modal-content">
 
                 </div>
-
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
