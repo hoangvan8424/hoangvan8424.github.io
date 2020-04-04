@@ -24,6 +24,7 @@
                 <th>Địa chỉ</th>
                 <th>Tổng tiền</th>
                 <th>Ghi chú</th>
+                <th>Thời gian</th>
                 <th>Trạng thái</th>
                 <th>Tùy chọn</th>
             </tr>
@@ -39,6 +40,7 @@
                             <td>{{ $transactions->tr_address }}</td>
                             <td>{{ number_format($transactions->tr_total, 0, '', '.') }}đ</td>
                             <td>{{ $transactions->tr_note?$transactions->tr_note:'Không' }}</td>
+                            <td>{{ $transactions->created_at }}</td>
                             <td>
                                 @if($transactions->tr_status==0)
                                 <a href="" class="label label-danger" title="Thay đổi trạng thái">

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestTransaction;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Transaction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -103,7 +106,8 @@ class ShoppingCartController extends FrontendController
             'tr_user_phone' => $requestTransaction->phone,
             'tr_address' => $requestTransaction->address,
             'tr_total' => $requestTransaction->total,
-            'tr_note' => $requestTransaction->note
+            'tr_note' => $requestTransaction->note,
+            'created_at' => Carbon::now()
         ]);
 
         if($transactionId)
@@ -114,7 +118,8 @@ class ShoppingCartController extends FrontendController
                     'product_id' => $id,
                     'or_quantity' => $cartDetail['quantity'],
                     'or_price' => $cartDetail['price'],
-                    'or_sale' => $cartDetail['sale']
+                    'or_sale' => $cartDetail['sale'],
+                    'created_at' => Carbon::now()
                 ]);
             }
             session()->forget('cart');

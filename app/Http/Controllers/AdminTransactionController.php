@@ -10,7 +10,7 @@ class AdminTransactionController extends Controller
 {
     public function index()
     {
-        $transaction = Transaction::paginate(10);
+        $transaction = Transaction::orderBy('id', 'desc')->paginate(10);
         $viewData = [
             'transaction' => $transaction
         ];
