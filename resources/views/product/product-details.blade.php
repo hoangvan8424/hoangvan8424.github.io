@@ -92,8 +92,7 @@
                         </div>
                         <!-- Thông số kỹ thuật -->
                         <div id="information" class="pro-details-tab pro-info-tab tab-pane">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            {!! $product->pro_configuration !!}
                         </div>
                         <!-- Đánh giá -->
                         <div id="reviews" class="pro-details-tab pro-rev-tab tab-pane">

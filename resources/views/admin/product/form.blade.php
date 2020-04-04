@@ -83,7 +83,7 @@
         <div class="col-sm-5">
             <div class="form-group">
                 <label>Thông số cấu hình</label>
-                <textarea class="form-control" id="editor2" name="pro_configuration" cols="100" rows="20" placeholder="Nhập thông số cấu hình">{{ isset($product->pro_cofiguration)?old('pro_configuration', $product->pro_configuration):'' }}</textarea>
+                <textarea class="form-control" id="editor2" name="pro_configuration" cols="100" rows="20" placeholder="Nhập thông số cấu hình">{{ isset($product->pro_configuration)?old('pro_configuration', $product->pro_configuration):'' }}</textarea>
                 @if($errors->has('pro_configuration'))
                     <span class="error-text">
                         {{$errors->first('pro_configuration')}}
