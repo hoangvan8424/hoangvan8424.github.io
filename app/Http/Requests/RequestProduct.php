@@ -30,6 +30,7 @@ class RequestProduct extends FormRequest
             'pro_avatar' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
             'pro_description' => 'required',
             'pro_content' => 'required',
+            'pro_configuration' => 'required',
             'brand_id'  => 'required'
 
         ];
@@ -50,7 +51,8 @@ class RequestProduct extends FormRequest
             'pro_avatar.mimes' => 'Hình ảnh vừa chọn không đúng định dạng ảnh (.jpg, .jpeg, .png, .gif, .svg)',
             'pro_avatar.max' => 'Kích thước ảnh quá lớn (>2MB), hãy chọn ảnh có kích thước nhỏ hơn!',
             'pro_description.required' => 'Mô tả không được để trống.',
-            'pro_content.required' => 'Nội dung không được để trống',
+            'pro_configuration.required' => 'Thông số cấu hình không được bỏ trống.',
+            'pro_content.required' => 'Đặc điểm nổi bật không được để trống',
             'brand_id.required' => 'Thương hiệu không được để trống!'
         ];
     }
