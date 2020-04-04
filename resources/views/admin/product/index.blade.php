@@ -49,7 +49,9 @@
                 <th>#</th>
                 <th style="width: 15%">Sản phẩm</th>
                 <th>Hình ảnh</th>
-                <th width="30%">Mô tả</th>
+                <th>Mô tả</th>
+                <th>Nội dung</th>
+                <th>Cấu hình</th>
                 <th>Thương hiệu</th>
                 <th>Danh mục</th>
                 <th>Trạng thái</th>
@@ -76,9 +78,12 @@
                             <td>
                                 <img src="{{ asset('/img/product').'/'.$products->pro_avatar }}" alt="{{ $products->pro_name }}" height="60" width="70">
                             </td>
+                            <td>{{ $products->pro_description }}</td>
+
                             <td>
                                 {{ $products->pro_content }}
                             </td>
+                            <td>{{ $products->pro_configuration }}</td>
                             <td>
                                 {{ $products->getBrandName->brand_name }}
                             </td>

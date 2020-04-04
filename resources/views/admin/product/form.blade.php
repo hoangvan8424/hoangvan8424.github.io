@@ -21,31 +21,11 @@
                 @endif
             </div>
             <div class="form-group">
-                <label>Nội dung</label>
-                <textarea class="form-control" id="editor" name="pro_content" cols="100" rows="10" placeholder="Nhập nội dung sản phẩm">{{ isset($product->pro_content)?old('pro_content', $product->pro_content):'' }}</textarea>
+                <label>Đặc điểm nổi bật</label>
+                <textarea class="form-control" id="editor" name="pro_content" cols="100" rows="20" placeholder="Nhập đặc điểm nổi bật">{{ isset($product->pro_content)?old('pro_content', $product->pro_content):'' }}</textarea>
                 @if($errors->has('pro_content'))
                     <span class="error-text">
                         {{$errors->first('pro_content')}}
-                    </span>
-                @endif
-            </div>
-            <div class="form-group">
-                <label for="">Từ khóa seo</label>
-                <input type="text" name="pro_keyword_seo" class="form-control" id="" placeholder="Nhập từ khóa seo" value="{{ isset($product->pro_keyword_seo)?old('pro_keyword_seo', $product->pro_keyword_seo):'' }}">
-            </div>
-            <div class="form-group">
-                <label for="">Mô tả seo</label>
-                <input type="text" name="pro_description_seo" class="form-control" id="" placeholder="Nhập mô tả seo" value="{{ isset($product->pro_description_seo)?old('pro_description_seo', $product->pro_description_seo):'' }}">
-            </div>
-        </div>
-        <div class="col-sm-5">
-            <div class="form-group">
-                <label for="pro_avatar">Hình ảnh</label>
-                <input type="file" class="form-control" name="pro_avatar">
-                <input type="hidden" name="pro_avatar_update" value="{{ isset($product->pro_avatar) ? $product->pro_avatar : '' }}">
-                @if($errors->has('pro_avatar'))
-                    <span class="error-text">
-                        {{$errors->first('pro_avatar')}}
                     </span>
                 @endif
             </div>
@@ -98,6 +78,35 @@
             </div>
             <div class="checkbox">
                 <label><input type="checkbox" name="hot" value="1" {{ old('hot', isset($product->hot) ? $product->hot : '' == 1 ? 'checked' : '') }} >Nổi bật</label>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label>Thông số cấu hình</label>
+                <textarea class="form-control" id="editor2" name="pro_configuration" cols="100" rows="20" placeholder="Nhập thông số cấu hình">{{ isset($product->pro_cofiguration)?old('pro_configuration', $product->pro_configuration):'' }}</textarea>
+                @if($errors->has('pro_configuration'))
+                    <span class="error-text">
+                        {{$errors->first('pro_configuration')}}
+                    </span>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="">Từ khóa seo</label>
+                <input type="text" name="pro_keyword_seo" class="form-control" id="" placeholder="Nhập từ khóa seo" value="{{ isset($product->pro_keyword_seo)?old('pro_keyword_seo', $product->pro_keyword_seo):'' }}">
+            </div>
+            <div class="form-group">
+                <label for="">Mô tả seo</label>
+                <input type="text" name="pro_description_seo" class="form-control" id="" placeholder="Nhập mô tả seo" value="{{ isset($product->pro_description_seo)?old('pro_description_seo', $product->pro_description_seo):'' }}">
+            </div>
+            <div class="form-group">
+                <label for="pro_avatar">Hình ảnh</label>
+                <input type="file" class="form-control" name="pro_avatar">
+                <input type="hidden" name="pro_avatar_update" value="{{ isset($product->pro_avatar) ? $product->pro_avatar : '' }}">
+                @if($errors->has('pro_avatar'))
+                    <span class="error-text">
+                        {{$errors->first('pro_avatar')}}
+                    </span>
+                @endif
             </div>
         </div>
 

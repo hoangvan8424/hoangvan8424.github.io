@@ -86,23 +86,16 @@
                         <li><a href="#reviews" data-toggle="tab">Đánh giá</a></li>
                     </ul>
                     <div class="tab-content fix">
-                        <!-- Product Info Tab -->
+                        <!-- Đặc điểm nổi bật -->
                         <div id="description" class="pro-details-tab pro-dsc-tab tab-pane active">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet, consectetur product</li>
-                                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
-                                <li>Excepteur sinted occaecat cupidatat non proident products</li>
-                                <li>Voluptate velit esse cillum.</li>
-                            </ul>
+                            {!! $product->pro_content !!}
                         </div>
-                        <!-- Product Info Tab -->
+                        <!-- Thông số kỹ thuật -->
                         <div id="information" class="pro-details-tab pro-info-tab tab-pane">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
-                        <!-- Product Info Tab -->
+                        <!-- Đánh giá -->
                         <div id="reviews" class="pro-details-tab pro-rev-tab tab-pane">
                             <div class="review-wrapper fix">
                                 <div class="sin-review">
