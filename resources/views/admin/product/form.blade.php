@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label>Nội dung</label>
-                <textarea class="form-control" name="pro_content" cols="30" rows="5" placeholder="Nhập nội dung sản phẩm">{{ isset($product->pro_content)?old('pro_content', $product->pro_content):'' }}</textarea>
+                <textarea class="form-control" id="editor" name="pro_content" cols="100" rows="10" placeholder="Nhập nội dung sản phẩm">{{ isset($product->pro_content)?old('pro_content', $product->pro_content):'' }}</textarea>
                 @if($errors->has('pro_content'))
                     <span class="error-text">
                         {{$errors->first('pro_content')}}

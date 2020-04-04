@@ -23,8 +23,10 @@
     <link href="{{ asset('/theme_admin/css/dashboard.css') }}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-
     <script src="{{ asset('/theme_admin/js/ie-emulation-modes-warning.js') }}"></script>
+
+    <!-- CKEditor -->
+    <script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
 
 </head>
 
@@ -106,6 +108,18 @@
 <script src="{{asset('/theme_admin/js/ie10-viewport-bug-workaround.js')}}"></script>
 
 <script src="{{ asset('/theme_admin/js/popper.min.js') }}"></script>
+
+<!-- CKEditor -->
+<script>
+    CKEDITOR.replace('editor', {
+        filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
+        filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
+        filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
+        filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+        filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+        filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+    });
+</script>
 @yield('scripts')
 
 </body>

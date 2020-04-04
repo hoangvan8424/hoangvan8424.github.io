@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-
+@section('title', 'Cập nhật sản phẩm')
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
