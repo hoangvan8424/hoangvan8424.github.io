@@ -81,13 +81,13 @@
             <div class="col-xs-12 mt-40">
                 <div class="pro-details-tab-container fix">
                     <ul class="pro-details-tablist fix">
-                        <li class="active"><a href="#description" data-toggle="tab">Đặc điểm nổi bật</a></li>
+                        <li><a href="#description" data-toggle="tab">Đặc điểm nổi bật</a></li>
                         <li><a href="#information" data-toggle="tab">Thông số kỹ thuật</a></li>
-                        <li><a href="#reviews" data-toggle="tab">Đánh giá</a></li>
+                        <li class="active"><a href="#reviews" data-toggle="tab">Đánh giá</a></li>
                     </ul>
                     <div class="tab-content fix">
                         <!-- Đặc điểm nổi bật -->
-                        <div id="description" class="pro-details-tab pro-dsc-tab tab-pane active">
+                        <div id="description" class="pro-details-tab pro-dsc-tab tab-pane">
                             {!! $product->pro_content !!}
                         </div>
                         <!-- Thông số kỹ thuật -->
@@ -95,7 +95,7 @@
                             {!! $product->pro_configuration !!}
                         </div>
                         <!-- Đánh giá -->
-                        <div id="reviews" class="pro-details-tab pro-rev-tab tab-pane">
+                        <div id="reviews" class="pro-details-tab pro-rev-tab tab-pane active">
                             <div class="review-wrapper fix">
                                 <div class="sin-review">
                                     <div class="review-image">
@@ -148,48 +148,53 @@
                                 <h3>write a review</h3>
                                 <div class="review-form">
                                     <form action="#">
-                                        <div class="star-box fix">
-                                            <h4>your Rating</h4>
-                                            <div class="star star-1">
-                                                <i class="zmdi zmdi-star-outline"></i>
+                                        <div class="list-review">
+                                            <div class="row">
+                                                <div class="col-sm-6" style="border-right: 1px solid #f3f3f3;">
+                                                    @for($i=1;$i<=5;$i++)
+                                                        <div style="width: 100%">
+                                                            {{ $i }}<i class="fa fa-star" style="width: 10%; margin-left: 15px;"></i>
+                                                            <div class="bgb" style="width: 50%">
+                                                                <div class="bgb-color"></div>
+                                                            </div>
+                                                            <a href="" style="width: 20%; margin-left: 15px;">0 đánh giá</a>
+                                                        </div>
+                                                    @endfor
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <button type="button" class="btn btn-warning" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</button>
+                                                </div>
                                             </div>
-                                            <div class="star star-2">
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
+                                            <div class="row ips" style="padding: 32px;">
+                                                <span>Chọn đánh giá của bạn: </span>
+                                                <span class="cStar">
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                    <i class="fa fa-star fa-2x"></i>
+                                                </span>
+                                                <span class="lStar">Không thích</span>
                                             </div>
-                                            <div class="star star-3">
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
+                                            <div class="sForm">
+                                                <div class="input-box-2 fix">
+                                                    <div class="input-box float-left">
+                                                        <input id="name" placeholder="Nhập tên của bạn" type="text">
+                                                    </div>
+                                                    <div class="input-box float-left">
+                                                        <input placeholder="Nhập email" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="input-box review-box fix">
+                                                    <textarea placeholder="Nhập đánh giá (tối thiểu 80 ký tự)"></textarea>
+                                                </div>
+                                                <div class="input-box submit-box fix">
+                                                    <button type="submit" class="btn btn-danger">Gửi đánh giá</button>
+                                                </div>
                                             </div>
-                                            <div class="star star-4">
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                            </div>
-                                            <div class="star star-5">
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                                <i class="zmdi zmdi-star-outline"></i>
-                                            </div>
+
                                         </div>
-                                        <div class="input-box-2 fix">
-                                            <div class="input-box float-left">
-                                                <input id="name" placeholder="Type your name" type="text">
-                                            </div>
-                                            <div class="input-box float-left">
-                                                <input placeholder="Type your email" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="input-box review-box fix">
-                                            <textarea placeholder="Write your review"></textarea>
-                                        </div>
-                                        <div class="input-box submit-box fix">
-                                            <input value="submit review" type="submit">
-                                        </div>
+
                                     </form>
                                 </div>
                             </div>
