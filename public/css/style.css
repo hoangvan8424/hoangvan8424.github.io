@@ -8160,15 +8160,13 @@ h3.widget-title-modal {
     color: #ce1111;
 }
 
-<<<<<<< HEAD
-.list-review{
+.list-review {
     border: 1px solid #f3f3f3;
     border-radius: 5px;
     padding: 20px;
-=======
+}
 .list-review .star i{
     margin-left: 15px;
->>>>>>> 273ba1192e4d4244f9ddcaacac7812c25224738e
 }
 .list-review .bgb {
     height: 8px;
@@ -8181,15 +8179,18 @@ h3.widget-title-modal {
     width: 20%;
     background: #c51f1a;
 }
-<<<<<<< HEAD
 
 .list-review .cStar {
     cursor: pointer;
+    position: relative;
+    top: 3px;
+    margin-left: 5px;
 }
-.list-review .cStar:hover i {
-    color: yellow;
+.list-review .cStar i {
+    padding: 0 5px;
 }
-.list-review .lStar {
+
+.list-review .list-text {
     display: inline-block;
     background: #52b858;
     color: #fff;
@@ -8200,7 +8201,7 @@ h3.widget-title-modal {
     position: relative;
     border-radius: 3px;
 }
-.list-review .lStar::before {
+.list-review .list-text::before {
     content: "";
     border: solid transparent;
     border-right-color: #52b858;
@@ -8209,5 +8210,3 @@ h3.widget-title-modal {
     top: 7px;
     left: -14px;
 }
-=======
->>>>>>> 273ba1192e4d4244f9ddcaacac7812c25224738e
