@@ -6509,8 +6509,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .review-form {
-    margin-left: -15px;
-    margin-right: -15px;
+    /*margin-left: -15px;*/
+    /*margin-right: -15px;*/
 }
 
 .review-form .star-box {
@@ -8158,4 +8158,19 @@ h3.widget-title-modal {
     font-size: 70px;
     margin-bottom: 15px;
     color: #ce1111;
+}
+
+.list-review .star i{
+    margin-left: 15px;
+}
+.list-review .bgb {
+    height: 8px;
+    background: #ccc;
+    display: inline-block;
+}
+
+.list-review .bgb .bgb-color {
+    height: 8px;
+    width: 20%;
+    background: #c51f1a;
 }

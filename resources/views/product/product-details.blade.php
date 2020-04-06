@@ -148,6 +148,25 @@
                                 <h3>write a review</h3>
                                 <div class="review-form">
                                     <form action="#">
+                                        <div class="list-review">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    @for($i=1;$i<=5;$i++)
+                                                        <div style="width: 100%">
+                                                            {{ $i }}<i class="fa fa-star" style="width: 10%; margin-left: 15px;"></i>
+                                                            <div class="bgb" style="width: 50%">
+                                                                <div class="bgb-color"></div>
+                                                            </div>
+                                                            <a href="" style="width: 20%; margin-left: 15px;">0 đánh giá</a>
+                                                        </div>
+                                                    @endfor
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <button type="button" class="btn btn-warning" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="star-box fix">
                                             <h4>your Rating</h4>
                                             <div class="star star-1">
