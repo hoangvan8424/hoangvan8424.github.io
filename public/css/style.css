@@ -8188,13 +8188,25 @@ h3.widget-title-modal {
 }
 .list-review .cStar i {
     padding: 0 5px;
+    color: #ccc;
 }
-
+.list-review .ips, .list-review .sForm {
+    transition: 1s;
+}
+.list-review .button-review.no-active {
+    background-color: transparent!important;
+    color: #f0ad4e!important;
+    border-color: #d58512!important;
+}
+.list-review .cStar .star-active {
+    color: #ff9705!important;
+}
 .list-review .list-text {
-    display: inline-block;
+    display: none;
     background: #52b858;
     color: #fff;
-    padding: 2px 8px;
+    padding: 6px 8px;
+    font-weight: 500;
     box-sizing: border-box;
     font-size: 12px;
     margin-left: 10px;
@@ -8203,10 +8215,9 @@ h3.widget-title-modal {
 }
 .list-review .list-text::before {
     content: "";
-    border: solid transparent;
+    border: 7px solid transparent;
     border-right-color: #52b858;
-    border-width: 7px;
     position: absolute;
-    top: 7px;
+    top: 6px;
     left: -14px;
 }

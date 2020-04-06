@@ -162,36 +162,36 @@
                                                     @endfor
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <button type="button" class="btn btn-warning" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</button>
+                                                    <a href="#" class="btn btn-warning button-review" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</a>
                                                 </div>
                                             </div>
-                                            <div class="row ips" style="padding: 32px;">
-                                                <span>Chọn đánh giá của bạn: </span>
-                                                <span class="cStar">
-                                                    <i class="fa fa-star fa-2x"></i>
-                                                    <i class="fa fa-star fa-2x"></i>
-                                                    <i class="fa fa-star fa-2x"></i>
-                                                    <i class="fa fa-star fa-2x"></i>
-                                                    <i class="fa fa-star fa-2x"></i>
+
+                                            <div class="row ips hide" style="padding: 32px;">
+                                                    <span>Chọn đánh giá của bạn: </span>
+                                                    <span class="cStar">
+                                                    @for($i=1;$i<=5;$i++)
+                                                            <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
+                                                        @endfor
                                                 </span>
-                                                <span class="list-text">Không thích</span>
-                                            </div>
-                                            <div class="sForm">
-                                                <div class="input-box-2 fix">
-                                                    <div class="input-box float-left">
-                                                        <input id="name" placeholder="Nhập tên của bạn" type="text">
+                                                    <span class="list-text"></span>
+                                                </div>
+                                            <div class="sForm hide">
+                                                    <div class="input-box-2 fix">
+                                                        <div class="input-box float-left">
+                                                            <input id="name" placeholder="Nhập tên của bạn" type="text">
+                                                        </div>
+                                                        <div class="input-box float-left">
+                                                            <input placeholder="Nhập email" type="text">
+                                                        </div>
                                                     </div>
-                                                    <div class="input-box float-left">
-                                                        <input placeholder="Nhập email" type="text">
+                                                    <div class="input-box review-box fix">
+                                                        <textarea placeholder="Nhập đánh giá (tối thiểu 80 ký tự)"></textarea>
+                                                    </div>
+                                                    <div class="input-box submit-box fix">
+                                                        <button type="submit" class="btn btn-danger">Gửi đánh giá</button>
                                                     </div>
                                                 </div>
-                                                <div class="input-box review-box fix">
-                                                    <textarea placeholder="Nhập đánh giá (tối thiểu 80 ký tự)"></textarea>
-                                                </div>
-                                                <div class="input-box submit-box fix">
-                                                    <button type="submit" class="btn btn-danger">Gửi đánh giá</button>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </form>
                                 </div>
@@ -378,6 +378,50 @@
                 }
             });
         });
+
+        let listStar = $('.cStar .fa');
+        var listText = {
+            1 : 'Không thích',
+            2 : 'Tạm được',
+            3 : 'Bình thường',
+            4 : 'Rất tốt',
+            5 : 'Tuyệt vời'
+        };
+        listStar.mouseover(function () {
+            let ele = $(this);
+            let data = ele.attr('data-key');
+            listStar.removeClass('star-active');
+
+            $.each(listStar, function (key, value) {
+                if(key+1 <= data) {
+                    $(this).addClass('star-active');
+                }
+            });
+
+            $('.list-text').text('').text(listText[data]).show();
+        });
+        $('.button-review').click(function (event) {
+            event.preventDefault();
+            if($('.ips').hasClass('hide')) {
+                $('.ips').addClass('active').removeClass('hide');
+                $(this).text('Đóng lại');
+                $(this).addClass('no-active');
+
+            }
+            else {
+                $('.ips').addClass('hide').removeClass('active');
+                $(this).text('Gửi đánh giá của bạn');
+                $(this).removeClass('no-active');
+                $('.sForm').addClass('hide');
+            }
+
+        });
+
+        listStar.click(function () {
+            $('.sForm').removeClass('hide');
+        });
+
+
     </script>
 @endsection
 
