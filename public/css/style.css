@@ -8160,10 +8160,15 @@ h3.widget-title-modal {
     color: #ce1111;
 }
 
+<<<<<<< HEAD
 .list-review{
     border: 1px solid #f3f3f3;
     border-radius: 5px;
     padding: 20px;
+=======
+.list-review .star i{
+    margin-left: 15px;
+>>>>>>> 273ba1192e4d4244f9ddcaacac7812c25224738e
 }
 .list-review .bgb {
     height: 8px;
@@ -8176,6 +8181,7 @@ h3.widget-title-modal {
     width: 20%;
     background: #c51f1a;
 }
+<<<<<<< HEAD
 
 .list-review .cStar {
     cursor: pointer;
@@ -8203,3 +8209,5 @@ h3.widget-title-modal {
     top: 7px;
     left: -14px;
 }
+=======
+>>>>>>> 273ba1192e4d4244f9ddcaacac7812c25224738e

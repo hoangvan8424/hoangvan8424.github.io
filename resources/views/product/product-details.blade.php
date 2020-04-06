@@ -150,7 +150,11 @@
                                     <form action="#">
                                         <div class="list-review">
                                             <div class="row">
+<<<<<<< HEAD
                                                 <div class="col-sm-6" style="border-right: 1px solid #f3f3f3;">
+=======
+                                                <div class="col-sm-6">
+>>>>>>> 273ba1192e4d4244f9ddcaacac7812c25224738e
                                                     @for($i=1;$i<=5;$i++)
                                                         <div style="width: 100%">
                                                             {{ $i }}<i class="fa fa-star" style="width: 10%; margin-left: 15px;"></i>
@@ -164,6 +168,16 @@
                                                 <div class="col-sm-6">
                                                     <button type="button" class="btn btn-warning" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</button>
                                                 </div>
+<<<<<<< HEAD
+=======
+                                            </div>
+                                        </div>
+
+                                        <div class="star-box fix">
+                                            <h4>your Rating</h4>
+                                            <div class="star star-1">
+                                                <i class="zmdi zmdi-star-outline"></i>
+>>>>>>> 273ba1192e4d4244f9ddcaacac7812c25224738e
                                             </div>
                                             <div class="row ips" style="padding: 32px;">
                                                 <span>Chọn đánh giá của bạn: </span>
