@@ -95,56 +95,7 @@
                         </div>
                         <!-- Đánh giá -->
                         <div id="reviews" class="pro-details-tab pro-rev-tab tab-pane active">
-                            <div class="review-wrapper fix">
-                                <div class="sin-review">
-                                    <div class="review-image">
-                                        <img src="{{ asset('/img/review/1.jpg') }}" alt="" />
-                                    </div>
-                                    <div class="review-details fix">
-                                        <div class="review-author float-left">
-                                            <h3>Gerald Barnes</h3>
-                                            <div class="review-star float-left">
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                            </div>
-                                            <span>27 Jun 2017 at 12:24pm</span>
-                                        </div>
-                                        <div class="replay-delect float-right">
-                                            <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                    </div>
-                                </div>
-                                <div class="sin-review">
-                                    <div class="review-image">
-                                        <img src="{{ asset('/img/review/2.jpg') }}" alt="" />
-                                    </div>
-                                    <div class="review-details fix">
-                                        <div class="review-author float-left">
-                                            <h3>Gerald Barnes</h3>
-                                            <div class="review-star float-left">
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                            </div>
-                                            <span>27 Jun 2017 at 12:24pm</span>
-                                        </div>
-                                        <div class="replay-delect float-right">
-                                            <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="review-form-wrapper fix">
-                                <h3>write a review</h3>
                                 <div class="review-form">
                                     <div class="list-review">
                                         <div class="row">
@@ -161,18 +112,17 @@
                                                 @endfor
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="#" class="btn btn-warning button-review"
-                                                   style="transform: translate(150px,35px);">Gửi đánh giá của bạn</a>
+                                                <a href="#" class="btn btn-warning button-review" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</a>
                                             </div>
                                         </div>
 
                                         <div class="row ips hide" style="padding: 32px;">
                                             <span>Chọn đánh giá của bạn: </span>
                                             <span class="cStar">
-                                                    @for($i=1;$i<=5;$i++)
+                                                @for($i=1;$i<=5;$i++)
                                                     <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
                                                 @endfor
-                                                </span>
+                                            </span>
                                             <span class="list-text"></span>
                                         </div>
                                         <div class="sForm hide">
@@ -189,6 +139,29 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="review-wrapper fix mt-40">
+                                @if(isset($review))
+                                    @foreach($review as $reviews)
+                                        <div class="sin-review">
+                                            <div class="review-details fix">
+                                                <div class="review-author float-left">
+                                                    <h3>{{ $reviews->user->name }}</h3>
+                                                    <div class="review-star float-left">
+                                                        @for($i=1;$i<=5;$i++)
+                                                            <i class="zmdi zmdi-star {{ $i<=$reviews->re_rating ? 'active':'' }}"></i>
+                                                        @endfor
+                                                    </div>
+                                                    <div>
+                                                        <span>{{ date_format($reviews->created_at, 'd-m-Y H:i:s') }}</span>
+                                                        <a href="#">Trả lời</a>
+                                                    </div>
+                                                </div>
+                                                <p>{{ $reviews->re_comment }}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>

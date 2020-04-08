@@ -48,42 +48,55 @@
             <tr class="success">
                 <th>#</th>
                 <th style="width: 15%">Sản phẩm</th>
-                <th>Hình ảnh</th>
+                <th>Ảnh</th>
                 <th>Mô tả</th>
-                <th>Nội dung</th>
-                <th>Cấu hình</th>
-                <th>Thương hiệu</th>
-                <th>Danh mục</th>
+                <th>Hiệu</th>
+                <th>D/m</th>
                 <th>Trạng thái</th>
-                <th>Loại s/p</th>
+                <th>Loại</th>
                 <th style="width: 11%;">Tùy chọn</th>
             </tr>
             </thead>
             <tbody>
                 @if(isset($product))
+                    @php
+                        $count = 0;
+                        $rating = 0;
+                    @endphp
                     @foreach($product as $products)
+                        @php
+                            if($products->pro_rating_count>0) {
+                                $count = $products->pro_rating_count;
+                                $rating = round($products->pro_rating_total/$count, 1);
+                            }
+                        @endphp
                         <tr>
                             <td>{{ $products->id }}</td>
-                            <td class="tb-pro-name" style="width: 470px;">
+                            <td class="tb-pro-name" style="width: 30%;">
                                 <p>{{ $products->pro_name }}</p>
-                                <ul>
+                                <ul style="position: relative; left: -22px; font-weight: 500;">
                                     <li>
-                                        {{ number_format($products->pro_price, 0, '', '.') }}đ
+                                        Giá: {{ number_format($products->pro_price, 0, '', '.') }}đ
                                     </li>
                                     <li>
-                                        {{ $products->pro_sale }}%
+                                        Sale: {{ $products->pro_sale }}%
+                                    </li>
+                                    <li>
+                                        Đánh giá:
+                                        @for($i=1;$i<=5;$i++)
+                                            <i class="fa fa-star {{ $i<= $rating ? 'active':'' }}"></i>
+                                        @endfor
+                                        @if($rating>0)
+                                            {{ $rating }}
+                                        @endif
                                     </li>
                                 </ul>
                             </td>
                             <td>
-                                <img src="{{ asset('/img/product').'/'.$products->pro_avatar }}" alt="{{ $products->pro_name }}" height="60" width="70">
+                                <img src="{{ asset('/img/product').'/'.$products->pro_avatar }}" alt="{{ $products->pro_name }}" height="60" width="65">
                             </td>
-                            <td>{{ $products->pro_description }}</td>
+                            <td>{!! $products->pro_description !!}</td>
 
-                            <td>
-                                {{ $products->pro_content }}
-                            </td>
-                            <td>{{ $products->pro_configuration }}</td>
                             <td>
                                 {{ $products->getBrandName->brand_name }}
                             </td>

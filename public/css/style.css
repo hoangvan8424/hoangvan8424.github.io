@@ -6350,7 +6350,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 /* Product Review Tab */
 .pro-rev-tab {
-    max-width: 910px;
+    /*max-width: 910px;*/
     width: 100%;
 }
 
@@ -6385,29 +6385,34 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-weight: 600;
     line-height: 12px;
     margin: 0 30px 0 0;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .review-author span {
     color: #909090;
-    display: block;
+    display: inline-block;
     float: left;
     font-size: 12px;
     line-height: 12px;
     margin-top: 7px;
-    overflow: hidden;
-    width: 100%;
+    /*overflow: hidden;*/
+    /*width: 100%;*/
+    margin-right: 15px;
 }
 
 .review-author .review-star {
 }
 
 .review-author .review-star i {
-    color: #ec4445;
     display: block;
     float: left;
     line-height: 12px;
     margin-right: 3px;
+}
+
+.review-author .review-star i.active {
+    color: #ec4445!important;
+
 }
 
 .sin-review .replay-delect {
@@ -6442,7 +6447,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: block;
     float: left;
     line-height: 20px;
-    margin-top: 18px;
+    margin-top: 5px;
 }
 
 /* Review Form */

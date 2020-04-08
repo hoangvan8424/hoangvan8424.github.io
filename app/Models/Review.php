@@ -15,21 +15,21 @@ class Review extends Model
 
     public function user()
     {
-        return $this->belongsTo('users');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function scopeApproved($query)
     {
-        return $query->where('re_approved', true);
+        return $query->where('re_approved', 1);
     }
 
     public function scopeSpam($query)
     {
-        return $query->where('re_spam', true);
+        return $query->where('re_spam', 1);
     }
 
     public function scopeNotSpam($query)
     {
-        return $query->where('re_spam', false);
+        return $query->where('re_spam', 0);
     }
 }
