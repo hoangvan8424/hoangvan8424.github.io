@@ -65,7 +65,6 @@
                                     <i class="zmdi zmdi-favorite-outline"></i>
                                 </button>
 							</div>
-
 						</div>
 						<div class="pro-thumb-slider">
 							<div class="sin-item"><a href="#pro-img-1" data-toggle="tab"><img src="{{ asset('/img/single-product/1.1.jpg') }}" alt="" /></a></div>
@@ -147,45 +146,48 @@
                             <div class="review-form-wrapper fix">
                                 <h3>write a review</h3>
                                 <div class="review-form">
-{{--                                    <form action="#">--}}
-                                        <div class="list-review">
-                                            <div class="row">
-                                                <div class="col-sm-6" style="border-right: 1px solid #f3f3f3;">
-                                                    @for($i=1;$i<=5;$i++)
-                                                        <div style="width: 100%">
-                                                            {{ $i }}<i class="fa fa-star" style="width: 10%; margin-left: 15px;"></i>
-                                                            <div class="bgb" style="width: 50%">
-                                                                <div class="bgb-color"></div>
-                                                            </div>
-                                                            <a href="" style="width: 20%; margin-left: 15px;">0 đánh giá</a>
+                                    <div class="list-review">
+                                        <div class="row">
+                                            <div class="col-sm-6" style="border-right: 1px solid #f3f3f3;">
+                                                @for($i=1;$i<=5;$i++)
+                                                    <div style="width: 100%">
+                                                        {{ $i }}<i class="fa fa-star"
+                                                                   style="width: 10%; margin-left: 15px;"></i>
+                                                        <div class="bgb" style="width: 50%">
+                                                            <div class="bgb-color"></div>
                                                         </div>
-                                                    @endfor
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <a href="#" class="btn btn-warning button-review" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</a>
-                                                </div>
+                                                        <a href="" style="width: 20%; margin-left: 15px;">0 đánh giá</a>
+                                                    </div>
+                                                @endfor
                                             </div>
+                                            <div class="col-sm-6">
+                                                <a href="#" class="btn btn-warning button-review"
+                                                   style="transform: translate(150px,35px);">Gửi đánh giá của bạn</a>
+                                            </div>
+                                        </div>
 
-                                            <div class="row ips hide" style="padding: 32px;">
-                                                <span>Chọn đánh giá của bạn: </span>
-                                                <span class="cStar">
+                                        <div class="row ips hide" style="padding: 32px;">
+                                            <span>Chọn đánh giá của bạn: </span>
+                                            <span class="cStar">
                                                     @for($i=1;$i<=5;$i++)
-                                                        <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
-                                                    @endfor
+                                                    <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
+                                                @endfor
                                                 </span>
-                                                <span class="list-text"></span>
-                                            </div>
-                                            <div class="sForm hide">
+                                            <span class="list-text"></span>
+                                        </div>
+                                        <div class="sForm hide">
+                                            <form method="post">
                                                 <div class="form-group" style="padding: 0 20px">
                                                     <textarea class="form-control text-review" placeholder="Nhập đánh giá (tối thiểu 80 ký tự)" rows="7"></textarea>
                                                     <input type="hidden" class="star-hidden" name="star-hidden">
                                                 </div>
                                                 <div class="input-box submit-box fix">
-                                                    <button class="btn btn-danger button-submit-review" data-id="{{ $product->id }}">Gửi đánh giá</button>
+                                                    <button type="submit" class="btn btn-danger" id="button-submit-review" data-id="{{ $product->id }}">Gửi đánh giá
+                                                    </button>
                                                 </div>
-                                            </div>
+                                            </form>
                                         </div>
-{{--                                    </form>--}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -394,13 +396,13 @@
             $('.list-text').text('').text(listText[data]).show();
             $('.star-hidden').val(data);
         });
+
         $('.button-review').click(function (event) {
             event.preventDefault();
             if($('.ips').hasClass('hide')) {
                 $('.ips').addClass('active').removeClass('hide');
                 $(this).text('Đóng lại');
                 $(this).addClass('no-active');
-
             }
             else {
                 $('.ips').addClass('hide').removeClass('active');
@@ -408,24 +410,27 @@
                 $(this).removeClass('no-active');
                 $('.sForm').addClass('hide');
             }
-
         });
 
         listStar.click(function () {
             $('.sForm').removeClass('hide');
         });
 
-        $('.button-submit-review').click(function () {
+        $('#button-submit-review').click(function (e) {
+            e.preventDefault();
             let productId = $(this).attr('data-id');
             let numberStar = $('.star-hidden').val();
             let comment = $('.text-review').val();
 
             $.ajax({
                 url: '{{ route('save.review') }}',
-                method: 'POST',
+                method: "post",
+                cache: false,
                 data: {
                     _token: '{{ csrf_token() }}',
-                    id: productId
+                    id: productId,
+                    star: numberStar,
+                    comment: comment
                 },
                 success: function (response) {
                     console.log('cho cho');
