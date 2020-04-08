@@ -355,9 +355,10 @@
 
 @section('scripts')
     <script type="text/javascript">
+
+        //  Thêm vào giỏ hàng
         $('.pro-details-act-btn').click(function (e) {
             e.preventDefault();
-
             var ele = $(this);
             $.ajax({
                 method: "post",
@@ -374,6 +375,7 @@
             });
         });
 
+        //  Đánh giá
         let listStar = $('.cStar .fa');
         var listText = {
             1 : 'Không thích',
@@ -416,6 +418,7 @@
             $('.sForm').removeClass('hide');
         });
 
+        //  Lưu đánh giá
         $('#button-submit-review').click(function (e) {
             e.preventDefault();
             let productId = $(this).attr('data-id');
@@ -433,7 +436,7 @@
                     comment: comment
                 },
                 success: function (response) {
-                    console.log('cho cho');
+                    window.location.reload();
                 }
             });
         });
