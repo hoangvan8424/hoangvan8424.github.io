@@ -110,3 +110,7 @@ Route::group(['prefix' => 'gio-hang'], function () {
 //  Xử lý liên hệ
 Route::get('lien-he', 'ContactController@getContact')->name('get.contact');
 Route::post('lien-he', 'ContactController@postContact');
+
+// Đánh giá
+
+Route::post('danh-gia', 'ReviewController@save')->name('save.review');

@@ -147,7 +147,7 @@
                             <div class="review-form-wrapper fix">
                                 <h3>write a review</h3>
                                 <div class="review-form">
-                                    <form action="#">
+{{--                                    <form action="#">--}}
                                         <div class="list-review">
                                             <div class="row">
                                                 <div class="col-sm-6" style="border-right: 1px solid #f3f3f3;">
@@ -167,33 +167,25 @@
                                             </div>
 
                                             <div class="row ips hide" style="padding: 32px;">
-                                                    <span>Chọn đánh giá của bạn: </span>
-                                                    <span class="cStar">
+                                                <span>Chọn đánh giá của bạn: </span>
+                                                <span class="cStar">
                                                     @for($i=1;$i<=5;$i++)
-                                                            <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
-                                                        @endfor
+                                                        <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
+                                                    @endfor
                                                 </span>
-                                                    <span class="list-text"></span>
-                                                </div>
+                                                <span class="list-text"></span>
+                                            </div>
                                             <div class="sForm hide">
-                                                    <div class="input-box-2 fix">
-                                                        <div class="input-box float-left">
-                                                            <input id="name" placeholder="Nhập tên của bạn" type="text">
-                                                        </div>
-                                                        <div class="input-box float-left">
-                                                            <input placeholder="Nhập email" type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="input-box review-box fix">
-                                                        <textarea placeholder="Nhập đánh giá (tối thiểu 80 ký tự)"></textarea>
-                                                    </div>
-                                                    <div class="input-box submit-box fix">
-                                                        <button type="submit" class="btn btn-danger">Gửi đánh giá</button>
-                                                    </div>
+                                                <div class="form-group" style="padding: 0 20px">
+                                                    <textarea class="form-control text-review" placeholder="Nhập đánh giá (tối thiểu 80 ký tự)" rows="7"></textarea>
+                                                    <input type="hidden" class="star-hidden" name="star-hidden">
                                                 </div>
-
+                                                <div class="input-box submit-box fix">
+                                                    <button class="btn btn-danger button-submit-review" data-id="{{ $product->id }}">Gửi đánh giá</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </form>
+{{--                                    </form>--}}
                                 </div>
                             </div>
                         </div>
@@ -356,6 +348,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 
 @section('scripts')
@@ -399,6 +392,7 @@
             });
 
             $('.list-text').text('').text(listText[data]).show();
+            $('.star-hidden').val(data);
         });
         $('.button-review').click(function (event) {
             event.preventDefault();
@@ -421,6 +415,23 @@
             $('.sForm').removeClass('hide');
         });
 
+        $('.button-submit-review').click(function () {
+            let productId = $(this).attr('data-id');
+            let numberStar = $('.star-hidden').val();
+            let comment = $('.text-review').val();
+
+            $.ajax({
+                url: '{{ route('save.review') }}',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: productId
+                },
+                success: function (response) {
+                    console.log('cho cho');
+                }
+            });
+        });
 
     </script>
 @endsection
