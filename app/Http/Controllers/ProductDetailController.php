@@ -22,7 +22,8 @@ class ProductDetailController extends FrontendController
             $review = Review::with('product', 'user')
                 ->where([
                     're_approved' => 1,
-                    're_spam' => 0
+                    're_spam' => 0,
+                    'product_id' => $id
                 ])->orderByDesc('id')->paginate(10);
             return view('product.product-details', compact('product', 'review'));
         }

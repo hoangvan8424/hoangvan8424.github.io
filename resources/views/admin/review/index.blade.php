@@ -35,10 +35,8 @@
                             </td>
                             <td>
                                 @for($i=1;$i<=5;$i++)
-                                    @for($i=1;$i<=5;$i++)
-                                        <i class="fa fa-star {{ $i<= $reviews->re_rating ? 'active':'' }}"></i>
-                                    @endfor
-                                @endfor
+                                    <i class="fa fa-star {{ $i<= $reviews->re_rating ? 'active':'' }}"></i>
+                                @endfor {{ $reviews->re_rating }}
                                 <p>{{ $reviews->re_comment }}</p>
                             </td>
                             <td>
