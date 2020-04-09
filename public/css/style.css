@@ -8120,19 +8120,62 @@ h3.widget-title-modal {
     border-radius: 5px;
     padding: 20px;
 }
+
+.list-review .star-tb {
+    transform: translateY(33px);
+    border-right: 1px solid #ccc;
+}
+
+.list-review .star-tb i {
+    font-size: 20px;
+}
+
+.list-review .star-tb i.active {
+    color: #000000!important;
+    font-weight: 900;
+}
+.list-review .star-tb p {
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 22px;
+
+}
 .list-review .star i{
     margin-left: 15px;
 }
 .list-review .bgb {
-    height: 8px;
-    background: #ccc;
+    position: relative;
+    top: 2px;
+    height: 16px;
+    background: #F1F1EF;
     display: inline-block;
+    border-radius: 0;
+    margin-bottom: 0;
 }
 
 .list-review .bgb .bgb-color {
-    height: 8px;
+    height: 16px;
     width: 20%;
-    background: #c51f1a;
+}
+
+.list-review .bgb .bgb-color.bgb-1 {
+    background-color: #56BB88;
+}
+
+.list-review .bgb .bgb-color.bgb-2 {
+    background-color: #99CE65;
+}
+
+.list-review .bgb .bgb-color.bgb-3 {
+    background-color: #FECF0A;
+}
+
+.list-review .bgb .bgb-color.bgb-4 {
+    background-color: #FEA000;
+}
+
+.list-review .bgb .bgb-color.bgb-5 {
+    background-color: #FD6F30;
 }
 
 .list-review .cStar {
@@ -8154,8 +8197,11 @@ h3.widget-title-modal {
     border-color: #d58512!important;
 }
 .list-review .cStar .star-active {
+    font-weight: 900!important;
     color: #ff9705!important;
+    transition: width .6s ease-out;
 }
+
 .list-review .list-text {
     display: none;
     background: #52b858;
