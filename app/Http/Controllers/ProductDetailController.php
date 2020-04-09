@@ -25,8 +25,47 @@ class ProductDetailController extends FrontendController
                     're_spam' => 0,
                     'product_id' => $id
                 ])->orderByDesc('id')->paginate(10);
-            return view('product.product-details', compact('product', 'review'));
+
+
+
+            $numberRating = DB::table('reviews')
+                                ->join('products', 'products.id', '=', 'reviews.product_id')
+                                ->select('re_rating', DB::raw('COUNT(re_rating) as star'))
+                                ->where('product_id', $id)
+                                ->groupBy('product_id', 're_rating')->get();
+
+            $arrRating = [];
+            if(!empty($numberRating)) {
+                for($i = 5; $i >= 1; $i--) {
+                    $arrRating[$i] = 0;
+                    foreach ($numberRating as $item) {
+                        if($item->re_rating == $i) {
+                            $arrRating[$i] = $item->star;
+                            continue;
+                        }
+                    }
+                }
+            }
+
+            $calculateRating = $this->countRating($product->pro_rating_count, $product->pro_rating_total);
+//            dd($arrRating);
+            $viewData = [
+                'product' => $product,
+                'review' => $review,
+                'listRating' => $arrRating,
+                'calculateRating' => $calculateRating
+            ];
+
+            return view('product.product-details', $viewData);
         }
         return view('404');
+    }
+
+    public function countRating($ratingCount, $ratingTotal)
+    {
+        if($ratingCount>0) {
+             return round($ratingTotal/$ratingCount, 1);
+        }
+        else return 0;
     }
 }

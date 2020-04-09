@@ -99,23 +99,30 @@
                                 <div class="review-form">
                                     <div class="list-review">
                                         <div class="row">
-                                            <div class="col-sm-6" style="border-right: 1px solid #f3f3f3;">
-                                                @for($i=1;$i<=5;$i++)
-                                                    <div style="width: 100%">
-                                                        {{ $i }}<i class="fa fa-star"
-                                                                   style="width: 10%; margin-left: 15px;"></i>
-                                                        <div class="bgb" style="width: 50%">
-                                                            <div class="bgb-color"></div>
-                                                        </div>
-                                                        <a href="" style="width: 20%; margin-left: 15px;">0 đánh giá</a>
-                                                    </div>
+                                            <div class="col-sm-3 star-tb text-center">
+                                                <p>{{ $calculateRating }}</p>
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    <i class="fal fa-star {{ $i<= $calculateRating ? 'active':'' }}"></i>
                                                 @endfor
                                             </div>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-6" style="border-right: 1px solid #f3f3f3;">
+                                                @if(isset($listRating))
+                                                    @foreach($listRating as $key => $value)
+                                                        <div style="margin-bottom: 7px;">
+                                                            {{ $key }}<i class="fal fa-star" style="width: 10%; margin-left: 5px;"></i>
+                                                            <div class="bgb progress" style="width: 70%">
+                                                                <div class="bgb-color bgb-{{ $key }} progress-bar" style="width: {{ round(($key*$value/$product->pro_rating_total)*100) }}%"></div>
+                                                            </div>
+                                                            <a href="" style="width: 10%; margin-left: 15px;">{{ $value }} đánh giá</a>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                            <div class="col-sm-3 text-center">
                                                 @if(Auth::check())
-                                                    <a href="#" class="btn btn-warning button-review" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</a>
+                                                    <a href="#" class="btn btn-warning button-review" style="transform: translateY(60px);">Gửi đánh giá của bạn</a>
                                                 @else
-                                                    <a href="{{ route('get.login') }}" class="btn btn-warning" style="transform: translate(150px,35px);">Vui lòng đăng nhập để gửi đánh giá</a>
+                                                    <a href="{{ route('get.login') }}" class="btn btn-warning" style="transform: translateY(60px);">Vui lòng đăng nhập để gửi đánh giá</a>
                                                 @endif
                                             </div>
                                         </div>
@@ -124,7 +131,7 @@
                                                 <span>Chọn đánh giá của bạn: </span>
                                                 <span class="cStar">
                                                     @for($i=1;$i<=5;$i++)
-                                                        <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
+                                                        <i class="fal fa-star fa-2x" data-key="{{ $i }}"></i>
                                                     @endfor
                                                 </span>
                                                 <span class="list-text"></span>
@@ -354,7 +361,7 @@
         });
 
         //  Đánh giá
-        let listStar = $('.cStar .fa');
+        let listStar = $('.cStar .fal');
         var listText = {
             1 : 'Không thích',
             2 : 'Tạm được',
