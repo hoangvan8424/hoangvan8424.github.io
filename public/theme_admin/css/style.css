@@ -31,6 +31,6 @@ a {
 .table-admin thead > tr th {
     text-align: center!important;
 }
-table li i.active {
+table td i.active {
     color: #ec4445!important;
 }

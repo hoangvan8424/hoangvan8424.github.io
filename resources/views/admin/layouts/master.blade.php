@@ -80,6 +80,9 @@
                 <li class="{{ Request::is('admin/transaction') || Request::is('admin/transaction/*') ? 'active' : '' }}">
                     <a href="{{ route('admin.get.list.transaction') }}">Đơn hàng</a>
                 </li>
+                <li class="{{ Request::is('admin/review') || Request::is('admin/review/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.get.list.review') }}">Đánh giá</a>
+                </li>
             </ul>
 
         </div>

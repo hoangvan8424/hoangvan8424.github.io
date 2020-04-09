@@ -67,12 +67,12 @@ Route::prefix('admin')->group(function () {
     Route::group(['prefix' => 'transaction'], function () {
         Route::get('/', 'AdminTransactionController@index')->name('admin.get.list.transaction');
         Route::get('/view/{id}', 'AdminTransactionController@viewDetailOrder')->name('admin.get.view.order');
-//        Route::get('/update/{id}', 'AdminUserController@update')->name('admin.get.update.user');
-//        Route::post('/update/{id}', 'AdminUserController@edit');
-//        Route::get('delete/{id}', 'AdminUserController@delete')->name('admin.get.delete.user');
-//        Route::get('/active/{id}', 'AdminUserController@changeStatus')->name('admin.get.status.user');
     });
-
+//  Quản lý đánh giá
+    Route::group(['prefix' => 'review'], function () {
+        Route::get('/', 'AdminReviewController@index')->name('admin.get.list.review');
+        Route::get('delete/{id}', 'AdminReviewController@delete')->name('admin.get.delete.review');
+    });
 });
 //  Kết thúc trang admin
 

@@ -80,13 +80,13 @@
             <div class="col-xs-12 mt-40">
                 <div class="pro-details-tab-container fix">
                     <ul class="pro-details-tablist fix">
-                        <li><a href="#description" data-toggle="tab">Đặc điểm nổi bật</a></li>
+                        <li class="active"><a href="#description" data-toggle="tab">Đặc điểm nổi bật</a></li>
                         <li><a href="#information" data-toggle="tab">Thông số kỹ thuật</a></li>
-                        <li class="active"><a href="#reviews" data-toggle="tab">Đánh giá</a></li>
+                        <li><a href="#reviews" data-toggle="tab">Đánh giá</a></li>
                     </ul>
                     <div class="tab-content fix">
                         <!-- Đặc điểm nổi bật -->
-                        <div id="description" class="pro-details-tab pro-dsc-tab tab-pane">
+                        <div id="description" class="pro-details-tab pro-dsc-tab tab-pane active">
                             {!! $product->pro_content !!}
                         </div>
                         <!-- Thông số kỹ thuật -->
@@ -94,7 +94,7 @@
                             {!! $product->pro_configuration !!}
                         </div>
                         <!-- Đánh giá -->
-                        <div id="reviews" class="pro-details-tab pro-rev-tab tab-pane active">
+                        <div id="reviews" class="pro-details-tab pro-rev-tab tab-pane">
                             <div class="review-form-wrapper fix">
                                 <div class="review-form">
                                     <div class="list-review">
@@ -112,31 +112,36 @@
                                                 @endfor
                                             </div>
                                             <div class="col-sm-6">
-                                                <a href="#" class="btn btn-warning button-review" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</a>
+                                                @if(Auth::check())
+                                                    <a href="#" class="btn btn-warning button-review" style="transform: translate(150px,35px);">Gửi đánh giá của bạn</a>
+                                                @else
+                                                    <a href="{{ route('get.login') }}" class="btn btn-warning" style="transform: translate(150px,35px);">Vui lòng đăng nhập để gửi đánh giá</a>
+                                                @endif
                                             </div>
                                         </div>
-
-                                        <div class="row ips hide" style="padding: 32px;">
-                                            <span>Chọn đánh giá của bạn: </span>
-                                            <span class="cStar">
-                                                @for($i=1;$i<=5;$i++)
-                                                    <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
-                                                @endfor
-                                            </span>
-                                            <span class="list-text"></span>
-                                        </div>
-                                        <div class="sForm hide">
-                                            <form method="post">
-                                                <div class="form-group" style="padding: 0 20px">
-                                                    <textarea class="form-control text-review" placeholder="Nhập đánh giá (tối thiểu 80 ký tự)" rows="7"></textarea>
-                                                    <input type="hidden" class="star-hidden" name="star-hidden">
-                                                </div>
-                                                <div class="input-box submit-box fix">
-                                                    <button type="submit" class="btn btn-danger" id="button-submit-review" data-id="{{ $product->id }}">Gửi đánh giá
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
+                                        @if(Auth::check())
+                                            <div class="row ips hide" style="padding: 32px;">
+                                                <span>Chọn đánh giá của bạn: </span>
+                                                <span class="cStar">
+                                                    @for($i=1;$i<=5;$i++)
+                                                        <i class="fa fa-star fa-2x" data-key="{{ $i }}"></i>
+                                                    @endfor
+                                                </span>
+                                                <span class="list-text"></span>
+                                            </div>
+                                            <div class="sForm hide">
+                                                <form method="post">
+                                                    <div class="form-group" style="padding: 0 20px">
+                                                        <textarea class="form-control text-review" placeholder="Nhập đánh giá (tối thiểu 80 ký tự)" rows="7"></textarea>
+                                                        <input type="hidden" class="star-hidden" name="star-hidden">
+                                                    </div>
+                                                    <div class="input-box submit-box fix">
+                                                        <button type="submit" class="btn btn-danger" id="button-submit-review" data-id="{{ $product->id }}">Gửi đánh giá
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
