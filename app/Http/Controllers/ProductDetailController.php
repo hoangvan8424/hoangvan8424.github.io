@@ -34,7 +34,10 @@ class ProductDetailController extends FrontendController
                                 ->where('product_id', $id)
                                 ->groupBy('product_id', 're_rating')->get();
 
+<<<<<<< HEAD
 //          Chuyển số sao vào mảng
+=======
+>>>>>>> 56b6bbea56655726a63014092bc412f443813dd6
             $arrRating = [];
             if(!empty($numberRating)) {
                 for($i = 5; $i >= 1; $i--) {
@@ -48,8 +51,13 @@ class ProductDetailController extends FrontendController
                 }
             }
 
+<<<<<<< HEAD
 //          Tính số sao trung bình
             $calculateRating = $this->countRating($product->pro_rating_count, $product->pro_rating_total);
+=======
+            $calculateRating = $this->countRating($product->pro_rating_count, $product->pro_rating_total);
+//            dd($arrRating);
+>>>>>>> 56b6bbea56655726a63014092bc412f443813dd6
             $viewData = [
                 'product' => $product,
                 'review' => $review,
