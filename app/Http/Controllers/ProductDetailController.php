@@ -50,7 +50,6 @@ class ProductDetailController extends FrontendController
 
 //          Tính số sao trung bình
             $calculateRating = $this->countRating($product->pro_rating_count, $product->pro_rating_total);
-//            dd($arrRating);
             $viewData = [
                 'product' => $product,
                 'review' => $review,
