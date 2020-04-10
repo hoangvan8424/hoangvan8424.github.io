@@ -83,6 +83,7 @@ class AdminProductController extends Controller
         $product->hot = $requestProduct->hot ? $requestProduct->hot:0;
         $product->pro_slug = str_slug($requestProduct->pro_name);
         $product->brand_id = $requestProduct->brand_id;
+        $product->pro_number = $requestProduct->pro_number?$requestProduct->pro_number:0;
 
         if($requestProduct->hasFile('pro_avatar')) {
             $img = $requestProduct->file('pro_avatar');

@@ -108,6 +108,15 @@
                     </span>
                 @endif
             </div>
+            <div class="form-group">
+                <label>Số lượng</label>
+                <input type="text" class="form-control" name="pro_number" value="{{ isset($product->pro_number)?old('pro_number', $product->pro_number):10 }}">
+                @if($errors->has('pro_number'))
+                    <span class="error-text">
+                        {{$errors->first('pro_number')}}
+                    </span>
+                @endif
+            </div>
         </div>
 
     </div>

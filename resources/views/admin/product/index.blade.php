@@ -50,6 +50,7 @@
                 <th style="width: 15%">Sản phẩm</th>
                 <th>Ảnh</th>
                 <th>Mô tả</th>
+                <th>Số lượng</th>
                 <th>Hiệu</th>
                 <th>D/m</th>
                 <th>Trạng thái</th>
@@ -96,7 +97,7 @@
                                 <img src="{{ asset('/img/product').'/'.$products->pro_avatar }}" alt="{{ $products->pro_name }}" height="60" width="65">
                             </td>
                             <td>{!! $products->pro_description !!}</td>
-
+                            <td>{{ $products->pro_number }}</td>
                             <td>
                                 {{ $products->getBrandName->brand_name }}
                             </td>

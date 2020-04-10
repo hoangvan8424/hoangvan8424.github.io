@@ -31,7 +31,8 @@ class RequestProduct extends FormRequest
             'pro_description' => 'required',
             'pro_content' => 'required',
             'pro_configuration' => 'required',
-            'brand_id'  => 'required'
+            'brand_id'  => 'required',
+            'pro_number' => 'required|numeric|min:1'
 
         ];
     }
@@ -53,7 +54,10 @@ class RequestProduct extends FormRequest
             'pro_description.required' => 'Mô tả không được để trống.',
             'pro_configuration.required' => 'Thông số cấu hình không được bỏ trống.',
             'pro_content.required' => 'Đặc điểm nổi bật không được để trống',
-            'brand_id.required' => 'Thương hiệu không được để trống!'
+            'brand_id.required' => 'Thương hiệu không được để trống!',
+            'pro_number.required' => 'Số lượng sản phẩm không được để trống.',
+            'pro_number.numer' => 'Số lượng sản phẩm không hợp lệ.',
+            'pro_number.min' => 'Số lượng sản phẩm không hợp lệ.'
         ];
     }
 }
