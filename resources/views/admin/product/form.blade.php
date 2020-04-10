@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="pro_category_id">Loại sản phẩm</label>
-                <select name="pro_category_id" class="form-control" id="">
+                <select name="pro_category_id" class="form-control">
                     <option value="">---Chọn---</option>
                     @if(isset($category))
                         @foreach($category as $categories)
@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label for="brand_id">Thương hiệu</label>
-                <select name="brand_id" class="form-control" id="">
+                <select name="brand_id" class="form-control">
                     <option value="">---Chọn---</option>
                     @foreach($brand as $brands)
                         <option value="{{ $brands->id }}" @if(isset($product->brand_id) && $product->brand_id==$brands->id) {{'selected'}} @else {{''}} @endif>
@@ -83,7 +83,7 @@
         <div class="col-sm-5">
             <div class="form-group">
                 <label>Thông số cấu hình</label>
-                <textarea class="form-control" id="editor2" name="pro_configuration" cols="100" rows="20" placeholder="Nhập thông số cấu hình">{{ isset($product->pro_configuration)?old('pro_configuration', $product->pro_configuration):'' }}</textarea>
+                <textarea class="form-control" id="editor-2" name="pro_configuration" cols="100" rows="20" placeholder="Nhập thông số cấu hình">{{ isset($product->pro_configuration)?old('pro_configuration', $product->pro_configuration):'' }}</textarea>
                 @if($errors->has('pro_configuration'))
                     <span class="error-text">
                         {{$errors->first('pro_configuration')}}
@@ -92,11 +92,11 @@
             </div>
             <div class="form-group">
                 <label for="">Từ khóa seo</label>
-                <input type="text" name="pro_keyword_seo" class="form-control" id="" placeholder="Nhập từ khóa seo" value="{{ isset($product->pro_keyword_seo)?old('pro_keyword_seo', $product->pro_keyword_seo):'' }}">
+                <input type="text" name="pro_keyword_seo" class="form-control" placeholder="Nhập từ khóa seo" value="{{ isset($product->pro_keyword_seo)?old('pro_keyword_seo', $product->pro_keyword_seo):'' }}">
             </div>
             <div class="form-group">
                 <label for="">Mô tả seo</label>
-                <input type="text" name="pro_description_seo" class="form-control" id="" placeholder="Nhập mô tả seo" value="{{ isset($product->pro_description_seo)?old('pro_description_seo', $product->pro_description_seo):'' }}">
+                <input type="text" name="pro_description_seo" class="form-control"  placeholder="Nhập mô tả seo" value="{{ isset($product->pro_description_seo)?old('pro_description_seo', $product->pro_description_seo):'' }}">
             </div>
             <div class="form-group">
                 <label for="pro_avatar">Hình ảnh</label>
@@ -114,3 +114,23 @@
     <button type="submit" class="btn btn-success btn-outline-dark">Lưu thay đổi</button>
 
 </form>
+@section('scripts')
+    <script>
+        CKEDITOR.replace('editor', {
+            filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
+            filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
+            filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
+            filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+            filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+            filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+        });
+        CKEDITOR.replace('editor-2', {
+            filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
+            filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
+            filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
+            filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+            filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+            filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+        });
+    </script>
+@endsection

@@ -40,7 +40,7 @@
                             <td>{{ $transactions->tr_address }}</td>
                             <td>{{ number_format($transactions->tr_total, 0, '', '.') }}đ</td>
                             <td>{{ $transactions->tr_note?$transactions->tr_note:'Không' }}</td>
-                            <td>{{ $transactions->created_at }}</td>
+                            <td>{{ date_format($transactions->created_at, 'd-m-Y H:i:s')  }}</td>
                             <td>
                                 @if($transactions->tr_status==0)
                                 <a href="" class="label label-danger" title="Thay đổi trạng thái">

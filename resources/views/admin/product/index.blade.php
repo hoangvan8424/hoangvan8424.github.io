@@ -14,7 +14,7 @@
         <div class="col-sm-12">
             <form action="">
                     <div class="form-group col-sm-8">
-                        <input type="text" name="name_search" id="" class="form-control" placeholder="Tên sản phẩm..." value="{{ \Request::get('name') }}">
+                        <input type="text" name="name_search" class="form-control" placeholder="Tên sản phẩm..." value="{{ \Request::get('name') }}">
                     </div>
                     <div class="form-group col-sm-2">
                         <select name="category_search" id="" class="form-control">

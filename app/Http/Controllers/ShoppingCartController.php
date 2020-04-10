@@ -107,7 +107,8 @@ class ShoppingCartController extends FrontendController
             'tr_address' => $requestTransaction->address,
             'tr_total' => $requestTransaction->total,
             'tr_note' => $requestTransaction->note,
-            'created_at' => Carbon::now()
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
         if($transactionId)

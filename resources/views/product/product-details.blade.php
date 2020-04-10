@@ -111,11 +111,8 @@
                                                         <div style="margin-bottom: 7px;">
                                                             {{ $key }}<i class="fal fa-star" style="width: 10%; margin-left: 5px;"></i>
                                                             <div class="bgb progress" style="width: 70%">
-<<<<<<< HEAD
                                                                 <div class="bgb-color bgb- progress-bar" style="width: {{ $product->pro_rating_total>0 ? round(($key*$value/$product->pro_rating_total)*100):0 }}%"></div>
-=======
                                                                 <div class="bgb-color bgb-{{ $key }} progress-bar" style="width: {{ round(($key*$value/$product->pro_rating_total)*100) }}%"></div>
->>>>>>> 56b6bbea56655726a63014092bc412f443813dd6
                                                             </div>
                                                             <a href="" style="width: 10%; margin-left: 15px;">{{ $value }} đánh giá</a>
                                                         </div>
