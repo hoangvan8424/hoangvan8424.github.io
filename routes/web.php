@@ -67,6 +67,7 @@ Route::prefix('admin')->group(function () {
     Route::group(['prefix' => 'transaction'], function () {
         Route::get('/', 'AdminTransactionController@index')->name('admin.get.list.transaction');
         Route::get('/view/{id}', 'AdminTransactionController@viewDetailOrder')->name('admin.get.view.order');
+        Route::Get('/process/{id}', 'AdminTransactionController@changeStatus')->name('admin.change.status.transaction');
     });
 //  Quản lý đánh giá
     Route::group(['prefix' => 'review'], function () {

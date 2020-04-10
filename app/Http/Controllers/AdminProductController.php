@@ -26,7 +26,7 @@ class AdminProductController extends Controller
             $product->where('pro_category_id', $request->category_search);
         }
 
-        $product = $product->orderByDesc('id')->paginate(15);
+        $product = $product->orderByDesc('updated_at')->paginate(15);
         $category = $this->getCategories();
 
         $viewData = [

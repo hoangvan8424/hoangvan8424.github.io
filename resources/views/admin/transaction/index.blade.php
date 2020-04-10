@@ -43,11 +43,11 @@
                             <td>{{ date_format($transactions->created_at, 'd-m-Y H:i:s')  }}</td>
                             <td>
                                 @if($transactions->tr_status==0)
-                                <a href="" class="label label-danger" title="Thay đổi trạng thái">
+                                <a href="{{ route('admin.change.status.transaction', $transactions->id) }}" class="label label-danger" title="Thanh toán đơn hàng">
                                     Đang chờ xử lý
                                 </a>
                                 @elseif($transactions->tr_status==1)
-                                    <a href="" class="label label-success" title="Thay đổi trạng thái">Đã xử lý</a>
+                                    <span class="label label-success">Đã xử lý</span>
                                 @endif
 
                             </td>
