@@ -2803,6 +2803,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     padding: 0 !important;
 }
 
+.product-tab .row .best-selling{
+    padding: 0 !important;
+}
+
+.product-tab .row .new{
+    padding: 0 !important;
+}
+
+.product-tab .row .hot-price{
+    padding: 0 !important;
+}
+
 .product-tab .row .phone-product {
     padding: 0 !important;
 }
@@ -2849,7 +2861,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /* Single Product */
 .sin-product {
     /*border: 1px solid #f1f1f1;*/
-    height: 320px;
+    height: 350px;
     border-left: 0;
     position: relative;
     -webkit-transition: all 0.3s ease 0s;
@@ -2902,7 +2914,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .pro-image {
     position: relative;
     /*width: 270px;*/
-    height: 180px;
+    height: 200px;
     padding: 20px;
     margin-bottom: 12px;
 }

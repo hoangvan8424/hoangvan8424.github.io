@@ -16,18 +16,24 @@ class HomeController extends FrontendController
 
     public function index()
     {
-        $computerProduct = DB::table('products')->where([
-            ['pro_category_id', '=', 1],
-            ['pro_active', '=', Product::PUBLIC_STATUS]
-        ])->limit(5)->get();
+        $bestSelling = DB::table('products')->where([
+            ['pro_active', '=', Product::PUBLIC_STATUS],
+            ['pro_purchase_number', '>=', 5]
+        ])->orderByDesc('pro_purchase_number')->limit(10)->get();
 
-        $phoneProduct = DB::table('products')->where([
-            ['pro_category_id', '=', 2],
-            ['pro_active', '=', Product::PUBLIC_STATUS]
-        ])->limit(5)->get();
+        $hotPrice = DB::table('products')->where([
+            ['pro_active', '=', Product::PUBLIC_STATUS],
+            ['pro_sale', '>=', 15]
+        ])->orderByDesc('pro_sale')->limit(10)->get();
+
+        $new = DB::table('products')->where([
+            ['pro_active', '=', Product::PUBLIC_STATUS],
+        ])->orderByDesc('created_at')->limit(10)->get();
+
         $viewData = [
-            'computerProduct' => $computerProduct,
-            'phoneProduct' => $phoneProduct
+            'bestSelling' => $bestSelling,
+            'hotPrice'  => $hotPrice,
+            'new' => $new
         ];
         return view('home.index', $viewData);
     }
