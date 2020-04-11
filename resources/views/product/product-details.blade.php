@@ -186,15 +186,16 @@
 <!-- Sản phẩm liên quan -->
 <div class="related-product-area fix container mb-40 mt-40">
     <div class="section-title text-left col-xs-12 mt-10">
-        <h2 class="active">Sản phẩm cùng thương hiệu</h2>
+        <h2 class="active">Sản phẩm cùng thương hiệu {{ $product->brand_name }}</h2>
     </div>
     <div class="product-slider product-slider-6 plr-60">
         @if(isset($suggestProduct))
             @foreach($suggestProduct as $key => $value)
                 <div class="col-xs-12">
                     <a href="#">
-                        <div class="sin-product">
-                            <span class="pro-label">sale</span>
+                        <div class="sin-product suggest{{ $product->productId==$value->id ? ' active':'' }}">
+                            <span class="pro-label">Sale</span>
+                            <span class="pro-view{{ $product->productId==$value->id ? ' active':' hide' }}">{{ $product->productId==$value->id ? 'Đang xem':'' }}</span>
                             <div class="pro-image">
                                 <img src="{{ asset('/img/product').'/'.$value->pro_avatar }}" alt="{{ $value->pro_name }}" class="img"/>
                             </div>

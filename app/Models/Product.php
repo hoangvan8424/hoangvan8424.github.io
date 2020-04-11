@@ -61,5 +61,10 @@ class Product extends Model
         return $this->hasMany(Review::class);
     }
 
+    public function brand()
+    {
+        return $this->hasOne(Brand::class, 'brand_id');
+    }
+
 
 }

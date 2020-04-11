@@ -15,8 +15,10 @@ class ProductDetailController extends FrontendController
         $id = array_pop($url);
         if($id!=null) {
             $product = DB::table('products')
+                ->join('brands', 'products.brand_id', '=', 'brands.id')
+                ->select('*', 'brands.id as brandId', 'products.id as productId')
                 ->where([
-                    ['id', '=', $id],
+                    ['products.id', '=', $id],
                     ['pro_active', '=', Product::PUBLIC_STATUS],
                     ['pro_number', '>', 0]
                 ])->first();
@@ -83,7 +85,6 @@ class ProductDetailController extends FrontendController
                 ['pro_category_id', $category],
                 ['brand_id', $brand],
                 ['pro_number', '>', 0]
-            ])->whereNotIn('id', [$currentId])
-            ->paginate(8);
+            ])->paginate(10);
     }
 }

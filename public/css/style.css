@@ -2858,14 +2858,23 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /*    padding-left: 0!important;*/
 /*    padding-right: 0!important;*/
 /*}*/
+
+.sin-product.suggest.active {
+    border: 1px solid #ec4445;
+}
+
+.sin-product.suggest {
+    border: 1px solid #ccc;
+}
+
 /* Single Product */
 .sin-product {
-    /*border: 1px solid #f1f1f1;*/
     height: 350px;
     border-left: 0;
     position: relative;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    overflow: hidden;
 }
 
 .sin-product:hover {
@@ -2873,6 +2882,24 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 /* Product Label */
+
+span.pro-view.active {
+    position: absolute;
+    z-index: 5;
+    top: 10px;
+    left: -41px;
+    width: 138px;
+    height: 30px;
+    background: #1aad08d1;
+    color: #fff;
+    padding: 5px 10px;
+    line-height: 19px;
+    font-weight: 400;
+    transform: rotate(-45deg);
+    text-align: center;
+    font-size: 12px;
+}
+
 .pro-label {
     background-color: #ec4445;
     border-radius: 3px;
@@ -2890,7 +2917,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .pro-label:before {
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
     border-radius: 3px;
     bottom: 1px;
     content: "";
