@@ -17,16 +17,16 @@ class ProductDetailController extends FrontendController
             $product = DB::table('products')
                 ->where([
                     ['id', '=', $id],
-                    ['pro_active', '=', Product::PUBLIC_STATUS]
+                    ['pro_active', '=', Product::PUBLIC_STATUS],
+                    ['pro_number', '>', 0]
                 ])->first();
+
             $review = Review::with('product', 'user')
                 ->where([
                     're_approved' => 1,
                     're_spam' => 0,
                     'product_id' => $id
                 ])->orderByDesc('id')->paginate(10);
-
-
 
             $numberRating = DB::table('reviews')
                                 ->join('products', 'products.id', '=', 'reviews.product_id')
@@ -50,13 +50,17 @@ class ProductDetailController extends FrontendController
 
 //          Tính số sao trung bình
             $calculateRating = $this->countRating($product->pro_rating_count, $product->pro_rating_total);
-            $calculateRating = $this->countRating($product->pro_rating_count, $product->pro_rating_total);
+
+//          Sản phẩm cùng danh mục
+            $suggestProduct = $this->suggest($product->pro_category_id, $product->brand_id, $id);
+//            dd($suggestProduct);
 
             $viewData = [
                 'product' => $product,
                 'review' => $review,
                 'listRating' => $arrRating,
-                'calculateRating' => $calculateRating
+                'calculateRating' => $calculateRating,
+                'suggestProduct' => $suggestProduct
             ];
 
             return view('product.product-details', $viewData);
@@ -70,5 +74,16 @@ class ProductDetailController extends FrontendController
              return round($ratingTotal/$ratingCount, 1);
         }
         else return 0;
+    }
+
+    public function suggest($category, $brand, $currentId)
+    {
+        return DB::table('products')
+            ->where([
+                ['pro_category_id', $category],
+                ['brand_id', $brand],
+                ['pro_number', '>', 0]
+            ])->whereNotIn('id', [$currentId])
+            ->paginate(8);
     }
 }

@@ -75,7 +75,7 @@
                             @if(isset($hotPrice))
                                 @foreach($hotPrice as $key => $value)
                                     <div class="col-md-3 col-sm-6 col-xs-12 computer">
-                                        <a href="#">
+                                        <a href="{{ route('get.detail.product', [$value->pro_slug, $value->id]) }}">
                                             <div class="sin-product">
                                                 <div class="pro-image">
                                                     <img src="img/product/{{ $value->pro_avatar}}" alt="{{ $value->pro_name }}" class="img"/>

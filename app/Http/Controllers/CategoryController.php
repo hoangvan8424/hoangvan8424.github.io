@@ -17,7 +17,8 @@ class CategoryController extends FrontendController
         {
             $product = Product::where([
                 ['pro_category_id', '=', $id],
-                ['pro_active', '=', Product::PUBLIC_STATUS]
+                ['pro_active', '=', Product::PUBLIC_STATUS],
+                ['pro_number', '>', 0]
             ]);
 
             if($request->price) {

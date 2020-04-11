@@ -166,7 +166,7 @@
                                                     </div>
                                                     <div>
                                                         <span>{{ date_format($reviews->created_at, 'd-m-Y H:i:s') }}</span>
-                                                        <a href="#">Trả lời</a>
+                                                        <a href="#" style="display: inline-block;">Trả lời</a>
                                                     </div>
                                                 </div>
                                                 <p>{{ $reviews->re_comment }}</p>
@@ -186,153 +186,31 @@
 <!-- Sản phẩm liên quan -->
 <div class="related-product-area fix container mb-40 mt-40">
     <div class="section-title text-left col-xs-12 mt-10">
-        <h2 class="active">Sản phẩm liên quan</h2>
+        <h2 class="active">Sản phẩm cùng thương hiệu</h2>
     </div>
     <div class="product-slider product-slider-6 plr-60">
-        <div class="col-xs-12">
-            <a href="#">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image">
-                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
-                    </div>
-                    <div class="pro-details">
-                        <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
-                        <p class="pro-price">
-                            <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
-                            <span class="price-sale">-{{ 12 }}%</span>
-                            <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
-                        </p>
-                    </div>
+        @if(isset($suggestProduct))
+            @foreach($suggestProduct as $key => $value)
+                <div class="col-xs-12">
+                    <a href="#">
+                        <div class="sin-product">
+                            <span class="pro-label">sale</span>
+                            <div class="pro-image">
+                                <img src="{{ asset('/img/product').'/'.$value->pro_avatar }}" alt="{{ $value->pro_name }}" class="img"/>
+                            </div>
+                            <div class="pro-details">
+                                <p class="pro-title">{{ $value->pro_name }}</p>
+                                <p class="pro-price">
+                                    <span class="new">{{ number_format($value->pro_price, 0, '', '.') }}đ</span>
+                                    <span class="price-sale">-{{ $value->pro_sale }}%</span>
+                                    <span class="original">{{ number_format($value->pro_price/(1-$value->pro_sale/100),0,'','.') }}đ</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <div class="col-xs-12">
-            <a href="#">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image">
-                        <img src="{{ asset('/img/product/ae7804aff708e7197488e34a819f85db.jpg') }}" alt="" class="img"/>
-                    </div>
-                    <div class="pro-details">
-                        <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
-                        <p class="pro-price">
-                            <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
-                            <span class="price-sale">-{{ 12 }}%</span>
-                            <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xs-12">
-            <a href="#">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image">
-                        <img src="{{ asset('/img/product/71c6a96cec117c905c563755d7968163.jpg') }}" alt="" class="img"/>
-                    </div>
-                    <div class="pro-details">
-                        <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
-                        <p class="pro-price">
-                            <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
-                            <span class="price-sale">-{{ 12 }}%</span>
-                            <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xs-12">
-            <a href="#">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image">
-                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
-                    </div>
-                    <div class="pro-details">
-                        <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
-                        <p class="pro-price">
-                            <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
-                            <span class="price-sale">-{{ 12 }}%</span>
-                            <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xs-12">
-            <a href="#">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image">
-                        <img src="{{ asset('/img/product/0b50dcd1e3bda923d1558b4ad96f3f9a.jpg') }}" alt="" class="img"/>
-                    </div>
-                    <div class="pro-details">
-                        <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
-                        <p class="pro-price">
-                            <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
-                            <span class="price-sale">-{{ 12 }}%</span>
-                            <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xs-12">
-            <a href="#">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image">
-                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
-                    </div>
-                    <div class="pro-details">
-                        <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
-                        <p class="pro-price">
-                            <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
-                            <span class="price-sale">-{{ 12 }}%</span>
-                            <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xs-12">
-            <a href="#">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image">
-                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
-                    </div>
-                    <div class="pro-details">
-                        <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
-                        <p class="pro-price">
-                            <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
-                            <span class="price-sale">-{{ 12 }}%</span>
-                            <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xs-12">
-            <a href="#">
-                <div class="sin-product">
-                    <span class="pro-label">sale</span>
-                    <div class="pro-image">
-                        <img src="{{ asset('/img/product/a04255c348106f0ee126432d2f680d94.jpg') }}" alt="" class="img"/>
-                    </div>
-                    <div class="pro-details">
-                        <p class="pro-title">Microsoft Surface Pro 2018 - Core i5-8250U/8G/256GB - Hàng Chính Hãng</p>
-                        <p class="pro-price">
-                            <span class="new">{{ number_format(12000000, 0, '', '.') }}đ</span>
-                            <span class="price-sale">-{{ 12 }}%</span>
-                            <span class="original">{{ number_format(12000000/(1-12/100),0,'','.') }}đ</span>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
+            @endforeach
+        @endif
     </div>
 </div>
 

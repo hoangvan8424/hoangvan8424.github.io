@@ -18,16 +18,17 @@ class HomeController extends FrontendController
     {
         $bestSelling = DB::table('products')->where([
             ['pro_active', '=', Product::PUBLIC_STATUS],
-            ['pro_purchase_number', '>=', 5]
+            ['pro_number', '>', 0]
         ])->orderByDesc('pro_purchase_number')->limit(10)->get();
 
         $hotPrice = DB::table('products')->where([
             ['pro_active', '=', Product::PUBLIC_STATUS],
-            ['pro_sale', '>=', 15]
+            ['pro_number', '>', 0]
         ])->orderByDesc('pro_sale')->limit(10)->get();
 
         $new = DB::table('products')->where([
             ['pro_active', '=', Product::PUBLIC_STATUS],
+            ['pro_number', '>', 0]
         ])->orderByDesc('created_at')->limit(10)->get();
 
         $viewData = [
