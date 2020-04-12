@@ -108,3 +108,21 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+    <script>
+        $('.re-button').click(function () {
+            let email = $('.re-email').val();
+            $.ajax({
+                url: '{{ route('receive.information') }}',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    email: email
+                },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
+@endsection

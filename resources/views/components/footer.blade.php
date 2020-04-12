@@ -4,7 +4,7 @@
             <div class="footer-contact col-md-4 col-sm-6 col-xs-12">
                 <img src="{{ asset('/img/logo-2.png') }}" alt="" />
                 <div><span>Địa chỉ :</span> <p>Thanh Xuân, <br />Hà Nội</p></div>
-                <div><span>Điện thoại :</span> <p>+4393724111</p></div>
+                <div><span>Điện thoại :</span> <p>+84393724111</p></div>
                 <div><span>Email :</span> <a href="#">hoangvan181198@gmail.com</a></div>
                 <div class="footer-social fix">
                     <a href="" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
@@ -42,23 +42,23 @@
                 </ul>
             </div>
             <div class="footer-shipping col-md-2 col-sm-6 col-xs-12">
-                <h4>Mua sắm</h4>
+                <h4>Sản phẩm</h4>
                 <ul>
-                    <li><a href="product-details-1.html">New Products</a></li>
-                    <li><a href="product-details-1.html">Top Sellers</a></li>
-                    <li><a href="product-details-1.html">Manufactirers</a></li>
-                    <li><a href="product-details-1.html">Suppliers</a></li>
-                    <li><a href="product-details-1.html">Specials</a></li>
+                    <li><a href="{{ route('get.list.product', ['may-tinh', '1']) }}">Máy tính</a></li>
+                    <li><a href="{{ route('get.list.product', ['dien-thoai', '2']) }}">Điện thoại</a></li>
                 </ul>
             </div>
             <div class="footer-newsletter col-md-4 col-sm-6 col-xs-12">
                 <h4>Nhận thông tin sản phẩm mới</h4>
                 <p>Chúng tôi sẽ liên hệ với bạn khi có thông tin sản phẩm mới, hoặc có chương trình giảm giá.</p>
-                <form id="mc-form" class="mc-form" enctype="multipart/form-data">
-                    @csrf
-                    <input id="mc-email" type="email" autocomplete="off" placeholder="Email..." />
-                    <button class="btn btn-danger" id="mc-submit" type="submit">Đăng ký</button>
-                </form>
+                <div>
+                    <div class="form-group">
+                        <input class="form-control re-email" type="email" placeholder="Email..." required oninvalid="this.setCustomValidity('Vui lòng nhập đúng định dạng email!')" oninput="this.setCustomValidity('')">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-danger re-button">Đăng ký</button>
+                    </div>
+                </div>
                 <!-- mailchimp-alerts Start -->
                 <div class="mailchimp-alerts text-centre">
                     <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
@@ -82,3 +82,4 @@
         </div>
     </div>
 </div>
+
