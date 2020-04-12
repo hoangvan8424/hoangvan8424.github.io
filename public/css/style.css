@@ -6353,6 +6353,28 @@ span.pro-view.active {
 .pro-dsc-tab {
 }
 
+
+.pro-dsc-tab .product-content.expand{
+    max-height: none;
+}
+
+.pro-dsc-tab .product-content {
+    max-height: 545px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.pro-dsc-tab .button-view-all button {
+    color: #2e6da4!important;
+    background-color: #fff!important;
+}
+
+.pro-dsc-tab .button-view-all button:hover {
+    color: #fff!important;
+    border-color: #2e6da4!important;
+    background-color: #2e6da4!important;
+}
+
 .pro-dsc-tab p {
     color: #333333;
     margin-bottom: 25px;

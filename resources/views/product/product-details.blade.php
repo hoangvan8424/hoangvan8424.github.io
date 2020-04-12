@@ -58,7 +58,7 @@
                                 <input value="1" name="qtybutton" class="cart-plus-minus-box quantity" type="text">
                             </div>
 							<div class="pro-details-action float-left">
-								<button class="pro-details-act-btn btn-text active" title="Thêm vào giỏ hàng" data-id="{{ $product->id }}">
+								<button class="pro-details-act-btn btn-text active" title="Thêm vào giỏ hàng" data-id="{{ $product->productId }}">
                                     <i class="zmdi zmdi-shopping-cart"></i>Thêm vào giỏ hàng
                                 </button>
 								<button class="pro-details-act-btn btn-icon">
@@ -87,7 +87,12 @@
                     <div class="tab-content fix">
                         <!-- Đặc điểm nổi bật -->
                         <div id="description" class="pro-details-tab pro-dsc-tab tab-pane active">
-                            {!! $product->pro_content !!}
+                            <div class="product-content">
+                                {!! $product->pro_content !!}
+                            </div>
+                            <div class="text-center button-view-all">
+                                <button class="btn btn-primary">Xem thêm nội dung</button>
+                            </div>
                         </div>
                         <!-- Thông số kỹ thuật -->
                         <div id="information" class="pro-details-tab pro-info-tab tab-pane">
@@ -143,7 +148,7 @@
                                                         <input type="hidden" class="star-hidden" name="star-hidden">
                                                     </div>
                                                     <div class="input-box submit-box fix">
-                                                        <button type="submit" class="btn btn-danger" id="button-submit-review" data-id="{{ $product->id }}">Gửi đánh giá
+                                                        <button type="submit" class="btn btn-danger" id="button-submit-review" data-id="{{ $product->productId }}">Gửi đánh giá
                                                         </button>
                                                     </div>
                                                 </form>
@@ -192,7 +197,7 @@
         @if(isset($suggestProduct))
             @foreach($suggestProduct as $key => $value)
                 <div class="col-xs-12">
-                    <a href="#">
+                    <a href="{{ route('get.detail.product', [$value->pro_slug, $value->id]) }}">
                         <div class="sin-product suggest{{ $product->productId==$value->id ? ' active':'' }}">
                             <span class="pro-label">Sale</span>
                             <span class="pro-view{{ $product->productId==$value->id ? ' active':' hide' }}">{{ $product->productId==$value->id ? 'Đang xem':'' }}</span>
@@ -303,6 +308,20 @@
                     window.location.reload();
                 }
             });
+        });
+
+    //    View all
+        $('.button-view-all button').click(function () {
+            let productDes = $('.product-content');
+            if(productDes.hasClass('expand'))
+            {
+                productDes.removeClass('expand');
+                $(this).text('Xem thêm nội dung');
+            }
+            else {
+                productDes.addClass('expand');
+                $(this).text('Thu gọn nội dung');
+            }
         });
 
     </script>

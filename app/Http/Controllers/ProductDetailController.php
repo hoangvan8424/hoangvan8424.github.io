@@ -15,7 +15,7 @@ class ProductDetailController extends FrontendController
         $id = array_pop($url);
         if($id!=null) {
             $product = DB::table('products')
-                ->join('brands', 'products.brand_id', '=', 'brands.id')
+                ->join('brands', 'brand_id', '=', 'brands.id')
                 ->select('*', 'brands.id as brandId', 'products.id as productId')
                 ->where([
                     ['products.id', '=', $id],
@@ -30,31 +30,14 @@ class ProductDetailController extends FrontendController
                     'product_id' => $id
                 ])->orderByDesc('id')->paginate(10);
 
-            $numberRating = DB::table('reviews')
-                                ->join('products', 'products.id', '=', 'reviews.product_id')
-                                ->select('re_rating', DB::raw('COUNT(re_rating) as star'))
-                                ->where('product_id', $id)
-                                ->groupBy('product_id', 're_rating')->get();
-
-//          Chuyển số sao vào mảng
-            $arrRating = [];
-            if(!empty($numberRating)) {
-                for($i = 5; $i >= 1; $i--) {
-                    $arrRating[$i] = 0;
-                    foreach ($numberRating as $item) {
-                        if($item->re_rating == $i) {
-                            $arrRating[$i] = $item->star;
-                            continue;
-                        }
-                    }
-                }
-            }
+//          Lấy ra danh sách đánh giá
+            $arrRating = $this->getListRating($id);
 
 //          Tính số sao trung bình
             $calculateRating = $this->countRating($product->pro_rating_count, $product->pro_rating_total);
 
 //          Sản phẩm cùng danh mục
-            $suggestProduct = $this->suggest($product->pro_category_id, $product->brand_id, $id);
+            $suggestProduct = $this->suggest($product->pro_category_id, $product->brandId, $id);
 //            dd($suggestProduct);
 
             $viewData = [
@@ -86,5 +69,29 @@ class ProductDetailController extends FrontendController
                 ['brand_id', $brand],
                 ['pro_number', '>', 0]
             ])->paginate(10);
+    }
+
+    public function getListRating($id)
+    {
+        $numberRating = DB::table('reviews')
+            ->join('products', 'products.id', '=', 'reviews.product_id')
+            ->select('re_rating', DB::raw('COUNT(re_rating) as star'))
+            ->where('product_id', $id)
+            ->groupBy('product_id', 're_rating')->get();
+
+//          Chuyển số sao vào mảng
+        $arrRating = [];
+        if(!empty($numberRating)) {
+            for($i = 5; $i >= 1; $i--) {
+                $arrRating[$i] = 0;
+                foreach ($numberRating as $item) {
+                    if($item->re_rating == $i) {
+                        $arrRating[$i] = $item->star;
+                        continue;
+                    }
+                }
+            }
+        }
+        return $arrRating;
     }
 }
