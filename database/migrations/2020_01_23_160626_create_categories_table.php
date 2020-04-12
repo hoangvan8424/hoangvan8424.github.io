@@ -19,8 +19,6 @@ class CreateCategoriesTable extends Migration
             $table->string('c_slug')->index();
             $table->char('c_icon')->nullable();
             $table->tinyInteger('c_active')->default(1)->index();
-            $table->string('c_keyword_seo')->nullable();
-            $table->string('c_description_seo')->nullable();
             $table->timestamps();
         });
     }

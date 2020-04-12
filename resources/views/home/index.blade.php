@@ -46,7 +46,7 @@
                             @if(isset($new))
                                 @foreach($new as $key => $value)
                                     <div class="col-md-3 col-sm-6 col-xs-12 computer">
-                                        <a href="#">
+                                        <a href="{{ route('get.detail.product', [$value->pro_slug, $value->id]) }}">
                                             <div class="sin-product">
                                                 <div class="pro-image">
                                                     <img src="img/product/{{ $value->pro_avatar}}" alt="{{ $value->pro_name }}" class="img"/>
@@ -99,8 +99,8 @@
                     </div>
                     <div class="view-all mt-40">
                         <div class="row text-center">
-                            <a href="{{ route('get.list.product', ['may-tinh', '1']) }}" class="btn btn-success" style="border-radius: 0!important">Xem tất cả laptop</a>
-                            <a href="{{ route('get.list.product', ['dien-thoai', '2']) }}" class="btn btn-warning" style="border-radius: 0!important; position: relative; right: 4px;">Xem tất cả điện thoại</a>
+                            <a href="{{ route('get.list.product', ['may-tinh', '1']) }}" class="btn btn-success" style="border-radius: 0!important"><i class="fas fa-long-arrow-alt-left"></i>  Xem tất cả laptop</a>
+                            <a href="{{ route('get.list.product', ['dien-thoai', '2']) }}" class="btn btn-warning" style="border-radius: 0!important; position: relative; right: 4px;">Xem tất cả điện thoại <i class="fas fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>
                 </div>

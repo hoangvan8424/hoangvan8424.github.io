@@ -77,7 +77,7 @@
 				</div>
 			</div>
 
-            <div class="col-xs-12 mt-40">
+            <div class="col-xs-12">
                 <div class="pro-details-tab-container fix">
                     <ul class="pro-details-tablist fix">
                         <li class="active"><a href="#description" data-toggle="tab">Đặc điểm nổi bật</a></li>

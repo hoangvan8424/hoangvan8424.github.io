@@ -40,8 +40,6 @@ class AdminCategoryController extends Controller
         $category->c_name = $requestCategory->c_name;
         $category->c_slug = str_slug($requestCategory->c_name);
         $category->c_icon = $requestCategory->c_icon;
-        $category->c_keyword_seo = $requestCategory->c_keyword_seo ? $requestCategory->c_keyword_seo : $requestCategory->c_name;
-        $category->c_description_seo = $requestCategory->c_description_seo ? $requestCategory->c_description_seo : $requestCategory->c_name;
         $category->save();
     }
     public function insert(RequestCategory $requestCategory)

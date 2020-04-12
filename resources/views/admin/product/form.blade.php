@@ -91,14 +91,6 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="">Từ khóa seo</label>
-                <input type="text" name="pro_keyword_seo" class="form-control" placeholder="Nhập từ khóa seo" value="{{ isset($product->pro_keyword_seo)?old('pro_keyword_seo', $product->pro_keyword_seo):'' }}">
-            </div>
-            <div class="form-group">
-                <label for="">Mô tả seo</label>
-                <input type="text" name="pro_description_seo" class="form-control"  placeholder="Nhập mô tả seo" value="{{ isset($product->pro_description_seo)?old('pro_description_seo', $product->pro_description_seo):'' }}">
-            </div>
-            <div class="form-group">
                 <label for="pro_avatar">Hình ảnh</label>
                 <input type="file" class="form-control" name="pro_avatar">
                 <input type="hidden" name="pro_avatar_update" value="{{ isset($product->pro_avatar) ? $product->pro_avatar : '' }}">

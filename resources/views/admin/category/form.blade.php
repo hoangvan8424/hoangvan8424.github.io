@@ -18,14 +18,5 @@
             </span>
         @endif
     </div>
-    <div class="form-group">
-        <label for="">Từ khóa seo</label>
-        <input type="text" name="c_keyword_seo" class="form-control" id="" placeholder="Nhập từ khóa seo" value="{{ isset($category->c_keyword_seo)?old('c_keyword_seo', $category->c_keyword_seo):'' }}">
-    </div>
-    <div class="form-group">
-        <label for="">Mô tả seo</label>
-        <input type="text" name="c_description_seo" class="form-control" id="" placeholder="Nhập mô tả seo" value="{{ isset($category->c_description_seo)?old('c_description_seo', $category->c_description_seo):'' }}">
-    </div>
-
     <button type="submit" class="btn btn-success btn-outline-dark">Lưu thay đổi</button>
 </form>

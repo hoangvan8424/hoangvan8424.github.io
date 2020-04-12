@@ -32,8 +32,6 @@ class CreateProductsTable extends Migration
             $table->string('pro_img_3')->nullable();
             $table->string('pro_img_4')->nullable();
             $table->integer('pro_auth_id')->default(0)->index();
-            $table->string('pro_keyword_seo')->nullable();
-            $table->string('pro_description_seo')->nullable();
             $table->timestamps();
             $table->foreign('pro_category_id')->references('id')->on('categories');
             $table->foreign('brand_id')
