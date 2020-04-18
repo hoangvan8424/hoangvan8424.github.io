@@ -22,12 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
         menu[2].classList.remove('d-menu-3');
         content.classList.remove('move-left');
         menu[3].classList.remove('d-menu-4');
+        container.classList.remove('move');
     };
 
 
     // Slide on top
     let buttonSlideOnTop = document.getElementById("slide-on-top");
     buttonSlideOnTop.onclick = function () {
+        container.classList.add('move');
         background.classList.add('display');
         menu[2].classList.add('d-menu-3');
     };
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonReveal.onclick = function () {
         background.classList.add('display');
         content.classList.add('move-left');
+        menu[1].classList.add('d-menu-2');
     };
 
     // Slide Along
