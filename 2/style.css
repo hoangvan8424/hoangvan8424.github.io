@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+.container {
+    width: 210mm;
+    height: 290mm;
+    background: #fff;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border-left: 25px solid #E3CCBE;
+    padding: 0 30px 0 50px;
+    overflow: hidden;
+}
+.header {
+    padding: 45px 0 20px 0;
+    text-align: center;
+}
+
+.header > p:first-child {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+.header > p:first-child > span {
+    color: #E3CCBE;
+}
+.header > p:nth-child(2) {
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+.header > p:last-child {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: justify;
+    line-height: 18px;
+}
+.content {
+    width: 100%;
+}
+.left {
+    width: 30%;
+    float: left;
+}
+.right {
+    width: 65%;
+    float: right;
+}
+
+.info {
+    text-align: center;
+}
+
+.info > span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #E3CCBE;
+    border-radius: 50%;
+}
+
+.info > span > i {
+    font-size: 18px;
+    color: #fff;
+    position: relative;
+    left: 0;
+    top: 5px;
+}
+.info > p {
+    display: inline-block;
+    padding: 10px;
+    font-size: 13px;
+}
+.for {
+    text-align: left;
+}
+.compe {
+    margin-top: 30px;
+}
+.for .title, .compe .title, .ato .title{
+    display: inline-block;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 15px;
+    margin-left: 15px;
+}
+.exp .title {
+    display: inline-block;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 15px;
+}
+.for .title.for {
+    margin-left: 20px;
+}
+hr {
+    width: 50%;
+    position: relative;
+    left: 23%;
+    height: 3px;
+    background: #E3CCBE;
+    border: none;
+}
+.for .for-1 {
+    padding: 20px 0 15px 0;
+}
+.for .for-1 p, .for .for-2 p {
+    line-height: 20px;
+    font-size: 13px;
+}
+.for .for-2 {
+    padding: 0 0 15px 0;
+}
+.contact {
+    display: flex;
+    justify-content: space-between;
+}
+.right hr {
+    width: 100%;
+    position: relative;
+    left: 0;
+    height: 3px;
+    background: #E3CCBE;
+    border: none;
+}
+.exp-1 {
+    padding: 20px 0;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: justify;
+}
+.exp-2 {
+    padding-bottom: 20px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: justify;
+}
+.exp-1 > p, .exp-2 > p {
+    padding-bottom: 3px;
+}
+.exp-1 ul, .exp-2 ul {
+    margin-left: 45px;
+}
+.exp-1 ul li, .exp-2 ul li {
+    padding-bottom: 3px;
+}
+.ato .title.ato {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+}
+.compe > div, .ato > div {
+    padding: 20px 0;
+}
+.compe > div > p, .ato > div > p {
+    padding: 8px 0;
+    font-size: 13px;
+}
