@@ -5,7 +5,6 @@
 body {
     background: #ccc;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    box-sizing: border-box;
     padding: 20px 0;
 }
 .container {
@@ -16,158 +15,127 @@ body {
     background: #fff;
     box-sizing: border-box;
     margin: 0 auto;
-    border-left: 25px solid #E3CCBE;
-    padding: 0 30px 0 50px;
     overflow: hidden;
+    position: relative;
 }
 .header {
     padding: 45px 0 20px 0;
     text-align: center;
+    background-color: #22303D;
+    border-bottom: 5px solid #C4BC97;
+    color: #C4BC97;
 }
-
 .header > p:first-child {
     font-size: 40px;
     font-weight: 300;
-    letter-spacing: 15px;
-    text-transform: uppercase;
+    letter-spacing: 10px;
+    padding-bottom: 15px;
 }
-.header > p:first-child > span {
-    color: #E3CCBE;
-}
-.header > p:nth-child(2) {
+.header>p:last-child {
     text-transform: uppercase;
-    padding: 10px 0;
     font-size: 15px;
     letter-spacing: 5px;
 }
-.header > p:last-child {
-    margin-top: 10px;
-    font-size: 13px;
-    text-align: justify;
-    line-height: 18px;
-}
 .content {
-    width: 100%;
+    padding: 30px 45px 30px 30px;
+    height: 100%;
 }
 .left {
-    width: 30%;
+    width: 25%;
     float: left;
+    height: 100%;
+    border-right: 2px solid #ccc;
 }
 .right {
-    width: 65%;
+    width: 73%;
     float: right;
 }
-
 .info {
-    text-align: center;
+    padding-bottom: 10px;
 }
-
-.info > span {
+.info > span:first-child {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 29px;
+    height: 29px;
     background: #E3CCBE;
     border-radius: 50%;
 }
-
 .info > span > i {
-    font-size: 18px;
+    font-size: 20px;
     color: #fff;
     position: relative;
-    left: 0;
-    top: 5px;
+    left: 6px;
+    top: 4px;
 }
-.info > p {
-    display: inline-block;
-    padding: 10px;
+.info > span:last-child {
     font-size: 13px;
 }
-.for {
-    text-align: left;
-}
-.compe {
-    margin-top: 30px;
-}
-.for .title, .compe .title, .ato .title{
-    display: inline-block;
-    padding: 10px 0;
+p.title {
+    font-size: 15px;
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 5px;
-    font-size: 15px;
-    margin-left: 15px;
-}
-.exp .title {
-    display: inline-block;
-    padding: 10px 0;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 5px;
-    font-size: 15px;
-}
-.for .title.for {
-    margin-left: 20px;
+    padding-bottom: 8px;
 }
 hr {
-    width: 50%;
-    position: relative;
-    left: 23%;
-    height: 3px;
-    background: #E3CCBE;
+    height: 5px;
     border: none;
+    background-color: #C4BC97;
+    width: 85px;
 }
-.for .for-1 {
-    padding: 20px 0 15px 0;
+.compe {
+    margin-top: 40px;
+    padding-bottom: 20px;
 }
-.for .for-1 p, .for .for-2 p {
+.compe > div {
+    padding: 20px 0;
+}
+.compe > div > p {
+    font-size: 13px;
     line-height: 20px;
+}
+.for {
+    line-height: 18px;
     font-size: 13px;
 }
-.for .for-2 {
-    padding: 0 0 15px 0;
+.for > div {
+    padding-bottom: 15px;
 }
-.contact {
-    display: flex;
-    justify-content: space-between;
+.for .for-1 {
+    padding-top: 15px;
 }
-.right hr {
-    width: 100%;
-    position: relative;
-    left: 0;
-    height: 3px;
-    background: #E3CCBE;
-    border: none;
+.pro > p:last-child {
+    font-size: 13px;
+    line-height: 15px;
+    text-align: justify;
+    padding: 10px 0;
+}
+.exp {
+    margin-top: 40px;
+    font-size: 13px;
+    line-height: 18px;
 }
 .exp-1 {
     padding: 20px 0;
-    font-size: 13px;
-    line-height: 18px;
-    text-align: justify;
 }
-.exp-2 {
-    padding-bottom: 20px;
-    font-size: 13px;
-    line-height: 18px;
-    text-align: justify;
+.exp > div > ul {
+    margin-left: 38px;
 }
-.exp-1 > p, .exp-2 > p {
-    padding-bottom: 3px;
+.exp > div > p:nth-child(2) {
+    padding-bottom: 10px;
 }
-.exp-1 ul, .exp-2 ul {
-    margin-left: 45px;
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 210mm;
 }
-.exp-1 ul li, .exp-2 ul li {
-    padding-bottom: 3px;
-}
-.ato .title.ato {
+.footer > p:first-child {
     width: 100%;
-    text-align: center;
-    margin-left: 0;
+    height: 5px;
+    background-color: #C4BC97;
 }
-.compe > div, .ato > div {
-    padding: 20px 0;
-}
-.compe > div > p, .ato > div > p {
-    padding: 8px 0;
-    font-size: 13px;
+.footer > p:last-child {
+    width: 100%;
+    height: 10px;
+    background-color: #22303D;
 }
