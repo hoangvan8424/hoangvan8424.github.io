@@ -1,11 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     background: #ccc;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    box-sizing: border-box;
     padding: 20px 0;
 }
 .container {
@@ -59,7 +59,7 @@ body {
 }
 .content {
     padding: 30px 45px 30px 30px;
-    height: 830px;
+    height: 900px;
 }
 .left {
     width: 30%;
@@ -69,7 +69,7 @@ body {
     padding-right: 30px;
 }
 .right {
-    width: 62%;
+    width: 65%;
     float: right;
 }
 .contact .info:first-child {

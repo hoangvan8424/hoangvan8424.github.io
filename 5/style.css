@@ -1,151 +1,134 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
-    background: #ccc;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    box-sizing: border-box;
     padding: 20px 0;
+    background: #fff;
 }
 .container {
      width: 210mm;
      height: 290mm;
      max-width: 210mm;
      max-height: 290mm;
-     background: #fff;
+     background: #E7E7E5;
      margin: 0 auto;
      overflow: hidden;
  }
 .header {
     position: relative;
-    padding: 45px 0 20px 0;
+    padding: 30px 0 20px 0;
     text-align: center;
-    background-color: #32849C;
-    color: #EAE9E7;
-    height: 150px;
-    box-sizing: unset!important;
+    color: #826B8A;
+    height: 185px;
 }
-.header > p:first-child {
-    position: absolute;
+.header-top {
+    display: flex;
+    justify-content: center;
+}
+.header-top > p {
+    font-size: 11px;
+    padding-right: 35px;
+}
+.header-bottom {
+    margin-top: 50px;
+}
+.header-bottom > p:first-child {
     font-size: 40px;
     font-weight: 300;
     letter-spacing: 10px;
-    left: 368px;
-    padding: 15px 0;
-    top: 30%;
-    transform: translateX(-47%);
-    z-index: 3;
-    background-color: #32849c;
-}
-.header>p:nth-child(2) {
     text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 5px;
-    position: absolute;
-    top: 68%;
-    left: 49%;
-    z-index: 2;
-    font-weight: 300;
 }
-.header > p:last-child {
-    position: absolute;
-    width: 200px;
-    height: 145px;
-    border: 2px solid #7C8862;
-    top: 35px;
-    left: 16%;
-    z-index: 1;
+.header-bottom > p:last-child {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding-top: 10px;
 }
 .content {
-    padding: 30px 45px 30px 30px;
-    height: 830px;
+    position: relative;
+    margin: 30px;
+    padding: 40px;
+    height: 855px;
+    background: #EEEEEE;
+    border-top: 15px solid #B2A7B8;
 }
 .left {
     width: 30%;
     float: left;
-    height: 98%;
-    border-right: 2px solid #A09D9C;
-    padding-right: 30px;
 }
 .right {
-    width: 62%;
+    width: 70%;
     float: right;
 }
-.contact .info:first-child {
-    padding-top: 30px;
-}
-.contact .info:last-child {
-    padding-bottom: 30px;
-}
-.info {
-    padding-bottom: 10px;
-}
-.info > span:first-child {
-    display: inline-block;
-    width: 29px;
-    height: 29px;
-    background: #E3CCBE;
+.avatar {
+    position: absolute;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-right: 2px;
+    border: 3px solid #fff;
+    background: #CBCBCB;
+    top: -54px;
+    left: 40%;
+    z-index: 10000;
 }
-.info > span > i {
-    font-size: 20px;
-    color: #fff;
-    position: relative;
-    left: 6px;
-    top: 4px;
-}
-.info > span:last-child {
-    font-size: 13px;
-}
+
 p.title {
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 500;
-    padding-bottom: 8px;
+    letter-spacing: 3px;
+    color: #B2A7B8;
 }
-hr {
-    height: 3px;
-    border: none;
-    background-color: #A09D9C;
-}
+
 .compe {
-    margin-top: 40px;
-    padding-bottom: 20px;
+    height: 250px;
 }
 .compe > div {
-    padding: 20px 0;
-    margin-left: 15px;
+    padding: 10px 0;
 }
 .compe > div > p {
     font-size: 13px;
-    line-height: 20px;
-    padding-bottom: 20px;
+    line-height: 15px;
+    padding-bottom: 15px;
 }
 .for {
-    line-height: 18px;
+    line-height: 17px;
     font-size: 13px;
-    margin-top: 67px;
 }
 .for > div {
     padding-bottom: 15px;
-    margin-left: 15px;
 }
 .for .for-1 {
-    padding-top: 30px;
+    padding-top: 10px;
+}
+.pro {
+    margin-top: 20px;
+    height: 180px;
 }
 .pro > p:last-child {
     font-size: 13px;
-    line-height: 18px;
+    line-height: 17px;
     text-align: justify;
     padding: 10px 0;
-    margin-top: 20px;
+}
+.ato {
+    margin-top: 15px;
+}
+.ato > div {
+    padding-top: 10px;
+}
+.ato > div > p {
+    font-size: 13px;
+    line-height: 15px;
+    padding-bottom: 20px;
 }
 .exp {
-    margin-top: 50px;
     font-size: 13px;
-    line-height: 18px;
+    line-height: 17px;
 }
 .exp-1 {
     padding: 20px 0;
