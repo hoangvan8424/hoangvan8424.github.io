@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.container {
+    width: 210mm;
+    height: 290mm;
+    max-width: 210mm;
+    max-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+}
+.container .header {
+    height: 200px;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    background-color: #4B4D4C;
+    border-bottom: 5px solid #F2F2F2;
+    color: #C4BC97;
+}
+.header > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header > div > p:first-child, .header > div > p:last-child {
+    width: 100px;
+    border-bottom: 1px solid #757776;
+}
+.header > div > p:nth-child(2) {
+    @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+    color: #757776;
+    text-transform: uppercase;
+    font-family: 'Parisienne', cursive;
+    font-size: 35px;
+    padding: 0 20px;
+}
+.header > p:nth-child(2) {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    padding: 15px 0;
+    color: #fff;
+}
+.header>p:last-child {
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: #A3A5A4;
+}
+.content {
+    padding: 30px 45px;
+}
+.left {
+    width: 30%;
+    float: left;
+    height: 750px;
+    border-right: 3px solid #B1B3B2;
+}
+.right {
+    width: 70%;
+    float: right;
+    padding: 0 30px;
+}
+.contact {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 13px;
+    height: 73px;
+    background: #8D8D8D;
+    padding: 15px 0;
+}
+.info {
+
+}
+.info > p {
+    color: #fff;
+    margin-top: 5px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    background: #fff;
+    border-radius: 50%;
+}
+.info > span > i {
+    font-size: 20px;
+    color: #000;
+    position: relative;
+    left: 0;
+    top: 4px;
+}
+.info > span:last-child {
+    font-size: 13px;
+}
+p.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 8px;
+    letter-spacing: 5px;
+}
+hr {
+    height: 3px;
+    border: none;
+    background-color: #B1B3B2;
+    width: 125px;
+}
+.compe {
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+.compe > div {
+    padding: 20px 0;
+    margin-left: 2px;
+    font-size: 13px;
+    line-height: 25px;
+}
+.compe > div > ul {
+    list-style: inside;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    height: 350px;
+}
+.for > div {
+    padding-bottom: 15px;
+}
+.for .for-1 {
+    padding-top: 15px;
+}
+.pro > p:last-child {
+    font-size: 13px;
+    line-height: 15px;
+    text-align: justify;
+    padding: 10px 0;
+}
+.exp {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 16px;
+}
+.exp-1 {
+    padding: 20px 0;
+}
+.exp > div > ul {
+    margin-left: 38px;
+}
+.exp > div > p:nth-child(2) {
+    padding-bottom: 10px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 210mm;
+}
+.footer > p:first-child {
+    width: 100%;
+    height: 5px;
+    background-color: #C4BC97;
+}
+.footer > p:last-child {
+    width: 100%;
+    height: 10px;
+    background-color: #22303D;
+}
