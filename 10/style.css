@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.container {
+    position: relative;
+    width: 210mm;
+    height: 290mm;
+    max-width: 210mm;
+    max-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+    padding: 10px;
+}
+.border {
+    position: absolute;
+    width: 97%;
+    height: 98%;
+    border: 3px solid #000;
+    top: 11px;
+    left: 11px;
+}
+.container .header {
+    height: 150px;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+.header > p:first-child {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    padding: 15px 0;
+    color: #000;
+}
+.header > p:last-child {
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: #A3A5A4;
+}
+.contact {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px 0;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    margin: 0 20px;
+}
+.contact .info > span:last-child {
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+    font-size: 13px;
+}
+.info > p {
+    color: #fff;
+    margin-top: 5px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    background: #000;
+    border-radius: 50%;
+}
+.info > span > i {
+    font-size: 18px;
+    color: #fff;
+    position: relative;
+    left: 0;
+    top: 6px;
+}
+.content {
+    padding: 20px;
+}
+.left {
+    width: 30%;
+    float: left;
+    height: 830px;
+    border-right: 3px solid #000;
+    padding: 10px;
+}
+.right {
+    width: 70%;
+    float: right;
+    padding: 10px 30px;
+}
+p.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+}
+hr {
+    height: 3px;
+    border: none;
+    background-color: #000000;
+    width: 167px;
+}
+.compe {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    height: 330px;
+}
+.compe > div {
+    margin-left: 2px;
+    font-size: 13px;
+    line-height: 25px;
+}
+.compe > div > ul {
+    list-style: none;
+    margin-left: 10px;
+}
+.ato {
+    margin-top: 15px;
+}
+.ato > p.title {
+    margin-left: 10px;
+}
+.ato > div {
+    padding-top: 10px;
+    margin-left: 10px;
+}
+.ato > div > p {
+    font-size: 13px;
+    line-height: 15px;
+    padding-bottom: 20px;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    height: 220px;
+}
+.for > div {
+    margin-left: 10px;
+}
+.pro {
+    height: 170px;
+}
+.pro > p:last-child {
+    font-size: 13px;
+    line-height: 17px;
+    text-align: justify;
+}
+.exp {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 17px;
+}
+.exp > .exp-2 {
+    margin-top: 20px;
+}
+.exp > div > ul {
+    margin-left: 38px;
+    margin-top: 15px;
+}
+.exp > div > p:nth-child(2) {
+    padding-bottom: 10px;
+}
