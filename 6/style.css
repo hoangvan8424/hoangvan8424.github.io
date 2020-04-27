@@ -16,7 +16,7 @@ body {
     background: #fff;
     margin: 0 auto;
 }
-.container .header {
+.header {
     height: 250px;
     text-align: center;
     color: #515150;
@@ -109,7 +109,7 @@ body {
 .info > span:last-child {
     font-size: 13px;
 }
-p.title {
+.title {
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 600;
