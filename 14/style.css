@@ -136,7 +136,17 @@ body {
 
 }
 .info {
+    position: relative;
     padding: 10px;
+}
+.info > p {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #323232;
+    transform: rotate(45deg);
+    left: 6px;
+    top: 9px;
 }
 .info > span:first-child {
     display: inline-block;
@@ -150,6 +160,7 @@ body {
 
 .info > span:last-child {
     font-size: 13px;
+    margin-left: 15px;
 }
 .title {
     font-size: 15px;
