@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.container {
+    width: 210mm;
+    height: 290mm;
+    max-width: 210mm;
+    max-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.header {
+    height: 230px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+}
+.border {
+    position: absolute;
+    top: 35px;
+    left: 144px;
+    width: 60%;
+    height: 134px;
+    border: 5px solid #fff;
+}
+.header .name {
+    width: 100%;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    top: 36%;
+}
+.header .job {
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    margin-top: 20px;
+    font-style: italic;
+    position: absolute;
+    bottom: 18px;
+}
+.content {
+    padding: 30px 0;
+}
+.right {
+    width: 30%;
+    float: right;
+}
+.left {
+    width: 70%;
+    float: left;
+    padding-right: 50px;
+}
+.contact {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: #EBE3DA;
+    border: 3px solid #000;
+    padding: 10px 0;
+}
+.contact > div {
+    padding: 10px 0;
+}
+.info {
+    padding-bottom: 10px;
+}
+.info > hr {
+    height: 3px;
+    border: none;
+    background: #000;
+    margin: 5px;
+}
+.info > p {
+    text-transform: uppercase;
+}
+.info > span {
+    font-style: italic;
+}
+.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px 0;
+    background-color: #EBE3DA;
+    letter-spacing: 5px;
+    color: #0F243F;
+    border: 3px solid #000;
+    text-align: center;
+}
+.skill {
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+.compe > .skill:nth-child(2) {
+    padding-top: 20px;
+}
+.skill > p {
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.skill .status {
+    display: inline-block;
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+}
+.skill .status > span {
+    display: inline-block;
+    height: 8px;
+    margin-bottom: 7px;
+    background: #414143;
+}
+.skill-1 .status .sk-pt {
+    width: 10%;
+    text-align: left;
+}
+.skill-2 .status .sk-pt {
+    width: 40%;
+    text-align: left;
+}
+.skill-3 .status .sk-pt {
+    width: 50%;
+    text-align: left;
+}
+.skill-4 .status .sk-pt {
+    width: 90%;
+    text-align: left;
+}
+.skill-5 .status .sk-pt {
+    width: 100%;
+    text-align: left;
+}
+.compe > div > ul {
+    font-size: 13px;
+    line-height: 20px;
+    list-style: inside;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    height: 185px;
+    margin-top: 20px;
+}
+.for > div {
+    text-align: center;
+    text-transform: uppercase;
+}
+.for > div:nth-child(2) {
+    padding: 25px 0;
+}
+.for > div > p:nth-child(2) {
+    padding-bottom: 15px;
+}
+.for > div > p:first-child {
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.for .for-1 {
+    padding-top: 15px;
+}
+.pro {
+    height: 200px;
+}
+
+.pro > p:last-child {
+    font-size: 13px;
+    line-height: 17px;
+    padding: 10px 0;
+}
+.exp {
+    font-size: 13px;
+    line-height: 18px;
+}
+.exp hr {
+    width: 200px;
+}
+.exp-1 {
+    padding: 10px 0;
+}
+.exp-1 > div, .exp-2 > div {
+    padding-bottom: 10px;
+    text-align: center;
+}
+.exp-1 > div > p:first-child, .exp-2 > div > p:first-child {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.exp > div > ul {
+    margin-left: 38px;
+}
+.exp > div > p:nth-child(2) {
+    padding-bottom: 10px;
+}
