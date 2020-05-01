@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.container {
+    width: 210mm;
+    height: 290mm;
+    max-width: 210mm;
+    max-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+}
+.container .header {
+    height: 200px;
+    padding: 45px 0;
+    text-align: center;
+    background-color: #D8B9AA;
+    color: #000;
+}
+hr {
+    height: 2px;
+    width: 100%;
+    border: none;
+    background-color: #0F243F;
+}
+.header hr {
+    width: 33%;
+    background-color: #000;
+    border: none;
+    height: 3px;
+    margin-left: 262px;
+}
+.header > div {
+    padding: 10px 0;
+}
+.header > div > p:first-child {
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 10px;
+}
+.header > div > p:last-child {
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+.content {
+    padding: 50px;
+}
+.left {
+    width: 50%;
+    float: left;
+    padding-right: 60px;
+}
+.right {
+    width: 50%;
+    float: right;
+}
+.contact {
+    padding: 15px 0;
+    height: 190px;
+}
+.contact > div {
+    padding: 10px 0;
+}
+.info {
+    padding-bottom: 10px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 20px;
+    margin-right: 2px;
+}
+.info > span > i {
+    font-size: 17px;
+    color: #000;
+}
+
+.info > span:last-child {
+    font-size: 13px;
+}
+.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 8px 0;
+    letter-spacing: 2px;
+    color: #D8B9AA;
+}
+.compe > div {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.compe > div > div > p{
+    font-size: 13px;
+    line-height: 25px;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    height: 245px;
+}
+.for > div {
+    padding-bottom: 15px;
+}
+.for .for-1 {
+    padding-top: 15px;
+}
+.pro {
+    height: 175px;
+}
+.pro > hr {
+    position: relative;
+    width: 160px;
+    left: 38%;
+}
+.pro .title {
+    text-align: center;
+}
+.pro > p:last-child {
+    font-size: 13px;
+    line-height: 17px;
+    margin: 20px 50px;
+}
+.exp {
+    font-size: 13px;
+    line-height: 18px;
+}
+.exp-1 {
+    padding: 20px 0;
+}
+.exp > div > ul {
+    margin-left: 38px;
+    padding-top: 10px;
+}
+.exp > div > p:nth-child(2) {
+    padding-bottom: 10px;
+}
