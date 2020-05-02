@@ -23,7 +23,7 @@ body {
     color: #000;
     position: relative;
 }
-.header .name {
+.name {
     width: 100%;
     position: absolute;
     font-size: 40px;
@@ -32,7 +32,7 @@ body {
     text-transform: uppercase;
     top: 22%;
 }
-.header .job {
+.job {
     width: 100%;
     font-size: 15px;
     letter-spacing: 20px;
@@ -222,7 +222,7 @@ body {
     position: relative;
     width: 100%;
     height: 50px;
-    top: 5px;
+    top: -3px;
     left: 0;
 }
 .pro-hr-middle > hr {
@@ -242,10 +242,10 @@ body {
     left: 50%;
 }
 .pro-hr-middle > p:nth-child(2) {
-    left: 233px;
+    left: 215px;
 }
 .pro-hr-middle > p:nth-child(3) {
-    right: 214px;
+    right: 196px;
 }
 .exp {
     font-size: 13px;

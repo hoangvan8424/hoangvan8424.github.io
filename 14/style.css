@@ -57,10 +57,7 @@ body {
     padding: 20px 10px;
     background-color: #DAE6E1;
 }
-.left .title {
-    background-color: #323232;
-    color: #fff;
-}
+
 .right {
     width: 70%;
     float: right;
@@ -161,6 +158,16 @@ body {
 .info > span:last-child {
     font-size: 13px;
     margin-left: 15px;
+}
+.title-left {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background-color: #323232;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
 }
 .title {
     font-size: 15px;

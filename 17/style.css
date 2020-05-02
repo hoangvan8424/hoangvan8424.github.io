@@ -17,6 +17,14 @@ body {
     margin: 0 auto;
     position: relative;
 }
+.border {
+    position: absolute;
+    height: 100%;
+    width: 25px;
+    top: 0;
+    left: 0;
+    background-color: #635D79;
+}
 .header {
     height: 180px;
     color: #fff;
@@ -49,10 +57,10 @@ body {
 .left {
     position: absolute;
     top: 2%;
-    border-left: 25px solid #635D79;
-    width: 27%;
+    width: 24%;
     height: 98%;
     float: left;
+    left: 25px;
     padding: 20px 10px;
     background-color: #DAE6E1;
 
@@ -66,7 +74,7 @@ body {
     position: relative;
     padding: 0;
     height: 158px;
-    width: 189px;
+    width: 190px;
     background-color: #95959D;
     top: -20px;
     left: -10px;

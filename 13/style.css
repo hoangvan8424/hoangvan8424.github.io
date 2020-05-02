@@ -32,7 +32,7 @@ body {
     height: 134px;
     border: 5px solid #fff;
 }
-.header .name {
+.name {
     width: 100%;
     position: absolute;
     font-size: 30px;
@@ -41,7 +41,7 @@ body {
     text-transform: uppercase;
     top: 36%;
 }
-.header .job {
+.job {
     width: 100%;
     font-size: 20px;
     letter-spacing: 3px;

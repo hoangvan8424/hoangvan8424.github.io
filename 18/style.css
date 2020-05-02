@@ -73,9 +73,15 @@ body {
     padding: 30px;
     background-color: #EBEBEB;
 }
-.left .title {
+.title-left {
     background-color: #50647C;
     color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+    padding: 7px 0 7px 15px;
+    text-align: left;
 }
 .right {
     width: 68%;
