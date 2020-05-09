@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+/*@font-face {*/
+/*    font-family: 'Gotham';*/
+/*    src: url("Gotham-Light.otf");*/
+/*}*/
+
+.no {}
+@font-face {
+    font-family: 'Gotham';
+    src: url("../../public/fonts/Gotham-Light.otf");
+}
+.container {
+    font-family: 'Open Sans', sans-serif;
+    width: 210mm;
+    height: auto;
+    max-width: 210mm;
+    min-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    font-family: 'Gotham';
+    height: 250px;
+    padding: 40px;
+    text-align: center;
+    background-color: #2B3D4B;
+    color: #B8985E;
+    position: relative;
+}
+.header > div:nth-child(2) {
+    position: relative;
+    top: 25px;
+}
+.border {
+    position: absolute;
+    width: 90%;
+    min-height: 70%;
+    border: 3px solid #B8985E;
+}
+.header > div:nth-child(2) > p:first-child, .header > div:nth-child(2) > p:nth-child(2) {
+    text-transform: capitalize;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 15px;
+}
+.header > div:nth-child(2) > p:last-child {
+    text-transform: capitalize;
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    margin-top: 15px;
+}
+.text-left {
+    position: absolute;
+    width: 30px;
+    top: 37%;
+    left: 8%;
+}
+.text-left p {
+    text-transform: capitalize;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+.text-left hr {
+    height: 1px;
+    border: none;
+    background-color: #B8985E;
+    margin: 10px 0;
+}
+.content {
+    padding: 0 30px 30px 0;
+}
+.left {
+    width: 37%;
+    float: left;
+    min-height: 846px;
+    padding-left: 40px;
+    padding-top: 30px;
+    background-color: #F2F0EF;
+    border-right: 2px solid #000;
+}
+.right {
+    width: 63%;
+    float: right;
+    padding: 20px 20px 30px 30px;
+    font-size: 12px;
+    line-height: 15px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+.contact {
+    height: 250px;
+}
+.info:first-child {
+    padding-top: 15px;
+}
+.info:last-child {
+    padding-bottom: 30px;
+}
+.info {
+    display: flex;
+    padding-bottom: 15px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    background: #B8985E;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+.info > span > i {
+    color: #fff;
+    position: relative;
+}
+.info-1 > span > i {
+    font-size: 16px;
+    left: 7px;
+    top: 5px;
+}
+.info-2 > span > i {
+    font-size: 31px;
+    left: 9px;
+    top: -1px;
+}
+.info-3 > span > i {
+    font-size: 20px;
+    left: 6px;
+    top: 4px;
+}
+.info-4 > span > i {
+    font-size: 20px;
+    left: 7px;
+    top: 4px;
+}
+.info > div {
+    font-size: 13px;
+    margin-left: 15px;
+}
+.info > div > p {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #4F4F4C;
+    padding: 7px;
+}
+
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    height: 185px;
+}
+.for > div {
+    padding-bottom: 15px;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+.for > div > p:nth-child(2) {
+    padding-bottom: 15px;
+}
+.for > div > p:first-child {
+    font-weight: 600;
+}
+.for-1 {
+    padding-top: 15px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background-color: #2B3D4B;
+}

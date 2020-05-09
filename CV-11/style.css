@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.no {}
+.container {
+    width: 210mm;
+    height: 290mm;
+    max-width: 210mm;
+    max-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+    font-family: kaufmann;
+}
+.header {
+    height: 250px;
+    padding: 45px 0 20px 0;
+    text-align: center;
+    background-color: #0F243F;
+    color: #fff;
+    font-family: javatext;
+}
+hr {
+    height: 3px;
+    border: none;
+    background-color: #0F243F;
+    width: 180px;
+}
+.header hr {
+    width: 100%;
+    background-color: #fff;
+    height: 10px;
+}
+.header > div {
+    height: 150px;
+    padding: 30px 0;
+}
+.header > div > p:first-child {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 10px;
+}
+.header > div > p:last-child {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.content {
+    padding: 50px;
+}
+.left {
+    width: 30%;
+    float: left;
+    padding-right: 20px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+.border {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0E253E;
+}
+.right {
+    position: relative;
+    width: 70%;
+    float: right;
+    padding-left: 25px;
+    font-size: 13px;
+    line-height: 15px;
+}
+.contact {
+    height: 150px;
+}
+.contact > div {
+    padding: 10px 0;
+}
+.info {
+    padding-bottom: 10px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 20px;
+    margin-right: 2px;
+}
+.info > span > i {
+    font-size: 17px;
+    color: #000;
+}
+
+.info > span:last-child {
+    font-size: 13px;
+}
+.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 8px;
+    letter-spacing: 5px;
+    color: #0F243F;
+}
+.compe > div {
+    padding-top: 20px;
+}
+.compe > div > ul {
+    font-size: 13px;
+    line-height: 20px;
+    list-style: inside;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    height: 232px;
+}
+.for > div {
+    padding-bottom: 15px;
+}
+.for-1 {
+    padding-top: 15px;
+}

@@ -5,18 +5,30 @@
 }
 body {
     background: #ccc;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     padding: 20px 0;
 }
+@font-face {
+    font-family: 'Metropoli-Thin';
+    src: url("Metropolis-Thin.otf");
+}
+@font-face {
+    font-family: 'Metropoli-Regular';
+    src: url("Metropolis-Regular.otf");
+}
+.no {}
 .container {
+    font-family: 'Metropoli-Regular';
+    font-style: normal;
     width: 210mm;
-    height: 290mm;
+    height: auto;
     max-width: 210mm;
-    max-height: 290mm;
+    min-height: 290mm;
     background: #fff;
     margin: 0 auto;
 }
 .header {
+    font-family: 'Metropoli-Thin';
     height: 180px;
     color: #fff;
     background: #50647C;
@@ -26,7 +38,7 @@ body {
 }
 .middle > hr {
     width: 80%;
-    height: 2px;
+    height: 1px;
     background-color: #fff;
     border: none;
     margin-left: 65px;
@@ -67,8 +79,8 @@ body {
     padding: 0 30px 30px 0;
 }
 .left {
-    width: 32%;
-    height: 916px;
+    width: 35%;
+    min-height: 916px;
     float: left;
     padding: 30px;
     background-color: #EBEBEB;
@@ -84,7 +96,7 @@ body {
     text-align: left;
 }
 .right {
-    width: 68%;
+    width: 65%;
     float: right;
     padding: 30px 10px 30px 30px;
 }
@@ -102,10 +114,6 @@ body {
     width: 20px;
     margin-right: 2px;
 }
-.info > span > i {
-    font-size: 17px;
-    color: #000;
-}
 
 .info > span:last-child {
     font-size: 13px;
@@ -113,6 +121,9 @@ body {
 .info {
     position: relative;
     padding: 6px;
+    display: flex;
+    align-items: center;
+    line-height: 15px;
 }
 .info > p {
     position: absolute;
@@ -127,20 +138,23 @@ body {
     display: inline-block;
     width: 20px;
     margin-right: 2px;
+    text-align: center;
 }
 .info > span > i {
     font-size: 20px;
-    color: #323232;
+    color: #444B57;
 }
-
+.info-2 > span > i {
+    font-size: 18px;
+}
 .info > span:last-child {
-    font-size: 13px;
+    font-size: 12px;
     margin-left: 15px;
 }
 .title {
     font-size: 15px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 3px;
     color: #4F4F4C;
     background: #EBEBEB;
@@ -174,11 +188,14 @@ body {
     text-transform: uppercase;
     padding-bottom: 5px;
 }
+.for > div > p:nth-child(2) {
+    text-transform: uppercase;
+}
 .for > .for-1 {
     padding-top: 15px;
 }
 .pro > p:last-child {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 18px;
     padding: 20px 0;
     margin-left: 15px;
@@ -192,7 +209,7 @@ body {
     line-height: 20px;
 }
 .exp {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 16px;
 }
 .exp > div > p:first-child {

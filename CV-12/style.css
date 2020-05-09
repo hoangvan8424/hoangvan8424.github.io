@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.no {}
+.container {
+    width: 210mm;
+    height: auto;
+    max-width: 210mm;
+    min-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+}
+@font-face {
+    font-family: 'Italianno';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Italianno'), local('Italianno-Regular'), url(https://fonts.gstatic.com/s/italianno/v9/dg4n_p3sv6gCJkwzT6RXhpwocwM.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Italianno';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Italianno'), local('Italianno-Regular'), url(https://fonts.gstatic.com/s/italianno/v9/dg4n_p3sv6gCJkwzT6RXiJwo.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.header {
+    height: 250px;
+    padding: 40px;
+    text-align: center;
+    background-color: #8397B0;
+    color: #fff;
+    position: relative;
+}
+hr {
+    height: 3px;
+    border: none;
+    background-color: #9CADC0;
+}
+.header > div:nth-child(2) {
+    position: relative;
+    top: 25px;
+}
+.border {
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    border: 5px solid #fff;
+}
+.header > div > p:first-child {
+    text-transform: capitalize;
+    font-size: 70px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    height: 80px;
+    font-family: 'Italianno', cursive;
+}
+.header > div > p:last-child {
+    text-transform: capitalize;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+.content {
+    position: relative;
+    padding: 15px 40px;
+}
+.information {
+    height: 120px;
+}
+.information img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #B9C4E0;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    top: -74px;
+    left: 40%;
+    z-index: 100;
+}
+.contact {
+    width: 40%;
+    float: left;
+    margin-left: 30px;
+}
+.title-contact {
+    text-align: center;
+    width: 50%;
+}
+.contact > div {
+    font-size: 13px;
+    line-height: 22px;
+}
+.info {
+    padding-bottom: 10px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 20px;
+    margin-right: 2px;
+}
+.info > span > i {
+    font-size: 17px;
+    color: #000;
+}
+
+.info > span:last-child {
+    font-size: 13px;
+}
+.title {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 8px;
+    letter-spacing: 1px;
+    color: #9CADC0;
+}
+.pro {
+    width: 42%;
+    float: right;
+}
+.title-pro {
+    text-align: center;
+}
+.pro > p:last-child {
+    font-size: 13px;
+    line-height: 22px;
+    text-align: center;
+}
+.content-2 {
+    padding: 20px 0;
+    font-size: 12px;
+    line-height: 14px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+.footer {
+    position: absolute;
+    width: 210mm;
+    height: 20px;
+    background: #8397B0;
+    bottom: 0;
+}

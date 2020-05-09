@@ -8,17 +8,18 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 20px 0;
 }
+.no {}
 .container {
     width: 210mm;
-    height: 290mm;
+    height: auto;
+    min-height: 290mm;
     max-width: 210mm;
-    max-height: 290mm;
     background: #fff;
     margin: 0 auto;
     position: relative;
 }
 .header {
-    padding: 45px 0 20px 0;
+    padding: 60px 0 50px 0;
     text-align: center;
     background-color: #22303D;
     border-bottom: 5px solid #C4BC97;
@@ -43,29 +44,48 @@ body {
     width: 25%;
     float: left;
     height: 100%;
-    border-right: 2px solid #ccc;
 }
 .right {
-    width: 73%;
+    width: 75%;
+    height: 100%;
+    border-left: 1px solid #ccc;
     float: right;
+    padding-left: 15px;
 }
 .info {
     padding-bottom: 10px;
 }
 .info > span:first-child {
     display: inline-block;
-    width: 29px;
-    height: 29px;
+    width: 35px;
+    height: 35px;
     background: #B7A97E;
     border-radius: 50%;
     margin-right: 2px;
 }
 .info > span > i {
-    font-size: 20px;
     color: #fff;
     position: relative;
+}
+.contact > div:first-child > span > i {
+    font-size: 32px;
+    top: 2px;
+    left: 11px;
+}
+.contact > div:nth-child(2) > span > i {
+    font-size: 25px;
+    top: 5px;
     left: 6px;
-    top: 4px;
+}
+.contact > div:nth-child(3) > span > i {
+    font-size: 20px;
+    top: 7px;
+    left: 7px;
+}
+.contact > div:nth-child(4) > span > i {
+    font-size: 25px;
+    top: 5px;
+    left: 6px;
 }
 .info > span:last-child {
     font-size: 13px;
@@ -83,7 +103,7 @@ hr {
     width: 85px;
 }
 .compe {
-    margin-top: 40px;
+    margin-top: 11px;
     padding-bottom: 20px;
 }
 .compe > div {
@@ -110,9 +130,9 @@ hr {
     padding: 10px 0;
 }
 .exp {
-    margin-top: 40px;
+    margin-top: 49px;
     font-size: 13px;
-    line-height: 18px;
+    line-height: 17px;
 }
 .exp-1 {
     padding: 20px 0;

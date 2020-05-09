@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.no {}
+.container {
+    width: 210mm;
+    height: auto;
+    min-height: 290mm;
+    max-width: 210mm;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    padding: 60px 0 50px 0;
+    text-align: center;
+    background-color: #22303D;
+    border-bottom: 5px solid #C4BC97;
+    color: #C4BC97;
+}
+.header > p:first-child {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    padding-bottom: 15px;
+}
+.header > p:last-child {
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+.content {
+    padding: 30px 45px 30px 30px;
+    height: 100%;
+}
+.left {
+    width: 25%;
+    float: left;
+    height: 100%;
+}
+.right {
+    width: 75%;
+    height: 100%;
+    border-left: 1px solid #ccc;
+    float: right;
+    padding-left: 15px;
+    font-size: 13px;
+    line-height: 16px;
+}
+.info {
+    padding-bottom: 10px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #B7A97E;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+.info > span > i {
+    color: #fff;
+    position: relative;
+}
+.contact > div:first-child > span > i {
+    font-size: 32px;
+    top: 2px;
+    left: 11px;
+}
+.contact > div:nth-child(2) > span > i {
+    font-size: 25px;
+    top: 5px;
+    left: 6px;
+}
+.contact > div:nth-child(3) > span > i {
+    font-size: 20px;
+    top: 7px;
+    left: 7px;
+}
+.contact > div:nth-child(4) > span > i {
+    font-size: 25px;
+    top: 5px;
+    left: 6px;
+}
+.info > span:last-child {
+    font-size: 13px;
+}
+.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+hr {
+    height: 5px;
+    border: none;
+    background-color: #C4BC97;
+    width: 85px;
+}
+.compe {
+    margin-top: 11px;
+    padding-bottom: 20px;
+}
+.compe > div {
+    padding: 20px 0;
+}
+.compe > div > p {
+    font-size: 13px;
+    line-height: 20px;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+}
+.for > div {
+    padding-bottom: 15px;
+}
+.for .for-1 {
+    padding-top: 15px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 210mm;
+}
+.footer > p:first-child {
+    width: 100%;
+    height: 5px;
+    background-color: #C4BC97;
+}
+.footer > p:last-child {
+    width: 100%;
+    height: 10px;
+    background-color: #22303D;
+}

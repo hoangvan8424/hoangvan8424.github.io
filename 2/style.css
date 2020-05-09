@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     background: #ccc;
@@ -8,21 +9,27 @@ body {
     box-sizing: border-box;
     padding: 20px 0;
 }
+
+.no {}
+@font-face {
+    font-family: "bonvenoCF";
+    src: url("BonvenoCF-Light.otf");
+}
 .cv {
+    font-family: "bonvenoCF";
     margin: 0 auto;
     width: 210mm;
     max-width: 210mm;
-    height: 290mm;
-    max-height: 290mm;
+    height: auto;
+    min-height: 290mm;
     background: #fff;
     border-left: 25px solid #E3CCBE;
     padding: 0 30px 0 50px;
-    overflow: hidden;
 }
 .header {
     padding: 45px 0 20px 0;
     text-align: center;
-    height: 200px;
+    height: 260px;
 }
 
 .header > p:first-child {
@@ -65,18 +72,34 @@ body {
 
 .info > span {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     background: #E3CCBE;
     border-radius: 50%;
 }
-
 .info > span > i {
-    font-size: 20px;
     color: #fff;
     position: relative;
-    left: 0;
+}
+.info-1 > span > i {
+    font-size: 32px;
+    top: 2px;
+    left: 1px;
+}
+.info-2 > span > i {
+    font-size: 25px;
     top: 5px;
+    left: 0;
+}
+.info-3 > span > i {
+    font-size: 20px;
+    top: 7px;
+    left: 0;
+}
+.info-4 > span > i {
+    font-size: 25px;
+    top: 5px;
+    left: 1px;
 }
 .info > p {
     display: inline-block;
@@ -89,16 +112,7 @@ body {
 .compe {
     margin-top: 30px;
 }
-.for .title, .compe .title, .ato .title{
-    display: inline-block;
-    padding: 10px 0;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 5px;
-    font-size: 15px;
-    margin-left: 15px;
-}
-.exp .title {
+.title{
     display: inline-block;
     padding: 10px 0;
     text-transform: uppercase;
@@ -106,25 +120,32 @@ body {
     letter-spacing: 5px;
     font-size: 15px;
 }
-.for .title.for {
-    margin-left: 20px;
+.title-2 {
+    margin-left: 30px;
+}
+.title-3 {
+    width: 100%;
+    text-align: center;
 }
 hr {
-    width: 50%;
+    width: 40%;
     position: relative;
-    left: 23%;
+    left: 29%;
     height: 3px;
     background: #E3CCBE;
     border: none;
 }
-.for .for-1 {
+.title-1 {
+    margin-left: 32px;
+}
+.for-1 {
     padding: 20px 0 15px 0;
 }
-.for .for-1 p, .for .for-2 p {
+.for-1 p, .for-2 p {
     line-height: 20px;
     font-size: 13px;
 }
-.for .for-2 {
+.for-2 {
     padding: 0 0 15px 0;
 }
 .contact {
@@ -159,11 +180,6 @@ hr {
 }
 .exp-1 ul li, .exp-2 ul li {
     padding-bottom: 3px;
-}
-.ato .title.ato {
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
 }
 .compe > div, .ato > div {
     padding: 20px 0;

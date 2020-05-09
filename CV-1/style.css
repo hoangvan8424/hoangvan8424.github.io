@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.no {}
+.container {
+    position: relative;
+    width: 210mm;
+    max-width: 210mm;
+    height: auto;
+    min-height: 290mm;
+    margin: 0 auto;
+    background: #fff;
+    font-family: "Corbel";
+}
+@font-face {font-family: "Corbel"; src: url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.eot"); src: url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.woff") format("woff"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.svg#Corbel") format("svg"); }
+@font-face {font-family: "Constantia"; src: url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.eot"); src: url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.woff") format("woff"), url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.svg#Constantia") format("svg"); }
+.header {
+    text-align: center;
+    padding: 30px 0 8px 0;
+    border-bottom: 10px solid #6A6A6A;
+}
+.name {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 400;
+    font-family: "Constantia";
+}
+.header > p {
+    text-transform: uppercase;
+    padding: 8px 0;
+    font-size: 16px;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+}
+.contact > p {
+    border-right: 2px solid #a4a4a4;
+    padding: 0 4px;
+    font-size: 14px;
+}
+.contact > p:last-child {
+    border-right: none;
+    letter-spacing: 3px;
+}
+.content {
+    padding: 30px 40px;
+    line-height: 16px;
+    font-size: 14px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}

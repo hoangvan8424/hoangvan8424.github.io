@@ -8,52 +8,54 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 20px 0;
 }
+.ct {}
 .container {
     position: relative;
     width: 210mm;
     max-width: 210mm;
-    height: 290mm;
-    max-height: 290mm;
+    height: auto;
+    min-height: 290mm;
     margin: 0 auto;
     background: #fff;
-    overflow: hidden;
-    box-sizing: border-box;
+    font-family: "Corbel";
 }
+@font-face {font-family: "Corbel"; src: url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.eot"); src: url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.woff") format("woff"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.svg#Corbel") format("svg"); }
+@font-face {font-family: "Constantia"; src: url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.eot"); src: url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.woff") format("woff"), url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0b9856633d4311a19df074ea509d8390.svg#Constantia") format("svg"); }
 .header {
     text-align: center;
     padding: 30px 0 8px 0;
     border-bottom: 10px solid #6A6A6A;
 }
-.header .name {
+.name {
     text-transform: uppercase;
     font-size: 50px;
     font-weight: 400;
+    font-family: "Constantia";
 }
-.header>p {
+.header > p {
     text-transform: uppercase;
     padding: 8px 0;
     font-size: 16px;
 }
-.header .contact {
+.contact {
     display: flex;
     justify-content: center;
 }
-.header .contact > p {
+.contact > p {
     border-right: 2px solid #a4a4a4;
     padding: 0 4px;
     font-size: 14px;
 }
-.header .contact > p:last-child {
+.contact > p:last-child {
     border-right: none;
     letter-spacing: 3px;
 }
 .content {
     padding: 20px 30px 50px 30px;
 }
-.about .title {
+.title {
     text-transform: uppercase;
     border-bottom: 2px solid #a4a4a4;
-    margin-left: 10px;
     padding-bottom: 10px;
     letter-spacing: 5px;
     font-size: 20px;
@@ -63,18 +65,10 @@ body {
     line-height: 20px;
     font-size: 13px;
 }
-.compe .title, .exp .title {
-    text-transform: uppercase;
-    border-bottom: 2px solid #a4a4a4;
-    padding: 10px 0 10px 10px;
-    letter-spacing: 5px;
-    font-size: 20px;
-    margin-left: 10px;
-}
 .compe {
     margin-top: 30px;
 }
-.compe>div {
+.compe > div {
     display: grid;
     grid-template-columns: auto auto auto;
     text-align: center;
@@ -84,6 +78,9 @@ body {
     text-align: center;
     font-size: 13px;
     margin: 0;
+}
+.exp {
+    padding: 15px 0;
 }
 .exp-1, .exp-2 {
     padding: 10px 0;
@@ -101,13 +98,6 @@ body {
 .exp-1 > ul, .exp-2 >ul {
     margin-left: 40px;
     font-size: 13px;
-}
-.for .title {
-    text-transform: uppercase;
-    border-bottom: 2px solid #a4a4a4;
-    padding: 10px 0 5px 0;
-    letter-spacing: 5px;
-    font-size: 20px;
 }
 .for > p:nth-child(2) {
     padding: 13px 0 5px 0;

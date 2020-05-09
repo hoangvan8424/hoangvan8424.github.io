@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,29 +9,32 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 20px 0;
 }
-.container {
-    width: 210mm;
-    height: 290mm;
-    max-width: 210mm;
-    max-height: 290mm;
-    background: #fff;
-    margin: 0 auto;
-}
-
+.no {}
+/* latin-ext */
 @font-face {
     font-family: 'Italianno';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local('Italianno'), local('Italianno-Regular'), url(https://fonts.gstatic.com/s/italianno/v9/dg4n_p3sv6gCJkwzT6RXhpwocwM.woff2) format('woff2');
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-
+/* latin */
 @font-face {
     font-family: 'Italianno';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local('Italianno'), local('Italianno-Regular'), url(https://fonts.gstatic.com/s/italianno/v9/dg4n_p3sv6gCJkwzT6RXiJwo.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.container {
+    width: 210mm;
+    height: auto;
+    max-width: 210mm;
+    min-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
 }
 .header {
     height: 200px;
@@ -53,9 +56,9 @@ body {
 .header > div > p:nth-child(2) {
     color: #757776;
     text-transform: uppercase;
-    font-family: 'Parisienne', cursive;
-    font-size: 35px;
+    font-size: 45px;
     padding: 0 20px;
+    font-family: 'Italianno', cursive;
 }
 .header > p:nth-child(2) {
     font-size: 40px;
@@ -76,7 +79,7 @@ body {
 .left {
     width: 30%;
     float: left;
-    height: 750px;
+    min-height: 750px;
     border-right: 3px solid #B1B3B2;
 }
 .right {
@@ -93,9 +96,6 @@ body {
     background: #8D8D8D;
     padding: 15px 0;
 }
-.info {
-
-}
 .info > p {
     color: #fff;
     margin-top: 5px;
@@ -110,15 +110,25 @@ body {
     border-radius: 50%;
 }
 .info > span > i {
-    font-size: 20px;
-    color: #000;
+    color: #8D8D8D;
     position: relative;
+}
+.info-1 > span > i {
+    font-size: 30px;
+    left: 0;
+    top: 0;
+}
+.info-2 > span > i {
+    font-size: 20px;
     left: 0;
     top: 4px;
 }
-.info > span:last-child {
-    font-size: 13px;
+.info-3 > span > i {
+    font-size: 16px;
+    left: 0;
+    top: 6px;
 }
+
 .title {
     font-size: 15px;
     text-transform: uppercase;

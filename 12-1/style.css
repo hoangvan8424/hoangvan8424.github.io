@@ -8,16 +8,24 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 20px 0;
 }
+
+.no {}
+@font-face {
+    font-family: 'Gotham';
+    src: url("Gotham-Light.otf");
+}
 .container {
+    font-family: 'Open Sans', sans-serif;
     width: 210mm;
-    height: 290mm;
+    height: auto;
     max-width: 210mm;
-    max-height: 290mm;
+    min-height: 290mm;
     background: #fff;
     margin: 0 auto;
     position: relative;
 }
 .header {
+    font-family: 'Gotham';
     height: 250px;
     padding: 40px;
     text-align: center;
@@ -29,10 +37,10 @@ body {
     position: relative;
     top: 25px;
 }
-.header > .border {
+.border {
     position: absolute;
     width: 90%;
-    height: 70%;
+    min-height: 70%;
     border: 3px solid #B8985E;
 }
 .header > div:nth-child(2) > p:first-child, .header > div:nth-child(2) > p:nth-child(2) {
@@ -46,6 +54,7 @@ body {
     font-size: 18px;
     letter-spacing: 5px;
     font-weight: 300;
+    margin-top: 15px;
 }
 .text-left {
     position: absolute;
@@ -71,7 +80,7 @@ body {
 .left {
     width: 37%;
     float: left;
-    height: 846px;
+    min-height: 846px;
     padding-left: 40px;
     padding-top: 30px;
     background-color: #F2F0EF;
@@ -85,10 +94,10 @@ body {
 .contact {
     height: 250px;
 }
-.contact .info:first-child {
+.info:first-child {
     padding-top: 15px;
 }
-.contact .info:last-child {
+.info:last-child {
     padding-bottom: 30px;
 }
 .info {
@@ -104,10 +113,27 @@ body {
     margin-right: 2px;
 }
 .info > span > i {
-    font-size: 20px;
     color: #fff;
     position: relative;
+}
+.info-1 > span > i {
+    font-size: 16px;
+    left: 7px;
+    top: 5px;
+}
+.info-2 > span > i {
+    font-size: 31px;
+    left: 9px;
+    top: -1px;
+}
+.info-3 > span > i {
+    font-size: 20px;
     left: 6px;
+    top: 4px;
+}
+.info-4 > span > i {
+    font-size: 20px;
+    left: 7px;
     top: 4px;
 }
 .info > div {
@@ -160,7 +186,7 @@ body {
 .for > div > p:first-child {
     font-weight: 600;
 }
-.for .for-1 {
+.for-1 {
     padding-top: 15px;
 }
 .pro > p:last-child {

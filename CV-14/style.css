@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.no {}
+.container {
+    width: 210mm;
+    height: auto;
+    max-width: 210mm;
+    min-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: relative;
+}
+.header {
+    height: 180px;
+    color: #fff;
+    background: #323232;
+}
+.header > div {
+    width: 70%;
+    float: right;
+    text-align: center;
+    padding-top: 20px;
+}
+.header > div > p:first-child {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.header > div > p:last-child {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.content {
+    padding: 0 30px 30px 0;
+}
+.left {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 30%;
+    float: left;
+    min-height: 100%;
+    padding: 20px 10px;
+    background-color: #DAE6E1;
+}
+
+.right {
+    width: 70%;
+    float: right;
+    padding: 30px 0 30px 66px;
+    font-size: 13px;
+    line-height: 16px;
+}
+.logo {
+    position: relative;
+    height: 180px;
+}
+.logo > hr {
+    width: 74px;
+    height: 3px;
+    border: none;
+    background-color: #323232;
+}
+.logo .hr-top {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 40px;
+    left: 15px;
+}
+.logo .hr-left {
+    transform: rotate(225deg);
+    position: absolute;
+    bottom: 39px;
+    left: 14px;
+}
+.logo .hr-right {
+    position: absolute;
+    transform: rotate(45deg);
+    top: 41px;
+    right: 25px;
+}
+.logo .hr-bottom {
+    position: absolute;
+    transform: rotate(-45deg);
+    bottom: 40px;
+    right: 28px;
+}
+.logo > span {
+    font-size: 49px;
+    font-weight: 400;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+}
+.logo > span > hr {
+    width: 33px;
+    height: 3px;
+    border: none;
+    margin: 5px 0;
+    background-color: #323232;
+}
+.logo > p {
+    position: absolute;
+    top: 30px;
+    left: 42px;
+    width: 120px;
+    height: 120px;
+    border: 3px solid #000;
+    transform: rotate(45deg);
+}
+.contact {
+    height: 266px;
+    padding-top: 30px;
+}
+.contact > p:nth-child(2) {
+    font-size: 13px;
+    text-align: center;
+    padding: 20px 0;
+}
+.info {
+    position: relative;
+    padding: 10px;
+}
+.info > p {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #323232;
+    transform: rotate(45deg);
+    left: 6px;
+    top: 9px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 20px;
+    margin-right: 2px;
+}
+.info > span > i {
+    position: relative;
+    color: #323232;
+}
+.info-1 > span > i {
+    font-size: 15px;
+    top: 2px;
+    left: 1px;
+}
+.info-2 > span > i {
+    font-size: 13px;
+    top: 2px;
+    left: 0;
+}
+.info-3 > span > i {
+    font-size: 13px;
+    top: 2px;
+    left: 1px;
+}
+.info > span:last-child {
+    font-size: 13px;
+    margin-left: 15px;
+}
+.title-left {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background-color: #323232;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
+}
+.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #4F4F4C;
+    background: #DAE6E1;
+    padding: 7px;
+    text-align: center;
+}
+.compe {
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+.compe > div {
+    padding: 20px 0;
+    margin-left: 10px;
+    font-size: 13px;
+    line-height: 25px;
+}
+.compe > div > ul {
+    list-style: none;
+    margin-left: 15px;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    height: 245px;
+}
+.for > div {
+    padding-bottom: 15px;
+    margin-left: 15px;
+    line-height: 25px;
+}
+.for > .for-1 {
+    padding-top: 15px;
+}
+.for > .for-2 {
+    margin-top: 15px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}

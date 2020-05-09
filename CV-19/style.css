@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.no {}
+.container {
+    width: 210mm;
+    height: auto;
+    max-width: 210mm;
+    min-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+    border-left: 10px solid #595959;
+}
+.header {
+    height: 200px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    text-transform: uppercase;
+    margin: 0 15px;
+}
+.header hr {
+    width: 378px;
+    position: relative;
+    height: 3px;
+    background-color: #000;
+    left: 24%;
+}
+.header > p:first-child {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    padding-top: 55px;
+    padding-bottom: 3px;
+}
+.header > p:first-child > span {
+    color: #88B5B6;
+}
+.header>p:last-child {
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 5px;
+    padding-top: 15px;
+}
+.content {
+    padding: 10px 20px 15px 15px;
+}
+.left {
+    width: 25%;
+    float: left;
+    min-height: 865px;
+    border-right: 2px solid #ccc;
+    text-align: right;
+    padding-right: 15px;
+}
+.right {
+    width: 73%;
+    float: right;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 20px 0;
+}
+.contact {
+    height: 200px;
+    padding: 15px 0;
+}
+.info {
+    padding-bottom: 10px;
+}
+.info > span:last-child {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    background: #88B5B6;
+    border-radius: 50%;
+    margin-right: 2px;
+    margin-left: 5px;
+}
+.info > span > i {
+    color: #fff;
+    position: relative;
+}
+.info-1 > span > i {
+    font-size: 16px;
+    right: 7px;
+    top: 5px;
+}
+.info-2 > span:first-child {
+    position: relative;
+    top: -8px;
+}
+.info-2 > span > i {
+    font-size: 30px;
+    right: 8px;
+    top: 0;
+}
+.info-3 > span > i {
+    font-size: 20px;
+    right: 5px;
+    top: 4px;
+}
+.info-4 {
+    height: 30px;
+    position: relative;
+    bottom: 30px;
+}
+.info-4 > span > i {
+    font-size: 20px;
+    right: 5px;
+    top: 4px;
+}
+.info-4 > span:first-child {
+    display: block;
+    position: relative;
+    top: 28px;
+    right: 35px;
+    width: 163px;
+}
+.info > span:first-child {
+    font-size: 13px;
+}
+.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 8px;
+    letter-spacing: 2px;
+    color: #88B5B6;
+}
+hr {
+    height: 2px;
+    border: none;
+    background-color: #ccc;
+    width: 100%;
+}
+.compe {
+    padding: 20px 0;
+    height: 290px;
+}
+.compe > div {
+}
+.compe > div > p {
+    font-size: 13px;
+    line-height: 25px;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    padding: 20px 0;
+}
+.for > div {
+    padding-bottom: 15px;
+}
+.for .for-1 {
+    padding-top: 15px;
+}
+.pro {
+    padding: 20px 0;
+    height: 200px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}

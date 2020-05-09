@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+/*.no {}*/
+/*@font-face {*/
+/*    font-family: "Helvetica";*/
+/*    src: url("HelveticaNeue.otf");*/
+/*}*/
+.no {}
+@font-face {
+    font-family: "Helvetica";
+    src: url("../../public/fonts/Helvetica/HelveticaNeue.otf");
+}
+.container {
+    width: 210mm;
+    height: auto;
+    max-width: 210mm;
+    min-height: 290mm;
+    background: #fff;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+}
+.header {
+    font-family: "Helvetica";
+    height: 250px;
+    text-align: center;
+    background-color: #D9E3E4;
+    color: #000;
+    position: relative;
+}
+.name {
+    width: 100%;
+    position: absolute;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    top: 22%;
+}
+.job {
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: 20px;
+    font-weight: 400;
+    margin-top: 20px;
+    position: absolute;
+    line-height: 27px;
+    bottom: 32px;
+}
+.hr-middle {
+    position: relative;
+    width: 90%;
+    height: 50px;
+    top: 132px;
+    left: 32px;
+}
+.hr-middle > hr {
+    height: 1px;
+    background-color: #868787;
+    border: none;
+}
+.hr-middle > p {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    border: 1px solid #868787;
+    bottom: 35px;
+}
+.hr-middle > p:first-child {
+    left: 50%;
+}
+.hr-middle > p:nth-child(2) {
+    left: 337px;
+}
+.hr-middle > p:nth-child(3) {
+    right: 306px;
+}
+.content {
+    padding: 0 30px 20px 40px;
+    margin-top: 40px;
+}
+.left {
+    width: 40%;
+    float: left;
+    padding-left: 24px;
+}
+.right {
+    width: 60%;
+    float: right;
+    padding-left: 30px;
+    border-left: 1px dashed #868787;
+    font-size: 12px;
+    line-height: 14px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+.contact {
+    height: 183px;
+}
+.contact > p:nth-child(2) {
+    font-size: 13px;
+    text-align: center;
+    padding: 20px 0;
+}
+.info {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+.info > p {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #D0DCDA;
+    transform: rotate(45deg);
+    left: 5px;
+    top: 7px;
+}
+.info > span:first-child {
+    display: inline-block;
+    width: 20px;
+    margin-right: 2px;
+}
+.info > span > i {
+    position: relative;
+    z-index: 2;
+}
+.info-1 > span > i {
+    font-size: 17px;
+    color: #323232;
+    left: 2px;
+    z-index: 2;
+}
+.info-2> span > i {
+    font-size: 16px;
+    color: #323232;
+    z-index: 2;
+}
+.info-3 > span > i {
+    font-size: 18px;
+    color: #323232;
+    z-index: 2;
+    left: 3px;
+}
+.info-4 > span > i {
+    font-size: 17px;
+    color: #323232;
+    z-index: 2;
+    left: 1px;
+}
+.info > span:last-child {
+    position: relative;
+    font-size: 13px;
+    left: 30px;
+}
+.info-3 > span:last-child {
+    left: 34px;
+}
+.title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 7px 0;
+    background-color: #E1E1E1;
+    letter-spacing: 5px;
+    color: #0F243F;
+    text-align: center;
+}
+.skill {
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+.compe > .skill:nth-child(2) {
+    padding-top: 20px;
+}
+.compe > div > ul {
+    font-size: 13px;
+    line-height: 20px;
+    list-style: inside;
+}
+.for {
+    line-height: 18px;
+    font-size: 13px;
+    height: 190px;
+    margin: 20px 0;
+}
+.for > div {
+    text-align: center;
+    text-transform: uppercase;
+}
+.for > div:nth-child(2) {
+    padding: 25px 0 15px 0;
+}
+.for > div > p:nth-child(2) {
+    text-transform: capitalize;
+}
+.for > div > p:first-child {
+    font-weight: 600;
+}
+.for .for-1 {
+    padding-top: 15px;
+}
+.pro {
+    height: 226px;
+}
+.progress {
+    font-size: 13px;
+    padding: 40px 0;
+}
+.progress-1, .progress-2, .progress-3, .progress-4 {
+    display: flex;
+    margin-bottom: 30px;
+}
+.progress > div > div > p {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #909292;
+    transform: rotate(45deg);
+    margin-right: 15px;
+}
+.progress > div > p {
+    width: 100px;
+    margin-right: 21px;
+}
+.progress > div > div {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    left: 17px;
+}
+.progress-1 > div {
+    left: 1px!important;
+}

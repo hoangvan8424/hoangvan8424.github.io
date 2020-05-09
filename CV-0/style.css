@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 20px 0;
+}
+.no {}
+.container {
+    width: 210mm;
+    max-width: 210mm;
+    height: auto;
+    min-height: 290mm;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    background-color: #094C70;
+    padding: 25px 0;
+    height: 250px;
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px dashed #ccc;
+    position: relative;
+}
+.logo > span {
+    font-size: 35px;
+    color: #fff;
+    line-height: 30px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 17px;
+    left: 9px;
+    font-weight: 500;
+}
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text > p {
+    padding: 0 25px;
+    text-transform: uppercase;
+    color: #ccc;
+    font-size: 15px;
+}
+.begin {
+    width: 44%;
+    border-bottom: 2px solid #7C7C7E;
+}
+.end {
+    width: 44%;
+    border-bottom: 2px solid #7C7C7E;
+}
+.header-bottom {
+    text-align: center;
+    margin-top: 10px;
+}
+.header-bottom > p:last-child {
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #787377;
+    font-size: 15px;
+    line-height: 23px;
+}
+.header-bottom > p:first-child {
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+.contact {
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 300;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    top: 40px;
+}
+.content {
+    padding: 0 40px;
+    font-size: 13px;
+    line-height: 16px;
+}
+.one, .three, .five {
+    width: 50%;
+    float: right;
+}
+.two, .four {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
