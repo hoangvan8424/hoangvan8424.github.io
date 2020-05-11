@@ -15,6 +15,7 @@ body {
     min-height: 290mm;
     margin: 0 auto;
     background: #fff;
+    overflow-y: auto;
 }
 hr {
     height: 11px;
@@ -81,9 +82,9 @@ hr {
     padding: 20px 30px 50px 30px;
 }
 .about {
-    height: 135px;
+    min-height: 135px;
 }
-p.title {
+.title {
     text-transform: uppercase;
     border-bottom: 2px solid #a4a4a4;
     padding-bottom: 8px;
@@ -113,7 +114,7 @@ p.title {
     margin: 0;
 }
 .exp {
-    height: 423px;
+    min-height: 423px;
 }
 .exp-1, .exp-2 {
     padding: 10px 0;

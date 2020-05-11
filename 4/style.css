@@ -16,6 +16,8 @@ body {
     min-height: 290mm;
     background: #fff;
     margin: 0 auto;
+    overflow-y: auto;
+    padding-bottom: 30px;
 }
 .header {
     position: relative;
@@ -66,12 +68,14 @@ body {
     width: 30%;
     float: left;
     min-height: 77%;
-    border-right: 2px solid #A09D9C;
     padding-right: 30px;
 }
 .right {
-    width: 65%;
+    width: 70%;
     float: right;
+    border-left: 2px solid #A09D9C;
+    padding-left: 30px;
+    min-height: 822px;
 }
 .contact .info:first-child {
     padding-top: 30px;

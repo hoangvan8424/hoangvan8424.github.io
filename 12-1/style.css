@@ -23,6 +23,7 @@ body {
     background: #fff;
     margin: 0 auto;
     position: relative;
+    overflow-y: auto;
 }
 .header {
     font-family: 'Gotham';
@@ -92,7 +93,7 @@ body {
     padding: 0 0 30px 30px;
 }
 .contact {
-    height: 250px;
+    min-height: 250px;
 }
 .info:first-child {
     padding-top: 15px;
@@ -173,7 +174,7 @@ body {
 .for {
     line-height: 18px;
     font-size: 13px;
-    height: 185px;
+    min-height: 185px;
 }
 .for > div {
     padding-bottom: 15px;

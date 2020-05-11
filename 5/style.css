@@ -20,6 +20,8 @@ body {
     background: #E7E7E5;
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
+    overflow-y: auto;
+    position: relative;
 }
 .header {
     position: relative;
@@ -62,6 +64,7 @@ body {
     background: #EEEEEE;
     border-top: 15px solid #B2A7B8;
     box-sizing: border-box;
+    overflow: auto;
 }
 .left {
     width: 30%;
@@ -78,7 +81,7 @@ body {
     border-radius: 50%;
     border: 3px solid #fff;
     background: #CBCBCB;
-    top: -50px;
+    top: 174px;
     left: 40%;
     z-index: 10000;
 }
@@ -92,7 +95,7 @@ body {
 }
 
 .compe {
-    height: 250px;
+    min-height: 250px;
 }
 .compe > div {
     padding: 10px 0;
@@ -114,7 +117,7 @@ body {
 }
 .pro {
     margin-top: 20px;
-    height: 170px;
+    min-height: 170px;
 }
 .pro > p:last-child {
     font-size: 13px;

@@ -21,6 +21,7 @@ body {
     background: #fff;
     margin: 0 auto;
     font-family: 'Raleway', sans-serif;
+    overflow-y: auto;
 }
 .header {
     font-family: "Helvetica";
@@ -94,7 +95,7 @@ body {
     border-right: 1px dashed #868787;
 }
 .contact {
-    height: 183px;
+    min-height: 183px;
 }
 .contact > p:nth-child(2) {
     font-size: 13px;
@@ -130,7 +131,7 @@ body {
     left: 2px;
     z-index: 2;
 }
-.info-2> span > i {
+.info-2 > span > i {
     font-size: 16px;
     color: #323232;
     z-index: 2;
@@ -180,7 +181,7 @@ body {
 .for {
     line-height: 18px;
     font-size: 13px;
-    height: 190px;
+    min-height: 190px;
     margin: 20px 0;
 }
 .for > div {
@@ -200,9 +201,8 @@ body {
     padding-top: 15px;
 }
 .pro {
-    height: 226px;
+    min-height: 226px;
 }
-
 .pro > p:nth-child(2) {
     font-size: 13px;
     line-height: 17px;
@@ -286,5 +286,5 @@ body {
     left: 17px;
 }
 .progress-1 > div {
-    left: 1px!important;
+    left: 1px !important;
 }

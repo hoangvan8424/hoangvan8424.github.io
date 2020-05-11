@@ -17,6 +17,7 @@ body {
     background: #fff;
     margin: 0 auto;
     border-left: 10px solid #595959;
+    overflow-y: auto;
 }
 .header {
     height: 200px;
@@ -64,7 +65,7 @@ body {
     float: right;
 }
 .contact {
-    height: 200px;
+    min-height: 200px;
     padding: 15px 0;
 }
 .info {
@@ -138,7 +139,7 @@ hr {
 }
 .compe {
     padding: 20px 0;
-    height: 290px;
+    min-height: 290px;
 }
 .compe > div {
 }
@@ -159,7 +160,7 @@ hr {
 }
 .pro {
     padding: 20px 0;
-    height: 200px;
+    min-height: 200px;
 }
 .pro > p:last-child {
     font-size: 13px;

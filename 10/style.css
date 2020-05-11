@@ -20,6 +20,7 @@ body {
     margin: 0 auto;
     padding: 10px;
     z-index: 100000;
+    overflow-y: auto;
 }
 .border {
     position: absolute;
@@ -147,7 +148,7 @@ hr {
 .compe {
     margin-top: 20px;
     padding-bottom: 20px;
-    height: 330px;
+    min-height: 330px;
 }
 .compe > div {
     margin-left: 2px;
@@ -176,13 +177,13 @@ hr {
 .for {
     line-height: 18px;
     font-size: 13px;
-    height: 220px;
+    min-height: 220px;
 }
 .for > div {
     margin-left: 10px;
 }
 .pro {
-    height: 170px;
+    min-height: 170px;
 }
 .pro > p:last-child {
     font-size: 13px;

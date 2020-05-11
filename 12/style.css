@@ -17,6 +17,7 @@ body {
     background: #fff;
     margin: 0 auto;
     position: relative;
+    overflow-y: auto;
 }
 @font-face {
     font-family: 'Italianno';
@@ -76,7 +77,7 @@ hr {
     padding: 15px 40px;
 }
 .information {
-    height: 120px;
+    min-height: 120px;
 }
 .information img {
     position: absolute;
@@ -135,7 +136,7 @@ hr {
     display: flex;
     line-height: 18px;
     font-size: 13px;
-    height: 232px;
+    min-height: 232px;
     padding: 20px 0 10px 0;
 }
 .for > p.title {

@@ -26,6 +26,7 @@ body {
     background: #fff;
     margin: 0 auto;
     padding: 0 40px;
+    overflow-y: auto;
 }
 .header {
     font-family: 'Hightower';
@@ -147,7 +148,7 @@ body {
 .for {
     line-height: 18px;
     font-size: 13px;
-    height: 185px;
+    min-height: 185px;
     margin-top: 20px;
 }
 .for > div {
@@ -168,7 +169,7 @@ body {
     padding-top: 15px;
 }
 .pro {
-    height: 200px;
+    min-height: 200px;
 }
 
 .pro > p:last-child {

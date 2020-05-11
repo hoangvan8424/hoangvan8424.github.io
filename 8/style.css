@@ -35,6 +35,7 @@ body {
     min-height: 290mm;
     background: #fff;
     margin: 0 auto;
+    overflow-y: auto;
 }
 .header {
     height: 200px;
@@ -158,7 +159,7 @@ hr {
 .for {
     line-height: 18px;
     font-size: 13px;
-    height: 350px;
+    min-height: 350px;
 }
 .for > div {
     padding-bottom: 15px;

@@ -26,6 +26,7 @@ body {
     min-height: 290mm;
     background: #fff;
     margin: 0 auto;
+    overflow-y: auto;
 }
 .header {
     font-family: 'Metropoli-Thin';
@@ -101,7 +102,7 @@ body {
     padding: 30px 10px 30px 30px;
 }
 .contact {
-    height: 174px;
+    min-height: 174px;
 }
 .contact > div {
     padding: 10px 0;
@@ -177,7 +178,7 @@ body {
 }
 .for {
     font-size: 13px;
-    height: 245px;
+    min-height: 245px;
 }
 .for > div {
     text-align: center;

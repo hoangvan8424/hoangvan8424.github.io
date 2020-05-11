@@ -17,6 +17,7 @@ body {
     background: #fff;
     margin: 0 auto;
     font-family: kaufmann;
+    overflow-y: auto;
 }
 .header {
     height: 250px;
@@ -64,7 +65,7 @@ hr {
 }
 .border {
     width: 3px;
-    height: 100%;
+    min-height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -76,7 +77,7 @@ hr {
     padding-right: 50px;
 }
 .contact {
-    height: 150px;
+    min-height: 150px;
 }
 .contact > div {
     padding: 10px 0;
@@ -116,7 +117,7 @@ hr {
 .for {
     line-height: 18px;
     font-size: 13px;
-    height: 232px;
+    min-height: 232px;
 }
 .for > div {
     padding-bottom: 15px;
@@ -125,7 +126,7 @@ hr {
     padding-top: 15px;
 }
 .pro {
-    height: 150px;
+    min-height: 150px;
 }
 .title-pro {
     text-align: center;
