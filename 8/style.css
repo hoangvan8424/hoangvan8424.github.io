@@ -76,6 +76,8 @@ body {
 }
 .content {
     padding: 30px 45px;
+    display: flex;
+    flex-flow: row wrap;
 }
 .left {
     width: 30%;

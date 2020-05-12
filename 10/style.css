@@ -119,6 +119,8 @@ body {
 }
 .content {
     padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
 }
 .left {
     width: 30%;

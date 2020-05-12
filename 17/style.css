@@ -25,21 +25,22 @@ body {
     overflow-y: auto;
 }
 .border {
-    position: absolute;
+    position: relative;
     min-height: 100%;
     height: auto;
     width: 25px;
     top: 0;
-    left: -25px;
+    left: 0;
     background-color: #635D79;
 }
 .header {
+    width: 578px;
     height: 200px;
     color: #fff;
     background: #635D79;
 }
 .header > div {
-    width: 70%;
+    width: 100%;
     float: right;
     text-align: center;
     top: 72px;
@@ -60,35 +61,43 @@ body {
     text-transform: uppercase;
 }
 .content {
-    padding: 0 30px 30px 0;
+    display: flex;
+    flex-flow: row wrap;
 }
 .left {
-    position: absolute;
-    top: 43px;
     width: 24%;
     min-height: 1053px;
     float: left;
-    left: 25px;
-    padding: 20px 10px 0 10px;
     background-color: #D6D5D6;
     box-sizing: border-box;
 }
+.left > div:nth-child(3) {
+    padding: 0 10px;
+}
+.left > p:first-child {
+    height: 62px;
+    width: 191px;
+    background-color: #635D79;
+}
 .right {
-    width: 73%;
+    width: 72%;
     float: right;
-    padding: 30px 10px 30px 40px;
+}
+.right > div:nth-child(2) {
+    padding: 30px;
 }
 .logo {
     position: relative;
     padding: 0;
     height: 158px;
-    width: 190px;
+    width: 191px;
     background-color: #95959D;
     top: -20px;
-    left: -10px;
+    left: 0;
 }
 .logo > p {
     width: 100%;
+    font-family: "Cambria";
     text-align: center;
     font-size: 100px;
     color: #635D79;
@@ -180,6 +189,7 @@ hr {
 .exp {
     font-size: 13px;
     line-height: 16px;
+    margin-top: 23px
 }
 .exp > div > p:first-child {
     font-weight: 600;
