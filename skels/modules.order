@@ -1,0 +1,7 @@
+kernel//home/thai/linux-master/tools/labs/skels/./kernel_api/3-memory/memory.ko
+kernel//home/thai/linux-master/tools/labs/skels/./kernel_api/2-sched-spin/sched-spin.ko
+kernel//home/thai/linux-master/tools/labs/skels/./kernel_api/7-list-test/list-test.ko
+kernel//home/thai/linux-master/tools/labs/skels/./kernel_api/6-list-sync/list-sync.ko
+kernel//home/thai/linux-master/tools/labs/skels/./kernel_api/4-list/list.ko
+kernel//home/thai/linux-master/tools/labs/skels/./kernel_api/1-mem/mem.ko
+kernel//home/thai/linux-master/tools/labs/skels/./kernel_api/5-list-full/list-full.ko
