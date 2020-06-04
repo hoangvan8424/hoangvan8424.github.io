@@ -69,17 +69,17 @@ static ssize_t vchar_driver_read(struct file *filp, char __user *user_buf, size_
 {
 	if(select == 3) {
 		copy_to_user(user_buf, kernel_buf2, MEM_SIZE);
-		printk(KERN_INFO "Read from kernel buffer\n");
+		printk(KERN_INFO "Read\n");
 		return binNumber;
 	}
 	if(select == 4) {
 		copy_to_user(user_buf, kernel_buf8, MEM_SIZE);
-		printk(KERN_INFO "Read from kernel buffer\n");
+		printk(KERN_INFO "Read\n");
 		return octNumber;
 	}
 	if(select == 5) {
 		copy_to_user(user_buf, kernel_buf16, MEM_SIZE);
-		printk(KERN_INFO, "Read from kernel buffer\n");
+		printk(KERN_INFO, "Read\n");
 		return hexNumber;
 	}
 	return MEM_SIZE;
@@ -110,7 +110,7 @@ static ssize_t vchar_driver_write(struct file *filp, const char __user *user_buf
 			select = 5;
 		}
 	}
-	printk(KERN_INFO "Write to user buffer\n");
+	printk(KERN_INFO "Write\n");
 	return len;
 }
 
