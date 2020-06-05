@@ -8,7 +8,7 @@
 #include<linux/time.h>
 #include<linux/jiffies.h>
 
-#define DRIVER_AUTHOR "Hoang Van Thai"
+#define DRIVER_AUTHOR "Lab 05-1"
 #define DRIVER_DESC "Lab 05 - Bai 1"
 #define VERSION "3.0"
 #define MEM_SIZE 1024
@@ -188,7 +188,7 @@ static int __init char_driver_init(void)
 	}
     printk("Insert character driver successfully. major(%d), minor(%d)\n", MAJOR(vchar_drv.dev_num), MINOR(vchar_drv.dev_num));
 
-	// Register the device class
+	/* tao device file /dev/lab51 */
     vchar_drv.dev_class = class_create(THIS_MODULE, "Lab05");
 	if(IS_ERR(vchar_drv.dev_class)) {
 		printk("Can't create class\n");
