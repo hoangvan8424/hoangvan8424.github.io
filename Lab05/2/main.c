@@ -39,6 +39,7 @@ int main(int argc, char** argv)
         printf("3. Lay thoi gian tuong doi\n");
         printf("4. Ket thuc chuong trinh\n");
         printf("\nNhap lua chon: ");
+        scanf(" %c", &select);
 
         switch (select)
         {  
