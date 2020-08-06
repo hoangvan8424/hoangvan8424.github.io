@@ -1,0 +1,341 @@
+// converted by version 1.3
+// on Fri Aug 07 02:09:16 ICT 2020
+
+.package lab04 {
+	.aid 0x11:0x22:0x33:0x44:0x55;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.3;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.applet {
+		0x11:0x22:0x33:0x44:0x55:0x0 lab04;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef short lab04/index;
+		// 1
+		instanceFieldRef short lab04/j;
+		// 2
+		instanceFieldRef short lab04/dataLen;
+		// 3
+		instanceFieldRef short lab04/i;
+		// 4
+		instanceFieldRef short lab04/position;
+		// 5
+		staticFieldRef byte[] lab04/sinhVien;
+		// 6
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 7
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 8
+		virtualMethodRef 0.10.6()S;		// setIncomingAndReceive()S
+		// 9
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 10
+		staticMethodRef lab04/<init>()V;
+		// 11
+		classRef lab04;
+		// 12
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 13
+		staticFieldRef byte lab04/soMon;
+		// 14
+		virtualMethodRef 0.10.7()S;		// setOutgoing()S
+		// 15
+		virtualMethodRef 0.10.9(S)V;		// setOutgoingLength(S)V
+		// 16
+		virtualMethodRef 0.10.5([BSS)V;		// sendBytesLong([BSS)V
+		// 17
+		staticFieldRef byte[] lab04/diemThi;
+		// 18
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+	}
+
+	.class public lab04 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			 short index 0;		// S
+			 short i 1;		// S
+			 short j 2;		// S
+			 short dataLen 3;		// S
+			 short position 4;		// S
+			private static final byte INS_INSERT = 0;		// B
+			private static final byte INS_PRINT = 1;		// B
+			private static final byte INS_EDIT = 3;		// B
+			private static final byte INS_DEL = 4;		// B
+			private static byte[] diemThi;		// [B
+			private static byte[] sinhVien;		// [B
+			private static byte soMon = 9;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 11;		// lab04/lab04
+					dup;
+					invokespecial 10;		// lab04/lab04.<init>()V
+					pop;
+					return;
+		}
+
+		.method private <init>()V {
+			.stack 4;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 12;		// javacard/framework/Applet.<init>()V
+					sconst_2;
+					getstatic_b 13;		// byte lab04/lab04.soMon
+					smul;
+					newarray 11;
+					putstatic_a 17;		// reference lab04/lab04.diemThi
+					sconst_4;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 83;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 86;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 48;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 49;
+					bastore;
+					putstatic_a 5;		// reference lab04/lab04.sinhVien
+					aload_0;
+					invokevirtual 6;		// register()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 5;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 7;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 8;		// setIncomingAndReceive()S
+					pop;
+					aload_1;
+					invokevirtual 9;		// getBuffer()[B
+					astore_2;
+				L3:	aload_2;
+					sconst_1;
+					baload;
+					stableswitch L26 0 4 L4 L8 L26 L9 L15;
+				L4:	aload_0;
+					sconst_5;
+					putfield_s 0;		// short lab04/lab04.index
+					aload_0;
+					sconst_0;
+					putfield_s 1;		// short lab04/lab04.j
+					aload_0;
+					aload_2;
+					sconst_4;
+					baload;
+					putfield_s 2;		// short lab04/lab04.dataLen
+					aload_0;
+					getfield_s_this 0;		// short lab04/lab04.index
+					putfield_s 3;		// short lab04/lab04.i
+				L5:	getfield_s_this 3;		// short lab04/lab04.i
+					getfield_s_this 0;		// short lab04/lab04.index
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					sadd;
+					if_scmpge L7;
+				L6:	getstatic_a 17;		// reference lab04/lab04.diemThi
+					getfield_s_this 1;		// short lab04/lab04.j
+					aload_2;
+					getfield_s_this 3;		// short lab04/lab04.i
+					baload;
+					bastore;
+					getstatic_a 17;		// reference lab04/lab04.diemThi
+					getfield_s_this 1;		// short lab04/lab04.j
+					sconst_1;
+					sadd;
+					aload_2;
+					getfield_s_this 3;		// short lab04/lab04.i
+					sconst_1;
+					sadd;
+					baload;
+					bastore;
+					aload_0;
+					getfield_s_this 1;		// short lab04/lab04.j
+					sconst_2;
+					sadd;
+					putfield_s 1;		// short lab04/lab04.j
+					aload_0;
+					getfield_s_this 3;		// short lab04/lab04.i
+					sconst_2;
+					sadd;
+					putfield_s 3;		// short lab04/lab04.i
+					goto L5;
+				L7:	aload_1;
+					invokevirtual 14;		// setOutgoing()S
+					pop;
+					aload_1;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					invokevirtual 15;		// setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 17;		// reference lab04/lab04.diemThi
+					sconst_0;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					invokevirtual 16;		// sendBytesLong([BSS)V
+					goto_w L27;
+				L8:	aload_1;
+					invokevirtual 14;		// setOutgoing()S
+					pop;
+					aload_1;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					invokevirtual 15;		// setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 17;		// reference lab04/lab04.diemThi
+					sconst_0;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					invokevirtual 16;		// sendBytesLong([BSS)V
+					goto_w L27;
+				L9:	aload_0;
+					sconst_0;
+					putfield_s 1;		// short lab04/lab04.j
+					aload_0;
+					sconst_0;
+					putfield_s 3;		// short lab04/lab04.i
+				L10:	getfield_s_this 3;		// short lab04/lab04.i
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					if_scmpge L14;
+				L11:	getstatic_a 17;		// reference lab04/lab04.diemThi
+					getfield_s_this 3;		// short lab04/lab04.i
+					baload;
+					aload_2;
+					sconst_5;
+					baload;
+					if_scmpne L13;
+				L12:	getstatic_a 17;		// reference lab04/lab04.diemThi
+					getfield_s_this 3;		// short lab04/lab04.i
+					sconst_1;
+					sadd;
+					aload_2;
+					bspush 6;
+					baload;
+					bastore;
+				L13:	aload_0;
+					getfield_s_this 3;		// short lab04/lab04.i
+					sconst_2;
+					sadd;
+					putfield_s 3;		// short lab04/lab04.i
+					goto L10;
+				L14:	aload_1;
+					invokevirtual 14;		// setOutgoing()S
+					pop;
+					aload_1;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					invokevirtual 15;		// setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 17;		// reference lab04/lab04.diemThi
+					sconst_0;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					invokevirtual 16;		// sendBytesLong([BSS)V
+					goto_w L27;
+				L15:	aload_0;
+					sconst_0;
+					putfield_s 3;		// short lab04/lab04.i
+				L16:	getfield_s_this 3;		// short lab04/lab04.i
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					if_scmpge L20;
+				L17:	getstatic_a 17;		// reference lab04/lab04.diemThi
+					getfield_s_this 3;		// short lab04/lab04.i
+					baload;
+					aload_2;
+					sconst_5;
+					baload;
+					if_scmpne L19;
+				L18:	aload_0;
+					getfield_s_this 3;		// short lab04/lab04.i
+					putfield_s 4;		// short lab04/lab04.position
+					goto L20;
+				L19:	aload_0;
+					getfield_s_this 3;		// short lab04/lab04.i
+					sconst_2;
+					sadd;
+					putfield_s 3;		// short lab04/lab04.i
+					goto L16;
+				L20:	aload_0;
+					getfield_s_this 4;		// short lab04/lab04.position
+					putfield_s 3;		// short lab04/lab04.i
+				L21:	getfield_s_this 3;		// short lab04/lab04.i
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					if_scmpge L25;
+				L22:	getfield_s_this 3;		// short lab04/lab04.i
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					sconst_2;
+					ssub;
+					if_scmpne L24;
+				L23:	goto L25;
+				L24:	getstatic_a 17;		// reference lab04/lab04.diemThi
+					getfield_s_this 3;		// short lab04/lab04.i
+					getstatic_a 17;		// reference lab04/lab04.diemThi
+					getfield_s_this 3;		// short lab04/lab04.i
+					sconst_2;
+					sadd;
+					baload;
+					bastore;
+					aload_0;
+					dup;
+					getfield_s 3;		// short lab04/lab04.i
+					sconst_1;
+					sadd;
+					putfield_s 3;		// short lab04/lab04.i
+					goto L21;
+				L25:	aload_0;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					sconst_2;
+					ssub;
+					putfield_s 2;		// short lab04/lab04.dataLen
+					aload_1;
+					invokevirtual 14;		// setOutgoing()S
+					pop;
+					aload_1;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					invokevirtual 15;		// setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 17;		// reference lab04/lab04.diemThi
+					sconst_0;
+					getfield_s_this 2;		// short lab04/lab04.dataLen
+					invokevirtual 16;		// sendBytesLong([BSS)V
+					goto L27;
+				L26:	sspush 27904;
+					invokestatic 18;		// javacard/framework/ISOException.throwIt(S)V
+				L27:	return;
+		}
+
+	}
+
+}
