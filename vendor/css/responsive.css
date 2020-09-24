@@ -48,7 +48,7 @@
         text-align: center;
     }
     .text-lego p:nth-child(2) {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .lego-form {
@@ -58,6 +58,7 @@
         display: block;
         background-color: #CD1043;
         padding: 20px 10px;
+        width: 100%;
     }
     .header-bottom > .container > .row:first-child {
         height: 487px!important;
@@ -256,9 +257,7 @@
         padding: 20px 0;
         height: 438px;
     }
-    .lego-form-mobile {
-        width: 100%;
-    }
+
     .footer {
         height: 385px;
         padding: 20px 0;
