@@ -173,35 +173,38 @@
     .content-interview {
         margin-top: 0;
         padding-top: 30px;
-        height: 876px;
+        height: 1130px;
     }
     .i-1 {
         right: 10px;
     }
     .iv-img {
-        position: relative;
+
     }
     .iv-img-2 img:first-child {
-        position: absolute;
-        left: 122px;
-        top: 0;
+        margin-right: 0!important;
     }
     .iv-img-2 img:nth-child(2) {
-        position: absolute;
-        top: 316px;
-        left: -49px;
+        margin-right: 0!important;
     }
 
     .iv-img-2 img:nth-child(3) {
-        position: absolute;
-        right: 43px;
-        top: 157px;
+
     }
 
     .iv-2 {
         padding: 30px!important;
         height: 1213px;
     }
+
+    .title-2 p:nth-child(2) {
+        text-align: justify;
+        padding: 0 20px;
+    }
+    .title-2 p:nth-child(2) br{
+        display: none;
+    }
+
     .title-3 {
         text-align: left;
     }
