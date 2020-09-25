@@ -298,5 +298,10 @@
     }
     .p-title {
         font-size: 24px;
+        line-height: 36px;
+    }
+    .title-comment {
+        font-size: 24px;
+        line-height: 36px;
     }
 }
