@@ -118,6 +118,7 @@ p {
     display: block;
     float: left;
     height: 5px;
+    width: 0;
     font-size: 40px;
     color: #B00041;
 
@@ -761,11 +762,11 @@ input.name-2, input.phone, input.email {
 .infomation {
     font-size: 17px;
     line-height: 20px;
-    color: #000000;
+    color: #ffffff;
     font-family: Montserrat-Regular;
 }
 .infomation a, .infomation a:focus {
-    color: #000000;
+    color: #ffffff;
 }
 .info {
     display: flex;
@@ -793,6 +794,7 @@ input.name-2, input.phone, input.email {
     top: -121px;
     left: 90%;
     transform: rotate(90deg);
+    background-color: #ffffff;
 }
 .i-s-1 {
     position: absolute;
