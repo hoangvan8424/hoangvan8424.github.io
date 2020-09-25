@@ -306,13 +306,13 @@
                             </div>
                         </div>
                         <div class="mySlides fade">
-                            <img src="images/ph.png" width="290" height="300" alt=""/>
+                            <img src="images/IMG_0411.jpg" width="290" height="300" alt=""/>
                             <div class="text-comment">
                                 <p>Chị Ngọc Mai - phụ huynh học viên chia sẻ: “Học ở Sumato, con tôi được khuyến khích tự mày mò khám phá nhiều hơn là theo khuôn khổ, nhờ đó con mạnh dạn phát huy thế mạnh và chủ động khắc phục những điểm yếu của bản thân. Sau 1 khóa học, cháu tỏ ra hứng thú, tự giác và tự tin hơn trước rất nhiều</p>
                             </div>
                         </div>
                         <div class="mySlides fade">
-                            <img src="images/ph.png" width="290" height="300" alt=""/>
+                            <img src="images/IMG_0155.jpg" width="290" height="300" alt=""/>
                             <div class="text-comment">
                                 <p>Chị Ngọc Mai - phụ huynh học viên chia sẻ: “Học ở Sumato, con tôi được khuyến khích tự mày mò khám phá nhiều hơn là theo khuôn khổ, nhờ đó con mạnh dạn phát huy thế mạnh và chủ động khắc phục những điểm yếu của bản thân. Sau 1 khóa học, cháu tỏ ra hứng thú, tự giác và tự tin hơn trước rất nhiều</p>
                             </div>
@@ -454,7 +454,7 @@
 
     window.addEventListener("load",function() {
         showSlides(slideIndex);
-        myTimer = setInterval(function(){plusSlides(1)}, 4000);
+        myTimer = setInterval(function(){plusSlides(1)}, 3000);
         slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
 
         slideshowContainer.addEventListener('mouseenter', pause);
@@ -471,16 +471,16 @@
         }
 
         if (n === -1){
-            myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+            myTimer = setInterval(function(){plusSlides(n + 2)}, 3000);
         } else {
-            myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+            myTimer = setInterval(function(){plusSlides(n + 1)}, 3000);
         }
     }
 
     //Controls the current slide and resets interval if needed
     function currentSlide(n){
         clearInterval(myTimer);
-        myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+        myTimer = setInterval(function(){plusSlides(n + 1)}, 3000);
         showSlides(slideIndex = n);
     }
 
@@ -508,7 +508,7 @@
 
     resume = () =>{
         clearInterval(myTimer);
-        myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+        myTimer = setInterval(function(){plusSlides(slideIndex)}, 3000);
     };
 </script>
 </body>

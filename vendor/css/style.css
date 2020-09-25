@@ -801,3 +801,18 @@ input.name-2, input.phone, input.email {
     bottom: 188px;
     left: 0;
 }
+.fade {
+    -webkit-animation-name: fade!important;
+    -webkit-animation-duration: 1.5s!important;
+    animation-name: fade!important;
+    animation-duration: 1.5s!important;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
