@@ -1,0 +1,372 @@
+.section-food {
+  font-family: "trade-gothic-next";
+  padding: 1rem 0px;
+  position: relative;
+  @include min-breakpoint($max-md) {
+    .food-feature-list-wrapper {
+      max-width: 50%;
+    }
+    .btn-light-custom {
+      color: #70BB3C;
+      background-color: #ffffff;
+      border-color: #ffffff;
+      padding: 15px 16px;
+      text-transform: uppercase;
+    }
+
+    .btn-light-custom:hover {
+      color: #ffffff;
+      background-color: #70BB3C;
+      border-color: #ffffff;
+    }
+  }
+  // padding-top: 3rem;
+  // padding-bottom: 3rem;
+  .section-food-wrapper {
+    align-items: center;
+    @include flexbox();
+    width: 100%;
+
+    .food-header {
+    }
+
+    .food-body {
+      flex: 1 1 auto;
+      @include flexbox();
+
+      .food-content {
+
+      }
+
+      .food-image {
+
+      }
+    }
+
+    &.image-first {
+      width: 100%;
+
+      .food-body {
+        flex: unset;
+      }
+    }
+  }
+
+  .food-feature-item {
+    .item-icon {
+      width: 50px;
+      height: 50px;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .item-text {
+
+    }
+  }
+
+  .food-feature-list-wrapper {
+    position: relative;
+    left: 10%;
+    z-index: 15;
+  }
+
+  .food-feature-list {
+    @include flexbox();
+    flex-wrap: wrap;
+    align-items: center;
+    color: $lightgreen;
+
+    .food-feature-item {
+      padding: 0 20px;
+
+      .item-icon {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .food-content {
+    position: relative;
+    right: -28%;
+    z-index: 10;
+
+    .food-title {
+      max-width: 335px;
+    }
+    .food-title.food-title-section-2 {
+      max-width: 340px;
+    }
+  }
+
+  .food-image {
+    img {
+      // max-width: 200px;
+    }
+  }
+
+
+  &.bg-green {
+    svg {
+      width: 50px;
+      height: 50px;
+
+      path {
+        fill: #fff;
+      }
+    }
+
+    .item-text {
+      color: $darkgreen;
+    }
+  }
+}
+
+.food-rating {
+  @include flexbox();
+  align-items: center;
+}
+.food-rating span {
+  text-transform: uppercase;
+  margin-right: 20px!important;
+}
+
+
+@include min-breakpoint($max-md) {
+  .section-food {
+    position: relative;
+
+    .section-food-wrapper {
+      // width: 90%;
+      margin-left: auto;
+    }
+
+    .food-pepper-wrapper {
+      position: relative;
+    }
+    .food-content.food-content-2 {
+      right: -5%;
+    }
+
+    .food-title, .food-title h3 {
+      font-size: 40px;
+      line-height: 1;
+      font-family: "ClubTypeBlackStd", Arial, sans-serif;
+    }
+
+    &.image-position-right {
+      .food-title {
+        text-align: right;
+      }
+
+      .food-pepper {
+        position: absolute;
+        top: -18%;
+        z-index: 1;
+        height: 150%;
+        right: -2%;
+      }
+
+      .food-image {
+        position: relative;
+        flex: 1 1 auto;
+        min-height: 311px;
+
+        img:first-child {
+          position: absolute;
+          width: auto;
+          height: 110%;
+          top: -5%;
+          right: -37%;
+          z-index: 5;
+        }
+        img:nth-child(2) {
+          position: absolute;
+          width: auto;
+          height: 161%;
+          top: -20%;
+          right: -123px;
+          z-index: 4;
+        }
+      }
+    }
+
+    &.image-position-left {
+      .food-pepper {
+        position: absolute;
+        top: -18%;
+        z-index: 0;
+        height: 150%;
+        left: -5%;
+      }
+
+      .food-content {
+        @include flexbox();
+        align-items: center;
+
+      }
+      .food-image.food-img-section-2 img {
+        position: absolute;
+        width: auto;
+        height: 139%;
+        z-index: 2;
+        top: -18%;
+        margin-left: -41%;
+      }
+
+      .food-image {
+        position: relative;
+        flex: 1 1 auto;
+        min-height: 311px;
+        min-width: 300px;
+
+
+
+        img {
+          position: absolute;
+          width: auto;
+          height: 110%;
+          z-index: 2;
+          top: -5%;
+          margin-left: -41%;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint($max-md) {
+  .btn-light-custom {
+    color: #70BB3C;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .btn-light-custom:hover {
+    color: #ffffff;
+    background-color: #70BB3C;
+    border-color: #ffffff;
+  }
+  .section-food {
+    .section-food-wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+      display: block;
+
+      .food-body {
+        display: block;
+      }
+
+
+      .food-content {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        right: unset!important;
+        font-family: "ClubTypeBlackStd", Arial, sans-serif;
+
+        .food-title {
+          max-width: 100%;
+        }
+        .food-rating span {
+          margin-right: 5px!important;
+        }
+      }
+
+      .food-feature-list-wrapper {
+      }
+
+      .food-content {
+      }
+    }
+
+    .food-feature-list {
+      justify-content: space-between;
+
+      .food-feature-item {
+        padding: 0px 5px;
+      }
+
+      .item-icon {
+        width: 30px;
+        height: 30px;
+
+        img, svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    .food-image {
+      text-align: center;
+    }
+  }
+}
+
+.food-dots {
+  position: absolute;
+  top: -10%;
+  left: 15px;
+  width: 200px;
+  @include breakpoint($max-md) {
+    display: none;
+  }
+}
+
+
+@include breakpoint($max-md) {
+  .food-feature-list {
+    flex-wrap: wrap;
+
+    .food-feature-item {
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include flexbox();
+
+      .item-text {
+        margin-left: 1rem;
+      }
+    }
+  }
+  .section-food {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .food-pepper {
+      position: absolute;
+      width: auto;
+      height: 72%;
+      top: 0%;
+      z-index: 0;
+    }
+
+    &.image-position-right {
+      .food-pepper {
+        width: auto;
+        height: 70%;
+        top: 39%;
+        z-index: 0;
+      }
+    }
+  }
+  .section-food-wrapper {
+    .food-image {
+      height: 345px;
+      margin-top: 2rem;
+
+      img {
+        position: absolute;
+        left: 0px;
+        z-index: 1;
+        max-width: 90%;
+        left: 5%;
+      }
+    }
+  }
+}

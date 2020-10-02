@@ -1,0 +1,15 @@
+@import "variables.scss";
+@import "colors.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "fonts.scss";
+@import "icons.scss";
+@import "mixins.scss";
+@import "animation.scss";
+
+// base
+@import "base/mixins.scss";
+@import "base/share.scss";
+@import "base/typography.scss";
+@import "base/card.scss";
+
+@import "layouts/food.scss";

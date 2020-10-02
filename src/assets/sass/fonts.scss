@@ -1,0 +1,54 @@
+@font-face {
+     font-family: SegoeUI;
+     font-style: normal;
+     font-weight: 600;
+     src:
+         local("Segoe UI Bold"),
+         url('../fonts/segoe-ui-bold.woff2') format("woff2"),
+         url('../fonts/segoe-ui-bold.woff') format("woff"),
+         url('../fonts/segoe-ui-bold.ttf') format("truetype"); 
+ }
+  @import url("//hello.myfonts.net/count/3c2714");
+
+@font-face {
+  font-family: 'ClubTypeBlackStd';
+  src: url('../fonts/ClubTypeBlackStd.woff2') format('woff2'), url('../fonts/ClubTypeBlackStd.woff') format('woff');
+}
+
+
+@import url("https://p.typekit.net/p.css?s=1&k=wvq5sge&ht=tk&f=15873.39680.39684.39687.39691&a=584745&app=typekit&e=css");
+
+@font-face {
+font-family:"amatic-sc";
+src:url("https://use.typekit.net/af/5428ca/00000000000000003b9b237c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/5428ca/00000000000000003b9b237c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/5428ca/00000000000000003b9b237c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:700;
+}
+
+@font-face {
+font-family:"trade-gothic-next";
+src:url("https://use.typekit.net/af/a1ace0/00000000000000003b9b2100/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/a1ace0/00000000000000003b9b2100/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/a1ace0/00000000000000003b9b2100/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:700;
+}
+
+@font-face {
+font-family:"trade-gothic-next";
+src:url("https://use.typekit.net/af/be447a/00000000000000003b9b2104/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/be447a/00000000000000003b9b2104/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/be447a/00000000000000003b9b2104/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:400;
+}
+
+@font-face {
+font-family:"trade-gothic-next";
+src:url("https://use.typekit.net/af/0f438f/00000000000000003b9b2107/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/0f438f/00000000000000003b9b2107/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/0f438f/00000000000000003b9b2107/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"trade-gothic-next-condensed";
+src:url("https://use.typekit.net/af/49496c/00000000000000003b9b210b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/49496c/00000000000000003b9b210b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/49496c/00000000000000003b9b210b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:700;
+}
+
+.tk-amatic-sc { font-family: "amatic-sc",sans-serif; }
+.tk-trade-gothic-next { font-family: "trade-gothic-next",sans-serif; }
+.tk-trade-gothic-next-condensed { font-family: "trade-gothic-next-condensed",sans-serif; }
+.CTMercuriusStd-Black {font-family: "ClubTypeBlackStd", sans-serif;}
