@@ -182,17 +182,17 @@
           position: absolute;
           width: auto;
           height: 110%;
-          top: -5%;
-          right: -202px;
+          top: 0;
+          right: -122px;
           z-index: 5;
         }
 
         img:nth-child(2) {
           position: absolute;
           width: auto;
-          height: 161%;
-          top: -20%;
-          right: -123px;
+          height: 164%;
+          top: -14%;
+          right: -29px;
           z-index: 4;
         }
       }
@@ -379,7 +379,7 @@
 
 @media only screen and (max-width: 320px) {
   .section-food {
-    padding-top: 3rem!important;
+    padding-top: 3rem !important;
     padding-bottom: 0;
   }
   .section-food-2 {
@@ -387,7 +387,7 @@
   }
   .section-food-2 .section-food-wrapper .food-image {
     height: 277px;
-    margin-top: 0!important;
+    margin-top: 0 !important;
   }
   .section-food.image-position-right .food-pepper {
     width: auto;
@@ -444,7 +444,7 @@
   }
 
   .food-title.food-title-section-2 {
-    text-align: center!important;
+    text-align: center !important;
   }
 
   .section-food .food-content {
@@ -517,7 +517,7 @@
 
   .section-food .food-content {
     position: relative;
-    right: 0;
+    right: 47px;
     z-index: 10;
   }
 
@@ -546,41 +546,43 @@
 
 }
 
-@include min-breakpoint($max-lg) {
-    .section-food .food-feature-list-wrapper {
-      position: relative;
-      left: 2%;
-      z-index: 15;
-      max-width: 50%;
-    }
-  .section-food.section-food-2 .food-feature-list-wrapper.food-feature-list-wrapper-2 {
-    left: 10%!important;
+@media only screen and (min-width: 991px) and (max-width: 1199px) {
+  .section-food .food-feature-list-wrapper {
+    position: relative;
+    left: 0;
+    z-index: 15;
+    max-width: 50%;
   }
-    .section-food .food-title, .section-food .food-title h3 {
-      font-size: 40px;
-      line-height: 1;
-      font-family: "ClubTypeBlackStd", Arial, sans-serif;
-    }
-    .section-food.image-position-right .food-title {
-      text-align: right;
-    }
-    .section-food .food-content {
-      position: relative;
-      right: -8%;
-      z-index: 10;
-    }
 
-    .section-food .food-feature-list .food-feature-item {
-      padding: 0 20px;
-    }
+  .section-food.section-food-2 .food-feature-list-wrapper.food-feature-list-wrapper-2 {
+    left: 10% !important;
+    max-width: 40%!important;
+  }
+  .section-food .food-title, .section-food .food-title h3 {
+    font-size: 40px;
+    line-height: 1;
+    font-family: "ClubTypeBlackStd", Arial, sans-serif;
+  }
+  .section-food.image-position-right .food-title {
+    text-align: right;
+  }
+  .section-food .food-content {
+    position: relative;
+    right: 0;
+    z-index: 10;
+  }
 
-    .section-food .btn-light-custom {
-      color: #70BB3C;
-      background-color: #ffffff;
-      border-color: #ffffff;
-      padding: 15px 16px;
-      text-transform: uppercase;
-    }
+  .section-food .food-feature-list .food-feature-item {
+    padding: 0 20px;
+  }
+
+  .section-food .btn-light-custom {
+    color: #70BB3C;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    padding: 15px 16px;
+    text-transform: uppercase;
+  }
 }
 
 @include min-breakpoint($max-xl) {
@@ -589,13 +591,13 @@
     margin-left: auto;
   }
   .section-food .food-content.food-content-2 {
-    left: 317px!important;
-    top: 118px!important;
+    left: 317px !important;
+    top: 118px !important;
   }
   .section-food.section-food-2 .food-feature-list-wrapper.food-feature-list-wrapper-2 {
     position: absolute;
-    left: unset!important;
-    right: 3%;
+    left: unset !important;
+    right: 10%;
     max-width: 50%;
     max-height: 50%;
   }
@@ -616,7 +618,7 @@
   }
   .section-food .food-content {
     position: absolute;
-    right: 181px;
+    right: 284px;
     z-index: 10;
   }
 
