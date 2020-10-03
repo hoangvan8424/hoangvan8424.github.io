@@ -1,6 +1,6 @@
 .section-food {
   font-family: "trade-gothic-next";
-  padding: 1rem 0px;
+  padding: 1rem 0;
   position: relative;
   @include min-breakpoint($max-md) {
     .food-feature-list-wrapper {
@@ -97,6 +97,7 @@
     .food-title {
       max-width: 335px;
     }
+
     .food-title.food-title-section-2 {
       max-width: 340px;
     }
@@ -129,9 +130,10 @@
   @include flexbox();
   align-items: center;
 }
+
 .food-rating span {
   text-transform: uppercase;
-  margin-right: 20px!important;
+  margin-right: 20px !important;
 }
 
 
@@ -147,6 +149,7 @@
     .food-pepper-wrapper {
       position: relative;
     }
+
     .food-content.food-content-2 {
       right: -5%;
     }
@@ -180,9 +183,10 @@
           width: auto;
           height: 110%;
           top: -5%;
-          right: -37%;
+          right: -202px;
           z-index: 5;
         }
+
         img:nth-child(2) {
           position: absolute;
           width: auto;
@@ -208,6 +212,7 @@
         align-items: center;
 
       }
+
       .food-image.food-img-section-2 img {
         position: absolute;
         width: auto;
@@ -224,7 +229,6 @@
         min-width: 300px;
 
 
-
         img {
           position: absolute;
           width: auto;
@@ -237,6 +241,7 @@
     }
   }
 }
+
 
 @include breakpoint($max-md) {
   .btn-light-custom {
@@ -267,14 +272,15 @@
       .food-content {
         margin-top: 1rem;
         margin-bottom: 1rem;
-        right: unset!important;
+        right: unset !important;
         font-family: "ClubTypeBlackStd", Arial, sans-serif;
 
         .food-title {
           max-width: 100%;
         }
+
         .food-rating span {
-          margin-right: 5px!important;
+          margin-right: 5px !important;
         }
       }
 
@@ -320,7 +326,7 @@
 }
 
 
-@include breakpoint($max-md) {
+@include breakpoint($max-sm) {
   .food-feature-list {
     flex-wrap: wrap;
 
@@ -341,9 +347,10 @@
     .food-pepper {
       position: absolute;
       width: auto;
-      height: 72%;
-      top: 0%;
+      height: 65%;
+      top: 68px;
       z-index: 0;
+      left: 30px;
     }
 
     &.image-position-right {
@@ -369,4 +376,232 @@
       }
     }
   }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+  .food-feature-list {
+    flex-wrap: wrap;
+
+    .food-feature-item {
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include flexbox();
+
+      .item-text {
+        margin-left: 1rem;
+      }
+    }
+  }
+  .section-food {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .food-pepper {
+      position: absolute;
+      width: auto;
+      height: 80%;
+      left: 18%;
+      top: 69px;
+      z-index: 0;
+    }
+
+    &.image-position-right {
+      .food-pepper {
+        width: auto;
+        height: 70%;
+        top: 39%;
+        z-index: 0;
+      }
+    }
+  }
+
+  .food-title.food-title-section-2 {
+    text-align: center!important;
+  }
+
+  .section-food .food-content {
+    position: relative;
+    right: -28%;
+    top: 41px;
+    z-index: 10;
+  }
+
+  .section-food .section-food-wrapper {
+    .food-image {
+      height: 345px;
+      margin-top: 5rem;
+
+      img:first-child {
+        position: absolute;
+        z-index: 10;
+        max-width: 90%;
+        left: 17%;
+      }
+
+      img:last-child {
+        position: absolute;
+        z-index: 6;
+        max-width: 90%;
+        left: 17%;
+      }
+    }
+  }
+
+  .section-food-2 .section-food-wrapper {
+    .food-image {
+      height: 345px;
+      margin-top: -1rem;
+
+      img {
+        position: absolute;
+        z-index: 1;
+        max-width: 90%;
+        left: 17%;
+      }
+    }
+  }
+
+  .section-food .food-feature-list-wrapper {
+    position: relative;
+    left: 10%;
+    z-index: 15;
+    top: 26px;
+  }
+  .section-food-2 .food-feature-list-wrapper {
+    position: relative;
+    left: 10%;
+    z-index: 15;
+    top: 26px;
+  }
+}
+
+@include min-breakpoint($max-md) {
+  .section-food .food-feature-list {
+
+  }
+
+  .section-food .food-feature-list-wrapper {
+    position: relative;
+    left: 0;
+    z-index: 15;
+    max-width: 35%;
+  }
+
+  .section-food .food-content {
+    position: relative;
+    right: 0;
+    z-index: 10;
+  }
+
+  .section-food .food-title, .section-food .food-title h3 {
+    font-size: 34px;
+    line-height: 1;
+    font-family: "ClubTypeBlackStd", Arial, sans-serif;
+  }
+
+  .section-food.image-position-right .food-title {
+    text-align: left;
+  }
+
+  .section-food .food-feature-list .food-feature-item {
+    padding: 0 20px;
+    margin-top: 15px;
+  }
+
+  .section-food .btn-light-custom {
+    color: #70BB3C;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+}
+
+@include min-breakpoint($max-lg) {
+    .section-food .food-feature-list-wrapper {
+      position: relative;
+      left: 2%;
+      z-index: 15;
+      max-width: 50%;
+    }
+  .section-food.section-food-2 .food-feature-list-wrapper.food-feature-list-wrapper-2 {
+    left: 10%!important;
+  }
+    .section-food .food-title, .section-food .food-title h3 {
+      font-size: 40px;
+      line-height: 1;
+      font-family: "ClubTypeBlackStd", Arial, sans-serif;
+    }
+    .section-food.image-position-right .food-title {
+      text-align: right;
+    }
+    .section-food .food-content {
+      position: relative;
+      right: -8%;
+      z-index: 10;
+    }
+
+    .section-food .food-feature-list .food-feature-item {
+      padding: 0 20px;
+    }
+
+    .section-food .btn-light-custom {
+      color: #70BB3C;
+      background-color: #ffffff;
+      border-color: #ffffff;
+      padding: 15px 16px;
+      text-transform: uppercase;
+    }
+}
+
+@include min-breakpoint($max-xl) {
+
+  .section-food-2 .section-food-wrapper {
+    margin-left: auto;
+  }
+  .section-food .food-content.food-content-2 {
+    left: 317px!important;
+    top: 118px!important;
+  }
+  .section-food.section-food-2 .food-feature-list-wrapper.food-feature-list-wrapper-2 {
+    position: absolute;
+    left: unset!important;
+    right: 3%;
+    max-width: 50%;
+    max-height: 50%;
+  }
+  .section-food .food-feature-list-wrapper {
+    position: relative;
+    left: 10%;
+    z-index: 15;
+    max-width: 50%;
+  }
+
+  .section-food .food-title, .section-food .food-title h3 {
+    font-size: 40px;
+    line-height: 1;
+    font-family: "ClubTypeBlackStd", Arial, sans-serif;
+  }
+  .section-food.image-position-right .food-title {
+    text-align: right;
+  }
+  .section-food .food-content {
+    position: absolute;
+    right: 181px;
+    z-index: 10;
+  }
+
+  .section-food .food-feature-list .food-feature-item {
+    padding: 0 20px;
+  }
+
+  .section-food .btn-light-custom {
+    color: #70BB3C;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    padding: 15px 16px;
+    text-transform: uppercase;
+  }
+
 }
