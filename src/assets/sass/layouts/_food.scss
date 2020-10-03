@@ -369,7 +369,6 @@
 
       img {
         position: absolute;
-        left: 0px;
         z-index: 1;
         max-width: 90%;
         left: 5%;
@@ -377,6 +376,35 @@
     }
   }
 }
+
+@media only screen and (max-width: 320px) {
+  .section-food {
+    padding-top: 3rem!important;
+    padding-bottom: 0;
+  }
+  .section-food-2 {
+    padding-bottom: 3rem;
+  }
+  .section-food-2 .section-food-wrapper .food-image {
+    height: 277px;
+    margin-top: 0!important;
+  }
+  .section-food.image-position-right .food-pepper {
+    width: auto;
+    height: 56%;
+    top: 45%;
+    z-index: 0;
+  }
+  .section-food-2 .food-pepper {
+    position: absolute;
+    width: auto;
+    height: 63%;
+    top: 26px;
+    z-index: 0;
+    left: 30px;
+  }
+}
+
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
   .food-feature-list {
