@@ -26,7 +26,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-@include('admin.component.sidebar')
+@include('admin.components.sidebar')
 <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -36,7 +36,7 @@
         <div id="content">
 
             <!-- Topbar -->
-        @include('admin.component.navbar')
+        @include('admin.components.navbar')
         <!-- End of Topbar -->
 
             <div class="flash-message">
