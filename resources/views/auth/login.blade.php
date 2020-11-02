@@ -19,9 +19,19 @@
                                         @csrf
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email...">
+                                            @if($errors->has('email'))
+                                                <span class="text-danger error-text">
+                                                    {{$errors->first('email')}}
+                                                </span>
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            @if($errors->has('password'))
+                                                <span class="text-danger error-text">
+                                                    {{$errors->first('password')}}
+                                                </span>
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
