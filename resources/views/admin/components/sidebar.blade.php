@@ -18,22 +18,18 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Question
-    </div>
-
     <!-- Nav Item - Pages Collapse Menu -->
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGroup" aria-expanded="true"
            aria-controls="collapseGroup">
             <i class="fas fa-layer-group"></i>
-            <span>Group</span>
+            <span>Chi nhánh</span>
         </a>
         <div id="collapseGroup" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">List group</a>
+                <a class="collapse-item" href="{{ route('branch.list') }}">Danh sách chi nhánh</a>
+                <a class="collapse-item" href="{{ route('branch.add') }}">Thêm chi nhánh</a>
             </div>
         </div>
     </li>
