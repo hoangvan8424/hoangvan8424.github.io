@@ -48,13 +48,24 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            if($this->checkRoles('active') === false ) {
-                return redirect()->route('logout');
-            } else {
+//            if($this->checkRoles('active') === false ) {
+//                return redirect()->route('logout');
+//            } else {
                 return redirect()->route('home');
-            }
+//            }
         } else {
             return redirect()->route('login');
         }
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

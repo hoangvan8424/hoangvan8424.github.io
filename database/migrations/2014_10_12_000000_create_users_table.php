@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('branch_id')->default(0);
             $table->integer('department_id')->default(0);
             $table->text('todo')->nullable();
-            $table->string('avatar')->default('/images/default/avatar.jpg');
+            $table->string('avatar')->default('public/images/default/avatar.jpg');
             $table->rememberToken();
             $table->timestamps();
         });
