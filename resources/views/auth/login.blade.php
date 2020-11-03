@@ -20,7 +20,7 @@
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email...">
                                             @if($errors->has('email'))
-                                                <span class="text-danger error-text">
+                                                <span class="text-danger error-text font-weight-bold">
                                                     {{$errors->first('email')}}
                                                 </span>
                                             @endif
@@ -28,7 +28,7 @@
                                         <div class="form-group">
                                             <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                             @if($errors->has('password'))
-                                                <span class="text-danger error-text">
+                                                <span class="text-danger error-text font-weight-bold">
                                                     {{$errors->first('password')}}
                                                 </span>
                                             @endif
@@ -55,7 +55,7 @@
                                         <a class="small" href="forgot-password.html">Quên mật khẩu?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Tạo tài khoản!</a>
+                                        <a class="small" href="{{ route('register') }}">Tạo tài khoản!</a>
                                     </div>
                                 </div>
                             </div>

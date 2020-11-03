@@ -12,37 +12,52 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user" method="POST" action="">
+                            <form class="user" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                                 @csrf
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Họ">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Tên">
-                                    </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" name="name" placeholder="Họ tên" value="{{ old('name') }}">
+                                    @if($errors->has('name'))
+                                        <span class="text-danger error-text font-weight-bold">
+                                            {{$errors->first('name')}}
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                                    <input type="email" class="form-control form-control-user" name="email" placeholder="Email" value="{{ old('email') }}">
+                                    @if($errors->has('email'))
+                                        <span class="text-danger error-text font-weight-bold">
+                                            {{$errors->first('email')}}
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mật khẩu">
+                                        <input type="password" class="form-control form-control-user" name="password" placeholder="Mật khẩu">
+                                        @if($errors->has('password'))
+                                            <span class="text-danger error-text font-weight-bold">
+                                                {{$errors->first('password')}}
+                                            </span>
+                                        @endif
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Xác nhận mật khẩu">
+                                        <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="Xác nhận mật khẩu">
+                                        @if($errors->has('password_confirmation'))
+                                            <span class="text-danger error-text font-weight-bold">
+                                                {{$errors->first('password_confirmation')}}
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Tạo tài khoản
-                                </a>
+                                </button>
                             </form>
                             <hr>
                             <div class="text-center">
                                 <a class="small" href="forgot-password.html">Quên mật khẩu?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Đã có tài khoản? Đăng nhập!</a>
+                                <a class="small" href="{{ route('login') }}">Đã có tài khoản? Đăng nhập!</a>
                             </div>
                         </div>
                     </div>
