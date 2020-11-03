@@ -36,6 +36,17 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id}', 'BranchController@delete')->name('branch.delete');
     });
 
+    Route::group(['prefix' => 'department'], function () {
+        Route::get('', 'DepartmentController@index')->name('department.list');
+        Route::get('/add', 'DepartmentController@add')->name('department.add');
+        Route::post('/add', 'DepartmentController@save')->name('department.save');
+
+        Route::get('/update/{id}', 'DepartmentController@showUpdateForm')->name('department.edit');
+        Route::post('/update/{id}', 'DepartmentController@update')->name('department.update');
+
+        Route::get('/delete/{id}', 'DepartmentController@delete')->name('department.delete');
+    });
+
 });
 
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');
