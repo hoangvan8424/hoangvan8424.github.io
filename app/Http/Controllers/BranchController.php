@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class BranchController extends Controller
 {
     public function index() {
-        $data = Branch::orderBy('id', 'desc')->get();
+        $data = Branch::all();
 
         return view('admin.branch.list', compact('data'));
     }
