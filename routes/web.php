@@ -24,6 +24,18 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::get('/', 'HomeController@index')->name('home');
     });
+
+    Route::group(['prefix' => 'branch'], function () {
+        Route::get('/', 'BranchController@index')->name('branch.list');
+        Route::get('/add', 'BranchController@add')->name('branch.add');
+        Route::post('/add', 'BranchController@save')->name('branch.save');
+
+        Route::get('/update/{id}', 'BranchController@showUpdateForm')->name('branch.edit');
+        Route::post('/update/{id}', 'BranchController@update')->name('branch.update');
+
+        Route::get('/delete/{id}', 'BranchController@delete')->name('branch.delete');
+    });
+
 });
 
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');
