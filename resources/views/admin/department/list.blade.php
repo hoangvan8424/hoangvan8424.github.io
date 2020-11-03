@@ -59,10 +59,10 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('branch.edit', $value->id) }}" class="btn btn-warning btn-circle">
+                                    <a href="{{ route('department.edit', $value->id) }}" class="btn btn-warning btn-circle">
                                         <i class="fas fa-pen"></i>
                                     </a>
-                                    <a href="{{ route('branch.delete', $value->id) }}" class="btn btn-danger btn-circle ml-2">
+                                    <a href="{{ route('department.delete', $value->id) }}" class="btn btn-danger btn-circle ml-2">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>

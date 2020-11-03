@@ -31,11 +31,20 @@ class DepartmentController extends Controller
     }
 
     public function showUpdateForm($id) {
-
+        $department = Department::findOrFail($id);
+        $branch = Branch::all();
+        return view('admin.department.update', compact('branch', 'department'));
     }
 
     public function update($id, RequestDepartment $request) {
+        $department = Department::findOrFail($id);
+        $department->name = $request->name;
+        $department->branch_id = $request->branch;
+        $department->note = $request->note ? $request->note:'';
+        $department->active = $request->active === 'true'?1:0;
 
+        $department->save();
+        return redirect()->route('department.list')->with('alert-success', 'Sửa phòng ban thành công');
     }
 
     public function delete($id) {

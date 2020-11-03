@@ -57,7 +57,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">List part</a>
+                <a class="collapse-item" href="">List par</a>
                 <a class="collapse-item" href="">Add part</a>
             </div>
         </div>
