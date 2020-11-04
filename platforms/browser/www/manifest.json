@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "I Love Vn",
+  "short_name": "I Love Vn",
+  "version": "com.ilovevn",
+  "description": "Vn Native Framework",
+  "author": "hoang.le.tn91@gmail.com",
+  "icons": [],
+  "start_url": "index.html"
+}

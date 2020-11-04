@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ilovevn" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>I Love Vn</name>
+    <description>
+        Vn Native Framework
+    </description>
+    <author email="hoang.le.tn91@gmail.com" href="">
+        hoang.le.tn91@gmail.com
+    </author>
+    <content src="index.html" />
+    <allow-navigation href="*" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <hook src="hooks/build.js" type="before_build" />
+    <hook src="hooks/after_run.js" type="after_run" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF" />
+</widget>
