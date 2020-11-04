@@ -162,6 +162,8 @@ messageScreen.render = function () {
     second_slide_name.create('h6');
     second_slide_name.content('John');
 
+    
+
 
     // build
     screen.childComponent(container_1.get());
@@ -178,12 +180,20 @@ messageScreen.render = function () {
     sub_div_title.childComponent(chat_friend.get());
 
     div_recent.childComponent(recent_slider.get());
+
     recent_slider.childComponent(first_item.get());
     first_item.childComponent(first_recent_box.get());
     first_recent_box.childComponent(first_dot_btn.get());
     first_recent_box.childComponent(first_recent_profile.get());
     first_recent_profile.childComponent(first_slide_img.get());
     first_recent_profile.childComponent(first_slide_name.get());
+
+    recent_slider.childComponent(second_item.get());
+    second_item.childComponent(second_recent_box.get());
+    second_recent_box.childComponent(second_dot_btn.get());
+    second_recent_box.childComponent(second_recent_profile.get());
+    second_recent_profile.childComponent(second_slide_img.get());
+    second_recent_profile.childComponent(second_slide_name.get());
 
 
 
