@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c3b8f3c2-74c7-4145-9794-017f58adc093" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jduZFXZmXUalOZ20YhrXXYjA9g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/www/assets/js/ckeditor" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www/assets/css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www/assets/js/ckeditor" />
+      <recent name="$PROJECT_DIR$/www/assets" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3b8f3c2-74c7-4145-9794-017f58adc093" name="Default Changelist" comment="" />
+      <created>1604146343890</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604146343890</updated>
+      <workItem from="1604417051872" duration="12101000" />
+      <workItem from="1604475878622" duration="2052000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="201" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1604477931169">
+      <screen x="58" y="27" width="1308" height="741" />
+    </state>
+    <state x="201" y="31" width="1022" height="737" key="SettingsEditor/58.27.1308.741/1366.0.1360.768@58.27.1308.741" timestamp="1604477931169" />
+    <state x="158" y="127" width="1108" height="541" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1604146908990">
+      <screen x="58" y="27" width="1308" height="741" />
+    </state>
+    <state x="158" y="127" width="1108" height="541" key="com.android.tools.idea.avdmanager.AvdListDialog/58.27.1308.741/1366.0.1360.768@58.27.1308.741" timestamp="1604146908990" />
+    <state x="376" y="174" key="run.anything.popup" timestamp="1604420026033">
+      <screen x="58" y="27" width="1308" height="741" />
+    </state>
+    <state x="376" y="174" key="run.anything.popup/58.27.1308.741/1366.0.1360.768@58.27.1308.741" timestamp="1604420026033" />
+  </component>
+</project>

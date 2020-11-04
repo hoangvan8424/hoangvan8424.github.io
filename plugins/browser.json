@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ilovevn"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ilovevn"
+    },
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "com.ilovevn"
+    }
+  },
+  "dependent_plugins": {}
+}
