@@ -162,7 +162,151 @@ messageScreen.render = function () {
     second_slide_name.create('h6');
     second_slide_name.content('John');
 
-    
+    // main message
+    let message_main = new componentObject();
+    message_main.create('div');
+    message_main.attr('class', 'chitchat-main small-sidebar');
+    message_main.attr('id', 'content');
+
+    let chat_content = new componentObject();
+    chat_content.create('div');
+    chat_content.attr('class', 'chat-content tabto active');
+
+    let message_custom = new componentObject();
+    message_custom.create('div');
+    message_custom.attr('class', 'messages custom-scroll active');
+    message_custom.attr('id', 'chating');
+    let contact_detail = new componentObject();
+    contact_detail.create('div');
+    contact_detail.attr('class', 'contact-details');
+
+    // message row
+    let message_row = new componentObject();
+    message_row.create('div');
+    message_row.attr('class', 'row');
+    let search_form = new componentObject();
+    search_form.create('form');
+    search_form.attr('class', 'form-inline search-form');
+    let chat_form_group = new componentObject();
+    chat_form_group.create('div');
+    chat_form_group.attr('class', 'form-group');
+    let input_plaint_text = new componentObject();
+    input_plaint_text.create('input');
+    input_plaint_text.attr('class', 'form-control-plaintext');
+    input_plaint_text.attr('type', 'search');
+    input_plaint_text.attr('placeholder', 'Search..');
+    let icon_close_search = new componentObject();
+    icon_close_search.create('div');
+    icon_close_search.attr('class', 'icon-close close-search');
+
+    // col-7
+    let col_7 = new componentObject();
+    col_7.create('div');
+    col_7.attr('class', 'col-7');
+
+    let media_left = new componentObject();
+    media_left.create('div');
+    media_left.attr('class', 'media left');
+    let sub_media_left = new componentObject();
+    sub_media_left.create('div');
+    sub_media_left.attr('class', 'media-left mr-3');
+    let profile_online_trigger = new componentObject();
+    profile_online_trigger.create('div');
+    profile_online_trigger.attr('class', 'profile online menu-trigger');
+    profile_online_trigger.cssObject({
+        backgroundImage: 'url(./assets/images/contact/2.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        display: 'block'
+    });
+
+    let bg_img_message = new componentObject();
+    bg_img_message.create('img');
+    bg_img_message.attr('src', './assets/images/contact/2.jpg');
+    bg_img_message.attr('alt', 'Avatar');
+
+    let media_body = new componentObject();
+    media_body.create('div');
+    media_body.attr('class', 'media-body');
+
+    let message_person_name = new componentObject();
+    message_person_name.create('h5');
+    message_person_name.content('Josephin water');
+    let badge_status = new componentObject();
+    badge_status.create('div');
+    badge_status.attr('class', 'badge badge-success');
+    badge_status.contentHTML('Active');
+    // end message row
+
+    // contact chat
+    let contact_chat = new componentObject();
+    contact_chat.create('div');
+    contact_chat.attr('class', 'contact-chat');
+    let ul_chat = new componentObject();
+    ul_chat.create('ul');
+    ul_chat.attr('class', 'chatappend');
+
+    let li_replies = new componentObject();
+    li_replies.create('li');
+    li_replies.attr('class', 'replies');
+
+    let chat_media = new componentObject();
+    chat_media.create('div');
+    chat_media.attr('class', 'media');
+
+    let chat_profile = new componentObject();
+    chat_profile.create('div');
+    chat_profile.attr('class', 'profile mr-4');
+    chat_profile.cssObject({
+        backgroundImage: 'url(./assets/images/contact/2.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        display: 'block',
+    });
+
+    let chat_profile_img = new componentObject();
+    chat_profile_img.create('img');
+    chat_profile_img.attr('class', 'bg-img');
+    chat_profile_img.attr('src', './assets/images/contact/2.jpg');
+    chat_profile_img.css('display','none');
+
+    let chat_media_body = new componentObject();
+    chat_media_body.create('div');
+    chat_media_body.attr('class', 'media-body');
+
+    let chat_contact_name = new componentObject();
+    chat_contact_name.create('div');
+    chat_contact_name.attr('class', 'contact-name');
+
+    let chat_name = new componentObject();
+    chat_name.create('h5');
+    chat_name.content('Alan josheph');
+
+    let chat_time = new componentObject();
+    chat_time.create('h6');
+    chat_time.content('01:40 AM');
+
+    let ul_message_box = new componentObject();
+    ul_message_box.create('ul');
+    ul_message_box.attr('class', 'msg-box');
+
+    let li_msg_setting_main = new componentObject();
+    li_msg_setting_main.create('li');
+    li_msg_setting_main.attr('class', 'msg-setting-main');
+
+    let msg_message = new componentObject();
+    msg_message.create('h5');
+    msg_message.content('Hi I am Alan,');
+
+    let li_msg_setting_main_2 = new componentObject();
+    li_msg_setting_main_2.create('li');
+    li_msg_setting_main_2.attr('class', 'msg-setting-main');
+
+    let msg_message_2 = new componentObject();
+    msg_message_2.create('h5');
+    msg_message_2.content('your personal assistant to help you');
+
+
 
 
     // build
@@ -170,6 +314,48 @@ messageScreen.render = function () {
 
     container_1.childComponent(nav.get());
     container_1.childComponent(leftSidebar.get());
+    container_1.childComponent(message_main.get());
+
+    message_main.childComponent(chat_content.get());
+    chat_content.childComponent(message_custom.get());
+    message_custom.childComponent(contact_detail.get());
+
+    contact_detail.childComponent(message_row.get());
+    message_row.childComponent(search_form.get());
+    search_form.childComponent(chat_form_group.get());
+
+    chat_form_group.childComponent(input_plaint_text.get());
+    chat_form_group.childComponent(icon_close_search.get());
+
+    message_row.childComponent(col_7.get());
+    col_7.childComponent(media_left.get());
+    media_left.childComponent(sub_media_left.get());
+    sub_media_left.childComponent(profile_online_trigger.get());
+
+    media_left.childComponent(chat_media_body.get());
+    chat_media_body.childComponent(message_person_name.get());
+    chat_media_body.childComponent(badge_status.get());
+
+    // main message
+    message_custom.childComponent(contact_chat.get());
+    contact_chat.childComponent(ul_chat.get());
+    ul_chat.childComponent(li_replies.get());
+    li_replies.childComponent(chat_media.get());
+    chat_media.childComponent(chat_profile.get());
+    chat_profile.childComponent(chat_profile_img.get());
+
+    chat_media.childComponent(media_body.get());
+
+    media_body.childComponent(chat_contact_name.get());
+    chat_contact_name.childComponent(chat_name.get());
+    chat_contact_name.childComponent(chat_time.get());
+    chat_contact_name.childComponent(ul_message_box.get());
+    ul_message_box.childComponent(li_msg_setting_main.get());
+    li_msg_setting_main.childComponent(msg_message.get());
+    ul_message_box.childComponent(li_msg_setting_main_2.get());
+    li_msg_setting_main_2.childComponent(msg_message_2.get());
+
+
 
     leftSidebar.childComponent(recentActive.get());
     recentActive.childComponent(div_recent.get());
