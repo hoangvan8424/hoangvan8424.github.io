@@ -1,0 +1,9 @@
+{
+    "env":"dev",
+    "ip":"localhost",
+    "port":"9000",
+    "api":{
+        "dev":"",
+        "prod":""
+    }
+}
