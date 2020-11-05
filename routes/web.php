@@ -80,6 +80,17 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id}', 'ProductDemoController@delete')->name('product.demo.delete');
     });
 
+    // customer
+    Route::group(['prefix' => 'customer'], function () {
+        Route::get('/', 'CustomerController@index')->name('customer.list');
+        Route::get('/add', 'CustomerController@add')->name('customer.add');
+        Route::post('/add', 'CustomerController@save')->name('customer.save');
+        Route::get('/update/{id}', 'CustomerController@showUpdateForm')->name('customer.edit');
+        Route::post('/update/{id}', 'CustomerController@update')->name('customer.update');
+
+        Route::get('/delete/{id}', 'ProductDemoController@delete')->name('customer.delete');
+    });
+
 });
 
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');

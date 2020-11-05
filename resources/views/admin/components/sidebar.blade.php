@@ -104,6 +104,22 @@
 
     <hr class="sidebar-divider">
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true"
+           aria-controls="collapsePages">
+            <i class="fas fa-people-carry"></i>
+            <span>Khách hàng</span>
+        </a>
+        <div id="collapseCustomer" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('customer.list') }}">Danh sách khách hàng</a>
+                <a class="collapse-item" href="{{ route('customer.add') }}">Thêm khách hàng</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider">
+
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
