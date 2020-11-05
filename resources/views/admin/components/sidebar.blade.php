@@ -78,8 +78,8 @@
         </a>
         <div id="collapseProductDemo" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">Danh sách sản phẩm demo</a>
-                <a class="collapse-item" href="">Thêm</a>
+                <a class="collapse-item" href="{{ route('product.demo.list') }}">Danh sách sp demo</a>
+                <a class="collapse-item" href="{{ route('product.demo.add') }}">Thêm sp demo</a>
             </div>
         </div>
     </li>
@@ -96,8 +96,8 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('product.print.list') }}">Danh sách sản phẩm in</a>
-                <a class="collapse-item" href="{{ route('product.print.add') }}">Thêm sản phẩm in</a>
+                <a class="collapse-item" href="{{ route('product.print.list') }}">Danh sách sp in</a>
+                <a class="collapse-item" href="{{ route('product.print.add') }}">Thêm sp in</a>
             </div>
         </div>
     </li>

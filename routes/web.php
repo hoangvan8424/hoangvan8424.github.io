@@ -59,7 +59,6 @@ Route::prefix('admin')->group(function () {
     });
 
     // product print
-
     Route::group(['prefix' => 'product-print'], function () {
         Route::get('/', 'ProductPrintController@index')->name('product.print.list');
         Route::get('/add', 'ProductPrintController@add')->name('product.print.add');
@@ -68,6 +67,17 @@ Route::prefix('admin')->group(function () {
         Route::post('/update/{id}', 'ProductPrintController@update')->name('product.print.update');
 
         Route::get('/delete/{id}', 'ProductPrintController@delete')->name('product.print.delete');
+    });
+
+    // product demo
+    Route::group(['prefix' => 'product-demo'], function () {
+        Route::get('/', 'ProductDemoController@index')->name('product.demo.list');
+        Route::get('/add', 'ProductDemoController@add')->name('product.demo.add');
+        Route::post('/add', 'ProductDemoController@save')->name('product.demo.save');
+        Route::get('/update/{id}', 'ProductDemoController@showUpdateForm')->name('product.demo.edit');
+        Route::post('/update/{id}', 'ProductDemoController@update')->name('product.demo.update');
+
+        Route::get('/delete/{id}', 'ProductDemoController@delete')->name('product.demo.delete');
     });
 
 });
