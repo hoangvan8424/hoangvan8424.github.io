@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
         <div class="sidebar-brand-text mx-3">{{ config("app.name") }}</div>
     </a>
 
@@ -9,8 +9,8 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="">
+    <li class="nav-item {{ Request::is('admin') ? 'active':'' }}">
+        <a class="nav-link" href="{{ route('home') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Tổng quan</span></a>
     </li>
@@ -20,7 +20,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
 
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/branch') || Request::is('admin/branch/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGroup" aria-expanded="true"
            aria-controls="collapseGroup">
             <i class="fas fa-code-branch"></i>
@@ -34,7 +34,9 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <hr class="sidebar-divider">
+
+    <li class="nav-item {{ Request::is('admin/department') || Request::is('admin/department/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
            aria-controls="collapseTwo">
             <i class="fas fa-building"></i>
@@ -48,8 +50,10 @@
         </div>
     </li>
 
+    <hr class="sidebar-divider">
+
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/product') || Request::is('admin/product/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
            aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fab fa-product-hunt"></i>
@@ -66,21 +70,16 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        History
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductDemo" aria-expanded="true"
            aria-controls="collapsePages">
-            <i class="fas fa-history"></i>
-            <span>History</span>
+            <i class="fab fa-slideshare"></i>
+            <span>Sản phẩm demo</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseProductDemo" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">List history</a>
+                <a class="collapse-item" href="">Danh sách sản phẩm demo</a>
+                <a class="collapse-item" href="">Thêm</a>
             </div>
         </div>
     </li>
@@ -88,10 +87,24 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        User
-    </div>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+           aria-controls="collapsePages">
+            <i class="fas fa-print"></i>
+            <span>Sản phẩm in</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('product.print.list') }}">Danh sách sản phẩm in</a>
+                <a class="collapse-item" href="{{ route('product.print.add') }}">Thêm sản phẩm in</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider">
+
+
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true"

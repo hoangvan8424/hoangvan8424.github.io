@@ -17,6 +17,9 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('public/template/css/sb-admin-2.css') }}" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet"/>
+
     <link href="{{ asset('public/template/css/custom.css') }}" rel="stylesheet">
     @stack('css')
 </head>
@@ -96,7 +99,10 @@
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('public/template/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('public/template//bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
+<script src="{{ asset('public/template/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('public/template/jquery-easing/jquery.easing.min.js') }}"></script>
