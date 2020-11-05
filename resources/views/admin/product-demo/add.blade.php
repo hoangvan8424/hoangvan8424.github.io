@@ -78,7 +78,7 @@
                                 <label for="delivery-date-2" class="col-sm-3 col-form-label">Ngày giao file lần 2 <span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control date" readonly name="delivery_date_2" id=delivery-date-2" value="{{ old('delivery_date_2') }}" placeholder="dd/mm/yyyy">
+                                    <input type="text" class="form-control date" readonly name="delivery_date_2" id="delivery-date-2" value="{{ old('delivery_date_2') }}" placeholder="dd/mm/yyyy">
                                     @if($errors->has('delivery_date_2'))
                                         <span class="text-danger error-text">
                                             {{$errors->first('delivery_date_2')}}
@@ -111,7 +111,6 @@
                                     @endif
                                 </div>
                             </div>
-
                             <div class="form-group row">
                                 <label for="note" class="col-sm-3 col-form-label">Ghi chú</label>
                                 <div class="col-sm-9">
