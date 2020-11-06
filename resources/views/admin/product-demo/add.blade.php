@@ -12,16 +12,30 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group row">
-                                <label for="name" class="col-sm-3 col-form-label">Tên sản phẩm<span
+                                <label for="branch" class="col-sm-3 col-form-label">Chi nhánh<span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="name" id="name">
+                                    <select class="form-control" name="branch" id="branch">
                                         <option value="">Chọn...</option>
-                                        @if(count($product))
-                                            @foreach($product as $key => $value)
+                                        @if(count($branch))
+                                            @foreach($branch as $key => $value)
                                                 <option value="{{ $value->id }}">{{ $value->name }}</option>
                                             @endforeach
                                         @endif
+                                    </select>
+                                    @if($errors->has('branch'))
+                                        <span class="text-danger error-text">
+                                        {{$errors->first('branch')}}
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="product-name" class="col-sm-3 col-form-label">Tên sản phẩm<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="name" id="product-name" disabled>
+                                        <option value="">Không có dữ liệu</option>
                                     </select>
                                     @if($errors->has('name'))
                                         <span class="text-danger error-text">
@@ -33,13 +47,8 @@
                             <div class="form-group row">
                                 <label for="shopper" class="col-sm-3 col-form-label">Thợ shop <span class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="shopper" id="shopper">
-                                        <option value="">Chọn...</option>
-                                        @if(count($shopper))
-                                            @foreach($shopper as $key => $value)
-                                                <option value="{{ $value->id }}">{{ $value->name }}</option>
-                                            @endforeach
-                                        @endif
+                                    <select class="form-control" name="shopper" id="shopper" disabled>
+                                        <option value="">Không có dữ liệu</option>
                                     </select>
                                     @if($errors->has('shopper'))
                                         <span class="text-danger error-text">
@@ -146,6 +155,40 @@
                 orientation: 'bottom left',
                 todayHighlight: true,
                 autoclose: true,
+            });
+        });
+
+        $(document).ready(function () {
+            $('#branch').change(function () {
+                let branch_id = $(this).val();
+                if(branch_id !== 0) {
+                    $.ajax({
+                        url: '{{ route('get.product.from.branch') }}',
+                        method: 'GET',
+                        data: {
+                            id: branch_id,
+                        },
+                        success: function (result) {
+                            if((result['product'].length +'') > 0) {
+                                $('#product-name').html("").append(result['product']);
+                                $('#product-name').attr('disabled', false);
+                            } else {
+                                let html = "<option value=''>Không có dữ liệu</option>";
+                                $('#product-name').html("").append(html);
+                                $('#product-name').attr('disabled', true);
+                            }
+
+                            if((result['shopper'].length +'') > 0) {
+                                $('#shopper').html("").append(result['shopper']);
+                                $('#shopper').attr('disabled', false);
+                            } else {
+                                let html = "<option value=''>Không có dữ liệu</option>";
+                                $('#shopper').html("").append(html);
+                                $('#shopper').attr('disabled', true);
+                            }
+                        }
+                    });
+                }
             });
         });
     </script>

@@ -18,7 +18,7 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Tên</th>
+                            <th>Thông tin</th>
                             <th>Thợ shop</th>
                             <th>Ngày nhận file</th>
                             <th>Ngày giao file</th>
@@ -30,7 +30,7 @@
                         <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Tên</th>
+                            <th>Thông tin</th>
                             <th>Thợ shop</th>
                             <th>Ngày nhận file</th>
                             <th>Ngày giao file</th>
@@ -44,7 +44,12 @@
                             @foreach($data as $key => $value)
                             <tr>
                                 <td>{{ $value->id }}</td>
-                                <td>{{ $value->product->name }}</td>
+                                <td>
+                                    <ul>
+                                        <li><strong>Tên: </strong>{{ $value->product->name }}</li>
+                                        <li><strong>Chi nhánh: </strong>{{ $value->product->branch->name }}</li>
+                                    </ul>
+                                </td>
                                 <td>{{ $value->user->name }}</td>
                                 <td>
                                     {{ date('d-m-y', strtotime($value->receive_demo_date)) }}
