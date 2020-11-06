@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestProductPrint;
+use App\Model\Branch;
 use App\Model\Product;
 use App\Model\ProductPrint;
 use App\User;
@@ -16,19 +17,12 @@ class ProductPrintController extends Controller
     }
 
     public function add() {
-        $product = Product::where([
+
+        $branch = Branch::where([
             'active' => true,
         ])->get();
 
-        $shopper = User::where([
-            'role' => 1
-        ])->get();
-
-        $data = [
-            'product' => $product,
-            'shopper' => $shopper,
-        ];
-        return view('admin.product-print.add', $data);
+        return view('admin.product-print.add', compact('branch'));
     }
 
     public function save(RequestProductPrint $request) {
@@ -53,20 +47,16 @@ class ProductPrintController extends Controller
 
 
     public function showUpdateForm($id) {
-        $print = ProductPrint::findOrFail($id);
-
-        $product = Product::where([
+        $branch = Branch::where([
             'active' => true,
         ])->get();
 
-        $shopper = User::where([
-            'role' => 1
-        ])->get();
+        $print = ProductPrint::findOrFail($id);
+
 
         $data = [
-            'product' => $product,
-            'shopper' => $shopper,
             'print'   => $print,
+            'branch'  => $branch
         ];
         return view('admin.product-print.update', $data);
     }

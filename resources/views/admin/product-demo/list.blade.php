@@ -19,7 +19,6 @@
                         <tr>
                             <th>#</th>
                             <th>Thông tin</th>
-                            <th>Thợ shop</th>
                             <th>Ngày nhận file</th>
                             <th>Ngày giao file</th>
                             <th>Ngày giao khách</th>
@@ -31,7 +30,6 @@
                         <tr>
                             <th>#</th>
                             <th>Thông tin</th>
-                            <th>Thợ shop</th>
                             <th>Ngày nhận file</th>
                             <th>Ngày giao file</th>
                             <th>Ngày giao khách</th>
@@ -46,11 +44,11 @@
                                 <td>{{ $value->id }}</td>
                                 <td>
                                     <ul>
-                                        <li><strong>Tên: </strong>{{ $value->product->name }}</li>
-                                        <li><strong>Chi nhánh: </strong>{{ $value->product->branch->name }}</li>
+                                        <li><strong class="text-dark">Tên: </strong>{{ $value->product->name }}</li>
+                                        <li><strong class="text-dark">Chi nhánh: </strong>{{ $value->product->branch->name }}</li>
+                                        <li><strong class="text-dark">Thợ shop: </strong>{{ $value->user->name }}</li>
                                     </ul>
                                 </td>
-                                <td>{{ $value->user->name }}</td>
                                 <td>
                                     {{ date('d-m-y', strtotime($value->receive_demo_date)) }}
                                 </td>
