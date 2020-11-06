@@ -27,7 +27,7 @@ class RequestUpdateUser extends FormRequest
             'name' => 'required|string|max:255',
             'branch'    => 'required',
             'department'    => 'required',
-            'date_of_birth' => 'required',
+            'date_of_birth' => 'required|date_format:d-m-Y|date|before:today',
         ];
     }
 
@@ -40,6 +40,9 @@ class RequestUpdateUser extends FormRequest
             'branch.required'   => 'Trường này không được để trống',
             'department.required'   => 'Trường này không được để trống',
             'date_of_birth.required'   => 'Trường này không được để trống',
+            'date_of_birth.date_format'   => 'Không đúng định dạng (dd-mm-yyyy)',
+            'date_of_birth.date'   => 'Không đúng định dạng (dd-mm-yyyy)',
+            'date_of_birth.before'   => 'Trường này không hợp lệ',
         ];
     }
 }

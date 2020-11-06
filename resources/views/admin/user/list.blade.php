@@ -55,21 +55,13 @@
                                 </td>
                                 <td>{{ $value->email }}</td>
                                 <td>
-                                    @if($value->role == 0)
+                                    @if($value->role == 1)
                                         <p class="btn btn-success btn-icon-split btn-sm">
-                                            <span class="text text-white">Admin</span>
+                                            <span class="text text-white">Giám đốc</span>
                                         </p>
-                                    @elseif($value->role == 1)
+                                    @else
                                         <p class="btn btn-primary btn-icon-split btn-sm">
-                                            <span class="text text-white">Thợ shop</span>
-                                        </p>
-                                    @elseif($value->role == 2)
-                                        <p class="btn btn-secondary btn-icon-split btn-sm">
-                                            <span class="text text-white">Thợ makeup</span>
-                                        </p>
-                                    @elseif($value->role == 3)
-                                        <p class="btn btn-warning btn-icon-split btn-sm">
-                                            <span class="text text-white">Thợ chụp</span>
+                                            <span class="text text-white">Nhân viên</span>
                                         </p>
                                     @endif
                                 </td>
