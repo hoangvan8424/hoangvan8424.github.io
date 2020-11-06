@@ -19,21 +19,12 @@ class ProductDemoController extends Controller
     }
 
     public function add() {
-        $product = Product::where([
-            'active' => true,
-        ])->get();
-
-        $shopper = User::where([
-            'role' => 1
-        ])->get();
 
         $branch = Branch::where([
             'active' => true,
         ])->get();
 
         $data = [
-            'product' => $product,
-            'shopper' => $shopper,
             'branch'  => $branch
         ];
 
@@ -63,18 +54,14 @@ class ProductDemoController extends Controller
     public function showUpdateForm($id) {
         $demo = ProductDemo::findOrFail($id);
 
-        $product = Product::where([
+        $branch = Branch::where([
             'active' => true,
         ])->get();
 
-        $shopper = User::where([
-            'role' => 1
-        ])->get();
 
         $data = [
-            'product' => $product,
-            'shopper' => $shopper,
             'demo'    => $demo,
+            'branch'  => $branch
         ];
         return view('admin.product-demo.update', $data);
     }
@@ -119,14 +106,14 @@ class ProductDemoController extends Controller
             ])->get();
 
 
-        $html = '<option value="">Chọn...</option><br>';
+        $html = '';
         if(count($product_name) > 0) {
             foreach ($product_name as $key => $value) {
                 $html .= "<option value='$value->id'>$value->name</option><br>";
             }
         }
 
-        $html_2 = '<option value="">Chọn...</option><br>';
+        $html_2 = '';
         if(count($employee_name) > 0) {
             foreach ($employee_name as $key => $value) {
                 $html_2 .= "<option value='$value->id'>$value->name</option><br>";
