@@ -18,13 +18,10 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Tên</th>
-                            <th>Thợ shop</th>
+                            <th>Thông tin sp</th>
                             <th>Khách gửi m/c</th>
                             <th>Ngày duyệt</th>
-                            <th>Chốt in</th>
-                            <th>Ngày sp c/n</th>
-                            <th>Khách nhận sp</th>
+                            <th>Thông tin in</th>
                             <th>Ghi chú</th>
                             <th>Lựa chọn</th>
                         </tr>
@@ -32,13 +29,10 @@
                         <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Tên</th>
-                            <th>Thợ shop</th>
+                            <th>Thông tin sp</th>
                             <th>Khách gửi m/c</th>
                             <th>Ngày duyệt</th>
-                            <th>Chốt in</th>
-                            <th>Ngày sp c/n</th>
-                            <th>Khách nhận sp</th>
+                            <th>Thông tin in</th>
                             <th>Ghi chú</th>
                             <th>Lựa chọn</th>
                         </tr>
@@ -48,8 +42,13 @@
                             @foreach($data as $key => $value)
                             <tr>
                                 <td>{{ $value->id }}</td>
-                                <td>{{ $value->product->name }}</td>
-                                <td>{{ $value->user->name }}</td>
+                                <td>
+                                    <ul>
+                                        <li><strong class="text-dark">Tên: </strong>{{ $value->product->name }}</li>
+                                        <li><strong class="text-dark">Chi nhánh: </strong>{{ $value->product->branch->name }}</li>
+                                        <li><strong class="text-dark">Thợ shop: </strong>{{ $value->user->name }}</li>
+                                    </ul>
+                                </td>
                                 <td>
                                     {{ date('d-m-y', strtotime($value->date_send_selected_code)) }}
                                 </td>
@@ -59,13 +58,9 @@
                                     <p><strong class="text-warning">Lần 3: </strong> {{ date('d-m-y', strtotime($value->review_date_3))  }}</p>
                                 </td>
                                 <td>
-                                    {{ date('d-m-y', strtotime($value->closing_date))  }}
-                                </td>
-                                <td>
-                                    {{ date('d-m-y', strtotime($value->delivery_date_in_branch))  }}
-                                </td>
-                                <td>
-                                    {{ date('d-m-y', strtotime($value->customer_receive_date))  }}
+                                    <p><strong class="text-primary">Chốt in: </strong> {{ date('d-m-y', strtotime($value->closing_date))  }}</p>
+                                    <p><strong class="text-success">SP chi nhánh : </strong> {{ date('d-m-y', strtotime($value->delivery_date_in_branch))  }}</p>
+                                    <p><strong class="text-warning">Khách nhận: </strong> {{ date('d-m-y', strtotime($value->customer_receive_date))  }}</p>
                                 </td>
                                 <td>{{ $value->note }}</td>
                                 <td>
@@ -78,7 +73,6 @@
                                 </td>
                             </tr>
                             @endforeach
-
                         </tbody>
                     </table>
                 </div>
