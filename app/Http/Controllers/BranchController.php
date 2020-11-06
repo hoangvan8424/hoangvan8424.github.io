@@ -22,7 +22,7 @@ class BranchController extends Controller
         $branch = new Branch();
 
         $branch->name       = $request->name;
-        $branch->address    = $request->address;
+        $branch->address    = $request->address ? $request->address : '';
         $branch->note       = $request->note ? $request->note : '';
         $branch->active     = $request->active === 'true' ? 1:0;
 
@@ -41,7 +41,7 @@ class BranchController extends Controller
         $branch = Branch::findOrFail($id);
 
         $branch->name       = $request->name;
-        $branch->address    = $request->address;
+        $branch->address    = $request->address ? $request->address : '';
         $branch->note       = $request->note ? $request->note : '';
         $branch->active     = $request->active === 'true' ? 1:0;
 

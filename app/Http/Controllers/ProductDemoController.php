@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestProductDemo;
 use App\Http\Requests\RequestProductPrint;
+use App\Model\Branch;
 use App\Model\Product;
 use App\Model\ProductDemo;
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductDemoController extends Controller
 {
@@ -24,10 +27,17 @@ class ProductDemoController extends Controller
             'role' => 1
         ])->get();
 
+        $branch = Branch::where([
+            'active' => true,
+        ])->get();
+
         $data = [
             'product' => $product,
             'shopper' => $shopper,
+            'branch'  => $branch
         ];
+
+
         return view('admin.product-demo.add', $data);
     }
 
@@ -90,6 +100,43 @@ class ProductDemoController extends Controller
         $productDemo = ProductDemo::findOrFail($id);
         $productDemo->delete();
         return redirect()->route('product.demo.list')->with('alert-success', 'Xóa sản phẩm demo thành công');
+    }
+
+    public function getProductFromBranch(Request $request) {
+        $branch_id = $request->get('id');
+        $product_name = Product::select('id', 'name')
+            ->where([
+            'branch_id' => $branch_id,
+            'active'    => true
+        ])->get();
+
+        $employee_name = DB::table('users')
+            ->join('departments', 'users.department_id', '=', 'departments.id')
+            ->select('users.id', 'users.name')
+            ->where([
+                ['departments.name', 'like', '%shop%'],
+                ['users.branch_id', '=', $branch_id]
+            ])->get();
+
+
+        $html = '<option value="">Chọn...</option><br>';
+        if(count($product_name) > 0) {
+            foreach ($product_name as $key => $value) {
+                $html .= "<option value='$value->id'>$value->name</option><br>";
+            }
+        }
+
+        $html_2 = '<option value="">Chọn...</option><br>';
+        if(count($employee_name) > 0) {
+            foreach ($employee_name as $key => $value) {
+                $html_2 .= "<option value='$value->id'>$value->name</option><br>";
+            }
+        }
+
+        return response()->json([
+            'product'   => $html,
+            'shopper'   => $html_2
+        ]);
     }
 
 

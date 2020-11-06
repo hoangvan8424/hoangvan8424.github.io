@@ -15,14 +15,12 @@ class DepartmentController extends Controller
     }
 
     public function add() {
-        $branch = Branch::all();
-        return view('admin.department.add', compact('branch'));
+        return view('admin.department.add');
     }
 
     public function save(RequestDepartment $request) {
         $department = new Department();
         $department->name = $request->name;
-        $department->branch_id = $request->branch;
         $department->note = $request->note ? $request->note:'';
         $department->active = $request->active === 'true'?1:0;
 
@@ -32,14 +30,12 @@ class DepartmentController extends Controller
 
     public function showUpdateForm($id) {
         $department = Department::findOrFail($id);
-        $branch = Branch::all();
-        return view('admin.department.update', compact('branch', 'department'));
+        return view('admin.department.update', compact( 'department'));
     }
 
     public function update($id, RequestDepartment $request) {
         $department = Department::findOrFail($id);
         $department->name = $request->name;
-        $department->branch_id = $request->branch;
         $department->note = $request->note ? $request->note:'';
         $department->active = $request->active === 'true'?1:0;
 

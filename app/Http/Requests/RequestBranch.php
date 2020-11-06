@@ -24,8 +24,7 @@ class RequestBranch extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|string',
-            'address'   => 'required|string',
+            'name'      => 'required|string|unique:branchs',
         ];
     }
 
@@ -34,8 +33,7 @@ class RequestBranch extends FormRequest
         return [
             'name.required'     => 'Trường này là bắt buộc',
             'name.string'       => 'Trường này không đúng định dạng',
-            'address.required'  => 'Trường này là bắt buộc',
-            'address.string'    => 'Trường này không đúng định dạng',
+            'name.unique'       => 'Tên chi nhánh đã tồn tại',
         ];
     }
 }
