@@ -19,7 +19,6 @@
                         <tr>
                             <th>#</th>
                             <th>Tên</th>
-                            <th>Chi nhánh</th>
                             <th>Ghi chú</th>
                             <th>Hiển thị</th>
                             <th>Lựa chọn</th>
@@ -29,7 +28,6 @@
                         <tr>
                             <th>#</th>
                             <th>Tên</th>
-                            <th>Chi nhánh</th>
                             <th>Ghi chú</th>
                             <th>Hiển thị</th>
                             <th>Lựa chọn</th>
@@ -41,7 +39,6 @@
                             <tr>
                                 <td>{{ $value->id }}</td>
                                 <td>{{ $value->name }}</td>
-                                <td>{{ $value->branch->name }}</td>
                                 <td>{{ $value->note }}</td>
                                 <td>
                                     @if($value->active === 1)

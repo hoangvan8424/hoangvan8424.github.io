@@ -23,24 +23,6 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="branch" class="col-sm-2 col-form-label">Chi nhánh <span class="text-danger">*</span></label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="branch" id="branch">
-                                        <option value="">Chọn...</option>
-                                        @if(count($branch))
-                                            @foreach($branch as $key => $value)
-                                                <option value="{{ $value->id }}">{{ $value->name }}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
-                                    @if($errors->has('branch'))
-                                        <span class="text-danger error-text">
-                                        {{$errors->first('branch')}}
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
 
                             <div class="form-group row">
                                 <label for="note" class="col-sm-2 col-form-label">Ghi chú</label>

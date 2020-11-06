@@ -24,8 +24,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="address" class="col-sm-2 col-form-label">Địa chỉ <span
-                                        class="text-danger">*</span></label>
+                                <label for="address" class="col-sm-2 col-form-label">Địa chỉ</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" name="address" id="address" rows="3">{{ old('address') }}</textarea>
                                     @if($errors->has('address'))
