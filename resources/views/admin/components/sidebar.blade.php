@@ -126,11 +126,12 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true"
            aria-controls="collapsePages">
             <i class="fas fa-user"></i>
-            <span>User</span>
+            <span>Người dùng</span>
         </a>
         <div id="collapseUsers" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">List user</a>
+                <a class="collapse-item" href="{{ route('user.list') }}">Danh sách người dùng</a>
+                <a class="collapse-item" href="{{ route('user.add') }}">Thêm người dùng</a>
             </div>
         </div>
     </li>

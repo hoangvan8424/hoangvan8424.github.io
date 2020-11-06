@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Model\Branch;
+use App\Model\Department;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -27,6 +29,8 @@ class User extends Authenticatable
         'todo',
         'avatar',
         'role',
+        'date_of_birth',
+        'sex'
     ];
 
     /**
@@ -46,4 +50,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function branch() {
+        return $this->belongsTo(Branch::class, 'branch_id');
+    }
+
+    public function department() {
+        return $this->belongsTo(Department::class, 'department_id');
+    }
+
 }
