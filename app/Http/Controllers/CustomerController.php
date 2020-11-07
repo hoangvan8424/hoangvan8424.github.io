@@ -16,6 +16,9 @@ class CustomerController extends Controller
     }
 
     public function add() {
+        if($this->checkRoles('add_customer') === false) {
+            return redirect()->route('customer.list');
+        }
         $product = Product::where([
             'active' => true,
         ])->get();
@@ -42,6 +45,9 @@ class CustomerController extends Controller
     }
 
     public function save(RequestCustomer $request) {
+        if($this->checkRoles('add_customer') === false) {
+            return redirect()->route('customer.list');
+        }
         $customer = new Customer([
             'name'                  => $request->get('customer_name'),
             'contract_code'         => $request->get('contract_code'),
@@ -58,6 +64,9 @@ class CustomerController extends Controller
     }
 
     public function showUpdateForm($id) {
+        if($this->checkRoles('update_customer') === false) {
+            return redirect()->route('customer.list');
+        }
         $customer = Customer::findOrFail($id);
 
         $product = Product::where([
@@ -88,6 +97,10 @@ class CustomerController extends Controller
     }
 
     public function update($id, RequestCustomer $request) {
+        if($this->checkRoles('update_customer') === false) {
+            return redirect()->route('customer.list');
+        }
+
         $customer = Customer::findOrFail($id);
 
         $customer->name               = $request->get('customer_name');
@@ -106,6 +119,10 @@ class CustomerController extends Controller
 
     public function delete($id)
     {
+        if($this->checkRoles('delete_customer') === false) {
+            return redirect()->route('customer.list');
+        }
+
         $customer = Customer::findOrFail($id);
         $customer->delete();
         return redirect()->route('customer.list')->with('alert-success', 'Xóa khách hàng thành công');

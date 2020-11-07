@@ -89,13 +89,25 @@ class InstallController extends Controller
 
 
     protected function validateForm($request){
-        $validator = Validator::make($request->all(), [
+
+        $rule = [
             'site_name' => 'required|min:3|max:160',
             'site_slogan' => 'required|min:3|max:160',
-            'name' => ['required', 'string', 'max:160'],
-            'email' => ['required', 'string', 'email', 'max:160'],
-            'password' => ['required', 'string', 'min:8', 'confirmed']
-        ]);
+            'name' => 'required'|'string'|'max:160',
+            'email' => 'required'|'string'|'email'|'max:160',
+            'password' => 'required'|'string'|'min:8'|'confirmed'
+        ];
+
+        $message = [
+            'name.required' => 'Trường này là bắt buộc',
+            'email.required' => 'Trường này là bắt buộc',
+            'password.required' => 'Trường này là bắt buộc',
+            'password.confirmed' => 'Xác nhận mật khẩu không khớp',
+            'site_name.required' => 'Trường này là bắt buộc',
+            'site_slogan.required' => 'Trường này là bắt buộc',
+        ];
+
+        $validator = Validator::make($request->all(), $rule, $message);
 
         return $validator;
     }

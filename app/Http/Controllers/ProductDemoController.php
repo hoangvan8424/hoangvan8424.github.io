@@ -19,6 +19,9 @@ class ProductDemoController extends Controller
     }
 
     public function add() {
+        if($this->checkRoles('add_product_demo') === false) {
+            return redirect()->route('product.demo.list');
+        }
 
         $branch = Branch::where([
             'active' => true,
@@ -33,6 +36,10 @@ class ProductDemoController extends Controller
     }
 
     public function save(RequestProductDemo $request) {
+        if($this->checkRoles('add_product_demo') === false) {
+            return redirect()->route('product.demo.list');
+        }
+
 
         $productDemo = new ProductDemo();
 
@@ -52,6 +59,10 @@ class ProductDemoController extends Controller
 
 
     public function showUpdateForm($id) {
+        if($this->checkRoles('update_product_demo') === false) {
+            return redirect()->route('product.demo.list');
+        }
+
         $demo = ProductDemo::findOrFail($id);
 
         $branch = Branch::where([
@@ -67,6 +78,10 @@ class ProductDemoController extends Controller
     }
 
     public function update($id, RequestProductDemo $request) {
+        if($this->checkRoles('update_product_demo') === false) {
+            return redirect()->route('product.demo.list');
+        }
+
         $productDemo = ProductDemo::findOrFail($id);
 
         $productDemo->product_id                   = $request->name;
@@ -84,6 +99,10 @@ class ProductDemoController extends Controller
     }
 
     public function delete($id) {
+        if($this->checkRoles('delete_product_demo') === false) {
+            return redirect()->route('product.demo.list');
+        }
+
         $productDemo = ProductDemo::findOrFail($id);
         $productDemo->delete();
         return redirect()->route('product.demo.list')->with('alert-success', 'Xóa sản phẩm demo thành công');

@@ -15,10 +15,17 @@ class DepartmentController extends Controller
     }
 
     public function add() {
+        if($this->checkRoles('add_department') === false) {
+            return redirect()->route('department.list');
+        }
         return view('admin.department.add');
     }
 
     public function save(RequestDepartment $request) {
+        if($this->checkRoles('add_department') === false) {
+            return redirect()->route('department.list');
+        }
+
         $department = new Department();
         $department->name = $request->name;
         $department->note = $request->note ? $request->note:'';
@@ -29,11 +36,19 @@ class DepartmentController extends Controller
     }
 
     public function showUpdateForm($id) {
+        if($this->checkRoles('update_department') === false) {
+            return redirect()->route('department.list');
+        }
+
         $department = Department::findOrFail($id);
         return view('admin.department.update', compact( 'department'));
     }
 
     public function update($id, RequestDepartment $request) {
+        if($this->checkRoles('update_department') === false) {
+            return redirect()->route('department.list');
+        }
+
         $department = Department::findOrFail($id);
         $department->name = $request->name;
         $department->note = $request->note ? $request->note:'';
@@ -44,6 +59,10 @@ class DepartmentController extends Controller
     }
 
     public function delete($id) {
+        if($this->checkRoles('delete_department') === false) {
+            return redirect()->route('department.list');
+        }
+
         $department = Department::findOrFail($id);
         $department->delete();
         return redirect()->back()->with('alert-success', 'Xóa phòng ban thành công.');

@@ -17,6 +17,9 @@ class ProductPrintController extends Controller
     }
 
     public function add() {
+        if($this->checkRoles('add_product_print') === false) {
+            return redirect()->route('product.print.list');
+        }
 
         $branch = Branch::where([
             'active' => true,
@@ -26,6 +29,9 @@ class ProductPrintController extends Controller
     }
 
     public function save(RequestProductPrint $request) {
+        if($this->checkRoles('add_product_print') === false) {
+            return redirect()->route('product.print.list');
+        }
 
         $productPrint = new ProductPrint();
 
@@ -47,6 +53,10 @@ class ProductPrintController extends Controller
 
 
     public function showUpdateForm($id) {
+        if($this->checkRoles('update_product_print') === false) {
+            return redirect()->route('product.print.list');
+        }
+
         $branch = Branch::where([
             'active' => true,
         ])->get();
@@ -62,6 +72,10 @@ class ProductPrintController extends Controller
     }
 
     public function update($id, RequestProductPrint $request) {
+        if($this->checkRoles('update_product_print') === false) {
+            return redirect()->route('product.print.list');
+        }
+
         $productPrint = ProductPrint::findOrFail($id);
 
         $productPrint->product_id               = $request->name;
@@ -81,6 +95,10 @@ class ProductPrintController extends Controller
     }
 
     public function delete($id) {
+        if($this->checkRoles('delete_product_print') === false) {
+            return redirect()->route('product.print.list');
+        }
+
         $productPrint = ProductPrint::findOrFail($id);
         $productPrint->delete();
         return redirect()->route('product.print.list')->with('alert-success', 'Xóa sản phẩm in thành công');

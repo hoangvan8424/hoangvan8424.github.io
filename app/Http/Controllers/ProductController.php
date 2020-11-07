@@ -15,11 +15,19 @@ class ProductController extends Controller
     }
 
     public function add() {
+        if($this->checkRoles('add_product') === false) {
+            return redirect()->route('product.list');
+        }
+
         $branch = Branch::all();
         return view('admin.product.add', compact('branch'));
     }
 
     public function save(RequestProduct $request) {
+        if($this->checkRoles('add_product') === false) {
+            return redirect()->route('product.list');
+        }
+
         $product = new Product();
 
         $product->name          = $request->name;
@@ -35,12 +43,20 @@ class ProductController extends Controller
     }
 
     public function showUpdateForm($id) {
+        if($this->checkRoles('update_product') === false) {
+            return redirect()->route('product.list');
+        }
+
         $branch = Branch::all();
         $product = Product::findOrFail($id);
         return view('admin.product.update', compact('branch', 'product'));
     }
 
     public function update($id, RequestProduct $request) {
+        if($this->checkRoles('update_product') === false) {
+            return redirect()->route('product.list');
+        }
+
         $product = Product::findOrFail($id);
 
         $product->name          = $request->name;
@@ -56,6 +72,10 @@ class ProductController extends Controller
     }
 
     public function delete($id) {
+        if($this->checkRoles('delete_product') === false) {
+            return redirect()->route('product.list');
+        }
+
         $product = Product::findOrFail($id);
         $product->delete();
         return redirect()->route('product.list')->with('alert-success', 'Xóa sản phẩm thành công');

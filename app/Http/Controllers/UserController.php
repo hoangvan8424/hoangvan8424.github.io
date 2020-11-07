@@ -13,11 +13,19 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function index() {
+        if($this->checkRoles('manage_user') === false) {
+            return redirect()->route('dashboard');
+        }
+
         $data = User::all();
         return view('admin.user.list', compact('data'));
     }
 
     public function add() {
+        if($this->checkRoles('manage_user') === false) {
+            return redirect()->route('dashboard');
+        }
+
         $branch = Branch::where([
             'active' => 1
         ])->get();
@@ -36,6 +44,10 @@ class UserController extends Controller
     }
 
     public function save(RequestUser $request) {
+        if($this->checkRoles('manage_user') === false) {
+            return redirect()->route('dashboard');
+        }
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -52,6 +64,11 @@ class UserController extends Controller
     }
 
     public function showUpdateForm($id) {
+
+        if($this->checkRoles('manage_user') === false) {
+            return redirect()->route('dashboard');
+        }
+
         $user = User::findOrFail($id);
 
         $branch = Branch::where([
@@ -73,6 +90,11 @@ class UserController extends Controller
     }
 
     public function update(RequestUpdateUser $request, $id) {
+
+        if($this->checkRoles('manage_user') === false) {
+            return redirect()->route('dashboard');
+        }
+
         $user = User::findOrFail($id);
 
         $user->name = $request->name;
@@ -87,6 +109,10 @@ class UserController extends Controller
     }
 
     public function delete($id) {
+        if($this->checkRoles('manage_user') === false) {
+            return redirect()->route('dashboard');
+        }
+
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('user.list')->with('alert-success', 'Xóa nhân viên thành công');
