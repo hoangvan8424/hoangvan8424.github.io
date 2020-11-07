@@ -2,7 +2,7 @@
 @section('title', 'Cài đặt - ' . config('app.name'))
 @section('content')
     <h2 class="text-center text-white text-uppercase pt-3 pb-3">Thiên đường wedding - Cài đặt</h2>
-    <div class="container bg-white main-box-setup pt-4 pb-4">
+    <div class="container bg-white main-box-setup pt-4 pb-4 mb-5">
         <div class="row">
             <div class="col-12">
                 <form action="{{ route('save.install') }}" method="POST" enctype="multipart/form-data">
@@ -14,7 +14,7 @@
                     @enderror
                     <div class="row">
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
-                            <div>
+                            <div class="setup-group">
                                 <h4>Tài khoản admin</h4>
                                 <div class="form-group">
                                     <label for="name">Họ tên</label>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
 
-                            <div>
+                            <div class="setup-group">
                                 <h4>Site setting </h4>
                                 <div class="form-group">
                                     <label for="site-name">Site name</label>
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
-                            <div class="">
+                            <div class="setup-group">
                                 <h4>Cơ sở dữ liệu
                                 </h4>
                                 <div class="form-group">
@@ -128,7 +128,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="">
+                            <div class="setup-group">
                                 <h4>Cài đặt mail</h4>
                                 <div class="form-group">
                                     <label for="mail_username">Username</label>
