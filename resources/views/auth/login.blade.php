@@ -2,6 +2,15 @@
 @section('title', 'Đăng nhập' . config('app.name'))
 @section('content')
     <div class="container">
+        <div class="row">
+            <div class="flash-message" style="position: fixed; right: 0; z-index: 999; width: 60%;">
+                @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                    @if(session()->has('alert-' . $msg))
+                        <p class="alert alert-{{ $msg }} font-weight-bold">{{ session()->get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                    @endif
+                @endforeach
+            </div>
+        </div>
         <!-- Outer Row -->
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -18,7 +27,7 @@
                                     <form class="user" method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email...">
+                                            <input type="email" name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email...">
                                             @if($errors->has('email'))
                                                 <span class="text-danger error-text font-weight-bold">
                                                     {{$errors->first('email')}}
@@ -26,7 +35,7 @@
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Password">
                                             @if($errors->has('password'))
                                                 <span class="text-danger error-text font-weight-bold">
                                                     {{$errors->first('password')}}
@@ -42,17 +51,11 @@
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Đăng nhập
                                         </button>
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Đăng nhập với Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Đăng nhập với Facebook
-                                        </a>
+
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Quên mật khẩu?</a>
+                                        <a class="small" href="">Quên mật khẩu?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="{{ route('register') }}">Tạo tài khoản!</a>

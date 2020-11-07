@@ -28,6 +28,8 @@ class RequestRegister extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'branch'   => 'required',
+            'department'   => 'required',
         ];
     }
 
@@ -35,6 +37,8 @@ class RequestRegister extends FormRequest
     {
         return [
             'name.required' => 'Trường này không được để trống',
+            'branch.required' => 'Trường này không được để trống',
+            'department.required' => 'Trường này không được để trống',
             'name.string'   => 'Không đúng định dạng tên',
             'name.max'      => 'Tên không được vượt quá 255 ký tự',
             'email.required'    => 'Trường này không được để trống',

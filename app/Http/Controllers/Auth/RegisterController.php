@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\AdminUser\AdminUserRoleHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestRegister;
+use App\Mail\WelcomeUserMail;
+use App\Model\Branch;
+use App\Model\Department;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -49,17 +54,30 @@ class RegisterController extends Controller
      */
     protected function create(RequestRegister $request)
     {
-        User::create([
+        $roles = AdminUserRoleHelper::setupAccountUser();
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'branch_id' => $request->branch,
+            'department_id' => $request->department,
+            'todo'  => $roles
         ]);
 
-        return redirect()->route('login');
+        Mail::to($request->input('email'))->send(new WelcomeUserMail($request->input('name')));
+
+        return redirect()->route('login')->with("alert-success", "Đăng ký tài khoản thành công. Tài khoản của bạn đang đợi admin kích hoạt.");
     }
 
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $branch = Branch::where([
+            'active' => true,
+        ])->get();
+
+        $department = Department::where([
+            'active' => true
+        ])->get();
+        return view('auth.register', compact('branch', 'department'));
     }
 }

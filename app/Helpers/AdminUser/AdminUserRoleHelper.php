@@ -107,6 +107,39 @@ if(!class_exists('AdminUserRoleHelper')) {
             return json_encode($array_rule);
         }
 
+        public static function activeUser() {
+            $array = [
+                "role_see_branch"               => 0,
+                "role_add_branch"               => 0,
+                "role_update_branch"            => 0,
+                "role_delete_branch"            => 0,
+                "role_see_department"           => 0,
+                "role_add_department"           => 0,
+                "role_update_department"        => 0,
+                "role_delete_department"        => 0,
+                "role_see_product"              => 0,
+                "role_add_product"              => 0,
+                "role_update_product"           => 0,
+                "role_delete_product"           => 0,
+                "role_see_product_demo"         => 0,
+                "role_add_product_demo"         => 0,
+                "role_update_product_demo"      => 0,
+                "role_delete_product_demo"      => 0,
+                "role_see_product_print"        => 0,
+                "role_add_product_print"        => 0,
+                "role_update_product_print"     => 0,
+                "role_delete_product_print"     => 0,
+                "role_see_customer"             => 0,
+                "role_add_customer"             => 0,
+                "role_update_customer"          => 0,
+                "role_delete_customer"          => 0,
+                "role_manage_user"              => 0,
+                "role_active"                   => 1,
+            ];
+
+            return json_encode($array);
+        }
+
         public static function rolesArray($json, $type = false) {
             return json_decode($json, $type);
         }
