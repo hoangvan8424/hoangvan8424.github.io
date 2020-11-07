@@ -20,9 +20,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
 });
 
+Route::get('/install', 'InstallController@index')->name('install');
+Route::post('/install/save', 'InstallController@save')->name('save.install');
+
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
-        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
         Route::group(['prefix' => 'branch'], function () {
             Route::get('/', 'BranchController@index')->name('branch.list');

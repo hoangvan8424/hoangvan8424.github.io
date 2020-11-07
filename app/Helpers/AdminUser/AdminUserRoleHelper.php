@@ -37,7 +37,7 @@ if(!class_exists('AdminUserRoleHelper')) {
          * Admin
          */
 
-        public function setupAccountAdmin() {
+        public static function setupAccountAdmin() {
             $array = [
                 "role_add_branch"               => 1,
                 "role_update_branch"            => 1,
@@ -68,7 +68,7 @@ if(!class_exists('AdminUserRoleHelper')) {
          * Update Role
          */
 
-        public function updateAccountRole($data = array()) {
+        public static function updateAccountRole($data = array()) {
             $array_rule = array([
                 "role_add_branch"               => !empty($data['role_add_branch']) ? 1:0,
                 "role_update_branch"            => !empty($data['role_update_branch']) ? 1:0,

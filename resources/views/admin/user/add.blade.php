@@ -67,7 +67,7 @@
                                 <label for="date-of-birthday" class="col-sm-3 col-form-label">Ngày sinh<span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <input class="form-control date" type="text" name="date_of_birth" id="date-of-birthday" value="{{ old('date_of_birth') }}" placeholder="dd/mm/yyyy">
+                                    <input class="form-control date" type="text" name="date_of_birth" id="date-of-birthday" value="{{ old('date_of_birth') }}" placeholder="dd/mm/yyyy" readonly>
                                     @if($errors->has('date_of_birth'))
                                         <span class="text-danger error-text">
                                             {{$errors->first('date_of_birth')}}
