@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Đăng ký' . config('app.name'))
+@section('title', 'Đăng ký - ' . config('app.name'))
 @section('content')
     <div class="container">
         <div class="card o-hidden border-0 shadow-lg my-5">
@@ -59,6 +59,27 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control" id="date-of-birth" name="date_of_birth" readonly placeholder="Ngày sinh">
+                                        @if($errors->has('date_of_birth'))
+                                            <span class="text-danger error-text font-weight-bold">
+                                                {{$errors->first('date_of_birth')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-sm-6 mt-2">
+                                        <input class="" type="radio" name="sex" id="male" value="Nam" checked> <label
+                                            for="male" class="mr-4">Nam</label>
+                                        <input class="" type="radio" name="sex" id="female" value="Nữ"> <label
+                                            for="female">Nữ</label>
+                                        @if($errors->has('sex'))
+                                            <span class="text-danger error-text font-weight-bold">
+                                                {{$errors->first('sex')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
                                         <select class="form-control" name="branch">
                                             <option class="" value="" selected>Chi nhánh</option>
                                             @foreach($branch as $key => $value)
@@ -103,3 +124,15 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $(function() {
+            $('#date-of-birth').datepicker({
+                format: 'dd-mm-yyyy',
+                orientation: 'bottom left',
+                todayHighlight: true,
+                autoclose: true,
+            });
+        });
+    </script>
+@endpush

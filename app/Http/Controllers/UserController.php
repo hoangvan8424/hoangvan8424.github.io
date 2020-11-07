@@ -86,9 +86,8 @@ class UserController extends Controller
             'branch'    => $branch,
             'department' => $department,
             'user'      => $user,
-            'role'      => AdminUserRoleHelper::rolesArray($user->first()->todo)
+            'role'      => AdminUserRoleHelper::rolesArray($user->todo),
         ];
-
 
         return view('admin.user.update', $data);
     }
@@ -103,20 +102,22 @@ class UserController extends Controller
 
         $roles = AdminUserRoleHelper::updateAccountRole($request->input());
 
+        $position = $request->position;
+
         $update = $user->update(array(
             'name' =>  $request->name,
             'branch_id' => $request->branch,
             'department_id' => $request->department,
             'sex'  => $request->sex,
             'date_of_birth' => date('Y-m-d', strtotime($request->date_of_birth)),
-            'role' => $request->position ? $request->position : 3,
+            'role' => $request->position != null ? $request->position : 3,
             'todo' => $roles
         ));
 
         if($update) {
             $deRole = json_decode($roles,true);
-            if(intval($deRole['role_active']) === 1) {
-                Mail::to($user->first()->email)->send(new ActiveAccountMail($request->input('name')));
+            if(intval($deRole['role_active']) === 1 and $position != 0) {
+                Mail::to($user->email)->send(new ActiveAccountMail($request->input('name')));
             }
 
             $request->session()->put('update_status',true);

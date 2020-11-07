@@ -61,6 +61,8 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'branch_id' => $request->branch,
             'department_id' => $request->department,
+            'date_of_birth' => date('Y-m-d', strtotime($request->date_of_birth)),
+            'sex' => $request->sex,
             'todo'  => $roles
         ]);
 

@@ -290,6 +290,7 @@
                             </div>
 
                             <!-- Active user -->
+                            @if($user->role != 0)
                             <div class="form-group">
                                 <label for="role_active">Kích hoạt tài khoản<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_active" id="role_active">
@@ -297,6 +298,7 @@
                                     <option value="1" {{ $role->role_active === 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
+                            @endif
 
                         </div>
                     </div>

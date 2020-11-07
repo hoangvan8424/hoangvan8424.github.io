@@ -30,6 +30,7 @@ class RequestRegister extends FormRequest
             'password' => 'required|string|min:8|confirmed',
             'branch'   => 'required',
             'department'   => 'required',
+            'date_of_birth' => 'required|date_format:d-m-Y|date|before:today',
         ];
     }
 
@@ -50,6 +51,10 @@ class RequestRegister extends FormRequest
             'password.string'      => 'Không đúng định dạng',
             'password.min'      => 'Mật khẩu quá yếu',
             'password.confirmed'      => 'Mật khẩu nhập lại không trùng khớp',
+            'date_of_birth.required'   => 'Trường này không được để trống',
+            'date_of_birth.date_format'   => 'Không đúng định dạng (dd-mm-yyyy)',
+            'date_of_birth.date'   => 'Không đúng định dạng (dd-mm-yyyy)',
+            'date_of_birth.before'   => 'Trường này không hợp lệ',
         ];
     }
 }
