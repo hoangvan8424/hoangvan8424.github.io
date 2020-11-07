@@ -39,7 +39,6 @@ class UserController extends Controller
             'department' => $department,
         ];
 
-
         return view('admin.user.add', $data);
     }
 
