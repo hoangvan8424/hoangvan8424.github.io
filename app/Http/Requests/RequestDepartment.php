@@ -25,7 +25,6 @@ class RequestDepartment extends FormRequest
     {
         return [
             'name' => 'required|string|unique:departments',
-            'branch' => 'required',
         ];
     }
 
@@ -33,7 +32,6 @@ class RequestDepartment extends FormRequest
     {
         return [
             'name.required' => 'Trường này không được để trống',
-            'branch.required' => 'Trường này không được để trống',
             'name.unique'     =>'Tên phòng ban đã tồn tại',
             'name.string'   => 'Trường này không đúng định dạng',
         ];

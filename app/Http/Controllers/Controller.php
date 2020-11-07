@@ -43,6 +43,8 @@ class Controller extends BaseController
             'id' => Auth::user()->id
         ]);
         $role = AdminUserRoleHelper::rolesArray($user->first()->todo, true);
+//        dd(intval($role['role_add_customer']));
+//        dd($role);
         if(isset($role['role_' . $roleCheck])) {
             return intval($role['role_' . $roleCheck]) === 1 ? true : false;
         }

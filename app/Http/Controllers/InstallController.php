@@ -7,6 +7,7 @@ use App\Http\Requests\RequestInstall;
 use App\Mail\HelloAdminMail;
 use App\Model\Install;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -21,7 +22,7 @@ class InstallController extends Controller
         return view('install.index');
     }
 
-    public function save(RequestInstall $request) {
+    public function save(Request $request) {
         if(env('APP_SETUP') == false) {
             print_r("Please change APP_SETUP of .env by value true to use this function");
             die;
@@ -89,15 +90,6 @@ class InstallController extends Controller
 
 
     protected function validateForm($request){
-
-        $rule = [
-            'site_name' => 'required|min:3|max:160',
-            'site_slogan' => 'required|min:3|max:160',
-            'name' => 'required'|'string'|'max:160',
-            'email' => 'required'|'string'|'email'|'max:160',
-            'password' => 'required'|'string'|'min:8'|'confirmed'
-        ];
-
         $message = [
             'name.required' => 'Trường này là bắt buộc',
             'email.required' => 'Trường này là bắt buộc',
@@ -107,7 +99,15 @@ class InstallController extends Controller
             'site_slogan.required' => 'Trường này là bắt buộc',
         ];
 
-        $validator = Validator::make($request->all(), $rule, $message);
+        $rule = [
+            'site_name' => 'required|min:3|max:160',
+            'site_slogan' => 'required|min:3|max:160',
+            'name' => 'required'|'string'|'max:160',
+            'email' => 'required'|'string'|'email'|'max:160',
+            'password' => 'required'|'string'|'min:8'|'confirmed'
+        ];
+
+        $validator = Validator::make($request->all(), $message);
 
         return $validator;
     }

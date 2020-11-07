@@ -130,6 +130,24 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="position" class="col-sm-3 col-form-label">Chức vụ <span class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="position" id="position">
+                                        <option value="">Chọn...</option>
+                                        <option value="0">Tổng giám đốc</option>
+                                        <option value="1">Giám đốc chi nhánh</option>
+                                        <option value="2">Trưởng phòng</option>
+                                        <option value="3">Nhân viên</option>
+                                    </select>
+                                    @if($errors->has('position'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('position')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <a class="btn btn-warning float-left" href="{{ route('user.list') }}">
                                     <i class="fas fa-exclamation-triangle"></i> Hủy

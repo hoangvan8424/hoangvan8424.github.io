@@ -55,7 +55,7 @@
                                 </td>
                                 <td>{{ $value->email }}</td>
                                 <td>
-                                    @if($value->role == 1)
+                                    @if($value->role == 0)
                                         <p class="btn btn-success btn-icon-split btn-sm">
                                             <span class="text text-white">Giám đốc</span>
                                         </p>

@@ -81,7 +81,7 @@ if(!class_exists('AdminUserRoleHelper')) {
          */
 
         public static function updateAccountRole($data = array()) {
-            $array_rule = array([
+            $array_rule = [
                 "role_add_branch"               => !empty($data['role_add_branch']) ? 1:0,
                 "role_update_branch"            => !empty($data['role_update_branch']) ? 1:0,
                 "role_delete_branch"            => !empty($data['role_delete_branch']) ? 1:0,
@@ -102,7 +102,7 @@ if(!class_exists('AdminUserRoleHelper')) {
                 "role_delete_customer"          => !empty($data['role_delete_customer']) ? 1:0,
                 "role_manage_user"              => !empty($data['role_manage_user']) ? 1:0,
                 "role_active"                   => !empty($data['role_active']) ? 1:0
-            ]);
+            ];
 
             return json_encode($array_rule);
         }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\AdminUser\AdminUserRoleHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestLogin;
 use App\Providers\RouteServiceProvider;
