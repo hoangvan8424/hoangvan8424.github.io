@@ -49,6 +49,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/delete/{id}', 'DepartmentController@delete')->name('department.delete');
         });
 
+        // product
         Route::group(['prefix' => 'product'], function () {
             Route::get('/', 'ProductController@index')->name('product.list');
             Route::get('/add', 'ProductController@add')->name('product.add');
