@@ -186,6 +186,7 @@
         $(document).ready(function () {
 
             let branch_id = $('#branch').val();
+
             getDateFromBranch(branch_id);
 
             $('#branch').change(function () {
@@ -226,4 +227,5 @@
                 });
             }
         }
+    </script>
 @endpush

@@ -14,13 +14,47 @@ use Illuminate\Support\Facades\DB;
 class ProductDemoController extends Controller
 {
     public function index() {
-        $data = ProductDemo::all();
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+
+                $data = DB::table('product_demos')
+                    ->join('products', 'product_demos.product_id', '=', 'products.id')
+                    ->join('branches', 'products.branch_id', '=', 'branches.id')
+                    ->join('users', 'product_demos.employee_id', '=', 'users.id')
+                    ->select('product_demos.id', 'product_demos.receive_demo_date', 'products.name as product_name', 'branches.name as branch_name', 'users.name as username', 'expected_delivery_date_1'
+                    , 'expected_delivery_date_2', 'expected_delivery_date_3', 'delivery_date', 'product_demos.note')
+                    ->where([
+                        'products.branch_id' => $branch_id,
+                    ])->get();
+                return view('admin.product-demo.list', compact('data'));
+            }
+        }
+
+        $data = DB::table('product_demos')
+            ->join('products', 'product_demos.product_id', '=', 'products.id')
+            ->join('branches', 'products.branch_id', '=', 'branches.id')
+            ->join('users', 'product_demos.employee_id', '=', 'users.id')
+            ->select('product_demos.id', 'product_demos.receive_demo_date', 'products.name as product_name', 'branches.name as branch_name', 'users.name as username', 'expected_delivery_date_1'
+                , 'expected_delivery_date_2', 'expected_delivery_date_3', 'delivery_date', 'product_demos.note')
+            ->get();
         return view('admin.product-demo.list', compact('data'));
     }
 
     public function add() {
         if($this->checkRoles('add_product_demo') === false) {
             return redirect()->route('product.demo.list');
+        }
+
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active' => true,
+                ])->get();
+                return view('admin.product-demo.add', compact('branch'));
+            }
         }
 
         $branch = Branch::where([
@@ -39,7 +73,6 @@ class ProductDemoController extends Controller
         if($this->checkRoles('add_product_demo') === false) {
             return redirect()->route('product.demo.list');
         }
-
 
         $productDemo = new ProductDemo();
 
@@ -64,6 +97,27 @@ class ProductDemoController extends Controller
         }
 
         $demo = ProductDemo::findOrFail($id);
+
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active' => true,
+                ])->get();
+                if($demo->product->branch_id != $branch_id) {
+                    return redirect()->route('product.demo.list')->with('alert-danger', 'Sản phẩm không tồn tại');
+                }
+
+                $data = [
+                    'demo'    => $demo,
+                    'branch'  => $branch
+                ];
+
+                return view('admin.product-demo.update', $data);
+            }
+        }
+
 
         $branch = Branch::where([
             'active' => true,

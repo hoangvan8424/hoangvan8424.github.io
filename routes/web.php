@@ -93,7 +93,9 @@ Route::prefix('admin')->group(function () {
             Route::get('/update/{id}', 'CustomerController@showUpdateForm')->name('customer.edit');
             Route::post('/update/{id}', 'CustomerController@update')->name('customer.update');
 
-            Route::get('/delete/{id}', 'ProductDemoController@delete')->name('customer.delete');
+            Route::get('/delete/{id}', 'CustomerController@delete')->name('customer.delete');
+
+            Route::get('/get-user', 'CustomerController@getUserFromBranch')->name('get.user.from.branch');
         });
 
         // user

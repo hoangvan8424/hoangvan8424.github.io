@@ -59,7 +59,21 @@ class UserController extends Controller
         $user->avatar = 'public/images/default/avatar.jpg';
         $user->sex = $request->sex;
         $user->date_of_birth = date('Y-m-d', strtotime($request->date_of_birth));
-        $user->role = $request->position ? $request->position : 3;
+
+        $roles = "[]";
+
+        if($request->position == 0 ) {
+            $roles = AdminUserRoleHelper::setupAccountAdmin();
+        } else if($request->position == 1) {
+            $roles = AdminUserRoleHelper::setupAccountVicePresident();
+        } else if($request->position == 2) {
+            $roles = AdminUserRoleHelper::setupAccountManager();
+        } else if($request->position == 3 || $request->position == null) {
+            $roles = AdminUserRoleHelper::setUpAccountUser();
+        }
+
+        $user->role = $request->position != null ? $request->position : 3;
+        $user->todo = $roles;
 
         $user->save();
 
@@ -83,10 +97,10 @@ class UserController extends Controller
         ])->get();
 
         $data = [
-            'branch'    => $branch,
-            'department' => $department,
-            'user'      => $user,
-            'role'      => AdminUserRoleHelper::rolesArray($user->todo),
+            'branch'        => $branch,
+            'department'    => $department,
+            'user'          => $user,
+            'role'          => AdminUserRoleHelper::rolesArray($user->todo),
         ];
 
         return view('admin.user.update', $data);

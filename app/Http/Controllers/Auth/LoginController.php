@@ -53,6 +53,11 @@ class LoginController extends Controller
             if ($this->checkRoles('active') === false) {
                 return redirect()->route('logout');
             } else {
+                $branch_id = Auth::user()->branch_id;
+                if($this->checkRoles('managed_by_branches') === true) {
+                    session()->put('branch_id', $branch_id);
+                }
+
                 return redirect()->route('home');
             }
 
@@ -69,6 +74,9 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
+        if(session()->has('branch_id')) {
+            session()->forget('branch_id');
+        }
         return redirect()->route('login');
     }
 }

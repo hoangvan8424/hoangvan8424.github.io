@@ -145,21 +145,21 @@
                                 <label for="role_add_branch">Thêm chi nhánh<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_add_branch" id="role_add_branch">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_add_branch === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_add_branch == 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="role_update_branch">Sửa chi nhánh<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_update_branch" id="role_update_branch">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_update_branch === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_update_branch == 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="role_delete_branch">Xóa chi nhánh<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_delete_branch" id="role_delete_branch">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_update_branch === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_delete_branch == 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
 
@@ -168,21 +168,21 @@
                                 <label for="role_add_department">Thêm phòng ban<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_add_department" id="role_add_department">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_add_department === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_add_department == 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="role_update_department">Sửa phòng ban<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_update_department" id="role_update_department">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_update_department === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_update_department == 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="role_delete_department">Xóa phòng ban<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_delete_department" id="role_delete_department">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_update_department === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_delete_department === 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
 
@@ -205,7 +205,7 @@
                                 <label for="role_delete_product">Xóa sản phẩm<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_delete_product" id="role_delete_product">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_update_product === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_delete_product == 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
 
@@ -228,7 +228,7 @@
                                 <label for="role_delete_product_demo">Xóa sản phẩm demo<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_delete_product_demo" id="role_delete_product_demo">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_update_product_demo === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_delete_product_demo === 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
 
@@ -254,7 +254,7 @@
                                 <label for="role_delete_product_print">Xóa sản phẩm in<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_delete_product_print" id="role_delete_product_print">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_update_product_print === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_delete_product_print === 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
                             <!-- Khách hàng -->
@@ -276,7 +276,7 @@
                                 <label for="role_delete_customer">Xóa khách hàng<span class="text-danger"> *</span></label>
                                 <select class="form-control" name="role_delete_customer" id="role_delete_customer">
                                     <option value="0">Không cho phép</option>
-                                    <option value="1" {{ $role->role_update_customer === 1 ? 'selected':'' }}>Cho phép</option>
+                                    <option value="1" {{ $role->role_delete_customer === 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
 
@@ -286,6 +286,15 @@
                                 <select class="form-control" name="role_manage_user" id="role_manage_user">
                                     <option value="0">Không cho phép</option>
                                     <option value="1" {{ $role->role_manage_user === 1 ? 'selected':'' }}>Cho phép</option>
+                                </select>
+                            </div>
+
+                            <!-- Quản lý nhân viên -->
+                            <div class="form-group">
+                                <label for="role_managed_by_branches">Quản lý theo chi nhánh (Dành cho giám đốc chi nhánh)<span class="text-danger"> *</span></label>
+                                <select class="form-control" name="role_managed_by_branches" id="role_managed_by_branches">
+                                    <option value="0">Không cho phép</option>
+                                    <option value="1" {{ $role->role_managed_by_branches === 1 ? 'selected':'' }}>Cho phép</option>
                                 </select>
                             </div>
 

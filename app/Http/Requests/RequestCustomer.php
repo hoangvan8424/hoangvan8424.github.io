@@ -31,6 +31,7 @@ class RequestCustomer extends FormRequest
             'makeup'                => 'required',
             'shopper'               => 'required',
             'photography_date'      => 'required',
+            'branch'                => 'required'
         ];
     }
 
@@ -44,6 +45,7 @@ class RequestCustomer extends FormRequest
             'makeup.required'           => 'Trường này không được để trống',
             'shopper.required'          => 'Trường này không được để trống',
             'photography_date.required' => 'Trường này không được để trống',
+            'branch.required'           => 'Trường này không được để trống',
         ];
     }
 }

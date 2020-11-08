@@ -8,17 +8,59 @@ use App\Model\Product;
 use App\Model\ProductPrint;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductPrintController extends Controller
 {
     public function index() {
-        $data = ProductPrint::all();
+
+        if($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+
+                $data = DB::table('product_prints')
+                    ->join('products', 'product_prints.product_id', '=', 'products.id')
+                    ->join('branches', 'products.branch_id', '=', 'branches.id')
+                    ->join('users', 'product_prints.employee_id', '=', 'users.id')
+                    ->select('product_prints.id', 'product_prints.date_send_selected_code',
+                        'products.name as product_name', 'branches.name as branch_name', 'users.name as username',
+                        'review_date_1', 'review_date_2',
+                        'review_date_3', 'delivery_date_in_branch', 'customer_receive_date', 'closing_date', 'product_prints.note')
+                    ->where([
+                        'products.branch_id' => $branch_id,
+                    ])->get();
+                return view('admin.product-print.list', compact('data'));
+            }
+        }
+
+
+        $data = DB::table('product_prints')
+            ->join('products', 'product_prints.product_id', '=', 'products.id')
+            ->join('branches', 'products.branch_id', '=', 'branches.id')
+            ->join('users', 'product_prints.employee_id', '=', 'users.id')
+            ->select('product_prints.id', 'product_prints.date_send_selected_code',
+                'products.name as product_name', 'branches.name as branch_name', 'users.name as username',
+                'review_date_1', 'review_date_2',
+                'review_date_3', 'delivery_date_in_branch', 'customer_receive_date', 'closing_date', 'product_prints.note')
+            ->get();
         return view('admin.product-print.list', compact('data'));
     }
 
     public function add() {
+
         if($this->checkRoles('add_product_print') === false) {
             return redirect()->route('product.print.list');
+        }
+
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active' => true,
+                ])->get();
+                return view('admin.product-print.add', compact('branch'));
+            }
         }
 
         $branch = Branch::where([
@@ -63,6 +105,26 @@ class ProductPrintController extends Controller
 
         $print = ProductPrint::findOrFail($id);
 
+
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active' => true,
+                ])->get();
+                if($print->product->branch_id != $branch_id) {
+                    return redirect()->route('product.print.list')->with('alert-danger', 'Sản phẩm không tồn tại');
+                }
+
+                $data = [
+                    'print'    => $print,
+                    'branch'  => $branch
+                ];
+
+                return view('admin.product-print.update', $data);
+            }
+        }
 
         $data = [
             'print'   => $print,

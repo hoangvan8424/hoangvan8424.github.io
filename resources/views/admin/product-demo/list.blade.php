@@ -44,9 +44,9 @@
                                 <td>{{ $value->id }}</td>
                                 <td>
                                     <ul>
-                                        <li><strong class="text-dark">Tên: </strong>{{ $value->product->name }}</li>
-                                        <li><strong class="text-dark">Chi nhánh: </strong>{{ $value->product->branch->name }}</li>
-                                        <li><strong class="text-dark">Thợ shop: </strong>{{ $value->user->name }}</li>
+                                        <li><strong class="text-dark">Tên: </strong>{{ $value->product_name }}</li>
+                                        <li><strong class="text-dark">Chi nhánh: </strong>{{ $value->branch_name }}</li>
+                                        <li><strong class="text-dark">Thợ shop: </strong>{{ $value->username }}</li>
                                     </ul>
                                 </td>
                                 <td>

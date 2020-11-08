@@ -55,6 +55,27 @@
                                     @endif
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="branch" class="col-sm-3 col-form-label">Chi nhánh<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="branch" id="branch">
+                                        <option value="">Chọn...</option>
+                                        @if(count($branch))
+                                            @foreach($branch as $key => $value)
+                                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                    @if($errors->has('branch'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('branch')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group row">
                                 <label for="photographer" class="col-sm-3 col-form-label">Thợ chụp <span class="text-danger">*</span></label>
                                 <div class="col-sm-9">
@@ -162,5 +183,59 @@
                 autoclose: true,
             });
         });
+
+        $(document).ready(function () {
+
+            let branch_id = $('#branch').val();
+            getDataFromBranch(branch_id);
+
+            $('#branch').change(function () {
+                let branch_id = $(this).val();
+                if(branch_id !== 0) {
+                    getDataFromBranch(branch_id);
+                }
+            });
+        });
+
+        function getDataFromBranch(branch_id) {
+            if(branch_id !== 0 && branch_id !== 6) {
+                $.ajax({
+                    url: '{{ route('get.user.from.branch') }}',
+                    method: 'GET',
+                    data: {
+                        id: branch_id,
+                    },
+                    success: function (result) {
+                        if((result['shopper'].length +'') > 0) {
+                            $('#shopper').html("").append(result['shopper']);
+                            $('#shopper').attr('disabled', false);
+                        } else {
+                            let html = "<option value=''>Không có dữ liệu</option>";
+                            $('#shopper').html("").append(html);
+                            $('#shopper').attr('disabled', true);
+                        }
+
+                        if((result['makeup'].length +'') > 0) {
+                            $('#makeup').html("").append(result['makup']);
+                            $('#makeup').attr('disabled', false);
+                        } else {
+                            let html = "<option value=''>Không có dữ liệu</option>";
+                            $('#makeup').html("").append(html);
+                            $('#makeup').attr('disabled', true);
+                        }
+
+                        if((result['photographer'].length +'') > 0) {
+                            $('#photographer').html("").append(result['photographer']);
+                            $('#photographer').attr('disabled', false);
+                        } else {
+                            let html = "<option value=''>Không có dữ liệu</option>";
+                            $('#photographer').html("").append(html);
+                            $('#photographer').attr('disabled', true);
+                        }
+                    }
+                });
+            }
+        }
+
     </script>
 @endpush

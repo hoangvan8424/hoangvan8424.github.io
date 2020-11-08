@@ -43,13 +43,20 @@ class Controller extends BaseController
             'id' => Auth::user()->id
         ]);
         $role = AdminUserRoleHelper::rolesArray($user->first()->todo, true);
-//        dd(intval($role['role_add_customer']));
-//        dd($role);
         if(isset($role['role_' . $roleCheck])) {
             return intval($role['role_' . $roleCheck]) === 1 ? true : false;
         }
 
         throw new \Exception("Check roles: role invalid ".$roleCheck);
+    }
+
+    public function getBranchId() {
+        $branch_id = 0;
+        if(session()->has('branch_id')) {
+            $branch_id = session('branch_id');
+        }
+
+        return $branch_id;
 
     }
 }

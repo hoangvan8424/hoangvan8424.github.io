@@ -59,8 +59,16 @@
                                         <p class="btn btn-success btn-icon-split btn-sm">
                                             <span class="text text-white">Giám đốc</span>
                                         </p>
-                                    @else
+                                    @elseif($value->role == 1)
                                         <p class="btn btn-primary btn-icon-split btn-sm">
+                                            <span class="text text-white">Giám đốc chi nhánh</span>
+                                        </p>
+                                    @elseif($value->role == 2)
+                                        <p class="btn btn-dark btn-icon-split btn-sm">
+                                            <span class="text text-white">Trưởng phòng</span>
+                                        </p>
+                                    @elseif($value->role == 3)
+                                        <p class="btn btn-warning btn-icon-split btn-sm">
                                             <span class="text text-white">Nhân viên</span>
                                         </p>
                                     @endif

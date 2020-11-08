@@ -168,5 +168,59 @@
                 autoclose: true,
             });
         });
+
+        $(document).ready(function () {
+
+            let branch_id = $('#branch').val();
+            getDataFromBranch(branch_id);
+
+            $('#branch').change(function () {
+                let branch_id = $(this).val();
+                if(branch_id !== 0) {
+                    getDataFromBranch(branch_id);
+                }
+            });
+        });
+
+        function getDataFromBranch(branch_id) {
+            if(branch_id !== 0 && branch_id !== 6) {
+                $.ajax({
+                    url: '{{ route('get.user.from.branch') }}',
+                    method: 'GET',
+                    data: {
+                        id: branch_id,
+                    },
+                    success: function (result) {
+                        if((result['shopper'].length +'') > 0) {
+                            $('#shopper').html("").append(result['shopper']);
+                            $('#shopper').attr('disabled', false);
+                        } else {
+                            let html = "<option value=''>Không có dữ liệu</option>";
+                            $('#shopper').html("").append(html);
+                            $('#shopper').attr('disabled', true);
+                        }
+
+                        if((result['makeup'].length +'') > 0) {
+                            $('#makeup').html("").append(result['makup']);
+                            $('#makeup').attr('disabled', false);
+                        } else {
+                            let html = "<option value=''>Không có dữ liệu</option>";
+                            $('#makeup').html("").append(html);
+                            $('#makeup').attr('disabled', true);
+                        }
+
+                        if((result['photographer'].length +'') > 0) {
+                            $('#photographer').html("").append(result['photographer']);
+                            $('#photographer').attr('disabled', false);
+                        } else {
+                            let html = "<option value=''>Không có dữ liệu</option>";
+                            $('#photographer').html("").append(html);
+                            $('#photographer').attr('disabled', true);
+                        }
+                    }
+                });
+            }
+        }
+
     </script>
 @endpush

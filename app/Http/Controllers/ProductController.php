@@ -9,7 +9,17 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
     public function index() {
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $data = Product::where([
+                    'branch_id' => $branch_id
+                ])->get();
+                return view('admin.product.list', compact('data'));
+            }
+        }
         $data = Product::all();
         return view('admin.product.list', compact('data'));
     }
@@ -19,7 +29,20 @@ class ProductController extends Controller
             return redirect()->route('product.list');
         }
 
-        $branch = Branch::all();
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active'    => true
+                ])->get();
+                return view('admin.product.add', compact('branch'));
+            }
+        }
+
+        $branch = Branch::where([
+            'active' => true
+        ]);
         return view('admin.product.add', compact('branch'));
     }
 
@@ -45,6 +68,22 @@ class ProductController extends Controller
     public function showUpdateForm($id) {
         if($this->checkRoles('update_product') === false) {
             return redirect()->route('product.list');
+        }
+
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active'    => true
+                ])->get();
+
+                $product = Product::findOrFail($id);
+                if($product->branch_id != $branch_id) {
+                    return redirect()->route('product.list')->with('alert-danger', 'Sản phẩm không tồn tại');
+                }
+                return view('admin.product.update', compact('branch', 'product'));
+            }
         }
 
         $branch = Branch::all();
