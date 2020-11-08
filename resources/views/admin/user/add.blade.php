@@ -135,10 +135,13 @@
                                 <div class="col-sm-9">
                                     <select class="form-control" name="position" id="position">
                                         <option value="">Chọn...</option>
+                                        @if($status === true)
                                         <option value="0">Tổng giám đốc</option>
                                         <option value="1">Giám đốc chi nhánh</option>
+                                        @endif
                                         <option value="2">Trưởng phòng</option>
                                         <option value="3">Nhân viên</option>
+
                                     </select>
                                     @if($errors->has('position'))
                                         <span class="text-danger error-text">
@@ -171,6 +174,18 @@
                 orientation: 'bottom left',
                 todayHighlight: true,
                 autoclose: true,
+            });
+        });
+
+        $(document).ready(function () {
+            $('#position').attr('disabled', true);
+            $('#department').change(function () {
+                let position = $(this).val();
+                if(position === '7') {
+                    $('#position').attr('disabled', false);
+                } else {
+                    $('#position').attr('disabled', true);
+                }
             });
         });
     </script>

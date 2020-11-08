@@ -20,6 +20,21 @@ class UserController extends Controller
             return redirect()->route('dashboard');
         }
 
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id'        => $branch_id,
+                    'active'    => true,
+                ])->get();
+                $data = User::where([
+                    'branch_id' => $branch_id,
+                ])->get();
+
+                return view('admin.user.list', compact('data'));
+            }
+        }
+
         $data = User::all();
         return view('admin.user.list', compact('data'));
     }
@@ -27,6 +42,28 @@ class UserController extends Controller
     public function add() {
         if($this->checkRoles('manage_user') === false) {
             return redirect()->route('dashboard');
+        }
+
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active' => true,
+                ])->get();
+                $department = Department::where([
+                    ['active', '=', 1],
+                    ['name', 'not like', '%Nhân sự%'],
+                ])->get();
+
+                $data = [
+                    'branch'    => $branch,
+                    'department' => $department,
+                    'status'     => false
+                ];
+
+                return view('admin.user.add', $data);
+            }
         }
 
         $branch = Branch::where([
@@ -40,6 +77,7 @@ class UserController extends Controller
         $data = [
             'branch'    => $branch,
             'department' => $department,
+            'status'    => true
         ];
 
         return view('admin.user.add', $data);
@@ -87,6 +125,35 @@ class UserController extends Controller
         }
 
         $user = User::findOrFail($id);
+
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+
+                if($user->branch_id != $branch_id) {
+                    return redirect()->route('user.list')->with('alert-error', 'Nhân viên không tồn tại');
+                }
+
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active' => true,
+                ])->get();
+                $department = Department::where([
+                    ['active', '=', 1],
+                    ['name', 'not like', '%Nhân sự%'],
+                ])->get();
+
+                $data = [
+                    'branch'        => $branch,
+                    'department'    => $department,
+                    'user'          => $user,
+                    'role'          => AdminUserRoleHelper::rolesArray($user->todo),
+                ];
+
+                return view('admin.user.update', $data);
+            }
+        }
+
 
         $branch = Branch::where([
             'active' => 1

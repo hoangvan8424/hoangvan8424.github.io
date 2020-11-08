@@ -18,8 +18,7 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Tên</th>
-                            <th>Mã HĐ</th>
+                            <th>Thông tin</th>
                             <th>Thợ</th>
                             <th>Sản phẩm</th>
                             <th>Ngày chụp</th>
@@ -30,8 +29,7 @@
                         <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Tên</th>
-                            <th>Mã HĐ</th>
+                            <th>Thông tin</th>
                             <th>Thợ</th>
                             <th>Sản phẩm</th>
                             <th>Ngày chụp</th>
@@ -44,8 +42,13 @@
                             @foreach($data as $key => $value)
                             <tr>
                                 <td>{{ $value->id }}</td>
-                                <td>{{ $value->name }}</td>
-                                <td>{{ $value->contract_code }}</td>
+                                <td>
+                                    <ul>
+                                        <li><strong>Tên khách: </strong>{{ $value->name }}</li>
+                                        <li><strong>Mã HĐ: </strong>{{ $value->contract_code }}</li>
+                                        <li><strong>Chi nhánh: </strong>{{ $value->branch->name }}</li>
+                                    </ul>
+                                </td>
                                 <td>
                                     <p><strong class="text-primary">Chụp: </strong> {{ $value->photographer->name }}</p>
                                     <p><strong class="text-success">Makeup: </strong> {{ $value->makeup->name }}</p>

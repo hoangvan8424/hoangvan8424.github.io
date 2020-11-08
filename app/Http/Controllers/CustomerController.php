@@ -18,7 +18,6 @@ class CustomerController extends Controller
         if ($this->checkRoles('managed_by_branches') === true) {
             $branch_id = $this->getBranchId();
             if($branch_id != 0) {
-
                 $data = Customer::where([
                     'branch_id' => $branch_id,
                 ])->get();
@@ -43,9 +42,6 @@ class CustomerController extends Controller
         if ($this->checkRoles('managed_by_branches') === true) {
             $branch_id = $this->getBranchId();
             if($branch_id != 0) {
-                $data = Customer::where([
-                    'branch_id' => $branch_id,
-                ])->get();
 
                 $branch = Branch::where([
                     'id' => $branch_id,
@@ -92,15 +88,13 @@ class CustomerController extends Controller
             }
         }
 
-
-
         $shopper = DB::table('users')
-        ->join('departments', 'users.department_id', '=', 'departments.id')
-        ->select('users.name as name', 'users.id as id')
-        ->where([
-            ['role', '=', '3'],
-            ['departments.name', 'like', '%Shop%']
-        ])->get();
+            ->join('departments', 'users.department_id', '=', 'departments.id')
+            ->select('users.name as name', 'users.id as id')
+            ->where([
+                ['role', '=', '3'],
+                ['departments.name', 'like', '%Shop%']
+            ])->get();
 
 
         $makeup = DB::table('users')
@@ -138,6 +132,7 @@ class CustomerController extends Controller
         if($this->checkRoles('add_customer') === false) {
             return redirect()->route('customer.list');
         }
+
         $customer = new Customer([
             'name'                  => $request->get('customer_name'),
             'contract_code'         => $request->get('contract_code'),
@@ -164,6 +159,66 @@ class CustomerController extends Controller
             'active' => true,
         ])->get();
 
+
+        if ($this->checkRoles('managed_by_branches') === true) {
+            $branch_id = $this->getBranchId();
+            if($branch_id != 0) {
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active' => true,
+                ])->get();
+
+                if($customer->branch_id != $branch_id) {
+                    return redirect()->route('customer.list')->with('alert-danger', 'Khách hàng không tồn tại');
+                }
+
+                $branch = Branch::where([
+                    'id' => $branch_id,
+                    'active' => true,
+                ])->get();
+
+                $shopper = DB::table('users')
+                    ->join('departments', 'users.department_id', '=', 'departments.id')
+                    ->select('users.name as name', 'users.id as id')
+                    ->where([
+                        ['role', '=', '3'],
+                        ['departments.name', 'like', '%Shop%'],
+                        ['users.branch_id', '=', $branch_id],
+                    ])->get();
+
+
+                $makeup = DB::table('users')
+                    ->join('departments', 'users.department_id', '=', 'departments.id')
+                    ->select('users.name as name', 'users.id as id')
+                    ->where([
+                        ['role', '=', 3],
+                        ['departments.name', 'like', '%Makeup%'],
+                        ['users.branch_id', '=', $branch_id],
+                    ])->get();
+
+
+                $photographer = DB::table('users')
+                    ->join('departments', 'users.department_id', '=', 'departments.id')
+                    ->select('users.name as name', 'users.id as id')
+                    ->where([
+                        ['role', '=', 3],
+                        ['departments.name', 'like', '%Chup%'],
+                        ['users.branch_id', '=', $branch_id],
+                    ])->get();
+
+                $data = [
+                    'product'       => $product,
+                    'shopper'       => $shopper,
+                    'makeup'        => $makeup,
+                    'photographer'  => $photographer,
+                    'customer'      => $customer,
+                    'branch'        => $branch
+                ];
+
+                return view('admin.customer.update', $data);
+            }
+        }
+
         $shopper = DB::table('users')
             ->join('departments', 'users.department_id', '=', 'departments.id')
             ->select('users.name as name', 'users.id as id')
@@ -189,35 +244,6 @@ class CustomerController extends Controller
                 ['role', '=', 3],
                 ['departments.name', 'like', '%Chup%']
             ])->get();
-
-        if ($this->checkRoles('managed_by_branches') === true) {
-            $branch_id = $this->getBranchId();
-            if($branch_id != 0) {
-                $branch = Branch::where([
-                    'id' => $branch_id,
-                    'active' => true,
-                ])->get();
-                if($customer->branch_id != $branch_id) {
-                    return redirect()->route('customer.list')->with('alert-danger', 'Khách hàng không tồn tại');
-                }
-
-                $branch = Branch::where([
-                    'id' => $branch_id,
-                    'active' => true,
-                ])->get();
-
-                $data = [
-                    'product'       => $product,
-                    'shopper'       => $shopper,
-                    'makeup'        => $makeup,
-                    'photographer'  => $photographer,
-                    'customer'      => $customer,
-                    'branch'        => $branch
-                ];
-
-                return view('admin.customer.update', $data);
-            }
-        }
 
         $branch = Branch::where([
             'active' => true,

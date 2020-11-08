@@ -42,7 +42,7 @@ class ProductController extends Controller
 
         $branch = Branch::where([
             'active' => true
-        ]);
+        ])->get();
         return view('admin.product.add', compact('branch'));
     }
 

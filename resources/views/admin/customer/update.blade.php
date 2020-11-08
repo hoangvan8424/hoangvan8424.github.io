@@ -62,6 +62,25 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="branch" class="col-sm-3 col-form-label">Chi nhánh<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="branch" id="branch">
+                                        <option value="">Chọn...</option>
+                                        @if(count($branch))
+                                            @foreach($branch as $key => $value)
+                                                <option value="{{ $value->id }}" {{ $customer->branch_id == $value->id ?'selected':'' }}>{{ $value->name }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                    @if($errors->has('branch'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('branch')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="photographer" class="col-sm-3 col-form-label">Thợ chụp <span class="text-danger">*</span></label>
                                 <div class="col-sm-9">
                                     <select class="form-control" name="photographer" id="photographer">
@@ -201,7 +220,7 @@
                         }
 
                         if((result['makeup'].length +'') > 0) {
-                            $('#makeup').html("").append(result['makup']);
+                            $('#makeup').html("").append(result['makeup']);
                             $('#makeup').attr('disabled', false);
                         } else {
                             let html = "<option value=''>Không có dữ liệu</option>";

@@ -18,6 +18,7 @@ class Customer extends Model
         'product_id',
         'photography_date',
         'note',
+        'branch_id',
     ];
 
     public function photographer() {
@@ -42,5 +43,9 @@ class Customer extends Model
 
     public function product_print() {
         return $this->belongsTo(ProductPrint::class, 'product_print_id');
+    }
+
+    public function branch() {
+        return $this->belongsTo(Branch::class, 'branch_id');
     }
 }
