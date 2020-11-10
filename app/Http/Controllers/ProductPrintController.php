@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestProductPrint;
 use App\Model\Branch;
+use App\Model\Customer;
 use App\Model\Product;
 use App\Model\ProductPrint;
 use App\User;
@@ -20,12 +21,14 @@ class ProductPrintController extends Controller
 
                 $data = DB::table('product_prints')
                     ->join('products', 'product_prints.product_id', '=', 'products.id')
-                    ->join('branches', 'products.branch_id', '=', 'branches.id')
+                    ->join('branches', 'product_prints.branch_id', '=', 'branches.id')
                     ->join('users', 'product_prints.employee_id', '=', 'users.id')
+                    ->join('customers', 'product_prints.customer_id', '=', 'customers.id')
                     ->select('product_prints.id', 'product_prints.date_send_selected_code',
                         'products.name as product_name', 'branches.name as branch_name', 'users.name as username',
                         'review_date_1', 'review_date_2',
-                        'review_date_3', 'delivery_date_in_branch', 'customer_receive_date', 'closing_date', 'product_prints.note')
+                        'review_date_3', 'delivery_date_in_branch', 'customer_receive_date',
+                        'closing_date', 'product_prints.note', 'customers.name as customer_name')
                     ->where([
                         'products.branch_id' => $branch_id,
                     ])->get();
@@ -36,12 +39,14 @@ class ProductPrintController extends Controller
 
         $data = DB::table('product_prints')
             ->join('products', 'product_prints.product_id', '=', 'products.id')
-            ->join('branches', 'products.branch_id', '=', 'branches.id')
+            ->join('branches', 'product_prints.branch_id', '=', 'branches.id')
             ->join('users', 'product_prints.employee_id', '=', 'users.id')
+            ->join('customers', 'product_prints.customer_id', '=', 'customers.id')
             ->select('product_prints.id', 'product_prints.date_send_selected_code',
                 'products.name as product_name', 'branches.name as branch_name', 'users.name as username',
                 'review_date_1', 'review_date_2',
-                'review_date_3', 'delivery_date_in_branch', 'customer_receive_date', 'closing_date', 'product_prints.note')
+                'review_date_3', 'delivery_date_in_branch', 'customer_receive_date', 'closing_date',
+                'product_prints.note', 'customers.name as customer_name')
             ->get();
         return view('admin.product-print.list', compact('data'));
     }
@@ -86,7 +91,9 @@ class ProductPrintController extends Controller
         $productPrint->closing_date             = date('Y-m-d', strtotime($request->closing_date));
         $productPrint->delivery_date_in_branch  = date('Y-m-d', strtotime($request->date_in_branch));
         $productPrint->customer_receive_date    = date('Y-m-d', strtotime($request->receive_date));
-        $productPrint->note                     = $request->note ? $request->note : '';
+        $productPrint->note                     = $request->note !== null ? $request->note : '';
+        $productPrint->customer_id = $request->customer;
+        $productPrint->branch_id = $request->branch;
 
         $productPrint->save();
 
@@ -99,12 +106,7 @@ class ProductPrintController extends Controller
             return redirect()->route('product.print.list');
         }
 
-        $branch = Branch::where([
-            'active' => true,
-        ])->get();
-
         $print = ProductPrint::findOrFail($id);
-
 
         if ($this->checkRoles('managed_by_branches') === true) {
             $branch_id = $this->getBranchId();
@@ -113,22 +115,35 @@ class ProductPrintController extends Controller
                     'id' => $branch_id,
                     'active' => true,
                 ])->get();
-                if($print->product->branch_id != $branch_id) {
-                    return redirect()->route('product.print.list')->with('alert-danger', 'Sản phẩm không tồn tại');
+                if($print->branch_id != $branch_id) {
+                    return redirect()->route('product.print.list')
+                        ->with('alert-danger', 'Sản phẩm không tồn tại');
                 }
 
+                $customer = Customer::where([
+                    'branch_id' => $branch_id
+                ]);
+
                 $data = [
-                    'print'    => $print,
-                    'branch'  => $branch
+                    'print'     => $print,
+                    'branch'    => $branch,
+                    'customer'  => $customer
                 ];
 
                 return view('admin.product-print.update', $data);
             }
         }
 
+        $branch = Branch::where([
+            'active' => true,
+        ])->get();
+
+        $customer = Customer::all();
+
         $data = [
             'print'   => $print,
-            'branch'  => $branch
+            'branch'  => $branch,
+            'customer'  => $customer
         ];
         return view('admin.product-print.update', $data);
     }
@@ -149,7 +164,9 @@ class ProductPrintController extends Controller
         $productPrint->closing_date             = date('Y-m-d', strtotime($request->closing_date));
         $productPrint->delivery_date_in_branch  = date('Y-m-d', strtotime($request->date_in_branch));
         $productPrint->customer_receive_date    = date('Y-m-d', strtotime($request->receive_date));
-        $productPrint->note                     = $request->note ? $request->note : '';
+        $productPrint->note                     = $request->note !== null ? $request->note : '';
+        $productPrint->customer_id = $request->customer;
+        $productPrint->branch_id = $request->branch;
 
         $productPrint->save();
 
@@ -165,6 +182,4 @@ class ProductPrintController extends Controller
         $productPrint->delete();
         return redirect()->route('product.print.list')->with('alert-success', 'Xóa sản phẩm in thành công');
     }
-
-
 }

@@ -16,6 +16,8 @@ class ProductDemo extends Model
         'expected_delivery_date_3',
         'delivery_date',
         'note',
+        'customer_id',
+        'branch_id',
     ];
 
     public function product() {
@@ -24,5 +26,9 @@ class ProductDemo extends Model
 
     public function user() {
         return $this->belongsTo(User::class, 'employee_id');
+    }
+
+    public function customer() {
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 }

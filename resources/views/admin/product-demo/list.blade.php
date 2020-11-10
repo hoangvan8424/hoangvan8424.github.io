@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title', 'Sản phẩm in')
+@section('title', 'Sản phẩm demo')
 @push('css')
     <!-- Custom styles for this page -->
     <link href="{{ asset('public/template/databases/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
@@ -10,7 +10,7 @@
         <div class="card shadow mb-4">
             @if(count($data) > 0)
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Danh sách sản phẩm in</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách sản phẩm demo</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -44,7 +44,8 @@
                                 <td>{{ $value->id }}</td>
                                 <td>
                                     <ul>
-                                        <li><strong class="text-dark">Tên: </strong>{{ $value->product_name }}</li>
+                                        <li><strong>Tên khách hàng: {{ $value->customer_name }}</strong></li>
+                                        <li><strong class="text-dark">Tên sản phẩm: </strong>{{ $value->product_name }}</li>
                                         <li><strong class="text-dark">Chi nhánh: </strong>{{ $value->branch_name }}</li>
                                         <li><strong class="text-dark">Thợ shop: </strong>{{ $value->username }}</li>
                                     </ul>

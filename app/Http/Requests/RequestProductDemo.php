@@ -31,7 +31,8 @@ class RequestProductDemo extends FormRequest
             'delivery_date_2'       => 'required',
             'delivery_date_3'       => 'required',
             'delivery_date'         => 'required',
-            'branch'                => 'required'
+            'branch'                => 'required',
+            'customer'              => 'required',
         ];
     }
 
@@ -45,7 +46,8 @@ class RequestProductDemo extends FormRequest
             'delivery_date_2.required'      => 'Trường này không được để trống',
             'delivery_date_3.required'      => 'Trường này không được để trống',
             'delivery_date.required'        => 'Trường này không được để trống',
-            'branch.required'               => 'Trường này không được bỏ trống'
+            'branch.required'               => 'Trường này không được bỏ trống',
+            'customer.required'               => 'Trường này không được bỏ trống'
         ];
     }
 }

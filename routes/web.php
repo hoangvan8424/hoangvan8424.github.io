@@ -81,6 +81,7 @@ Route::prefix('admin')->group(function () {
             Route::post('/update/{id}', 'ProductDemoController@update')->name('product.demo.update');
 
             Route::get('/get-product', 'ProductDemoController@getProductFromBranch')->name('get.product.from.branch');
+            Route::get('/get-customer', 'ProductDemoController@getCustomerFromBranch')->name('get.customer.from.branch');
 
             Route::get('/delete/{id}', 'ProductDemoController@delete')->name('product.demo.delete');
         });

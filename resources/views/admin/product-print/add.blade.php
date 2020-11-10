@@ -31,6 +31,20 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="customer" class="col-sm-3 col-form-label">Khách hàng<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="customer" id="customer">
+                                        <option value="">Chọn...</option>
+                                    </select>
+                                    @if($errors->has('customer'))
+                                        <span class="text-danger error-text">
+                                        {{$errors->first('customer')}}
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="product-name" class="col-sm-3 col-form-label">Tên sản phẩm<span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
@@ -194,14 +208,6 @@
                             id: branch_id,
                         },
                         success: function (result) {
-                            if((result['product'].length +'') > 0) {
-                                $('#product-name').html("").append(result['product']);
-                                $('#product-name').attr('disabled', false);
-                            } else {
-                                let html = "<option value=''>Không có dữ liệu</option>";
-                                $('#product-name').html("").append(html);
-                                $('#product-name').attr('disabled', true);
-                            }
 
                             if((result['shopper'].length +'') > 0) {
                                 $('#shopper').html("").append(result['shopper']);
@@ -211,10 +217,44 @@
                                 $('#shopper').html("").append(html);
                                 $('#shopper').attr('disabled', true);
                             }
+
+                            if((result['customer'].length +'') > 0) {
+                                $('#customer').html("").append(result['customer']);
+                                $('#customer').attr('disabled', false);
+                            } else {
+                                let html = "<option value=''>Không có dữ liệu</option>";
+                                $('#customer').html("").append(html);
+                                $('#customer').attr('disabled', true);
+                            }
                         }
                     });
                 }
             });
+
+            $('#customer').change(function () {
+                let customer_id = $(this).val();
+                if(customer_id !== 0) {
+                    $.ajax({
+                        url: '{{ route('get.customer.from.branch') }}',
+                        method: 'GET',
+                        data: {
+                            id: customer_id,
+                        },
+                        success: function (result) {
+                            if((result['product'].length +'') > 0) {
+                                $('#product-name').html("").append(result['product']);
+                                $('#product-name').attr('disabled', false);
+                            } else {
+                                let html = "<option value=''>Không có dữ liệu</option>";
+                                $('#product-name').html("").append(html);
+                                $('#product-name').attr('disabled', true);
+                            }
+
+                        }
+                    });
+                }
+            });
+
         });
 
     </script>

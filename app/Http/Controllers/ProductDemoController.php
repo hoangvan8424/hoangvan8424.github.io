@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RequestProductDemo;
 use App\Http\Requests\RequestProductPrint;
 use App\Model\Branch;
+use App\Model\Customer;
 use App\Model\Product;
 use App\Model\ProductDemo;
 use App\User;
@@ -22,8 +23,9 @@ class ProductDemoController extends Controller
                     ->join('products', 'product_demos.product_id', '=', 'products.id')
                     ->join('branches', 'products.branch_id', '=', 'branches.id')
                     ->join('users', 'product_demos.employee_id', '=', 'users.id')
+                    ->join('customers', 'product_demos.customer_id', '=', 'customers.id')
                     ->select('product_demos.id', 'product_demos.receive_demo_date', 'products.name as product_name', 'branches.name as branch_name', 'users.name as username', 'expected_delivery_date_1'
-                    , 'expected_delivery_date_2', 'expected_delivery_date_3', 'delivery_date', 'product_demos.note')
+                    , 'expected_delivery_date_2', 'expected_delivery_date_3', 'delivery_date', 'product_demos.note', 'customers.name as customer_name')
                     ->where([
                         'products.branch_id' => $branch_id,
                     ])->get();
@@ -33,11 +35,15 @@ class ProductDemoController extends Controller
 
         $data = DB::table('product_demos')
             ->join('products', 'product_demos.product_id', '=', 'products.id')
-            ->join('branches', 'products.branch_id', '=', 'branches.id')
+            ->join('branches', 'product_demos.branch_id', '=', 'branches.id')
             ->join('users', 'product_demos.employee_id', '=', 'users.id')
-            ->select('product_demos.id', 'product_demos.receive_demo_date', 'products.name as product_name', 'branches.name as branch_name', 'users.name as username', 'expected_delivery_date_1'
-                , 'expected_delivery_date_2', 'expected_delivery_date_3', 'delivery_date', 'product_demos.note')
+            ->join('customers', 'product_demos.customer_id', '=', 'customers.id')
+            ->select('product_demos.id', 'product_demos.receive_demo_date', 'products.name as product_name',
+                'branches.name as branch_name', 'users.name as username', 'expected_delivery_date_1'
+                ,'expected_delivery_date_2', 'expected_delivery_date_3', 'delivery_date',
+                'product_demos.note', 'customers.name as customer_name')
             ->get();
+
         return view('admin.product-demo.list', compact('data'));
     }
 
@@ -82,8 +88,10 @@ class ProductDemoController extends Controller
         $productDemo->expected_delivery_date_1     = date('Y-m-d', strtotime($request->delivery_date_1));
         $productDemo->expected_delivery_date_2     = date('Y-m-d', strtotime($request->delivery_date_2));
         $productDemo->expected_delivery_date_3     = date('Y-m-d', strtotime($request->delivery_date_3));
-        $productDemo->delivery_date               = date('Y-m-d', strtotime($request->delivery_date));
+        $productDemo->delivery_date                = date('Y-m-d', strtotime($request->delivery_date));
         $productDemo->note                         = $request->note ? $request->note : '';
+        $productDemo->customer_id                  = $request->customer;
+        $productDemo->branch_id                    = $request->branch;
 
         $productDemo->save();
 
@@ -105,13 +113,20 @@ class ProductDemoController extends Controller
                     'id' => $branch_id,
                     'active' => true,
                 ])->get();
-                if($demo->product->branch_id != $branch_id) {
-                    return redirect()->route('product.demo.list')->with('alert-danger', 'Sản phẩm không tồn tại');
+
+                if($demo->branch_id != $branch_id) {
+                    return redirect()->route('product.demo.list')
+                        ->with('alert-danger', 'Sản phẩm không tồn tại');
                 }
+
+                $customer = Customer::where([
+                    'branch_id' => $branch_id
+                ]);
 
                 $data = [
                     'demo'    => $demo,
-                    'branch'  => $branch
+                    'branch'  => $branch,
+                    'customer' => $customer
                 ];
 
                 return view('admin.product-demo.update', $data);
@@ -123,10 +138,12 @@ class ProductDemoController extends Controller
             'active' => true,
         ])->get();
 
+        $customer = Customer::all();
 
         $data = [
             'demo'    => $demo,
-            'branch'  => $branch
+            'branch'  => $branch,
+            'customer' => $customer
         ];
         return view('admin.product-demo.update', $data);
     }
@@ -144,8 +161,10 @@ class ProductDemoController extends Controller
         $productDemo->expected_delivery_date_1     = date('Y-m-d', strtotime($request->delivery_date_1));
         $productDemo->expected_delivery_date_2     = date('Y-m-d', strtotime($request->delivery_date_2));
         $productDemo->expected_delivery_date_3     = date('Y-m-d', strtotime($request->delivery_date_3));
-        $productDemo->delivery_date              = date('Y-m-d', strtotime($request->delivery_date));
-        $productDemo->note                         = $request->note ? $request->note : '';
+        $productDemo->delivery_date                = date('Y-m-d', strtotime($request->delivery_date));
+        $productDemo->note                         = $request->note !== null ? $request->note : '';
+        $productDemo->customer_id                  = $request->customer;
+        $productDemo->branch_id                    =  $request->branch;
 
         $productDemo->save();
 
@@ -164,10 +183,9 @@ class ProductDemoController extends Controller
 
     public function getProductFromBranch(Request $request) {
         $branch_id = $request->get('id');
-        $product_name = Product::select('id', 'name')
-            ->where([
-            'branch_id' => $branch_id,
-            'active'    => true
+
+        $customer = Customer::where([
+            'branch_id' => $branch_id
         ])->get();
 
         $employee_name = DB::table('users')
@@ -178,14 +196,6 @@ class ProductDemoController extends Controller
                 ['users.branch_id', '=', $branch_id]
             ])->get();
 
-
-        $html = '';
-        if(count($product_name) > 0) {
-            foreach ($product_name as $key => $value) {
-                $html .= "<option value='$value->id'>$value->name</option><br>";
-            }
-        }
-
         $html_2 = '';
         if(count($employee_name) > 0) {
             foreach ($employee_name as $key => $value) {
@@ -193,9 +203,44 @@ class ProductDemoController extends Controller
             }
         }
 
+        $html_3 = "<option value=''>Chọn...</option><br>";
+        if(count($customer) > 0) {
+            foreach ($customer as $key => $value) {
+                $html_3 .= "<option value='$value->id'>$value->name</option><br>";
+            }
+        }
+
         return response()->json([
-            'product'   => $html,
-            'shopper'   => $html_2
+            'shopper'   => $html_2,
+            'customer'  => $html_3
+        ]);
+    }
+
+
+    public function getCustomerFromBranch(Request $request) {
+        $customer_id = $request->get('id');
+        $customer = Customer::select('product_id')
+        ->where([
+            'id' => $customer_id
+        ])->first();
+
+        $product = Product::where([
+            'active' => true
+        ])->get();
+
+        $html = "<option value=''>Chọn...</option><br>";
+
+        $product_name = json_decode($customer->product_id, true);
+        foreach ($product_name as $customer_product) {
+            foreach ($product as $products) {
+                if($customer_product == $products->id) {
+                    $html .= "<option value='$products->id'>$products->name</option><br>";
+                }
+            }
+        }
+
+        return response()->json([
+            'product' => $html
         ]);
     }
 

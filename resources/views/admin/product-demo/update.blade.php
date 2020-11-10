@@ -17,9 +17,9 @@
                                 <div class="col-sm-9">
                                     <select class="form-control" name="branch" id="branch">
                                         <option value="">Chọn...</option>
-                                        @if(count($branch))
+                                        @if(count($branch)>0)
                                             @foreach($branch as $key => $value)
-                                                <option value="{{ $value->id }}" {{ $demo->product->branch->id == $value->id?'selected':'' }}>{{ $value->name }}</option>
+                                                <option value="{{ $value->id }}" {{ $demo->branch_id == $value->id?'selected':'' }}>{{ $value->name }}</option>
                                             @endforeach
                                         @endif
                                     </select>
@@ -31,10 +31,29 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="customer" class="col-sm-3 col-form-label">Khách hàng<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="customer" id="customer">
+                                        <option value="">Chọn...</option>
+                                        @if(count($customer) >0 )
+                                            @foreach($customer as $customers)
+                                                <option value="{{ $customers->id }}" {{ $demo->customer_id == $customers->id ?'selected' :'' }}>{{ $customers->name }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                    @if($errors->has('customer'))
+                                        <span class="text-danger error-text">
+                                        {{$errors->first('customer')}}
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="product-name" class="col-sm-3 col-form-label">Tên sản phẩm<span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="name" id="product-name" disabled>
+                                    <select class="form-control" name="name" id="product-name">
                                         <option value="{{ $demo->product->id }}">{{ $demo->product->name }}</option>
                                     </select>
                                     @if($errors->has('name'))
@@ -47,7 +66,7 @@
                             <div class="form-group row">
                                 <label for="shopper" class="col-sm-3 col-form-label">Thợ shop <span class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="shopper" id="shopper" disabled>
+                                    <select class="form-control" name="shopper" id="shopper">
                                         <option value="{{ $demo->user->id }}">{{ $demo->user->name }}</option>
                                     </select>
                                     @if($errors->has('shopper'))
@@ -160,19 +179,42 @@
         });
 
         $(document).ready(function () {
+            $('#customer').attr('disabled', true);
+            $('#product-name').attr('disabled', true);
+            $('#shopper').attr('disabled', true);
+
+            $('#content-submit').click(function () {
+                $('#customer').attr('disabled', false);
+                $('#product-name').attr('disabled', false);
+                $('#shopper').attr('disabled', false);
+            });
+
 
             let branch_id = $('#branch').val();
-            getDateFromBranch(branch_id);
 
-            $('#branch').change(function () {
+            $('#branch').click(function () {
                 let branch_id = $(this).val();
                 if(branch_id !== 0) {
-                    getDateFromBranch(branch_id);
+                    $('#content-submit').click(function () {
+                        $('#customer').attr('disabled', false);
+                        $('#product-name').attr('disabled', false);
+                        $('#shopper').attr('disabled', false);
+                    });
+                    getDataFromBranch(branch_id);
                 }
             });
+
+            $('#customer').click(function () {
+                let customer_id = $(this).val();
+                if(customer_id !== "") {
+                    getProductFromBranch(customer_id);
+                }
+
+            })
+
         });
 
-        function getDateFromBranch(branch_id) {
+        function getDataFromBranch(branch_id) {
             if(branch_id !== 0) {
                 $.ajax({
                     url: '{{ route('get.product.from.branch') }}',
@@ -181,14 +223,6 @@
                         id: branch_id,
                     },
                     success: function (result) {
-                        if((result['product'].length +'') > 0) {
-                            $('#product-name').html("").append(result['product']);
-                            $('#product-name').attr('disabled', false);
-                        } else {
-                            let html = "<option value=''>Không có dữ liệu</option>";
-                            $('#product-name').html("").append(html);
-                            $('#product-name').attr('disabled', true);
-                        }
 
                         if((result['shopper'].length +'') > 0) {
                             $('#shopper').html("").append(result['shopper']);
@@ -198,6 +232,39 @@
                             $('#shopper').html("").append(html);
                             $('#shopper').attr('disabled', true);
                         }
+
+                        if((result['customer'].length +'') > 0) {
+                            $('#customer').html("").append(result['customer']);
+                            $('#customer').attr('disabled', false);
+                        } else {
+                            let html = "<option value=''>Không có dữ liệu</option>";
+                            $('#customer').html("").append(html);
+                            $('#customer').attr('disabled', true);
+                        }
+                    }
+                });
+            }
+        }
+
+        function getProductFromBranch(customer_id) {
+
+            if(customer_id !== "") {
+                $.ajax({
+                    url: '{{ route('get.customer.from.branch') }}',
+                    method: 'GET',
+                    data: {
+                        id: customer_id,
+                    },
+                    success: function (result) {
+                        if ((result['product'].length + '') > 0) {
+                            $('#product-name').html("").append(result['product']);
+                            $('#product-name').attr('disabled', false);
+                        } else {
+                            let html = "<option value=''>Không có dữ liệu</option>";
+                            $('#product-name').html("").append(html);
+                            $('#product-name').attr('disabled', true);
+                        }
+
                     }
                 });
             }

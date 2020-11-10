@@ -18,6 +18,8 @@ class ProductPrint extends Model
         'delivery_date_in_branch',
         'customer_receive_date',
         'note',
+        'customer_id',
+        'branch_id'
     ];
 
     public function product() {
@@ -26,5 +28,9 @@ class ProductPrint extends Model
 
     public function user() {
         return $this->belongsTo(User::class, 'employee_id');
+    }
+
+    public function customer() {
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 }
