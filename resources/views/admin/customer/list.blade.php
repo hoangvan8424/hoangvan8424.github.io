@@ -23,6 +23,7 @@
                             <th>Sản phẩm</th>
                             <th>Ngày chụp</th>
                             <th>Ghi chú</th>
+                            <th>Trạng thái</th>
                             <th>Lựa chọn</th>
                         </tr>
                         </thead>
@@ -34,6 +35,7 @@
                             <th>Sản phẩm</th>
                             <th>Ngày chụp</th>
                             <th>Ghi chú</th>
+                            <th>Trạng thái</th>
                             <th>Lựa chọn</th>
                         </tr>
                         </tfoot>
@@ -67,6 +69,17 @@
                                     {{ date('d-m-y', strtotime($value->photography_date)) }}
                                 </td>
                                 <td>{{ $value->note }}</td>
+                                <td>
+                                    @if($value->status == 0)
+                                        <p class="btn btn-danger btn-sm">
+                                            Chưa chụp
+                                        </p>
+                                    @else
+                                        <p class="btn btn-success btn-sm">
+                                            Đã chụp
+                                        </p>
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="{{ route('customer.edit', $value->id) }}" class="btn btn-warning btn-circle">
                                         <i class="fas fa-pen"></i>

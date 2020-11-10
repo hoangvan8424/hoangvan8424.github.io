@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RequestCustomer;
 use App\Model\Branch;
 use App\Model\Customer;
+use App\Model\Deadline;
 use App\Model\Product;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -133,6 +135,9 @@ class CustomerController extends Controller
             return redirect()->route('customer.list');
         }
 
+        $date = date('Y-m-d H:i:s', strtotime($request->get('photography_date')));
+        $branch_id  =  $request->get('branch');
+
         $customer = new Customer([
             'name'                  => $request->get('customer_name'),
             'contract_code'         => $request->get('contract_code'),
@@ -146,7 +151,32 @@ class CustomerController extends Controller
         ]);
         $customer->save();
 
+        $last_id = $customer->id;
+
+        $this->saveToDeadline($last_id, $date, $branch_id);
+
+
         return redirect()->route('customer.list')->with('alert-success', 'Thêm khách hàng thành công');
+    }
+
+    public function saveToDeadline($id, $date, $branch_id) {
+        $data = Customer::where([
+            'id' => $id
+        ])->first();
+
+        $photographer = $data->photographer->name;
+        $work = 'Khách hàng ' .$data->name. ' chụp ảnh (Thợ chụp: '.$photographer.')';
+
+        $today = Carbon::today()->format('Y-m-d H:i:s');
+        if($date >= $today) {
+            $deadline = new Deadline();
+            $deadline->date = $date;
+            $deadline->branch_id = $branch_id;
+            $deadline->work = $work;
+            $deadline->customer_id = $data->id;
+            $deadline->save();
+        }
+
     }
 
     public function showUpdateForm($id) {

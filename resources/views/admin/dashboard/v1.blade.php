@@ -7,20 +7,34 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tổng quan</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
 
         <!-- Content Row -->
         <div class="row">
-
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
                 <div class="card border-left-primary shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Hôm nay</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($today) }} deadline</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Ngày mai</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($tomorrow) }} deadline</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -31,274 +45,256 @@
             </div>
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="progress progress-sm mr-2">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Ngày kia</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($next_tomorrow) }} deadline</div>
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-comments fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Content Row -->
 
         <div class="row">
-
             <!-- Area Chart -->
             <div class="col-12">
                 <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Hôm nay</h6>
+                    </div>
+
                     <div class="card-body">
+                        @if(count($today) > 0)
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Địa điểm</th>
-                                    <th>Ngày 17</th>
-                                    <th>Ngày 18</th>
-                                    <th>Ngày 19</th>
+                                    <th>#</th>
+                                    <th>Chi nhánh</th>
+                                    <th>Thời gian</th>
+                                    <th>Công việc</th>
+                                    <th>Trạng thái</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>Địa điểm</th>
-                                    <th>Ngày 17</th>
-                                    <th>Ngày 18</th>
-                                    <th>Ngày 19</th>
+                                    <th>#</th>
+                                    <th>Chi nhánh</th>
+                                    <th>Thời gian</th>
+                                    <th>Công việc</th>
+                                    <th>Trạng thái</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
 
-{{--                                @foreach($data as $key => $value)--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $value->id }}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <ul>--}}
-{{--                                                <li><strong>Tên khách: </strong>{{ $value->name }}</li>--}}
-{{--                                                <li><strong>Mã HĐ: </strong>{{ $value->contract_code }}</li>--}}
-{{--                                                <li><strong>Chi nhánh: </strong>{{ $value->branch->name }}</li>--}}
-{{--                                            </ul>--}}
-{{--                                        </td>--}}
-{{--                                        <td>--}}
-{{--                                            <p><strong class="text-primary">Chụp: </strong> {{ $value->photographer->name }}</p>--}}
-{{--                                            <p><strong class="text-success">Makeup: </strong> {{ $value->makeup->name }}</p>--}}
-{{--                                            <p><strong class="text-warning">Shop: </strong> {{ $value->shopper->name }}</p>--}}
-{{--                                        </td>--}}
-{{--                                        <td>--}}
-{{--                                            @foreach(json_decode($value->product_id, true) as $product_id)--}}
-{{--                                                @foreach($product as $products)--}}
-{{--                                                    @if($product_id == $products->id)--}}
-{{--                                                        <p>{{ $products->name }}</p>--}}
-{{--                                                    @endif--}}
-{{--                                                @endforeach--}}
-{{--                                            @endforeach--}}
-{{--                                        </td>--}}
-{{--                                        <td>--}}
-{{--                                            {{ date('d-m-y', strtotime($value->photography_date)) }}--}}
-{{--                                        </td>--}}
-{{--                                        <td>{{ $value->note }}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <a href="{{ route('customer.edit', $value->id) }}" class="btn btn-warning btn-circle">--}}
-{{--                                                <i class="fas fa-pen"></i>--}}
-{{--                                            </a>--}}
-{{--                                            <a href="{{ route('customer.delete', $value->id) }}" class="btn btn-danger btn-circle ml-2">--}}
-{{--                                                <i class="fas fa-trash"></i>--}}
-{{--                                            </a>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                @endforeach--}}
-
+                                @foreach($today as $key => $value)
+                                    <tr style="
+                                        @if($value->branch_id == 3)
+                                            {{ 'background: #36b9cc; color: #fff;' }}
+                                        @elseif($value->branch_id == 4)
+                                            {{ 'background: #858796; color: #fff;' }}
+                                        @elseif($value->branch_id == 5)
+                                        {{ 'background: #4e73df; color: #fff;' }}
+                                        @else {{''}}
+                                        @endif">
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>
+                                            {{ $value->branch->name }}
+                                        </td>
+                                        <td>
+                                            <p>{{ date('d-m-Y', strtotime($value->date)) }}</p>
+                                        </td>
+                                        <td>
+                                            {{ $value->work }}
+                                        </td>
+                                        <td>
+                                            @if($value->status === 0)
+                                                <a href="{{ route('deadline.change.status', [$value->id, $value->customer_id]) }}" class="btn btn-danger ml-2">
+                                                    Chưa hoàn thành
+                                                </a>
+                                            @else
+                                                <a href="#" class="btn btn-success btn-circle">
+                                                    Đã hoàn thành
+                                                </a>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
+                        @else
+                            <h4 class="m-0 font-weight-bold text-primary text-center pt-5 pb-5">
+                                <i class="fas fa-box-open fa-2x"></i>
+                                <span> Không có dữ liệu</span>
+                            </h4>
+                        @endif
                     </div>
                 </div>
             </div>
 
         </div>
-
-        <!-- Content Row -->
         <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
-                <!-- Project Card Example -->
+            <div class="col-12">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Ngày mai</h6>
                     </div>
                     <div class="card-body">
-                        <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
-                        <div class="progress mb-4">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                        @if(count($tomorrow) > 0)
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Chi nhánh</th>
+                                    <th>Thời gian</th>
+                                    <th>Công việc</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Chi nhánh</th>
+                                    <th>Thời gian</th>
+                                    <th>Công việc</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach($tomorrow as $key => $value)
+                                        <tr style="
+                                        @if($value->branch_id == 3)
+                                        {{ 'background: #36b9cc; color: #fff;' }}
+                                        @elseif($value->branch_id == 4)
+                                        {{ 'background: #858796; color: #fff;' }}
+                                        @elseif($value->branch_id == 5)
+                                        {{ 'background: #4e73df; color: #fff;' }}
+                                        @else {{''}}
+                                        @endif">
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>
+                                                {{ $value->branch->name }}
+                                            </td>
+                                            <td>
+                                                <p>{{ date('d-m-Y', strtotime($value->date)) }}</p>
+                                            </td>
+                                            <td>
+                                                {{ $value->work }}
+                                            </td>
+                                            <td>
+                                                @if($value->status === 0)
+                                                    <a href="{{ route('deadline.change.status', [$value->id, $value->customer_id]) }}" class="btn btn-danger ml-2">
+                                                        Chưa hoàn thành
+                                                    </a>
+                                                @else
+                                                    <a href="" class="btn btn-success">
+                                                        Đã hoàn thành
+                                                    </a>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
-                        <div class="progress mb-4">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                        <div class="progress mb-4">
-                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
-                        <div class="progress mb-4">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        @else
+                            <h4 class="m-0 font-weight-bold text-primary text-center pt-5 pb-5">
+                                <i class="fas fa-box-open fa-2x"></i>
+                                <span> Không có dữ liệu</span>
+                            </h4>
+                        @endif
                     </div>
                 </div>
-
-                <!-- Color System -->
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
-                        <div class="card bg-primary text-white shadow">
-                            <div class="card-body">
-                                Primary
-                                <div class="text-white-50 small">#4e73df</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card bg-success text-white shadow">
-                            <div class="card-body">
-                                Success
-                                <div class="text-white-50 small">#1cc88a</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card bg-info text-white shadow">
-                            <div class="card-body">
-                                Info
-                                <div class="text-white-50 small">#36b9cc</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card bg-warning text-white shadow">
-                            <div class="card-body">
-                                Warning
-                                <div class="text-white-50 small">#f6c23e</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card bg-danger text-white shadow">
-                            <div class="card-body">
-                                Danger
-                                <div class="text-white-50 small">#e74a3b</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card bg-secondary text-white shadow">
-                            <div class="card-body">
-                                Secondary
-                                <div class="text-white-50 small">#858796</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card bg-light text-black shadow">
-                            <div class="card-body">
-                                Light
-                                <div class="text-black-50 small">#f8f9fc</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card bg-dark text-white shadow">
-                            <div class="card-body">
-                                Dark
-                                <div class="text-white-50 small">#5a5c69</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+        </div>
 
-            <div class="col-lg-6 mb-4">
-
-                <!-- Illustrations -->
+        <div class="row">
+            <div class="col-12">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Ngày kia</h6>
                     </div>
                     <div class="card-body">
-                        <div class="text-center">
-                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
+                        @if(count($next_tomorrow) > 0)
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Chi nhánh</th>
+                                    <th>Thời gian</th>
+                                    <th>Công việc</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Chi nhánh</th>
+                                    <th>Thời gian</th>
+                                    <th>Công việc</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach($next_tomorrow as $key => $value)
+                                        <tr style="
+                                        @if($value->branch_id == 3)
+                                        {{ 'background: #36b9cc; color: #fff;' }}
+                                        @elseif($value->branch_id == 4)
+                                        {{ 'background: #858796; color: #fff;' }}
+                                        @elseif($value->branch_id == 5)
+                                        {{ 'background: #4e73df; color: #fff;' }}
+                                        @else {{''}}
+                                        @endif">
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>
+                                                {{ $value->branch->name }}
+                                            </td>
+                                            <td>
+                                                <p>{{ date('d-m-Y', strtotime($value->date)) }}</p>
+                                            </td>
+                                            <td>
+                                                {{ $value->work }}
+                                            </td>
+                                            <td>
+                                                @if($value->status === 0)
+                                                    <a href="{{ route('deadline.change.status', [$value->id, $value->customer_id]) }}" class="btn btn-danger ml-2">
+                                                        Chưa hoàn thành
+                                                    </a>
+                                                @else
+                                                    <a href="#" class="btn btn-success btn-circle">
+                                                        Đã hoàn thành
+                                                    </a>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>
-                        <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>
+                        @else
+                            <h4 class="m-0 font-weight-bold text-primary text-center pt-5 pb-5">
+                                <i class="fas fa-box-open fa-2x"></i>
+                                <span> Không có dữ liệu</span>
+                            </h4>
+                        @endif
                     </div>
                 </div>
-
-                <!-- Approach -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                    </div>
-                    <div class="card-body">
-                        <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.</p>
-                        <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
 
@@ -306,10 +302,4 @@
     <!-- /.container-fluid -->
 
 @endsection
-@push('scripts')
-    <script src="{{ asset('public/template/chart.js/Chart.min.js') }}"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('public/template/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('public/template/js/demo/chart-pie-demo.js') }}"></script>
-@endpush

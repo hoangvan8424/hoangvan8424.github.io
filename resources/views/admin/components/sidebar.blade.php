@@ -70,7 +70,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/product-demo') || Request::is('admin/product-demo/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductDemo" aria-expanded="true"
            aria-controls="collapsePages">
             <i class="fab fa-slideshare"></i>
@@ -88,7 +88,7 @@
     <hr class="sidebar-divider">
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/product-print') || Request::is('admin/product-print/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
            aria-controls="collapsePages">
             <i class="fas fa-print"></i>
@@ -104,7 +104,7 @@
 
     <hr class="sidebar-divider">
 
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/customer') || Request::is('admin/customer/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true"
            aria-controls="collapsePages">
             <i class="fas fa-people-carry"></i>
@@ -120,24 +120,37 @@
 
     <hr class="sidebar-divider">
 
-
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('admin/user') || Request::is('admin/user/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true"
            aria-controls="collapsePages">
             <i class="fas fa-user"></i>
-            <span>Người dùng</span>
+            <span>Nhân viên</span>
         </a>
         <div id="collapseUsers" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('user.list') }}">Danh sách người dùng</a>
-                <a class="collapse-item" href="{{ route('user.add') }}">Thêm người dùng</a>
+                <a class="collapse-item" href="{{ route('user.list') }}">Danh sách nhân viên</a>
+                <a class="collapse-item" href="{{ route('user.add') }}">Thêm nhân viên</a>
             </div>
         </div>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item {{ Request::is('admin/deadline') || Request::is('admin/deadline/*') ? 'active':'' }}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDeadline" aria-expanded="true"
+           aria-controls="collapsePages">
+            <i class="fas fa-calendar"></i>
+            <span>Deadline</span>
+        </a>
+        <div id="collapseDeadline" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('deadline.list') }}">Danh sách deadline</a>
+            </div>
+        </div>
+    </li>
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

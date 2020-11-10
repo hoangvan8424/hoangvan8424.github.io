@@ -19,6 +19,7 @@ class Customer extends Model
         'photography_date',
         'note',
         'branch_id',
+        'status',
     ];
 
     public function photographer() {

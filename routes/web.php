@@ -110,6 +110,12 @@ Route::prefix('admin')->group(function () {
             Route::get('/delete/{id}', 'UserController@delete')->name('user.delete');
         });
 
+        // deadline
+        Route::group(['prefix' => 'deadline'], function () {
+            Route::get('/', 'DeadlineController@index')->name('deadline.list');
+            Route::get('/status/{id}/{customer_id?}', 'DeadlineController@changeStatus')->name('deadline.change.status');
+        });
+
     });
 
 });

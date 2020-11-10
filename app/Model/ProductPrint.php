@@ -33,4 +33,8 @@ class ProductPrint extends Model
     public function customer() {
         return $this->belongsTo(Customer::class, 'customer_id');
     }
+
+    public function branch() {
+        return $this->belongsTo(Branch::class, 'branch_id');
+    }
 }

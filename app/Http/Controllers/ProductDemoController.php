@@ -6,9 +6,11 @@ use App\Http\Requests\RequestProductDemo;
 use App\Http\Requests\RequestProductPrint;
 use App\Model\Branch;
 use App\Model\Customer;
+use App\Model\Deadline;
 use App\Model\Product;
 use App\Model\ProductDemo;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -95,9 +97,38 @@ class ProductDemoController extends Controller
 
         $productDemo->save();
 
+        $last_id = $productDemo->id;
+        $last_product_demo = ProductDemo::where([
+            'id' => $last_id
+        ])->first();
+        $employee = $last_product_demo->user->name;
+        $work_1 = $employee .' giao file demo lần 1';
+        $work_2 = $employee .' giao file demo lần 2';
+        $work_3 = $employee .' giao file demo lần 3';
+        $work_4 = 'Giao file demo cho khách';
+        $branch_id = $last_product_demo->branch_id;
+
+        $this->saveToDeadline($last_product_demo->expected_delivery_date_1, $branch_id, $work_1);
+        $this->saveToDeadline($last_product_demo->expected_delivery_date_2, $branch_id, $work_2);
+        $this->saveToDeadline($last_product_demo->expected_delivery_date_3, $branch_id, $work_3);
+        $this->saveToDeadline($last_product_demo->delivery_date, $branch_id, $work_4);
+
         return redirect()->route('product.demo.list')->with('alert-success', 'Thêm sản phẩm demo thành công');
     }
 
+    public function saveToDeadline($date, $branch_id, $work) {
+
+        $today = Carbon::today()->format('Y-m-d H:i:s');
+        if($date >= $today) {
+            $deadline = new Deadline();
+            $deadline->date = $date;
+            $deadline->branch_id = $branch_id;
+            $deadline->work = $work;
+
+            $deadline->save();
+        }
+
+    }
 
     public function showUpdateForm($id) {
         if($this->checkRoles('update_product_demo') === false) {
