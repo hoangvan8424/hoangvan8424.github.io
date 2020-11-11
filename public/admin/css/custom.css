@@ -1,0 +1,51 @@
+.icon-success {
+    font-size: 20px;
+    margin-right: 20px;
+}
+.sidebar hr.sidebar-divider {
+    margin: 0 1rem!important;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-calendar:before {
+    content: "\e109";
+}
+.main-box-setup {
+    border-radius: 10px!important;
+}
+.setup-group {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 3px;
+}
+.setup-group h4 {
+    margin-top: -21px;
+    background: white;
+    width: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid #4e73df;
+    color: #4e73df;
+    padding-top: 2px;
+    text-align: center;
+}
+.user-title {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: #000000!important;
+}
