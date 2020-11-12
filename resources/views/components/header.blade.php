@@ -125,7 +125,7 @@
                         </div>
 
                         <div class="btn-admin">
-                            <a class="">
+                            <a href="{{ route('dashboard') }}">
                                 <i class="fal fa-lock" style="font-size: 22px; margin-left: 20px;"></i>
                             </a>
 

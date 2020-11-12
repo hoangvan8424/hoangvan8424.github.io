@@ -10803,7 +10803,7 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("../../images/register.jpg");
+  background: url("../../images/login.jpg");
   background-position: revert;
   background-size: cover;
 }
