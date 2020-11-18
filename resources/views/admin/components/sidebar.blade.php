@@ -36,7 +36,7 @@
 
     <hr class="sidebar-divider">
 
-    <li class="nav-item {{ Request::is('admin/department') || Request::is('admin/department/*') ? 'active':'' }}">
+    <li class="nav-item {{ Request::is('admin/product') || Request::is('admin/product/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
            aria-controls="collapseTwo">
             <i class="fab fa-product-hunt"></i>
