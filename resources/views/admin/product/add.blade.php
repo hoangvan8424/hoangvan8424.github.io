@@ -1,53 +1,159 @@
 @extends('admin.layouts.app')
-@section('title', 'Thêm danh mục')
+@section('title', 'Thêm sản phẩm')
 @section('content')
     <div class="container">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Thêm danh mục</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Thêm sản phẩm</h6>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('category.save') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('product.save') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
                             <div class="form-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Tên danh mục<span
+                                <label for="name" class="col-form-label col-sm-3">Tên sản phẩm<span
                                         class="text-danger">*</span></label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}">
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="name" id="name" cols="30" rows="4">{{ old('name') }}</textarea>
                                     @if($errors->has('name'))
                                         <span class="text-danger error-text">
-                                        {{$errors->first('name')}}
-                                    </span>
+                                            {{$errors->first('name')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="category" class="col-sm-3 col-form-label">Danh mục<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="category" id="category">
+                                        <option value="">Chọn...</option>
+                                        @if(count($category) > 0)
+                                            @foreach($category as $categories)
+                                                <option value="{{ $categories->id }}">{{ $categories->name }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                    @if($errors->has('category'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('category')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="price" class="col-sm-3 col-form-label">Giá</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="number" name="price" id="price" value="{{ old('price') }}" min="10000" placeholder="> 10000đ">
+                                    @if($errors->has('price'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('price')}}
+                                        </span>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="slug" class="col-sm-2 col-form-label">Slug</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" type="text" name="slug" id="slug" value="{{ old('slug') }}" placeholder="Ví dụ: bo-ban-ghe">
-                                    @if($errors->has('slug'))
+                                <label for="total-number" class="col-sm-3 col-form-label">Tổng số lượng</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="number" name="total_number" id="total-number" value="{{ old('total_number') }}" min="1" placeholder="1">
+                                    @if($errors->has('total_number'))
                                         <span class="text-danger error-text">
-                                        {{$errors->first('slug')}}
-                                    </span>
+                                            {{$errors->first('total_number')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
+                            <div class="form-group row">
+                                <label for="img-1" class="col-sm-2 col-form-label">Ảnh 1</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="img_1" id="img-1">
+                                    @if($errors->has('img_1'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('img_1')}}
+                                        </span>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="icon" class="col-sm-2 col-form-label">Icon</label>
+                                <label for="img-2" class="col-sm-2 col-form-label">Ảnh 2</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="text" name="icon" id="icon" value="{{ old('icon') }}" placeholder="">
-                                    @if($errors->has('icon'))
+                                    <input class="form-control" type="file" name="img_2" id="img-2">
+                                    @if($errors->has('img_2'))
                                         <span class="text-danger error-text">
-                                        {{$errors->first('icon')}}
-                                    </span>
+                                            {{$errors->first('img_2')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="img-3" class="col-sm-2 col-form-label">Ảnh 3</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="img_3" id="img-3">
+                                    @if($errors->has('img_3'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('img_3')}}
+                                        </span>
                                     @endif
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="img-4" class="col-sm-2 col-form-label">Ảnh 4</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="img_4" id="img-4">
+                                    @if($errors->has('img_4'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('img_4')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="img-5" class="col-sm-2 col-form-label">Ảnh 5</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="img_5" id="img-5">
+                                    @if($errors->has('img_5'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('img_5')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <label for="editor" class="col-sm-2 col-form-label">Mô tả <span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-10 form-tags">
+                                    <textarea class="form-control" name="description" id="editor" cols="30" rows="5"></textarea>
+                                    @if($errors->has('description'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('description')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="editor-2" class="col-sm-2 col-form-label">Thông tin <span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-10 form-tags">
+                                    <textarea class="form-control" name="information" id="editor-2" cols="30" rows="5"></textarea>
+                                    @if($errors->has('information'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('information')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label for="active" class="col-sm-2 col-form-label">Hiển thị <span
                                         class="text-danger">*</span></label>
@@ -58,6 +164,10 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
                             <div class="form-group">
                                 <a class="btn btn-warning float-left" href="{{ route('category.list') }}">
                                     <i class="fas fa-exclamation-triangle"></i> Hủy
@@ -67,9 +177,14 @@
                                 </button>
                             </div>
                         </div>
+
                     </div>
                 </form>
             </div>
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script src="{{ asset('public/template/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('public/template/js/tinymce.js') }}"></script>
+@endpush

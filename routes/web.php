@@ -39,7 +39,7 @@ Route::prefix('admin')->group(function () {
         Route::group(['prefix' => 'product'], function () {
             Route::get('/', [ProductController::class, 'index'])->name('product.list');
             Route::get('/add', [ProductController::class, 'showAddForm'])->name('product.add');
-            Route::post('/add', [CategoryController::class, 'save'])->name('product.save');
+            Route::post('/add', [ProductController::class, 'save'])->name('product.save');
 
             Route::get('/update/{id}', [ProductController::class, 'showUpdateForm'])->name('product.edit');
             Route::post('/update/{id}', [ProductController::class, 'update'])->name('product.update');

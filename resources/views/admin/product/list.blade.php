@@ -19,11 +19,9 @@
                         <tr>
                             <th>#</th>
                             <th>Tên</th>
-                            <th>Danh mục</th>
                             <th>Hình ảnh</th>
                             <th>Mô tả</th>
                             <th>Thông tin</th>
-                            <th>Hiển thị</th>
                             <th>Lựa chọn</th>
                         </tr>
                         </thead>
@@ -31,11 +29,9 @@
                         <tr>
                             <th>#</th>
                             <th>Thông tin</th>
-                            <th>Danh mục</th>
                             <th>Hình ảnh</th>
                             <th>Mô tả</th>
                             <th>Thông tin</th>
-                            <th>Hiển thị</th>
                             <th>Lựa chọn</th>
                         </tr>
                         </tfoot>
@@ -44,37 +40,37 @@
                             @foreach($data as $key => $value)
                             <tr>
                                 <td>{{ $value->id }}</td>
-                                <td>{{ $value->name }}
+                                <td>
                                     <ul>
-                                        <li>Tên: {{ $value->name }}</li>
-                                        <li>Số lượng: {{ $value->total_number }}</li>
-                                        <li>Giá: {{ number_format($value->price, 0, '.', '') }}</li>
-                                        <li>Sale: {{ $value->sale }}%</li>
+                                        <li><strong>Tên: </strong>{{ $value->name }}</li>
+                                        <li><strong>Danh mục: </strong>{{ $value->category->name }}</li>
+                                        <li><strong>Số lượng: </strong>{{ $value->total_number }}</li>
+                                        <li><strong>Giá: </strong>{{ number_format($value->price, 0, '', '.') }}đ</li>
+                                        <li><strong>Sale: </strong>{{ $value->sale }}%</li>
                                     </ul>
                                 </td>
-                                <td>{{ $value->category->name }}</td>
                                 <td>
                                     <ul>
                                         <li>
-                                            <img src="{{ asset($value->image_1) }}" alt="Ảnh 1">
+                                            <img src="{{ asset($value->image_1) }}" alt="Ảnh 1" width="100" height="70">
                                         </li>
                                         <li>
-                                            <img src="{{ asset($value->image_2) }}" alt="Ảnh 2">
+                                            <img src="{{ asset($value->image_2) }}" alt="Ảnh 2" width="100" height="70">
                                         </li>
                                         <li>
-                                            <img src="{{ asset($value->image_3) }}" alt="Ảnh 3">
+                                            <img src="{{ asset($value->image_3) }}" alt="Ảnh 3" width="100" height="70">
                                         </li>
                                         <li>
-                                            <img src="{{ asset($value->image_4) }}" alt="Ảnh 4">
+                                            <img src="{{ asset($value->image_4) }}" alt="Ảnh 4" width="100" height="70">
                                         </li>
                                         <li>
-                                            <img src="{{ asset($value->image_5) }}" alt="Ảnh 5">
+                                            <img src="{{ asset($value->image_5) }}" alt="Ảnh 5" width="100" height="70">
                                         </li>
                                     </ul>
 
                                 </td>
                                 <td>{!! $value->description !!}</td>
-                                <td>{!! $value->infomation !!}</td>
+                                <td>{!! $value->information !!}</td>
                                 <td>
                                     @if($value->active === 1)
                                         <a class="btn btn-sm btn-success btn-icon-split">
@@ -89,8 +85,6 @@
                                         </span>
                                         </a>
                                     @endif
-                                </td>
-                                <td>
                                     <a href="{{ route('product.edit', $value->id) }}" class="btn btn-warning btn-circle">
                                         <i class="fas fa-pen"></i>
                                     </a>
