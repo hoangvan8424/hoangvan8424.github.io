@@ -8,6 +8,7 @@ use App\Model\Category;
 use App\Model\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -27,6 +28,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->category_id = $request->category;
         $product->name = $request->name;
+        $product->slug = Str::slug($request->name);
         $product->price = $request->price;
         $product->total_number = $request->total_number;
         $product->description = $request->description;
@@ -100,6 +102,7 @@ class ProductController extends Controller
 
         $product->category_id = $request->category;
         $product->name = $request->name;
+        $product->slug = Str::slug($request->name);
         $product->price = $request->price;
         $product->total_number = $request->total_number;
         $product->description = $request->description;
