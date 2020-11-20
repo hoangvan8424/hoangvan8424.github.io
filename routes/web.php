@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\UserController;
 
 Auth::routes();
 
@@ -44,6 +45,13 @@ Route::prefix('admin')->group(function () {
             Route::get('/update/{id}', [ProductController::class, 'showUpdateForm'])->name('product.edit');
             Route::post('/update/{id}', [ProductController::class, 'update'])->name('product.update');
             Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+        });
+
+        Route::group(['prefix' => 'user'], function () {
+            Route::get('/', [UserController::class, 'index'])->name('user.list');
+
+            Route::get('/update/{id}', [UserController::class, 'showUpdateForm'])->name('user.edit');
+            Route::post('/update/{id}', [UserController::class, 'update'])->name('user.update');
         });
     });
 });

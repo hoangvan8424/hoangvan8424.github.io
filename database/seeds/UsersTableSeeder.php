@@ -19,12 +19,14 @@ class UsersTableSeeder extends Seeder
                 'email' => 'hoangvan181198@gmail.com',
                 'password' => Hash::make(12345678),
                 'role'  => 1,
+                'created_at' => \Carbon\Carbon::now(),
             ],
             [
                 'name' => 'Hoàng',
                 'email' => 'bienbang2017@gmail.com',
                 'password' => Hash::make(12345678),
                 'role'  => 1,
+                'created_at'    => \Carbon\Carbon::now(),
             ],
         ]);
     }

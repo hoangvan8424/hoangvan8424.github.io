@@ -61,7 +61,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">Danh sách người dùng</a>
+                <a class="collapse-item" href="{{ route('user.list') }}">Danh sách người dùng</a>
                 <a class="collapse-item" href="">Thêm người dùng</a>
             </div>
         </div>
