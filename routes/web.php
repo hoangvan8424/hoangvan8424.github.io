@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\SlideController;
 
 Auth::routes();
 
@@ -52,6 +53,16 @@ Route::prefix('admin')->group(function () {
 
             Route::get('/update/{id}', [UserController::class, 'showUpdateForm'])->name('user.edit');
             Route::post('/update/{id}', [UserController::class, 'update'])->name('user.update');
+        });
+
+        Route::group(['prefix' => 'slide'], function () {
+            Route::get('/', [SlideController::class, 'index'])->name('slide.list');
+            Route::get('/add', [SlideController::class, 'showAddForm'])->name('slide.add');
+            Route::post('/add', [SlideController::class, 'save'])->name('slide.save');
+
+            Route::get('/update/{id}', [SlideController::class, 'showUpdateForm'])->name('slide.edit');
+            Route::post('/update/{id}', [SlideController::class, 'update'])->name('slide.update');
+            Route::get('/delete/{id}', [SlideController::class, 'delete'])->name('slide.delete');
         });
     });
 });

@@ -20,6 +20,22 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
 
+    <li class="nav-item {{ Request::is('admin/slide') || Request::is('admin/slide/*') ? 'active':'' }}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSlide" aria-expanded="true"
+           aria-controls="collapseGroup">
+            <i class="fas fa-list-ul"></i>
+            <span>Slide</span>
+        </a>
+        <div id="collapseSlide" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('slide.list') }}">Danh sách slide</a>
+                <a class="collapse-item" href="{{ route('slide.add') }}">Thêm slide</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider">
+
     <li class="nav-item {{ Request::is('admin/category') || Request::is('admin/category/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGroup" aria-expanded="true"
            aria-controls="collapseGroup">
@@ -53,7 +69,7 @@
     <hr class="sidebar-divider">
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ request()->is('admin/user') || request()->is('admin/user/*') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
            aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-user-tie"></i>
