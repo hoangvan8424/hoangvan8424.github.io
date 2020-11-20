@@ -41,8 +41,10 @@
                             <tr>
                                 <td>{{ $value->id }}</td>
                                 <td>{{ $value->name }}</td>
-                                <td>{{ $value->titile }}</td>
-                                <td>{{ asset('public/images/slide/'.$value->image) }}</td>
+                                <td>{{ $value->title }}</td>
+                                <td>
+                                    <img src="{{ asset('public/images/slides/'.$value->image) }}" alt="{{ $value->title }}" width="200" height="130">
+                                </td>
                                 <td>
                                     @if($value->active === 1)
                                         <a class="btn btn-sm btn-success btn-icon-split">
