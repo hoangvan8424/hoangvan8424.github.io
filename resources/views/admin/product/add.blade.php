@@ -43,21 +43,26 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="price" class="col-sm-3 col-form-label">Giá</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" type="number" name="price" id="price" value="{{ old('price') }}" min="10000" placeholder="> 10000đ">
+                                <label for="price" class="col-sm-3 col-form-label">Giá<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-7 col-9">
+                                    <input class="form-control" type="number" name="price" id="price" value="{{ old('price') }}" min="10000" placeholder="">
                                     @if($errors->has('price'))
                                         <span class="text-danger error-text">
                                             {{$errors->first('price')}}
                                         </span>
                                     @endif
                                 </div>
+                                <span class="col-sm-2 col-3 mt-2">
+                                    VND
+                                </span>
                             </div>
 
                             <div class="form-group row">
-                                <label for="total-number" class="col-sm-3 col-form-label">Tổng số lượng</label>
+                                <label for="total-number" class="col-sm-3 col-form-label">Tổng số lượng<span
+                                        class="text-danger">*</span></label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" type="number" name="total_number" id="total-number" value="{{ old('total_number') }}" min="1" placeholder="1">
+                                    <input class="form-control" type="number" name="total_number" id="total-number" value="{{ old('total_number') }}" min="1" placeholder="">
                                     @if($errors->has('total_number'))
                                         <span class="text-danger error-text">
                                             {{$errors->first('total_number')}}
@@ -65,6 +70,22 @@
                                     @endif
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="sale" class="col-sm-3 col-form-label">Sale</label>
+                                <div class="col-sm-3 col-6">
+                                    <input class="form-control" type="number" name="sale" id="sale" value="{{ old('sale') }}" min="0" placeholder="">
+                                    @if($errors->has('sale'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('sale')}}
+                                        </span>
+                                    @endif
+                                </div>
+                                <span class="col-6 col-sm-6 align-left mt-2">
+                                    %
+                                </span>
+                            </div>
+
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
                             <div class="form-group row">
@@ -134,7 +155,7 @@
                                 <label for="editor" class="col-sm-2 col-form-label">Mô tả <span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-10 form-tags">
-                                    <textarea class="form-control" name="description" id="editor" cols="30" rows="5"></textarea>
+                                    <textarea class="form-control" name="description" id="editor" cols="30" rows="5">{{ old('description') }}</textarea>
                                     @if($errors->has('description'))
                                         <span class="text-danger error-text">
                                             {{$errors->first('description')}}
@@ -146,7 +167,7 @@
                                 <label for="editor-2" class="col-sm-2 col-form-label">Thông tin <span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-10 form-tags">
-                                    <textarea class="form-control" name="information" id="editor-2" cols="30" rows="5"></textarea>
+                                    <textarea class="form-control" name="information" id="editor-2" cols="30" rows="5">{{ old('information') }}</textarea>
                                     @if($errors->has('information'))
                                         <span class="text-danger error-text">
                                             {{$errors->first('information')}}
@@ -169,7 +190,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <a class="btn btn-warning float-left" href="{{ route('category.list') }}">
+                                <a class="btn btn-warning float-left" href="{{ route('product.list') }}">
                                     <i class="fas fa-exclamation-triangle"></i> Hủy
                                 </a>
                                 <button id="content-submit" class="btn btn-primary float-right">

@@ -18,11 +18,11 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Tên</th>
+                            <th style="width: 155px!important;">Tên</th>
                             <th>Hình ảnh</th>
                             <th>Mô tả</th>
                             <th>Thông tin</th>
-                            <th>Lựa chọn</th>
+                            <th style="width: 85px!important;">Lựa chọn</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -52,19 +52,19 @@
                                 <td>
                                     <ul>
                                         <li>
-                                            <img src="{{ asset($value->image_1) }}" alt="Ảnh 1" width="100" height="70">
+                                            <img class="mb-2" src="{{ asset('public/images/products/'.$value->image_1) }}" alt="Ảnh 1" width="100" height="70">
                                         </li>
                                         <li>
-                                            <img src="{{ asset($value->image_2) }}" alt="Ảnh 2" width="100" height="70">
+                                            <img class="mb-2" src="{{ asset('public/images/products/'.$value->image_2) }}" alt="Ảnh 2" width="100" height="70">
                                         </li>
                                         <li>
-                                            <img src="{{ asset($value->image_3) }}" alt="Ảnh 3" width="100" height="70">
+                                            <img class="mb-2" src="{{ asset('public/images/products/'.$value->image_3) }}" alt="Ảnh 3" width="100" height="70">
                                         </li>
                                         <li>
-                                            <img src="{{ asset($value->image_4) }}" alt="Ảnh 4" width="100" height="70">
+                                            <img class="mb-2" src="{{ asset('public/images/products/'.$value->image_4) }}" alt="Ảnh 4" width="100" height="70">
                                         </li>
                                         <li>
-                                            <img src="{{ asset($value->image_5) }}" alt="Ảnh 5" width="100" height="70">
+                                            <img src="{{ asset('public/images/products/'.$value->image_5) }}" alt="Ảnh 5" width="100" height="70">
                                         </li>
                                     </ul>
 
@@ -73,7 +73,7 @@
                                 <td>{!! $value->information !!}</td>
                                 <td>
                                     @if($value->active === 1)
-                                        <a class="btn btn-sm btn-success btn-icon-split">
+                                        <a class="btn btn-sm btn-circle btn-success btn-icon-split">
                                         <span class="icon text-white-50">
                                           <i class="fas fa-check"></i>
                                         </span>
@@ -85,10 +85,10 @@
                                         </span>
                                         </a>
                                     @endif
-                                    <a href="{{ route('product.edit', $value->id) }}" class="btn btn-warning btn-circle">
+                                    <a href="{{ route('product.edit', $value->id) }}" class="btn btn-warning btn-sm btn-circle">
                                         <i class="fas fa-pen"></i>
                                     </a>
-                                    <a href="{{ route('product.delete', $value->id) }}" class="btn btn-danger btn-circle ml-2">
+                                    <a href="{{ route('product.delete', $value->id) }}" class="btn btn-danger btn-sm btn-circle ml-2">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>

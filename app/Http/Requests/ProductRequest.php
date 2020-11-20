@@ -23,8 +23,24 @@ class ProductRequest extends FormRequest
      */
     public function rules()
     {
+        if(request()->is('admin/product/update/*')) {
+            return [
+                'name' => 'required|string|unique:products,name,'.$this->id,
+                'category' => 'required',
+                'price' => 'required|numeric|min:10000',
+                'total_number' => 'required|numeric|min:1',
+                'img_1' => 'mimes:jpeg,jpg,png|max:5000',
+                'img_2' => 'mimes:jpeg,jpg,png|max:5000',
+                'img_3' => 'mimes:jpeg,jpg,png|max:5000',
+                'img_4' => 'mimes:jpeg,jpg,png|max:5000',
+                'img_5' => 'mimes:jpeg,jpg,png|max:5000',
+                'description' => 'required',
+                'information' => 'required',
+            ];
+        }
+
         return [
-            'name' => 'required|string|unique:products',
+            'name' => 'required|string|unique:products,name,'.$this->id,
             'category' => 'required',
             'price' => 'required|numeric|min:10000',
             'total_number' => 'required|numeric|min:1',
@@ -36,6 +52,7 @@ class ProductRequest extends FormRequest
             'description' => 'required',
             'information' => 'required',
         ];
+
     }
 
     public function messages()
