@@ -27,6 +27,7 @@ class ProductController extends Controller
     public function save(ProductRequest $request) {
         $product = new Product();
         $product->category_id = $request->category;
+        $product->type = $request->type !=0 ? $request->type:0;
         $product->name = $request->name;
         $product->slug = Str::slug($request->name);
         $product->price = $request->price;
@@ -101,6 +102,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
         $product->category_id = $request->category;
+        $product->type = $request->type !=0 ? $request->type:0;
         $product->name = $request->name;
         $product->slug = Str::slug($request->name);
         $product->price = $request->price;

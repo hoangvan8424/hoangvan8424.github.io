@@ -43,6 +43,16 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="type" class="col-sm-3 col-form-label">Loại</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="type" id="type">
+                                        <option value="">Chọn...</option>
+                                        <option value="1">Mới</option>
+                                        <option value="2">Sale</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="price" class="col-sm-3 col-form-label">Giá<span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-7 col-9">
@@ -208,4 +218,18 @@
 @push('scripts')
     <script src="{{ asset('public/template/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('public/template/js/tinymce.js') }}"></script>
+    <script>
+        $('#sale').attr('disabled', true);
+        $(document).ready(function () {
+            $('#type').change(function () {
+                let type = $(this).val();
+                if(type == 2) {
+                    $('#sale').attr('disabled', false);
+                }
+                else {
+                    $('#sale').attr('disabled', true);
+                }
+            });
+        });
+    </script>
 @endpush
