@@ -18,11 +18,14 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SlideController;
+use App\Http\Controllers\ShowProductController;
 
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/gioi-thieu', 'HomeController@getAboutUs')->name('about.us');
+Route::get('/tat-ca-san-pham', [ShowProductController::class, 'getAllProduct'])->name('product.all');
+Route::get('/san-pham/{slug}', [ShowProductController::class, 'getDetailProduct'])->name('product.detail');
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
@@ -46,6 +49,8 @@ Route::prefix('admin')->group(function () {
             Route::get('/update/{id}', [ProductController::class, 'showUpdateForm'])->name('product.edit');
             Route::post('/update/{id}', [ProductController::class, 'update'])->name('product.update');
             Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+            Route::get('/change-type/{id}', [ProductController::class, 'changeType'])->name('product.change.type');
+            Route::get('/change-status/{id}', [ProductController::class, 'changeStatus'])->name('product.change.status');
         });
 
         Route::group(['prefix' => 'user'], function () {
