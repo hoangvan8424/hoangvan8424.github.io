@@ -26,7 +26,6 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|unique:categories,name,'.$this->id,
-            'slug' => 'string|unique:categories,slug,'.$this->id,
         ];
     }
 
@@ -36,9 +35,6 @@ class CategoryRequest extends FormRequest
             'name.required' => 'Tên không được để trống',
             'name.string'   => 'Tên không đúng định dạng',
             'name.unique'   => 'Tên danh mục đã tồn tại',
-            'slug.string'   => 'Slug không đúng định dạng',
-            'slug.unique'   => 'Slug đã tồn tại',
-
         ];
     }
 }

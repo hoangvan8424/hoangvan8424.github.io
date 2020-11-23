@@ -46,9 +46,9 @@ class ProductRequest extends FormRequest
             'total_number' => 'required|numeric|min:1',
             'img_1' => 'required|mimes:jpeg,jpg,png|max:5000',
             'img_2' => 'required|mimes:jpeg,jpg,png|max:5000',
-            'img_3' => 'required|mimes:jpeg,jpg,png|max:5000',
-            'img_4' => 'required|mimes:jpeg,jpg,png|max:5000',
-            'img_5' => 'required|mimes:jpeg,jpg,png|max:5000',
+            'img_3' => 'mimes:jpeg,jpg,png|max:5000',
+            'img_4' => 'mimes:jpeg,jpg,png|max:5000',
+            'img_5' => 'mimes:jpeg,jpg,png|max:5000',
             'description' => 'required',
             'information' => 'required',
         ];
