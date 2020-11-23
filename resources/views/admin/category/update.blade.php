@@ -23,19 +23,6 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <div class="form-group row">
-                                <label for="slug" class="col-sm-2 col-form-label">Slug</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" type="text" name="slug" id="slug" value="{{ $category->slug }}" placeholder="bo-ban-ghe">
-                                    @if($errors->has('slug'))
-                                        <span class="text-danger error-text">
-                                        {{$errors->first('slug')}}
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
                             <div class="form-group row">
                                 <label for="icon" class="col-sm-2 col-form-label">Icon</label>
                                 <div class="col-sm-10">

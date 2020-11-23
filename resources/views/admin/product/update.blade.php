@@ -47,8 +47,9 @@
                                 <div class="col-sm-9">
                                     <select class="form-control" name="type" id="type">
                                         <option value="">Chọn...</option>
-                                        <option value="1">Mới</option>
-                                        <option value="2">Sale</option>
+                                        <option value="1">Nổi bật</option>
+                                        <option value="2">Mới</option>
+                                        <option value="3">Sale</option>
                                     </select>
                                 </div>
                             </div>
@@ -192,6 +193,13 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Nổi bật <span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-10 form-tags mt-2">
+                                    <input type="checkbox" name="hot" id="hot" value="1" {{ $product->hot == 1 ? 'checked':'' }}><label for="hot" class="ml-3 font-weight-bold">Sản phẩm nổi bật</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -215,18 +223,4 @@
 @push('scripts')
     <script src="{{ asset('public/template/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('public/template/js/tinymce.js') }}"></script>
-    <script>
-        $('#sale').attr('disabled', true);
-        $(document).ready(function () {
-            $('#type').change(function () {
-                let type = $(this).val();
-                if(type == 2) {
-                    $('#sale').attr('disabled', false);
-                }
-                else {
-                    $('#sale').attr('disabled', true);
-                }
-            });
-        });
-    </script>
 @endpush

@@ -7,10 +7,12 @@
             <!-- the ID here will be used in the inline JavaScript below to initialize the slider -->
             <div id="rev_slider_1" class="rev_slider fullscreenbanner" data-version="5.4.5">
                 <ul>
+                    @if(count($slide) > 0)
+                        @foreach($slide as $key => $value)
                     <!-- BEGIN SLIDE 1 -->
                     <li data-transition="boxslide">
                         <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-                        <img src="{{ asset('public/images/hp-1-slide-bg-1.jpg') }}" alt="slide-1" class="rev-slidebg">
+                        <img src="{{ asset('public/images/slides/'.$value->image) }}" alt="{{ $value->name }}" class="rev-slidebg">
 
                         <!-- BEGIN LAYER -->
                         <div class="tp-caption tp-resizeme slide-caption-title-1"
@@ -41,8 +43,8 @@
                              data-width="['1200', '850', '850', '800']"
                              data-whitespace="normal"
                              data-basealign="slide"
-                             data-responsive_offset="off" >
-                            <span>SOFA</span> COLLECTION
+                             data-responsive_offset="off" style="text-transform: uppercase;" >
+                            {{ $value->title }}
                         </div>
                         <div class="tp-caption tp-resizeme slide-caption-title-3"
                              data-frames='[{"delay":0,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -58,7 +60,7 @@
                              data-whitespace="normal"
                              data-basealign="slide"
                              data-responsive_offset="off" >
-                            01
+                            {{ 0 . (++$key) }}
                         </div>
                         <div class="tp-caption tp-resizeme slide-caption-title-3"
                              data-frames='[{"delay":0,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -90,189 +92,13 @@
                              data-whitespace="normal"
                              data-basealign="slide"
                              data-responsive_offset="off" >
-                            03
+                            0{{ count($slide) }}
                         </div>
                         <!-- END LAYER -->
                     </li>
+                    @endforeach
+                @endif
                     <!-- END SLIDE 1 -->
-
-                    <!-- BEGIN SLIDE 2 -->
-                    <li data-transition="boxslide">
-                        <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-                        <img src="{{ asset('public/images/hp-1-slide-bg-2.jpg') }}" alt="slide-2" class="rev-slidebg">
-
-                        <!-- BEGIN LAYER -->
-                        <div class="tp-caption tp-resizeme slide-caption-title-1"
-                             data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['20', '25', '30', '35']"
-                             data-lineheight="['32', '35', '40', '45']"
-                             data-color="#3d4552"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-hoffset="['0', '0', '0', '0']"
-                             data-voffset="['-227', '-200', '-175', '-130']"
-                             data-width="['187', '250', '300', '350']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                        </div>
-                        <div class="tp-caption tp-resizeme slide-caption-title-2"
-                             data-frames='[{"delay":1000,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['90', '90', '80', '80']"
-                             data-lineheight="['70', '70', '60', '60']"
-                             data-color="#fff"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-hoffset="['0', '0', '0', '0']"
-                             data-voffset="['-140', '-117', '-110', '-90']"
-                             data-width="['1200', '850', '850', '800']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                            <span>SOFA</span> COLLECTION
-                        </div>
-                        <div class="tp-caption tp-resizeme slide-caption-title-3"
-                             data-frames='[{"delay":0,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['80', '80', '80', '90']"
-                             data-lineheight="['60', '60', '50', '50']"
-                             data-color="['#666','#fff','#fff','#fff']"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['right','right','right','right']"
-                             data-y="['bottom','bottom','bottom','bottom']"
-                             data-hoffset="['27', '27', '27', '60']"
-                             data-voffset="['28', '30', '30', '30']"
-                             data-width="['250', '250', '300', '350']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                            02
-                        </div>
-                        <div class="tp-caption tp-resizeme slide-caption-title-3"
-                             data-frames='[{"delay":0,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['13', '15', '20', '35']"
-                             data-lineheight="['32', '35', '40', '45']"
-                             data-color="['#666','#fff','#fff','#fff']"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['right','right','right','right']"
-                             data-y="['bottom','bottom','bottom','bottom']"
-                             data-hoffset="['3', '-23', '-20', '32']"
-                             data-voffset="['63', '56', '50', '37']"
-                             data-width="['187', '250', '300', '350']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                            /
-                        </div>
-                        <div class="tp-caption tp-resizeme slide-caption-title-3"
-                             data-frames='[{"delay":0,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['20', '25', '30', '40']"
-                             data-lineheight="['32', '35', '40', '45']"
-                             data-color="['#666','#fff','#fff','#fff']"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['right','right','right','right']"
-                             data-y="['bottom','bottom','bottom','bottom']"
-                             data-hoffset="['-17', '-43', '-40', '15']"
-                             data-voffset="['63', '56', '50', '37']"
-                             data-width="['187', '250', '300', '350']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                            03
-                        </div>
-                        <!-- END LAYER -->
-                    </li>
-                    <!-- END SLIDE 2 -->
-
-                    <!-- BEGIN SLIDE 3 -->
-                    <li data-transition="boxslide">
-                        <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-                        <img src="{{ asset('public/images/hp-1-slide-bg-3.jpg') }}" alt="slide-3" class="rev-slidebg">
-
-                        <!-- BEGIN LAYER -->
-                        <div class="tp-caption tp-resizeme slide-caption-title-1"
-                             data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['20', '25', '30', '35']"
-                             data-lineheight="['32', '35', '40', '45']"
-                             data-color="#3d4552"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-hoffset="['0', '0', '0', '0']"
-                             data-voffset="['-227', '-200', '-175', '-130']"
-                             data-width="['187', '250', '300', '350']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                        </div>
-                        <div class="tp-caption tp-resizeme slide-caption-title-2"
-                             data-frames='[{"delay":1000,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['90', '90', '80', '80']"
-                             data-lineheight="['70', '70', '60', '60']"
-                             data-color="#fff"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-hoffset="['0', '0', '0', '0']"
-                             data-voffset="['-140', '-117', '-110', '-90']"
-                             data-width="['1200', '850', '850', '800']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                            <span>SOFA</span> COLLECTION
-                        </div>
-                        <div class="tp-caption tp-resizeme slide-caption-title-3"
-                             data-frames='[{"delay":0,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['80', '80', '80', '90']"
-                             data-lineheight="['60', '60', '50', '50']"
-                             data-color="['#666','#fff','#fff','#fff']"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['right','right','right','right']"
-                             data-y="['bottom','bottom','bottom','bottom']"
-                             data-hoffset="['27', '27', '27', '60']"
-                             data-voffset="['28', '30', '30', '30']"
-                             data-width="['250', '250', '300', '350']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                            03
-                        </div>
-                        <div class="tp-caption tp-resizeme slide-caption-title-3"
-                             data-frames='[{"delay":0,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['13', '15', '20', '35']"
-                             data-lineheight="['32', '35', '40', '45']"
-                             data-color="['#666','#fff','#fff','#fff']"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['right','right','right','right']"
-                             data-y="['bottom','bottom','bottom','bottom']"
-                             data-hoffset="['3', '-23', '-20', '32']"
-                             data-voffset="['63', '56', '50', '37']"
-                             data-width="['187', '250', '300', '350']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                            /
-                        </div>
-                        <div class="tp-caption tp-resizeme slide-caption-title-3"
-                             data-frames='[{"delay":0,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-fontsize="['20', '25', '30', '40']"
-                             data-lineheight="['32', '35', '40', '45']"
-                             data-color="['#666','#fff','#fff','#fff']"
-                             data-textAlign="['center', 'center', 'center', 'center']"
-                             data-x="['right','right','right','right']"
-                             data-y="['bottom','bottom','bottom','bottom']"
-                             data-hoffset="['-17', '-43', '-40', '15']"
-                             data-voffset="['63', '56', '50', '37']"
-                             data-width="['187', '250', '300', '350']"
-                             data-whitespace="normal"
-                             data-basealign="slide"
-                             data-responsive_offset="off" >
-                            03
-                        </div>
-                        <!-- END LAYER -->
-                    </li>
-                    <!-- END SLIDE 3 -->
                 </ul>
             </div>
         </section>
@@ -286,14 +112,14 @@
                         <!-- Categories 1 -->
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="categories-detail lighting">
-                                <a href="shop-full-width.html" class="images"><img src="{{ asset('public/images/hp-1-categories-1.jpg') }}" alt="Lighting"></a>
+                                <a href="" class="images"><img src="{{ asset('public/images/hp-1-categories-1.jpg') }}" alt="Lighting"></a>
                                 <div class="product">
-                                    <a href="shop-full-width.html">
+                                    <a href="">
                                             <span class="name">
                                                 <span class="line">- </span>
-                                                Lighting
+                                                Đèn
                                             </span>
-                                        <span class="quantity">- 12 Products</span>
+                                        <span class="quantity">- 12 sản phẩm</span>
                                     </a>
                                 </div>
                             </div>
@@ -301,14 +127,14 @@
                         <!-- Categories 2 -->
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="categories-detail furniture">
-                                <a href="shop-full-width.html" class="images"><img src="{{ asset('public/images/hp-1-categories-2.jpg') }}" alt="Furniture"></a>
+                                <a href="" class="images"><img src="{{ asset('public/images/hp-1-categories-2.jpg') }}" alt="Furniture"></a>
                                 <div class="product">
-                                    <a href="shop-full-width.html">
+                                    <a href="">
                                             <span class="name">
                                                 <span class="line">- </span>
-                                                Furniture
+                                                Nội thất
                                             </span>
-                                        <span class="quantity">- 15 Products</span>
+                                        <span class="quantity">- 15 sản phẩm</span>
                                     </a>
                                 </div>
                             </div>
@@ -316,14 +142,14 @@
                         <!-- Categories 3 -->
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="categories-detail decoration">
-                                <a href="shop-full-width.html" class="images"><img src="{{ asset('public/images/hp-1-categories-3.jpg') }}" alt="Decoration"></a>
+                                <a href="" class="images"><img src="{{ asset('public/images/hp-1-categories-3.jpg') }}" alt="Decoration"></a>
                                 <div class="product">
-                                    <a href="shop-full-width.html">
+                                    <a href="">
                                             <span class="name">
                                                 <span class="line">- </span>
-                                                Decoration
+                                                Trang trí
                                             </span>
-                                        <span class="quantity">- 20 Products</span>
+                                        <span class="quantity">- 20 sản phẩm</span>
                                     </a>
                                 </div>
                             </div>
@@ -338,388 +164,62 @@
         <section class="featured-hp-1">
             <div class="container">
                 <div class="featured-content woocommerce">
-                    <h2 class="special-heading">Featured Sale</h2>
+                    <h2 class="special-heading">Nổi bật</h2>
                     <div class="content-area">
                         <div class="row">
-                            <!-- Product 1 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img class="image-cover" src="{{ asset('public/images/hp-1-featured-1.jpg') }}" alt="product">
-                                                <img class="image-secondary" src="{{ asset('public/images/hp-1-featured-11.jpg') }}" alt="product">
+                            @if(count($hot) > 0)
+                                @foreach($hot as $hots)
+                                    <div class="col">
+                                        <div class="product type-product">
+                                            <a href="{{ route('product.detail', $hots->slug) }}">
+                                                <div class="woocommerce-LoopProduct-link">
+                                                <div class="product-image">
+                                                    <p class="wp-post-image">
+                                                        <img class="image-cover" src="{{ asset('public/images/products/'.$hots->image_1) }}" alt="product">
+                                                        <img class="image-secondary" src="{{ asset('public/images/products/'.$hots->image_2) }}" alt="product">
+                                                    </p>
+                                                    <a href="#" class="onsale">SALE</a>
+                                                    <div class="yith-wcwl-add-button show">
+                                                        <a href="#" class="add_to_wishlist">
+                                                            <i class="zmdi zmdi-favorite-outline"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="button add_to_cart_button">
+                                                        <a href="#">
+                                                            <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
+                                                        </a>
+                                                    </div>
+                                                    <h5 class="woocommerce-loop-product__title"><a href="#">{{ $hots->name }}</a></h5>
+                                                    <span class="price">
+                                                        <del>
+                                                            <span class="woocommerce-Price-amount amount text-danger">
+                                                                {{ number_format($hots->price - $hots->price*($hots->sale/100), 0, '', '.') }}
+                                                                <span class="woocommerce-Price-currencySymbol">đ</span>
+                                                            </span>
+                                                        </del>
+                                                        <ins>
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                {{ number_format($hots->price, 0, '', '.') }}
+                                                                <span class="woocommerce-Price-currencySymbol">đ</span>
+                                                            </span>
+                                                        </ins>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             </a>
-                                            <a href="#" class="onsale">SALE</a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Ta-bl Side Table</a></h5>
-                                            <span class="price">
-                                                    <del>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            35
-                                                        </span>
-                                                    </del>
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            22
-                                                        </span>
-                                                    </ins>
-                                                </span>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- Product 2 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img src="{{ asset('public/images/hp-1-featured-2.jpg') }}" alt="product">
-                                            </a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Pendant Lamp</a></h5>
-                                            <span class="price">
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            45
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product 3 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img class="image-cover" src="{{ asset('public/images/hp-1-featured-3.jpg') }}" alt="product">
-                                                <img class="image-secondary" src="{{ asset('public/images/hp-1-featured-33.jpg') }}" alt="product">
-                                            </a>
-                                            <a href="#" class="onnew">NEW</a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Magnolia Dream</a></h5>
-                                            <span class="price">
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            18
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product 4 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img class="image-cover" src="{{ asset('public/images/hp-1-featured-4.jpg') }}" alt="product">
-                                                <img class="image-secondary" src="{{ asset('public/images/hp-1-featured-44.jpg') }}" alt="product">
-                                            </a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Elephant Chair</a></h5>
-                                            <span class="price">
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            56
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product 5 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img class="image-cover" src="{{ asset('public/images/hp-1-featured-5.jpg') }}" alt="product">
-                                                <img class="image-secondary" src="{{ asset('public/images/hp-1-featured-55.jpg') }}" alt="product">
-                                            </a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Planting Light</a></h5>
-                                            <span class="price">
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            41
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <!-- Product 6 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img src="{{ asset('public/images/hp-1-featured-6.jpg') }}" alt="product">
-                                            </a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Laundry Bag</a></h5>
-                                            <span class="price">
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            37
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product 7 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img class="image-cover" src="{{ asset('public/images/hp-1-featured-7.jpg') }}" alt="product">
-                                                <img class="image-secondary" src="{{ asset('public/images/hp-1-featured-77.jpg') }}" alt="product">
-                                            </a>
-                                            <a href="#" class="onnew">NEW</a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Hocko Blanket</a></h5>
-                                            <span class="price">
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            42
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product 8 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img class="image-cover" src="{{ asset('public/images/hp-1-featured-8.jpg') }}" alt="product">
-                                                <img class="image-secondary" src="{{ asset('public/images/hp-1-featured-88.jpg') }}" alt="product">
-                                            </a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Tweed Armchair</a></h5>
-                                            <span class="price">
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            31
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product 9 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img class="image-cover" src="{{ asset('public/images/hp-1-featured-9.jpg') }}" alt="product">
-                                                <img class="image-secondary" src="{{ asset('public/images/hp-1-featured-99.jpg') }}" alt="product">
-                                            </a>
-                                            <a href="#" class="onsale">SALE</a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Low Table/Stool</a></h5>
-                                            <span class="price">
-                                                    <del>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            49
-                                                        </span>
-                                                    </del>
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            29
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product 10 -->
-                            <div class="col">
-                                <div class="product type-product">
-                                    <div class="woocommerce-LoopProduct-link">
-                                        <div class="product-image">
-                                            <a href="#" class="wp-post-image">
-                                                <img src="{{ asset('public/images/hp-1-featured-10.jpg') }}" alt="product">
-                                            </a>
-                                            <a href="#" class="onnew">NEW</a>
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">
-                                                    <i class="zmdi zmdi-favorite-outline"></i>
-                                                </a>
-                                            </div>
-                                            <div class="button add_to_cart_button">
-                                                <a href="#">
-                                                    <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart">
-                                                </a>
-                                            </div>
-                                            <h5 class="woocommerce-loop-product__title"><a href="#">Cushion Cover</a></h5>
-                                            <span class="price">
-                                                    <ins>
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                                            12
-                                                        </span>
-                                                    </ins>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="view-all">
-                        <a href="shop-full-width.html" class="au-btn btn-small">View All<i class="zmdi zmdi-arrow-right"></i></a>
+                        <a href="{{ route('product.all') }}" class="au-btn btn-small">Xem thêm<i class="zmdi zmdi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- End Featured Sale Section -->
-
-        <!-- Banner Section -->
-        <section class="banner-hp-1 section-box">
-            <div class="container">
-                <div class="banner-content">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-4 cl-sm-12 col-12">
-                            <div class="banner-left">
-                                <a href="#" class="bg-image">
-                                    <img src="{{ asset('public/images/hp-1-banner-1.jpg') }}" alt="banner">
-                                </a>
-                                <div class="info">
-                                    <a href="#" class="sale">SALE UP TO</a>
-                                    <span>50% OFF</span>
-                                    <a href="shop-full-width.html" class="shop">Shop Now<i class="zmdi zmdi-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 cl-sm-12 col-12">
-                            <div class="banner-right">
-                                <a href="#" class="bg-image">
-                                    <img src="{{ asset('public/images/hp-1-banner-2.jpg') }}" alt="banner">
-                                </a>
-                                <div class="info">
-                                    <p class="text-1">Get <span>30%</span> Off</p>
-                                    <p class="text-2">on Elisa Armchair collection</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Banner Section -->
 
         <!-- Testimonials Section -->
         <section class="testimonials-hp-1">
@@ -749,7 +249,7 @@
                             <div class="row">
                                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 left-block left-block-2">
                                     <div class="images">
-                                        <img src="{{ asset('public') }}" alt="testimonials">
+                                        <img src="{{ asset('public/images/hp-1-testimonials-2.png') }}" alt="testimonials">
                                     </div>
                                 </div>
                                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 right-block">

@@ -18,7 +18,7 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th style="width: 155px!important;">Tên</th>
+                            <th style="width: 155px!important;">Thông tin</th>
                             <th>Hình ảnh</th>
                             <th>Mô tả</th>
                             <th>Thông tin</th>
@@ -47,6 +47,13 @@
                                         <li><strong>Số lượng: </strong>{{ $value->total_number }}</li>
                                         <li><strong>Giá: </strong>{{ number_format($value->price, 0, '', '.') }}đ</li>
                                         <li><strong>Sale: </strong>{{ $value->sale }}%</li>
+                                        <li>
+                                            @if($value->hot == 1)
+                                                <a href="{{ route('product.change.type', $value->id) }}" class="btn btn-sm btn-primary" title="Loại sản phẩm">Nổi bật</a>
+                                            @else
+                                                <a href="{{ route('product.change.type', $value->id) }}" class="btn btn-sm btn-dark" title="Loại sản phẩm">Thường</a>
+                                            @endif
+                                        </li>
                                     </ul>
                                 </td>
                                 <td>
@@ -73,13 +80,13 @@
                                 <td>{!! $value->information !!}</td>
                                 <td>
                                     @if($value->active === 1)
-                                        <a class="btn btn-sm btn-circle btn-success btn-icon-split">
+                                        <a href="{{ route('product.change.status', $value->id) }}" class="btn btn-sm btn-circle btn-success btn-icon-split" title="Hiển thị">
                                         <span class="icon text-white-50">
                                           <i class="fas fa-check"></i>
                                         </span>
                                         </a>
                                     @else
-                                        <a class="btn btn-sm btn-danger btn-icon-split">
+                                        <a href="{{ route('product.change.status', $value->id) }}" class="btn btn-sm btn-danger btn-icon-split" title="Không hiển thị">
                                         <span class="icon text-white-50">
                                           <i class="fas fa-times"></i>
                                         </span>

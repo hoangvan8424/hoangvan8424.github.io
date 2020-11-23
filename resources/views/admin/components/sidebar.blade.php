@@ -23,7 +23,7 @@
     <li class="nav-item {{ Request::is('admin/slide') || Request::is('admin/slide/*') ? 'active':'' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSlide" aria-expanded="true"
            aria-controls="collapseGroup">
-            <i class="fas fa-list-ul"></i>
+            <i class="fab fa-slideshare"></i>
             <span>Slide</span>
         </a>
         <div id="collapseSlide" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -78,7 +78,6 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('user.list') }}">Danh sách người dùng</a>
-                <a class="collapse-item" href="">Thêm người dùng</a>
             </div>
         </div>
     </li>

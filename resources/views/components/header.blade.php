@@ -6,7 +6,7 @@
                 <div class="menu-desktop-inner">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href=""><img src="{{ asset('public/images/icons/logo-black.png') }}" alt="logo"></a>
+                        <a href="{{ route('home') }}"><img src="{{ asset('public/images/icons/logo-black.png') }}" alt="logo"></a>
                     </div>
                     <!-- Main Menu -->
                     <nav class="main-menu">
@@ -17,43 +17,31 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="sub-menu-item">
-                                        <ul class="one">
-                                            <li class="title">
-                                                SHOP TYPES
-                                            </li>
-                                            <li><a href="shop-full-width.html">Shop Full Width</a></li>
-                                            <li><a href="shop-right-width-siderbar.html">Shop Right Width Sidebar</a></li>
-                                            <li><a href="shop-left-width-siderbar.html">Shop Left Width Sidebar</a></li>
-                                            <li><a href="shop-single-v1.html">Shop Single_v1</a></li>
-                                            <li><a href="shop-single-v2.html">Shop Single_v2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="sub-menu-item">
-                                        <ul class="second">
-                                            <li class="title">
-                                                SHOP PAGES
-                                            </li>
-                                            <li><a href="shop-cart.html">Shop Cart</a></li>
-                                            <li><a href="wish-list.html">Wish List</a></li>
-                                            <li><a href="check-out.html">Check Out</a></li>
-                                            <li><a href="my-account.html">My Account</a></li>
-                                            <li><a href="order-tracking.html">Order Tracking</a></li>
-                                        </ul>
+                                        @if(count($category) > 0)
+                                            <ul class="one">
+                                                @foreach($category as $categories)
+                                                    <li><a href=""
+                                                           style="text-transform: capitalize;">{{ $categories->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
                                     </li>
                                     <li class="sub-menu-item sub-menu-item-1">
+                                        <img class="ml-5" src="{{ asset('public/images/products/header-shop-images.png') }}" alt="shop" width="250" height="300">
                                         <figure>
-                                            <img src="{{ asset('public/images/header-shop-images.png') }}" alt="shop">
+
                                         </figure>
                                     </li>
                                 </ul>
                             </li>
                             <li class="menu-item mega-menu">
-                                <a href="shop-full-width.html">
+                                <a href="{{ route('product.all') }}">
                                     TẤT CẢ SẢN PHẨM
                                 </a>
                             </li>
                             <li class="menu-item mega-menu">
-                                <a href="shop-full-width.html">
+                                <a href="{{ route('about.us') }}">
                                     GIỚI THIỆU
                                 </a>
                             </li>

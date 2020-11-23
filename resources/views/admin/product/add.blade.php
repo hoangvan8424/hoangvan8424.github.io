@@ -84,7 +84,7 @@
                             <div class="form-group row">
                                 <label for="sale" class="col-sm-3 col-form-label">Sale</label>
                                 <div class="col-sm-3 col-6">
-                                    <input class="form-control" type="number" name="sale" id="sale" value="{{ old('sale') }}" min="0" placeholder="">
+                                    <input class="form-control" type="number" name="sale" id="sale" value="{{ old('sale') }}" min="1" placeholder="">
                                     @if($errors->has('sale'))
                                         <span class="text-danger error-text">
                                             {{$errors->first('sale')}}
@@ -195,6 +195,13 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Nổi bật <span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-10 form-tags mt-2">
+                                    <input type="checkbox" name="hot" id="hot" value="1"><label for="hot" class="ml-3 font-weight-bold">Sản phẩm nổi bật</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -208,7 +215,6 @@
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </form>
             </div>
@@ -219,14 +225,13 @@
     <script src="{{ asset('public/template/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('public/template/js/tinymce.js') }}"></script>
     <script>
-        $('#sale').attr('disabled', true);
         $(document).ready(function () {
+            $('#sale').attr('disabled', true);
             $('#type').change(function () {
                 let type = $(this).val();
-                if(type == 2) {
+                if(type === '2') {
                     $('#sale').attr('disabled', false);
-                }
-                else {
+                } else {
                     $('#sale').attr('disabled', true);
                 }
             });

@@ -43,6 +43,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/template/nouislider/css/nouislider.css') }}">
     <!-- Main Style Css -->
     <link rel="stylesheet" href="{{ asset('public/template/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('public/css/custom.css') }}"/>
+    @stack('css')
 </head>
 <body>
     <div class="images-preloader">
