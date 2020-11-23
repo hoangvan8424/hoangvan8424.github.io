@@ -2814,7 +2814,7 @@ textarea:-moz-placeholder {
   .story-about-section .story-content .story-detail:before {
     position: absolute;
     content: '';
-    background: url(../images/hp-6-items-bg.jpg);
+    background: url('./../../images/hp-6-items-bg.jpg');
     top: 8.5%;
     left: -18.5%;
     width: 119.3%;

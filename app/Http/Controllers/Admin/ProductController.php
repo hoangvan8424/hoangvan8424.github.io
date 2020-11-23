@@ -48,7 +48,7 @@ class ProductController extends Controller
         $product->total_number = $request->total_number;
         $product->description = $request->description;
         $product->information = $request->information;
-        $product->sale = $request->sale;
+        $product->sale = $request->sale != "" ? $request->sale : 0;
 
         $img_1 = "";
         if($request->has('img_1')) {
@@ -124,7 +124,7 @@ class ProductController extends Controller
         $product->total_number = $request->total_number;
         $product->description = $request->description;
         $product->information = $request->information;
-        $product->sale = $request->sale;
+        $product->sale = $request->sale != "" ? $request->sale : 0;
 
         $img_1 = $product->image_1;
         if($request->has('img_1')) {

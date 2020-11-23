@@ -34,9 +34,15 @@ class ShowProductController extends Controller
             'active' => true,
         ])->get();
 
+        $productSameCategory = Product::where([
+            'category_id' => $detail->category_id,
+            'active' => true,
+        ])->paginate(7);
+
         $data = [
             'detail' => $detail,
             'category'  => $category,
+            'productSameCategory' => $productSameCategory,
         ];
         return view('product.detail', $data);
     }

@@ -191,12 +191,14 @@
                                                     </div>
                                                     <h5 class="woocommerce-loop-product__title"><a href="#">{{ $hots->name }}</a></h5>
                                                     <span class="price">
+                                                        @if($hots->sale > 0)
                                                         <del>
                                                             <span class="woocommerce-Price-amount amount text-danger">
                                                                 {{ number_format($hots->price - $hots->price*($hots->sale/100), 0, '', '.') }}
                                                                 <span class="woocommerce-Price-currencySymbol">đ</span>
                                                             </span>
                                                         </del>
+                                                        @endif
                                                         <ins>
                                                             <span class="woocommerce-Price-amount amount">
                                                                 {{ number_format($hots->price, 0, '', '.') }}
