@@ -1,9 +1,9 @@
-(function($) { 
-"use strict"; 
+(function($) {
+    "use strict";
     /*Images Loader*/
-        $(window).on('load', function() {
+    $(window).on('load', function() {
         $('.images-preloader').fadeOut();
-        });
+    });
     /* End Images Loader*/
 
     /*Add class current in menu*/
@@ -18,7 +18,7 @@
     });
     $('.site-header-cart .cart-contents').on('click', function(event) {
         $(this).parent().find('.widget_shopping_cart').fadeToggle();
-        event.stopPropagation(); 
+        event.stopPropagation();
     });
     $('.site-header-cart .widget_shopping_cart').on('click', function(event) {
         $(this).fadeIn();
@@ -69,15 +69,15 @@
     /*Back To Top Button*/
     $(window).on('scroll',function () {
         if ($(this).scrollTop() > 300) {
-          $('#back-to-top').fadeIn('slow');
+            $('#back-to-top').fadeIn('slow');
         } else {
-          $('#back-to-top').fadeOut('slow');
+            $('#back-to-top').fadeOut('slow');
         }
-      });
+    });
     $('#back-to-top').on( 'click', function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
-    });     
+    });
     /*End Back To Top Button*/
 
     /*CheckOut Page*/
@@ -95,7 +95,7 @@
     $('[name="createaccount"]').on('click', function () {
         $('.create-account').slideToggle();
     });
-    
+
     $('.payment_box').hide();
     $('[name="payment_method"]').on('click', function () {
 
@@ -128,17 +128,17 @@
             },
             format: {
                 from: function(value) {
-                        return parseInt(x,10);
-                    },
+                    return parseInt(value);
+                },
                 to: function(value) {
-                        return parseInt(x,10);
-                    }
+                    return parseInt(value);
+                }
             }
         });
 
         /*Show the slider value*/
         var marginMin = document.getElementById('value-lower'),
-        marginMax = document.getElementById('value-upper');
+            marginMax = document.getElementById('value-upper');
 
         marginSlider.noUiSlider.on('update', function ( values, handle ) {
             if ( handle ) {
@@ -161,8 +161,8 @@
     $('.add_to_cart_button').on('mouseleave', function(){
         var newSrc = $(this).find('img').attr('src');
         var oldSrc = newSrc.replace('white','black');
-        $(this).find('img').attr('src', oldSrc);  
-        console.log('mouseleave');    
+        $(this).find('img').attr('src', oldSrc);
+        console.log('mouseleave');
     });
     /*End Featured Sale Section hp-1*/
 
@@ -178,8 +178,8 @@
     $('a.gallery-elements').fancybox({
         'transitionIn'  :   'elastic',
         'transitionOut' :   'elastic',
-        'speedIn'       :   500, 
-        'speedOut'      :   500, 
+        'speedIn'       :   500,
+        'speedOut'      :   500,
         'overlayShow'   :   false,
         'width'         : 937,
         'autoDimensions' : false,
@@ -190,11 +190,11 @@
     /*Coming Soon Page*/
     $('#clock').countdown('2020/01/21').on('update.countdown', function(event) {
         var $this = $(this).html(event.strftime(''
-        + '<p><span class="time">%-m</span> month%!m </p>'
-        + '<p><span class="time">%d</span> day%!d </p>'
-        + '<p><span class="time">%H</span> hours </p>'
-        + '<p><span class="time">%M</span> mins </p>'
-        + '<p><span class="time">%S</span> secs </p>'));
+            + '<p><span class="time">%-m</span> month%!m </p>'
+            + '<p><span class="time">%d</span> day%!d </p>'
+            + '<p><span class="time">%H</span> hours </p>'
+            + '<p><span class="time">%M</span> mins </p>'
+            + '<p><span class="time">%S</span> secs </p>'));
     });
     /*End Coming Soon Page*/
 
@@ -206,27 +206,27 @@
             defaultW: 640,
             defaultH: 360
         }, options );
-      
+
         $(settings.classBtn).on('click', function(e) {
-          var allowFullscreen = $(this).attr('data-bmdVideoFullscreen') || false;
-          
-          var dataVideo = {
-            'src': $(this).attr('data-bmdSrc'),
-            'height': $(this).attr('data-bmdHeight') || settings.defaultH,
-            'width': $(this).attr('data-bmdWidth') || settings.defaultW
-          };
-          
-          if ( allowFullscreen ) dataVideo.allowfullscreen = "";
-          
-          // stampiamo i nostri dati nell'iframe
-          $(self).find("iframe").attr(dataVideo);
+            var allowFullscreen = $(this).attr('data-bmdVideoFullscreen') || false;
+
+            var dataVideo = {
+                'src': $(this).attr('data-bmdSrc'),
+                'height': $(this).attr('data-bmdHeight') || settings.defaultH,
+                'width': $(this).attr('data-bmdWidth') || settings.defaultW
+            };
+
+            if ( allowFullscreen ) dataVideo.allowfullscreen = "";
+
+            // stampiamo i nostri dati nell'iframe
+            $(self).find("iframe").attr(dataVideo);
         });
-      
-        // se si chiude la modale resettiamo i dati dell'iframe per impedire ad un video di continuare a riprodursi anche quando la modale è chiusa
+
+        // se si chiude la modale resettiamo i dati dell'iframe per impedire ad un video di continuare a riprodursi anche quando la modale Ã¨ chiusa
         this.on('hidden.bs.modal', function(){
-          $(this).find('iframe').html("").attr("src", "");
+            $(this).find('iframe').html("").attr("src", "");
         });
-      
+
         return this;
     };
     jQuery("#modal-video").bmdIframe();
@@ -246,7 +246,7 @@
             'minutes': minutes,
             'seconds': seconds
         };
-    }   
+    }
 
     function initializeClock(id, endtime) {
         var clock = document.getElementById(id);
@@ -279,150 +279,150 @@
 
     /*Slider Revolution For Hp-1*/
     /* initialize the slider based on the Slider's ID attribute FROM THE WRAPPER above */
-        jQuery('#rev_slider_1').show().revolution({
+    jQuery('#rev_slider_1').show().revolution({
 
-            responsiveLevels: [1200, 992, 768, 576],
-            autoHeight: 'on',
-            sliderLayout: 'fullscreen',
-                
-            /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */         
-            navigation: {
+        responsiveLevels: [1200, 992, 768, 576],
+        autoHeight: 'on',
+        sliderLayout: 'fullscreen',
 
-                arrows: {
- 
-                    enable: true,
-                    style: 'hesperiden',
-                    tmp: '',
-                    rtl: false,
-                    hide_onleave: false,
-                    hide_onmobile: true,
-                    hide_under: 992,
-             
-                    left: {
-                        container: 'slider',
-                        h_align: 'right',
-                        v_align: 'bottom',
-                        h_offset: 187,
-                        v_offset: 38,
-                    },
-             
-                    right: {
-                        container: 'slider',
-                        h_align: 'right',
-                        v_align: 'bottom',
-                        h_offset: 35,
-                        v_offset: 38,
-                    }
-             
+        /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
+        navigation: {
+
+            arrows: {
+
+                enable: true,
+                style: 'hesperiden',
+                tmp: '',
+                rtl: false,
+                hide_onleave: false,
+                hide_onmobile: true,
+                hide_under: 992,
+
+                left: {
+                    container: 'slider',
+                    h_align: 'right',
+                    v_align: 'bottom',
+                    h_offset: 187,
+                    v_offset: 38,
                 },
 
-                bullets: {
-                    enable: true,
-                    style: 'uranus',
-                    tmp: '<span class="tp-bullet-inner"></span>',
-                    hide_onleave: false,
-                    h_align: "left",
-                    v_align: "bottom",
-                    h_offset: 50,
-                    v_offset: 30,
-                    space: 10,
+                right: {
+                    container: 'slider',
+                    h_align: 'right',
+                    v_align: 'bottom',
+                    h_offset: 35,
+                    v_offset: 38,
                 }
+
+            },
+
+            bullets: {
+                enable: true,
+                style: 'uranus',
+                tmp: '<span class="tp-bullet-inner"></span>',
+                hide_onleave: false,
+                h_align: "left",
+                v_align: "bottom",
+                h_offset: 50,
+                v_offset: 30,
+                space: 10,
             }
-        });   
-    /*End Slider Revolution For Hp-1*/ 
+        }
+    });
+    /*End Slider Revolution For Hp-1*/
 
     /*Slider Revolution For Hp-2 hp-6*/
     /* initialize the slider based on the Slider's ID attribute FROM THE WRAPPER above */
-        jQuery('#rev_slider_2').show().revolution({
+    jQuery('#rev_slider_2').show().revolution({
 
-            responsiveLevels: [1200, 992, 768, 576],
-            autoHeight: 'on',
-            sliderLayout: 'fullscreen',
-                
-            /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */         
-            navigation: {
+        responsiveLevels: [1200, 992, 768, 576],
+        autoHeight: 'on',
+        sliderLayout: 'fullscreen',
 
-                arrows: {
- 
-                    enable: true,
-                    style: 'hesperiden',
-                    tmp: '',
-                    rtl: false,
-                    hide_onleave: false,
-                    hide_onmobile: true,
-                    hide_under: 576,
+        /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
+        navigation: {
 
-                    left: {
-                        container: 'slider',
-                        h_align: 'left',
-                        v_align: 'center',
-                        h_offset: 40,
-                        v_offset: 0,
-                    },
-             
-                    right: {
-                        container: 'slider',
-                        h_align: 'right',
-                        v_align: 'center',
-                        h_offset: 40,
-                        v_offset: 0,
-                    }
-             
+            arrows: {
+
+                enable: true,
+                style: 'hesperiden',
+                tmp: '',
+                rtl: false,
+                hide_onleave: false,
+                hide_onmobile: true,
+                hide_under: 576,
+
+                left: {
+                    container: 'slider',
+                    h_align: 'left',
+                    v_align: 'center',
+                    h_offset: 40,
+                    v_offset: 0,
                 },
 
-                bullets: {
-                    enable: false,
+                right: {
+                    container: 'slider',
+                    h_align: 'right',
+                    v_align: 'center',
+                    h_offset: 40,
+                    v_offset: 0,
                 }
+
+            },
+
+            bullets: {
+                enable: false,
             }
-        });   
-    /*End Slider Revolution For Hp-2 hp-6*/ 
+        }
+    });
+    /*End Slider Revolution For Hp-2 hp-6*/
 
     /*Slider Revolution For Hp-4*/
     /* initialize the slider based on the Slider's ID attribute FROM THE WRAPPER above */
-        jQuery('#rev_slider_4').show().revolution({
+    jQuery('#rev_slider_4').show().revolution({
 
-            responsiveLevels: [1200, 992, 768, 576],
-             /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
-            gridwidth:[1200, 992, 768, 576],
-            /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
-            gridheight:[776, 768, 960, 720],     
+        responsiveLevels: [1200, 992, 768, 576],
+        /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
+        gridwidth:[1200, 992, 768, 576],
+        /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
+        gridheight:[776, 768, 960, 720],
 
-            navigation: {
+        navigation: {
 
-                arrows: {
- 
-                    enable: true,
-                    style: 'hesperiden',
-                    tmp: '',
-                    rtl: false,
-                    hide_onleave: false,
-                    hide_onmobile: true,
-                    hide_under: 576,
+            arrows: {
 
-                    left: {
-                        container: 'slider',
-                        h_align: 'left',
-                        v_align: 'center',
-                        h_offset: 0,
-                        v_offset: 0,
-                    },
-             
-                    right: {
-                        container: 'slider',
-                        h_align: 'right',
-                        v_align: 'center',
-                        h_offset: 0,
-                        v_offset: 0,
-                    }
-             
+                enable: true,
+                style: 'hesperiden',
+                tmp: '',
+                rtl: false,
+                hide_onleave: false,
+                hide_onmobile: true,
+                hide_under: 576,
+
+                left: {
+                    container: 'slider',
+                    h_align: 'left',
+                    v_align: 'center',
+                    h_offset: 0,
+                    v_offset: 0,
                 },
 
-                bullets: {
-                    enable: false,
+                right: {
+                    container: 'slider',
+                    h_align: 'right',
+                    v_align: 'center',
+                    h_offset: 0,
+                    v_offset: 0,
                 }
+
+            },
+
+            bullets: {
+                enable: false,
             }
-        });   
-    /*End Slider Revolution For Hp-4*/ 
+        }
+    });
+    /*End Slider Revolution For Hp-4*/
 
     /*Testimonials Section of hp-1*/
     $('#testimonials-hp-1').owlCarousel({
@@ -430,7 +430,7 @@
         loop:true,
         margin: 0,
         nav:true,
-        navText: [ 
+        navText: [
             "<span class='lnr lnr-chevron-left'></span>",
             "<span class='lnr lnr-chevron-right'></span>"],
         slideSpeed: 300,
@@ -443,7 +443,7 @@
             },
             576:{
                 items:1
-                
+
             },
             992:{
                 items:1
@@ -458,7 +458,7 @@
         loop:true,
         margin: 30,
         nav:true,
-        navText: [ 
+        navText: [
             "<i class='zmdi zmdi-long-arrow-left'></i>",
             "<i class='zmdi zmdi-long-arrow-right'></i>"],
         slideSpeed: 300,
@@ -471,7 +471,7 @@
             },
             576:{
                 items:1
-                
+
             },
             992:{
                 items:1
@@ -494,7 +494,7 @@
             },
             576:{
                 items:1
-                
+
             },
             992:{
                 items:1
@@ -519,7 +519,7 @@
             },
             576:{
                 items:1
-                
+
             },
             992:{
                 items:1
@@ -532,7 +532,7 @@
         loop:true,
         margin: 30,
         nav:true,
-        navText: [ 
+        navText: [
             "<i class='zmdi zmdi-long-arrow-left'></i>",
             "<i class='zmdi zmdi-long-arrow-right'></i>"],
         slideSpeed: 300,
@@ -545,7 +545,7 @@
             },
             576:{
                 items:1
-                
+
             },
             992:{
                 items:1
@@ -560,7 +560,7 @@
         loop:true,
         margin: 30,
         nav:true,
-        navText: [ 
+        navText: [
             "<i class='zmdi zmdi-chevron-left'></i>",
             "<i class='zmdi zmdi-chevron-right'></i>"],
         slideSpeed: 300,
@@ -573,7 +573,7 @@
             },
             576:{
                 items:1
-                
+
             },
             992:{
                 items:1
@@ -585,7 +585,7 @@
         loop:true,
         margin: 30,
         nav:true,
-        navText: [ 
+        navText: [
             "<i class='zmdi zmdi-chevron-left'></i>",
             "<i class='zmdi zmdi-chevron-right'></i>"],
         slideSpeed: 300,
@@ -598,7 +598,7 @@
             },
             576:{
                 items:1
-                
+
             },
             992:{
                 items:1
@@ -610,7 +610,7 @@
         loop:true,
         margin: 30,
         nav:true,
-        navText: [ 
+        navText: [
             "<i class='zmdi zmdi-chevron-left'></i>",
             "<i class='zmdi zmdi-chevron-right'></i>"],
         slideSpeed: 300,
@@ -623,7 +623,7 @@
             },
             576:{
                 items:1
-                
+
             },
             992:{
                 items:1
@@ -638,7 +638,7 @@
         loop: false,
         margin: 30,
         nav:true,
-        navText: [ 
+        navText: [
             "<i class='zmdi zmdi-chevron-left'></i>",
             "<i class='zmdi zmdi-chevron-right'></i>"],
         slideSpeed: 300,
@@ -651,11 +651,11 @@
             },
             576:{
                 items:2
-                
+
             },
             768:{
                 items:3
-                
+
             },
             1200:{
                 items:4
@@ -668,7 +668,7 @@
         loop: false,
         margin: 30,
         nav:true,
-        navText: [ 
+        navText: [
             "<i class='zmdi zmdi-chevron-left'></i>",
             "<i class='zmdi zmdi-chevron-right'></i>"],
         slideSpeed: 300,
@@ -681,11 +681,11 @@
             },
             576:{
                 items:2
-                
+
             },
             768:{
                 items:3
-                
+
             },
             1200:{
                 items:4
@@ -714,27 +714,27 @@
             defaultW: 640,
             defaultH: 360
         }, options );
-      
+
         $(settings.classBtn).on('click', function(e) {
-          var allowFullscreen = $(this).attr('data-bmdVideoFullscreen') || false;
-          
-          var dataVideo = {
-            'src': $(this).attr('data-bmdSrc') + "?autoplay=1",
-            'height': $(this).attr('data-bmdHeight') || settings.defaultH,
-            'width': $(this).attr('data-bmdWidth') || settings.defaultW
-          };
-          
-          if ( allowFullscreen ) dataVideo.allowfullscreen = "";
-          
-          // stampiamo i nostri dati nell'iframe
-          $(self).find("iframe").attr(dataVideo);
+            var allowFullscreen = $(this).attr('data-bmdVideoFullscreen') || false;
+
+            var dataVideo = {
+                'src': $(this).attr('data-bmdSrc') + "?autoplay=1",
+                'height': $(this).attr('data-bmdHeight') || settings.defaultH,
+                'width': $(this).attr('data-bmdWidth') || settings.defaultW
+            };
+
+            if ( allowFullscreen ) dataVideo.allowfullscreen = "";
+
+            // stampiamo i nostri dati nell'iframe
+            $(self).find("iframe").attr(dataVideo);
         });
-      
-        // se si chiude la modale resettiamo i dati dell'iframe per impedire ad un video di continuare a riprodursi anche quando la modale è chiusa
+
+        // se si chiude la modale resettiamo i dati dell'iframe per impedire ad un video di continuare a riprodursi anche quando la modale Ã¨ chiusa
         this.on('hidden.bs.modal', function(){
-          $(this).find('iframe').html("").attr("src", "");
+            $(this).find('iframe').html("").attr("src", "");
         });
-      
+
         return this;
     };
     var mediaElements = document.querySelectorAll('audio');
