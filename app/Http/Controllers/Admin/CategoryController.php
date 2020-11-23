@@ -23,9 +23,9 @@ class CategoryController extends Controller
     public function save(CategoryRequest $request) {
         Category::create([
             'name' => $request->get('name'),
-            'slug' => $request->get('slug') != null ? $request->get('slug') : Str::slug($request->get('name')),
+            'slug' => Str::slug($request->get('name')),
             'icon' => $request->get('icon') != null ? $request->get('icon') : '',
-            'active'   => $request->get('active') === 'true' ? 1:0,
+            'active'   => $request->get('active') == true ? 1:0,
         ]);
 
         return redirect()->route('category.list')->with('alert-success', 'Thêm danh mục sản phẩm thành công.');
@@ -41,9 +41,9 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
 
         $category->name = $request->get('name');
-        $category->slug = $request->get('slug') != null ? $request->get('slug') : Str::slug($request->get('name'));
+        $category->slug = Str::slug($request->get('name'));
         $category->icon = $request->get('icon') != null ? $request->get('icon') : '';
-        $category->active = $request->get('active') === 'true' ? 1:0;
+        $category->active = $request->get('active') == true ? 1 : 0;
 
         $category->save();
 

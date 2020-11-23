@@ -17,6 +17,20 @@ class ProductController extends Controller
         return view('admin.product.list', compact('data'));
     }
 
+    public function changeType($id) {
+        $product = Product::findOrFail($id);
+        $product->hot = $product->hot == 1 ? 0:1;
+        $product->save();
+        return redirect()->back()->with('alert-success', 'Thay đổi loại sản phẩm thành công.');
+    }
+
+    public function changeStatus($id) {
+        $product = Product::findOrFail($id);
+        $product->active = $product->active == 1 ? 0 : 1;
+        $product->save();
+        return redirect()->back()->with('alert-success', 'Thay đổi trạng thái sản phẩm thành công.');
+    }
+
     public function showAddForm() {
         $category = Category::where([
             'active' => true
@@ -82,10 +96,11 @@ class ProductController extends Controller
         $product->image_4 = $img_4;
         $product->image_5 = $img_5;
 
+        $product->hot = $request->hot != "" ? $request->hot : 0;
+
         $product->save();
 
         return redirect()->route('product.list')->with('alert-success', 'Thêm sản phẩm thành công.');
-
 
     }
 
@@ -156,6 +171,8 @@ class ProductController extends Controller
         $product->image_3 = $img_3;
         $product->image_4 = $img_4;
         $product->image_5 = $img_5;
+
+        $product->hot = $request->hot != "" ? $request->hot : 0;
 
         $product->save();
         return redirect()->route('product.list')->with('alert-success', 'Sửa sản phẩm thành công.');
