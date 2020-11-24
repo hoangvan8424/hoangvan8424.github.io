@@ -97,6 +97,7 @@ class ProductController extends Controller
         $product->image_5 = $img_5;
 
         $product->hot = $request->hot != "" ? $request->hot : 0;
+        $product->sku = $request->sku;
 
         $product->save();
 
@@ -173,6 +174,7 @@ class ProductController extends Controller
         $product->image_5 = $img_5;
 
         $product->hot = $request->hot != "" ? $request->hot : 0;
+        $product->sku = $request->sku;
 
         $product->save();
         return redirect()->route('product.list')->with('alert-success', 'Sửa sản phẩm thành công.');

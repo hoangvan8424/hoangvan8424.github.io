@@ -46,27 +46,6 @@
                                     </div>
 
                                 </div>
-                                <!-- Categories -->
-                                <div class="widget widget_product_categories">
-                                    <h3 class="widget-title">Danh mục</h3>
-                                    <ul class="product-categories">
-                                        @if(isset($category))
-                                            @foreach($category as $key => $categories)
-                                                <li class="cat-item cat-parent param-search {{ Request::get('c_'.$key) == $categories->id ? "active":""}}"
-                                                data-param="c_{{ $key }} = {{ $categories->id }}">
-                                                    <a href="{{ request()->fullUrlWithQuery(['c_'.$key => $categories->id]) }}"
-                                                       class="w-100">
-                                                        <label class="checkbox-container">{{ $categories->name }}
-                                                            <input type="checkbox" {{ Request::get('c_'.$key) == $categories->id ? "checked":""}}>
-                                                            <span class="checkmark-custom"></span>
-                                                        </label>
-                                                    </a>
-                                                </li>
-                                            @endforeach
-                                        @endif
-
-                                    </ul>
-                                </div>
                                 <!-- Products -->
                                 <div class="widgets widget_products">
                                     <h3 class="widget-title">Sản phẩm mới</h3>
@@ -219,16 +198,6 @@
 @push('scripts')
     <script>
         $(document).ready(function () {
-            $(".param-search").click(function (event) {
-                event.preventDefault();
-                let e = $(this);
-                let param = e.attr('data-param');
-                let url = e.find('a').attr("href");
-                if(e.hasClass('active')) {
-                    url = url.replace(param, "");
-                }
-                window.location.href = url;
-            });
 
             $('.sort-by').click(function (event) {
                 event.preventDefault();

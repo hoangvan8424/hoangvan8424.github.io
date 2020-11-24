@@ -376,34 +376,35 @@ input,
 select,
 textarea,
 .select-selected {
-  width: 100%;
-  height: 100%;
-  padding: 11px 20px;
-  border: 1px solid #e5e5e5;
-  appearance: unset !important;
-  -moz-appearance: unset !important;
-  -webkit-appearance: unset !important;
-  -o-appearance: unset !important;
-  -ms-appearance: unset !important;
-  outline: none;
-  -moz-outline: none;
-  -webkit-outline: none;
-  -o-outline: none;
-  -ms-outline: none;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  border-radius: 0;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  -o-border-radius: 0;
-  -ms-border-radius: 0;
-  color: #666;
-  font-size: 15px;
-  font-weight: 400;
-  font-family: 'Roboto', sans-serif; }
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*padding: 11px 20px;*/
+  /*border: 1px solid #e5e5e5;*/
+  /*appearance: unset !important;*/
+  /*-moz-appearance: unset !important;*/
+  /*-webkit-appearance: unset !important;*/
+  /*-o-appearance: unset !important;*/
+  /*-ms-appearance: unset !important;*/
+  /*outline: none;*/
+  /*-moz-outline: none;*/
+  /*-webkit-outline: none;*/
+  /*-o-outline: none;*/
+  /*-ms-outline: none;*/
+  /*box-sizing: border-box;*/
+  /*-moz-box-sizing: border-box;*/
+  /*-webkit-box-sizing: border-box;*/
+  /*-o-box-sizing: border-box;*/
+  /*-ms-box-sizing: border-box;*/
+  /*border-radius: 0;*/
+  /*-moz-border-radius: 0;*/
+  /*-webkit-border-radius: 0;*/
+  /*-o-border-radius: 0;*/
+  /*-ms-border-radius: 0;*/
+  /*color: #666;*/
+  /*font-size: 15px;*/
+  /*font-weight: 400;*/
+  /*font-family: 'Roboto', sans-serif; */
+}
 
 input:focus, select:focus, textarea:focus {
   outline: none;
@@ -1666,7 +1667,9 @@ textarea:-moz-placeholder {
         -o-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
         -ms-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1); }
         .featured-hp-1 .content-area .woocommerce-LoopProduct-link .product-image:hover .wp-post-image .image-secondary {
-          right: 0; }
+          right: 0;
+          /*right: 43px;*/
+        }
 .featured-hp-1 .view-all {
   text-align: center;
   padding: 30px 0 120px; }
@@ -3137,7 +3140,9 @@ textarea:-moz-placeholder {
     .shop-right-siderbar .widget-area .widget_search input {
       padding: 0 0 9px;
       border: none;
-      border-bottom: 1px solid #333; }
+      border-bottom: 1px solid #333;
+        width: 100% !important;
+    }
       .shop-right-siderbar .widget-area .widget_search input::-webkit-input-placeholder {
         color: #333; }
       .shop-right-siderbar .widget-area .widget_search input::-moz-placeholder {

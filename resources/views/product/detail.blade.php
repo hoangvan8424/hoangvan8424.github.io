@@ -11,18 +11,22 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                 <div class="woocommerce-product-gallery">
-                                    <a href="#" class="onnew">NEW</a>
+                                    @if($detail->type == 2)
+                                        <span class="onsale">SALE</span>
+                                    @elseif($detail->type == 1)
+                                        <span class="onnew">Mới</span>
+                                    @endif
                                     <div class="owl-carousel">
-                                        <div class="item">
+                                        <div class="item item-detail">
                                             <img src="{{ asset('public/images/products/' . $detail->image_1) }}" alt="{{ $detail->name }}">
                                         </div>
-                                        <div class="item">
+                                        <div class="item item-detail">
                                             <img src="{{ asset('public/images/products/' . $detail->image_2) }}" alt="{{ $detail->name }}">
                                         </div>
-                                        <div class="item">
+                                        <div class="item item-detail">
                                             <img src="{{ asset('public/images/products/' . $detail->image_3) }}" alt="{{ $detail->name }}">
                                         </div>
-                                        <div class="item">
+                                        <div class="item item-detail">
                                             <img src="{{ asset('public/images/products/' . $detail->image_4) }}" alt="{{ $detail->name }}">
                                         </div>
                                     </div>
@@ -32,18 +36,20 @@
                                 <div class="summary entry-summary">
                                     <h1 class="product_title entry-title">{{ $detail->name }}</h1>
                                     <span class="price">
-                                        <del>
-                                            <span class="woocommerce-Price-amount amount text-danger">
-                                                {{ number_format($detail->price - $detail->price*($detail->sale/100), 0, '', '.') }}
-                                                <span class="woocommerce-Price-currencySymbol">đ</span>
-                                            </span>
-                                        </del>
-                                        <ins>
+                                        <ins class="mr-3">
                                             <span class="woocommerce-Price-amount amount">
                                                 {{ number_format($detail->price, 0, '', '.') }}
                                                 <span class="woocommerce-Price-currencySymbol">đ</span>
                                             </span>
                                         </ins>
+                                        @if($detail->sale > 0)
+                                            <del>
+                                                <span class="woocommerce-Price-amount amount text-danger">
+                                                    {{ number_format($detail->price - $detail->price*($detail->sale/100), 0, '', '.') }}
+                                                    <span class="woocommerce-Price-currencySymbol">đ</span>
+                                                </span>
+                                            </del>
+                                        @endif
                                     </span>
                                     <div class="woocommerce-product-details__short-description">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
@@ -59,7 +65,7 @@
                                     <div class="product_meta">
 										<span class="sku_wrapper">
 											Mã sản phẩm:
-											<span class="sku">MQ000131926_44</span>
+											<span class="sku">{{ $detail->sku }}</span>
 										</span>
                                         <span class="posted_in">
 											Danh mục:

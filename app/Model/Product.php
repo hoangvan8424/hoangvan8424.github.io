@@ -22,6 +22,7 @@ class Product extends Model
         'total_number',
         'active',
         'hot',
+        'sku',
     ];
 
     public function category() {

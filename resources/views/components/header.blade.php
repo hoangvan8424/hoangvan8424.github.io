@@ -12,15 +12,15 @@
                     <nav class="main-menu">
                         <ul>
                             <li class="menu-item mega-menu">
-                                <a href="shop-full-width.html">
-                                    DANH MỤC
-                                </a>
+
+                                <span>DANH MỤC</span>
+
                                 <ul class="sub-menu">
                                     <li class="sub-menu-item">
                                         @if(count($category) > 0)
                                             <ul class="one">
                                                 @foreach($category as $categories)
-                                                    <li><a href=""
+                                                    <li><a href="{{ route('get.product.category', $categories->slug) }}"
                                                            style="text-transform: capitalize;">{{ $categories->name }}</a>
                                                     </li>
                                                 @endforeach
@@ -52,7 +52,7 @@
                         <!-- Cart -->
                         <div class="site-header-cart">
                             <div class="cart-contents">
-                                <i class="fal fa-heart" style="font-size: 22px;"></i>
+                                <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart" class="mb-1">
                             </div>
                             <div class="widget_shopping_cart">
                                 <div class="widget_shopping_cart_content">
@@ -91,25 +91,14 @@
                                         </li>
                                     </ul>
                                     <p class="woocommerce-mini-cart__total total">
-                                        <span>Subtotal:</span>
+                                        <span>Tổng : </span>
                                         <span class="woocommerce-Price-amount amount">
                                                     <span class="woocommerce-Price-currencySymbol">$</span>
                                                     364
                                                 </span>
                                     </p>
-                                    <p class="woocommerce-mini-cart__buttons buttons">
-                                        <a href="#" class="button wc-forward au-btn btn-small">View Cart</a>
-                                        <a href="#" class="button checkout wc-forward au-btn au-btn-black btn-small">Checkout</a>
-                                    </p>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Canvas -->
-                        <div class="canvas canvas-btn-wrap">
-                            <button class="canvas-images canvas-btn" data-toggle="modal" data-target="#canvasModal">
-                                <img src="{{ asset('public/images/icons/header-icon-3.png') }}" alt="canvas">
-                            </button>
-
                         </div>
 
                         <div class="btn-admin">

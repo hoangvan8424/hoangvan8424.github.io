@@ -6,6 +6,7 @@ use App\Model\Category;
 use App\Model\Product;
 use App\Model\Slide;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -26,9 +27,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $category = Category::where([
-            'active' => true,
-        ])->get();
+//        $category = Category::where([
+//            'active' => true,
+//        ])->get();
+
+        $category = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->select(array('categories.name as name', 'categories.slug as slug', DB::raw('COUNT(products.id) as total')))
+            ->where([
+                ['products.active', '=', true],
+            ])
+            ->groupBy(['name', 'slug'])
+            ->get();
 
         $slide = Slide::where([
             'active' => true,
@@ -48,9 +58,14 @@ class HomeController extends Controller
     }
 
     public function getAboutUs() {
-        $category = Category::where([
-            'active' => true,
-        ])->get();
+        $category = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->select(array('categories.name as name', 'categories.slug as slug', DB::raw('COUNT(products.id) as total')))
+            ->where([
+                ['products.active', '=', true],
+            ])
+            ->groupBy('name', 'slug')
+            ->get();
         return view('about-us', compact('category'));
     }
 }

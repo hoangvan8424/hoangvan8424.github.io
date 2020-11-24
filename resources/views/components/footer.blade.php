@@ -41,7 +41,7 @@
                             <div class="send">
                                 <i class="zmdi zmdi-mail-send"></i>
                             </div>
-                            <input type="email" required="" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" name="email" placeholder="Email...">
+                            <input type="email" class="email-contact" required="" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" name="email" placeholder="Email..." style="width: 100%!important;">
                         </div>
                     </div>
                 </div>

@@ -178,7 +178,11 @@
                                                         <img class="image-cover" src="{{ asset('public/images/products/'.$hots->image_1) }}" alt="product">
                                                         <img class="image-secondary" src="{{ asset('public/images/products/'.$hots->image_2) }}" alt="product">
                                                     </p>
-                                                    <a href="#" class="onsale">SALE</a>
+                                                    @if($hots->type == 2)
+                                                    <span class="onsale">SALE</span>
+                                                    @elseif($hots->type == 1)
+                                                        <span class="onnew">Mới</span>
+                                                    @endif
                                                     <div class="yith-wcwl-add-button show">
                                                         <a href="#" class="add_to_wishlist">
                                                             <i class="zmdi zmdi-favorite-outline"></i>
@@ -191,20 +195,20 @@
                                                     </div>
                                                     <h5 class="woocommerce-loop-product__title"><a href="#">{{ $hots->name }}</a></h5>
                                                     <span class="price">
+                                                        <ins class="mr-3">
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                {{ number_format($hots->price, 0, '', '.') }}
+                                                                <span class="woocommerce-Price-currencySymbol">đ</span>
+                                                            </span>
+                                                        </ins>
                                                         @if($hots->sale > 0)
-                                                        <del>
+                                                            <del>
                                                             <span class="woocommerce-Price-amount amount text-danger">
                                                                 {{ number_format($hots->price - $hots->price*($hots->sale/100), 0, '', '.') }}
                                                                 <span class="woocommerce-Price-currencySymbol">đ</span>
                                                             </span>
                                                         </del>
                                                         @endif
-                                                        <ins>
-                                                            <span class="woocommerce-Price-amount amount">
-                                                                {{ number_format($hots->price, 0, '', '.') }}
-                                                                <span class="woocommerce-Price-currencySymbol">đ</span>
-                                                            </span>
-                                                        </ins>
                                                     </span>
                                                 </div>
                                             </div>

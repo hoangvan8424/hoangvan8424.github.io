@@ -42,6 +42,7 @@
                                 <td>{{ $value->id }}</td>
                                 <td>
                                     <ul>
+                                        <li><strong>Mã: </strong>{{ $value->sku }}</li>
                                         <li><strong>Tên: </strong>{{ $value->name }}</li>
                                         <li><strong>Danh mục: </strong>{{ $value->category->name }}</li>
                                         <li><strong>Số lượng: </strong>{{ $value->total_number }}</li>

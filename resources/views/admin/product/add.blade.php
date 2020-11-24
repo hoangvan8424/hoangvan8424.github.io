@@ -12,6 +12,18 @@
                     <div class="row">
                         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
                             <div class="form-group row">
+                                <label for="sku" class="col-form-label col-sm-3">Mã sản phẩm<span
+                                        class="text-danger">*</span></label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="sku" id="sku" cols="30" rows="4">{{ old('sku') }}</textarea>
+                                    @if($errors->has('sku'))
+                                        <span class="text-danger error-text">
+                                            {{$errors->first('sku')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="name" class="col-form-label col-sm-3">Tên sản phẩm<span
                                         class="text-danger">*</span></label>
                                 <div class="col-sm-9">

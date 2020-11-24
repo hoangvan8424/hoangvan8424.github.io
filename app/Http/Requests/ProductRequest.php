@@ -25,6 +25,7 @@ class ProductRequest extends FormRequest
     {
         if(request()->is('admin/product/update/*')) {
             return [
+                'sku' => 'required|string:unique:products,sku,'.$this->id,
                 'name' => 'required|string|unique:products,name,'.$this->id,
                 'category' => 'required',
                 'price' => 'required|numeric|min:10000',
@@ -40,6 +41,7 @@ class ProductRequest extends FormRequest
         }
 
         return [
+            'sku' => 'required|string:unique:products,sku,'.$this->id,
             'name' => 'required|string|unique:products,name,'.$this->id,
             'category' => 'required',
             'price' => 'required|numeric|min:10000',
@@ -58,6 +60,8 @@ class ProductRequest extends FormRequest
     public function messages()
     {
         return [
+            'sku.required' => 'Trường này không được bỏ trống',
+            'sku.unique' => 'Mã sản phẩm sản phẩm đã tồn tại',
             'name.required' => 'Trường này không được bỏ trống',
             'name.unique' => 'Tên sản phẩm đã tồn tại',
             'category.required' => 'Trường này không được bỏ trống',
