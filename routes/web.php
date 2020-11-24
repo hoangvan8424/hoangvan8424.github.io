@@ -23,11 +23,14 @@ use App\Http\Controllers\ShoppingCartContrller;
 
 Auth::routes();
 
+Route::post('login', [LoginController::class, 'login']);
+Route::get('logout', [LoginController::class, 'logout']);
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/gioi-thieu', 'HomeController@getAboutUs')->name('about.us');
 Route::get('/tat-ca-san-pham', [ShowProductController::class, 'getAllProduct'])->name('product.all');
 Route::get('/san-pham/{slug}', [ShowProductController::class, 'getDetailProduct'])->name('product.detail');
-Route::get('/{slug}', [ShowProductController::class, 'getProductWithCategory'])->name('get.product.category');
+Route::get('danh-muc/{slug}', [ShowProductController::class, 'getProductWithCategory'])->name('get.product.category');
 
 // cart
 Route::group(['prefix' => 'gio-hang'], function () {
@@ -85,6 +88,3 @@ Route::prefix('admin')->group(function () {
         });
     });
 });
-
-Route::post('login', [LoginController::class, 'login']);
-Route::get('logout', [LoginController::class, 'logout']);

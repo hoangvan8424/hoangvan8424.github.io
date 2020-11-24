@@ -7755,3 +7755,6 @@ textarea:-moz-placeholder {
     width: 55px; } }
 
 /*# sourceMappingURL=style.css.map */
+.page-not-found {
+    background-image: url('./../../images/page-not-found-bg.jpg')
+}

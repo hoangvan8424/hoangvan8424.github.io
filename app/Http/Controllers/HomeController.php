@@ -27,9 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $category = Category::where([
-//            'active' => true,
-//        ])->get();
 
         $category = DB::table('products')
             ->join('categories', 'products.category_id', '=', 'categories.id')
