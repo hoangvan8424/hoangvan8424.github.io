@@ -20,7 +20,7 @@ body {
     font-family: "Malgun Gothic"!important;
     font-weight: normal;
     font-style: normal;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .menu-top {
     height: 55px;
@@ -53,15 +53,20 @@ a.navbar-item:hover, a.navbar-item:active, a.navbar-item:focus {
 a.navbar-item.active {
     border-bottom: 5px solid #c52228;
 }
-
+.navbar-start {
+    justify-content: center!important;
+}
 /* section 2 */
 .section-2 {
     height: 849px;
     width: 100%;
     background-image: url("../images/15.png");
-    background-repeat: round;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     position: relative;
 }
+
 .section-top {
     padding-top: 33px;
     height: 405px;
@@ -98,8 +103,9 @@ a.navbar-item.active {
 }
 .section-bottom {
     position: relative;
+    width: 75%;
     top: 15px;
-    margin: 0 165px;
+    /*padding: 0 165px;*/
     height: 428px;
     background-color: #ffffff52;
     border-bottom: 5px solid #c52228;
@@ -145,26 +151,36 @@ a.navbar-item.active {
     bottom: 18%;
 }
 .hr-text-2 {
-    background-color: #000000;!important;
+    background-color: #000000!important;
     height: 2px;
     margin: 0.5rem 2rem;
 }
 .section-3 {
     height: 450px;
     background-image: url("../images/body.png");
-    background-repeat: round;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
     position: relative;
 }
+.section-3 .container {
+    width: 80%;
+}
 .text-3 {
-    width: 503px;
+    /*width: 503px;*/
+    width: 590px;
     height: 254px;
     background-color: #ccccccb8;
     position: absolute;
-    left: 100px;
+    /*left: 100px;*/
+    left: 0;
     top: 100px;
     color: #000000;
     font-size: 16px;
     padding: 55px 20px 55px 55px;
+}
+.box-img-3 img {
+    height: 100%;
 }
 .text-3 p {
     font-family: "Malgun Gothic Bold";
@@ -184,19 +200,30 @@ a.navbar-item.active {
     float: right;
 }
 .box-img-3 {
-    width: 442px;
-    height: 338px;
+    /*width: 442px;*/
+    /*height: 338px;*/
+    width: 538px;
+    height: 348px;
     margin-left: 15px;
     margin-top: 40px;
 }
 .section-4 {
     height: 545px;
     background-color: #252525;
-    padding: 65px 165px 0 165px;
+    /*padding: 65px 165px 0 165px;*/
+    padding: 65px 0;
     position: relative;
 }
 .section-4 .container {
-
+    width: 75%;
+}
+.section-4 .container .column:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+.section-4 .container .column:nth-child(2) {
+    display: flex;
+    justify-content: center;
 }
 .img-round {
     width: 214px;
@@ -230,16 +257,31 @@ a.navbar-item.active {
     background-color: #c52228!important;
 }
 .hr-4-bottom {
-    position: relative;
-    bottom: -58px;
-    margin: 0!important;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+    /*margin: 0!important;*/
     height: 5px!important;
     background-color: #c52228!important;
 }
 .section-5 {
     height: 545px;
+    /*background-image: url("../images/img_5.png");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+}
+
+.section-5:before {
+    content: "";
+    position: absolute;
     background-image: url("../images/img_5.png");
-    background-repeat: round;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 .title-5 {
     text-align: center;
@@ -292,12 +334,14 @@ a.navbar-item.active {
 .section-6 {
     height: 364px;
     background-image: url("../images/4.png");
-    background-repeat: round;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 0 35px 0 25px;
 }
 
 .description-6 {
-    margin: 0 130px 0 140px;
+    /*margin: 0 130px 0 140px;*/
+    margin: 0 135px 0 147px;
     border-top: 5px solid #c52228;
 }
 .description-6 p {
@@ -340,7 +384,7 @@ a.navbar-item.active {
 
 .section-7 {
     height: 449px;
-    padding: 0 165px;
+    /*padding: 0 165px;*/
     background-color: #ffffff;
     text-align: center;
     margin-bottom: 5px;
@@ -348,6 +392,7 @@ a.navbar-item.active {
 
 .container-7 {
     height: 449px;
+    width: 75%;
     background-color: #111111;
     color: #ffffff;
     border-top: 5px solid #c52228;
@@ -381,11 +426,14 @@ a.navbar-item.active {
 .section-8 {
     height: 380px;
     background-image: url("../images/bg_8.png");
-    background-repeat: round;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-top: 6px;
-    padding: 0 165px;
+    /*padding: 0 165px;*/
 }
-
+.section-8 .container {
+    width: 75%;
+}
 .box-img-8 {
     width: 485px;
     height: 233px;
@@ -393,8 +441,7 @@ a.navbar-item.active {
 .form {
     margin-top: 30px;
     padding: 0 30px;
-    margin-left: 77px;
-
+    /*margin-left: 77px;*/
 }
 .form-title {
     font-size: 60px;
@@ -515,4 +562,24 @@ a.navbar-item.active {
     top: 0;
     transition: top 1s ease-in-out;
     z-index: 1000;
+}
+.icon-contact i.fas.fa-phone-alt {
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: 5px;
+    color: #000;
+    background-color: #fff;
+}
+.icon-contact a i {
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: 5px 9px;
+    color: #000;
+    background-color: #fff;
 }

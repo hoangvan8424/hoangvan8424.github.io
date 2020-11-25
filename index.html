@@ -9,8 +9,10 @@
 
 <!--    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css">-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
@@ -31,7 +33,7 @@
             </div>
 
             <div id="navbarBasicExample" class="navbar-menu column is-6-tablet menu-center">
-                <div class="navbar-start menu-header">
+                <div class="navbar-start menu-header-item">
                     <a class="navbar-item active" href="#section-2">
                         설명하다
                     </a>
@@ -61,8 +63,8 @@
         </nav>
         <div class="section-2" id="section-2">
             <div class="container section-top">
-                <div class="columns is-12-mobile">
-                    <div class="column is-6-desktop is-12-mobile">
+                <div class="columns is-12-mobile is-12-tablet">
+                    <div class="column is-12-mobile is-6-tablet-only is-6-desktop-only is-6-widescreen is-6-fullhd">
                         <div class="text-1">
                             <p>마카</p>
                             <p>"조디악 인삼" 이라고도 함</p>
@@ -71,7 +73,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="column is-6-desktop is-12-mobile image-top">
+                    <div class="column is-12-mobile is-6-tablet is-6-tablet-only is-6-desktop-only is-6-widescreen is-6-fullhd">
                         <div>
                             <figure class="image section-image-1">
                                 <img src="./assets/images/product_1.png" alt="product">
@@ -82,15 +84,15 @@
             </div>
 
             <div class="container section-bottom">
-                <div class="columns is-12-mobile">
-                    <div class="column is-6-desktop is-12-mobile">
-                        <div class="img-box">
+                <div class="columns is-12-mobile is-12-tablet">
+                    <div class="column is-12-mobile is-6-tablet is-6-tablet-only is-6-desktop-only is-6-widescreen is-6-fullhd" style="padding: 0!important;">
+                        <div class="img-box container">
                             <figure class="image section-image-2">
                                 <img src="./assets/images/product_2.png" alt="product">
                             </figure>
                         </div>
                     </div>
-                    <div class="column is-6-desktop is-12-mobile text-bottom">
+                    <div class="column is-12-mobile is-6-tablet is-6-tablet-only is-6-desktop-only is-6-widescreen is-6-fullhd text-bottom">
                         <div class="text-2">
                             <p>제약 주방 더 룸</p>
                             <hr class="hr-text-2">
@@ -108,14 +110,14 @@
         </div>
         <div class="section-3" id="section-3">
             <div class="container">
-                <div class="columns is-12-mobile">
-                    <div class="column is-6-desktop is-12-mobile">
+                <div class="columns is-12-mobile is-12-tablet">
+                    <div class="column is-12-mobile is-6-tablet is-6-tablet-only is-6-desktop-only is-6-widescreen is-6-fullhd">
                         <div class="text-3">
                             <p>마카 니드와 마카 인의 두 가지 활성 성분 덕분에 강력한 최음 효과가 있으며,이 두 가지 활성 성분은 남성의 성욕을 높이고 여성의 성욕을 높이는 호르몬 생산에 있습니다.</p>
                             <p>정자의 질과 운동성을 높여 남성 생식력을 향상시킵니다.</p>
                         </div>
                     </div>
-                    <div class="column is-6-desktop is-12-mobile image-3">
+                    <div class="column is-12-mobile is-6-tablet is-6-tablet-only is-6-desktop-only is-6-widescreen is-6-fullhd image-3">
                         <div>
                             <figure class="image box-img-3">
                                 <img src="./assets/images/body_2.png" alt="product">
@@ -128,8 +130,8 @@
         <div class="section-4" id="section-4">
             <div class="container">
                 <hr class="hr-4-top">
-                <div class="columns is-12-mobile">
-                    <div class="column is-4-desktop is-12-mobile">
+                <div class="columns is-12-mobile section-4-img">
+                    <div class="column is-4-desktop is-12-mobile round-1">
                         <div class="img-round">
                             <figure class="image box-img-4">
                                 <img src="./assets/images/img_4_1.png" alt="product">
@@ -137,7 +139,7 @@
                             <p>블랙 마카</p>
                         </div>
                     </div>
-                    <div class="column is-4-desktop is-12-mobile">
+                    <div class="column is-4-desktop is-6-mobile round-2">
                         <div class="img-round">
                             <figure class="image box-img-4">
                                 <img src="./assets/images/reishi.png" alt="product">
@@ -145,7 +147,7 @@
                             <p>영지 버섯 포자</p>
                         </div>
                     </div>
-                    <div class="column is-4-desktop is-12-mobile">
+                    <div class="column is-4-desktop is-6-mobile round-3">
                         <div class="img-round">
                             <figure class="image box-img-4">
                                 <img src="./assets/images/matong_czoi.png" alt="product">
@@ -155,16 +157,16 @@
                     </div>
                 </div>
             </div>
-            <p class="description">그 안에 블랙 마카 슬라이스의 특정 성분에는 비타민 C, 비타민 B6, 단백질, 섬유질, 지방, 망간, 칼륨, 구리, 철분, 칼로리, 탄수화물이 포함됩니다. 많은 식물에는 폴리 페놀과 글루코시 놀 레이트와 8 가지 필수 아미노산, 특히 2 가지 중요한 미량 영양소 인 마카 미드, 마카 인이 포함되어 있습니다.</p>
-            <hr class="hr-4-bottom">
+            <p class="container description">그 안에 블랙 마카 슬라이스의 특정 성분에는 비타민 C, 비타민 B6, 단백질, 섬유질, 지방, 망간, 칼륨, 구리, 철분, 칼로리, 탄수화물이 포함됩니다. 많은 식물에는 폴리 페놀과 글루코시 놀 레이트와 8 가지 필수 아미노산, 특히 2 가지 중요한 미량 영양소 인 마카 미드, 마카 인이 포함되어 있습니다.</p>
+            <hr class="hr-4-bottom container">
         </div>
         <div class="section-5" id="section-5">
             <div class="container">
                 <div class="title-5">
                     <p>페루 블랙 마카의 12 가지 용도</p>
                 </div>
-                <div class="columns is-12-mobile section-content-5">
-                    <div class="column is-6-desktop is-12-mobile">
+                <div class="columns is-12-mobile is-12-tablet section-content-5">
+                    <div class="column is-12-mobile is-6-tablet is-6-desktop is-12-mobile">
                         <div class="text-5-1">
                             <p><u><b>남녀 모두의 생리적 능력 향상 :</b></u><br>
                                 -일부 연구에서 마카는 "고려 인삼"이 남성과 여성 모두의 성행위를 증가시키는 능력을 가지고 있다는 영예를 안았습니다.</p>
@@ -188,7 +190,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="column is-6-desktop is-12-mobile">
+                    <div class="column is-12-mobile is-6-tablet is-6-desktop is-12-mobile">
                         <div class="text-5-2">
                             <p>
                                 <u><b>기억력과 집중력 향상 :</b></u><br>
@@ -226,7 +228,7 @@
                     <hr class="hr-text-6">
                 </div>
                 <div class="columns is-vcentered is-12-mobile img-6">
-                    <div class="column is-4-desktop is-12-mobile">
+                    <div class="column is-4-tablet is-4-desktop is-12-mobile">
                         <div class="">
                             <figure class="image box-img-6">
                                 <img src="./assets/images/5_1.png" alt="product">
@@ -234,7 +236,7 @@
                             <p><u>고혈압 환자</u></p>
                         </div>
                     </div>
-                    <div class="column is-4-desktop is-12-mobile">
+                    <div class="column is-4-tablet is-4-desktop is-12-mobile">
                         <div class="">
                             <figure class="image box-img-6">
                                 <img src="./assets/images/5_2.png" alt="product">
@@ -242,7 +244,7 @@
                             <p><u>갑상선 문제가있는 사람</u></p>
                         </div>
                     </div>
-                    <div class="column is-4-desktop is-12-mobile">
+                    <div class="column is-4-tablet is-4-desktop is-12-mobile">
                         <div class="">
                             <figure class="image box-img-6">
                                 <img src="./assets/images/5_3.png" alt="product">
@@ -255,7 +257,7 @@
         </div>
         <div class="section-7" id="section-7">
             <div class="container container-7">
-                <div class="columns is-12-mobile">
+                <div class="columns is-12-mobile is-12-tablet">
                     <div class="text-7">
                         <p class="title-7">한국 마카는 사용하기에 안전한가요?</p>
                         <p>한국 마카가 건강에 해롭지 않음을 확인하십시오 (위의 금기 사항 제외). 그러나 사용자는 각 개인의 상태에 적합한 복용량과 적당량을 사용하는 것을 고려해야합니다.</p>
@@ -271,15 +273,15 @@
 
         <div class="section-8" id="section-8">
             <div class="container">
-                <div class="columns is-12-mobile">
-                    <div class="column is-7-desktop is-12-mobile">
+                <div class="columns is-12-mobile is-12-tablet">
+                    <div class="column is-7-tablet is-7-desktop is-12-mobile">
                         <div class="img-8-left">
                             <figure class="image box-img-8">
                                 <img src="./assets/images/img_8_1.png" alt="product">
                             </figure>
                         </div>
                     </div>
-                    <div class="column is-5-desktop is-12-mobile image-8">
+                    <div class="column is-7-tablet is-5-desktop is-12-mobile image-8">
                         <div class="form">
                             <form action="" method="POST">
                                 <p class="form-title">즉시 입찰</p>
@@ -323,8 +325,8 @@
         </div>
         <div class="footer" id="footer">
             <div class="container">
-                <div class="columns is-12-mobile">
-                    <div class="column is-6-desktop is-12-mobile">
+                <div class="columns is-12-mobile is-12-tablet">
+                    <div class="column is-6-tablet is-6-desktop is-12-mobile">
                         <div class="footer-left">
                             <a href="#" class="logo-footer" id="back-to-top">
                                 <img src="./assets/images/logo_2.png" alt="product">
@@ -338,15 +340,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="column is-6-desktop is-12-mobile">
+                    <div class="column is-6-tablet is-6-desktop is-12-mobile">
                         <div class="footer-right">
                             <p><b>HOTLINE:</b> <i>1900 10 00</i></p>
                             <div class="icon-contact">
+                                <i class="fas fa-phone-alt"></i>
                                 <a href="#">
-                                    <img src="./assets/images/phone-call.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="./assets/images/facebook-circular-logo.png" alt="">
+                                    <i class="fab fa-facebook-f"></i>
                                 </a>
                             </div>
                         </div>

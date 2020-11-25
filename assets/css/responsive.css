@@ -1,0 +1,434 @@
+@media all and (min-width: 1408px){
+    .text-1 {
+        left: 24%;
+    }
+    .section-bottom {
+        width: 75%;
+    }
+    .img-box {
+        left: 112px;
+    }
+    .section-content-5 {
+        left: 220px;
+    }
+    .text-3 {
+        width: 590px;
+        left: 0;
+    }
+    .box-img-3 {
+        width: 538px;
+        height: 348px;
+    }
+    .box-img-3 img {
+        height: 100%;
+    }
+    .section-4 {
+        padding: 65px 0;
+    }
+    .section-4 .container {
+        width: 75%;
+    }
+    .section-4 .container.description {
+        width: 76%;
+    }
+    .hr-4-bottom {
+        margin: auto!important;
+    }
+    .section-3 .container {
+        width: 80%;
+    }
+
+    .description-6 {
+        margin: 0 138px 0 148px;
+    }
+}
+/*@media all and (min-width: 1024px) and (max-width: 1407px) {*/
+/*    .img-box {*/
+/*        left: 18%;*/
+/*    }*/
+/*    .text-1 {*/
+/*        left: 20%;*/
+/*    }*/
+/*}*/
+@media all and (min-width: 992px) and (max-width: 1200px){
+    .img-box {
+        left: 0;
+    }
+    .box-img-3 {
+        width: 392px;
+    }
+    .section-content-5 {
+        width: 734px;
+    }
+    .text-5-1 {
+        padding: 0;
+    }
+    .text-5-2 {
+        padding: 10px;
+    }
+    .description-6 {
+         margin: 0;
+    }
+
+    .container-7 {
+        padding: 20px 60px;
+        width: 84%;
+    }
+
+    .section-7 {
+        height: 449px;
+        /*padding: 0 95px;*/
+    }
+    .form {
+         padding: 0;
+    }
+    .description-6 {
+        margin: 0 59px 0 68px;
+    }
+    .hr-4-bottom {
+        left: 9%;
+        width: 82% !important;
+    }
+    .section-bottom {
+        width: 84%;
+    }
+
+    .text-3 {
+        width: 436px;
+    }
+}
+
+@media all and(min-width: 577px) and (max-width: 768px) {
+
+}
+@media all and (max-width: 576px) {
+    .menu-top {
+        padding: 0;
+        position: relative;
+    }
+    .logo {
+        margin-top: 0;
+        text-align: center;
+    }
+    .navbar-burger {
+        display: inline;
+        width: unset;
+        position: absolute;
+        left: 18px;
+        bottom: 0;
+    }
+    .navbar-end {
+        display: inline;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .menu-center {
+        padding: 0!important;
+    }
+    .menu-header-item {
+        background-color: #d7d7d7;
+        width: 110px;
+        text-align: center;
+        display: none;
+    }
+    .menu-header-item a {
+        font-size: 12.5px;
+        font-family: "Malgun Gothic";
+        padding-left: 0!important;
+        padding-right: 0!important;
+        color: #000000;
+    }
+    a.navbar-item.active {
+        border-bottom: unset;
+        background-color: #cccccc;
+        border-left: 2px solid #c52228;
+    }
+
+    /* section 2 */
+    .section-2 {
+        height: 1111px;
+    }
+
+    .section-image-1 {
+        width: 310px;
+        height: 220px;
+        margin-left: 33px;
+    }
+    .text-1 p:nth-child(2) {
+        word-spacing: unset;
+        font-size: 28px;
+    }
+    .text-1 {
+        bottom: -101px;
+        left: 6%;
+    }
+
+    .section-bottom {
+        width: 100%;
+        padding: 50px 10px 0 10px;
+        height: 620px;
+        top: 74px;
+    }
+    .img-box {
+        height: 312px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .text-bottom {
+        bottom: 0;
+    }
+
+    .text-2 {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .text-2 p:last-child {
+
+        width: 100%;
+        margin-left: 0;
+        padding: 0 73px;
+    }
+
+    .hr-text-2 {
+        padding: 0 20px;
+        display: inline-block;
+        width: 58%;
+    }
+
+    /*section 3*/
+    .section-3 {
+        height: 600px;
+    }
+    .section-3 .container {
+        width: 100%;
+    }
+    .box-img-3 {
+        width: 90%;
+        height: 245px;
+        margin: 40px auto;
+    }
+    .text-3 {
+        width: 83%;
+        padding: 40px;
+        top: 237px;
+        z-index: 100;
+        left: 34px;
+    }
+    .text-3 p {
+        width: auto!important;
+    }
+
+
+    /*section 4*/
+    .section-4 {
+        padding: 30px 0;
+        height: 580px;
+    }
+    .section-4 .container {
+        width: 100%;
+    }
+    .box-img-4 {
+        width: 141px;
+        height: 145px;
+    }
+    .img-round {
+        width: 141px;
+    }
+    .round-1 {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .img-round p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .section-4-img {
+        position: relative;
+    }
+    .round-3 {
+        position: absolute;
+        right: 29px;
+        top: 203px;
+    }
+    .section-4 .description {
+        font-size: 12px;
+        padding: 0 20px;
+        line-height: unset;
+    }
+
+
+    /*section 5*/
+    .section-5 {
+        height: 1065px;
+        background-color: #C0BDB8;
+    }
+    .section-5:before {
+        background-image: unset;
+    }
+    .section-5 .container .columns .column:nth-child(1) {
+        margin-bottom: 0!important;
+    }
+    .section-5 .container .columns .column:nth-child(2) {
+        padding-top: 0!important;
+    }
+    .section-content-5 {
+        border: unset;
+        width: 93%;
+        color: #000000;
+        z-index: 10;
+        height: auto;
+        left: 26px;
+        position: absolute;
+    }
+
+    .text-5-1 {
+        padding: 20px 20px 0 20px;
+    }
+    .text-5-2 {
+        padding: 20px 20px 0 20px;
+    }
+
+    /*section-6*/
+    .section-6 {
+        height: 919px;
+        padding: 0;
+    }
+    .description-6 {
+        margin: 0;
+    }
+
+    .description-6 p {
+        padding: 15px 40px 0 40px;
+    }
+    .hr-text-6 {
+        width: 37%;
+        left: 29%;
+    }
+
+    .section-7 {
+        height: 374px;
+
+    }
+    .container-7 {
+        width: 92%;
+        padding: 40px 20px;
+        margin: auto;
+        height: 374px;
+    }
+    .text-7 {
+        padding: 0 20px;
+    }
+    .text-7 .title-7 {
+        font-size: 18px;
+        padding: 0 0 5px 0;
+    }
+    .text-7 p:nth-child(2) {
+        font-size: 14px;
+        word-spacing: unset;
+        padding-bottom: 5px;
+        color: #d7ba3b;
+        line-height: 20px;
+    }
+    .text-7 p:nth-child(4) {
+        font-size: 14px;
+        word-spacing: unset;
+        padding-bottom: 5px;
+        line-height: 20px;
+    }
+
+    .section-8 {
+        margin-top: 12px;
+        height: 534px;
+    }
+    .section-8 .container {
+        width: 100%;
+    }
+    .img-8-left {
+        margin-top: 30px;
+    }
+    .box-img-8 {
+        width: 90%;
+        margin: auto;
+        height: 157px;
+    }
+
+    .form-title {
+        text-align: center;
+    }
+    .form-input {
+        width: 100%;
+        height: 198px;
+        padding: 30px 40px 20px;
+    }
+    .input-1 {
+        height: 27px;
+        width: auto;
+    }
+    .input-2 {
+        height: 27px;
+        width: auto;
+    }
+    .form-input .field:first-child {
+        display: flex;
+    }
+    .form-input .field:nth-child(2) {
+        display: flex;
+    }
+    .btn-save {
+        margin: auto;
+        margin-top: 20px;
+    }
+    .footer {
+        height: 100px;
+        position: relative;
+        padding: 0;
+    }
+    .text-footer-left {
+        position: absolute;
+        left: 20px;
+        bottom: -38px;
+        width: 261px;
+    }
+    .footer-left a {
+        position: absolute;
+        right: 20px;
+        top: 32px;
+        margin: 0;
+    }
+    .text-footer-left p {
+        font-size: 10px;
+    }
+    .footer-right {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        width: 275px;
+        flex-flow: row-reverse;
+    }
+    .icon-contact {
+        display: flex;
+        flex-flow: row-reverse;
+        margin-left: 0;
+    }
+    .footer-right p {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    .icon-contact a i {
+        font-size: 15px;
+        width: 26px;
+        height: 26px;
+        padding: 5px 7px;
+    }
+    .icon-contact i.fas.fa-phone-alt {
+        font-size: 15px;
+        width: 26px;
+        height: 26px;
+    }
+}
