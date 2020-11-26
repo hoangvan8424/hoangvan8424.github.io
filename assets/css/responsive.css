@@ -379,7 +379,7 @@
     }
 
     .section-5 .container {
-        width: 100%;
+        width: 95%;
         background-image: unset;
     }
     /*section-6*/
@@ -522,5 +522,73 @@
         width: 26px;
         height: 26px;
         margin-left: 5px;
+    }
+}
+@media all and (max-width: 320px){
+    .section-image-1 {
+        width: 300px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .img-box {
+        height: 230px;
+    }
+    .text-2 p:first-child {
+        font-size: 36px;
+    }
+    .text-1 p:nth-child(2) {
+        font-size: 22px;
+    }
+    .section-2 {
+        height: 1064px;
+    }
+    .section-bottom {
+        height: 575px;
+    }
+    .text-3 {
+        width: 90%;
+        left: 15px;
+        padding: 30px;
+    }
+    .round-3 {
+        right: 0;
+    }
+    .text-5-1 {
+        padding: 0;
+    }
+    .text-5-2 {
+        padding: 0;
+    }
+    .section-5 {
+        height: 1231px!important;
+    }
+    .description-6 p {
+        padding-top: 10px;
+    }
+    .form-title {
+        font-size: 51px;
+    }
+    .input-1 {
+        width: 158px;
+    }
+    .input-2 {
+        width: 158px;
+    }
+    .text-footer-left {
+        left: 0;
+    }
+    .footer-left a {
+        right: 0;
+        top: 37px;
+    }
+    .footer-right p {
+        font-size: 12px;
+        margin-left: 4px;
+    }
+
+}
+@media all and (max-width: 375px) and (min-width: 319px){
+    .section-5 {
+        height: 1191px;
     }
 }
