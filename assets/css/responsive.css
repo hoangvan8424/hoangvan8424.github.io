@@ -239,6 +239,7 @@
         height: 312px;
         width: 98%;
         margin: auto;
+        left: unset;
     }
     .img-box img {
         padding: 0 10px;
@@ -289,6 +290,7 @@
         top: 237px;
         z-index: 100;
         left: 34px;
+        height: 20rem;
     }
     .text-3 p {
         width: auto!important;
@@ -366,8 +368,7 @@
         color: #000000;
         z-index: 10;
         height: auto;
-        left: 26px;
-        position: absolute;
+        margin: auto;
     }
 
     .text-5-1 {
@@ -377,6 +378,10 @@
         padding: 0 10px 0 10px;
     }
 
+    .section-5 .container {
+        width: 100%;
+        background-image: unset;
+    }
     /*section-6*/
     .section-6 {
         height: 919px;
