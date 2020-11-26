@@ -24,8 +24,9 @@ body {
     overflow: hidden;
 }
 #header {
-    position: fixed;
-    z-index: 1000;
+    /*position: fixed;*/
+    /*z-index: 1000;*/
+    /*transition: all 1s;*/
 }
 .menu-top {
     height: 55px;
@@ -33,13 +34,16 @@ body {
     background-color: #111111;
     align-items: center!important;
     padding: 0 35px;
-    transition: 1s ease-in-out;
 }
 .menu-top a {
     color: #ffffff;
 }
 .cart a {
     float: right;
+}
+.cart a.active {
+     background-color: transparent;
+     border-left: unset;
 }
 .logo {
     margin-top: 5px;
@@ -104,7 +108,7 @@ a.navbar-item.active {
     width: 390px;
     position: absolute;
     bottom: -32px;
-    left: 14%;
+    left: 19%;
 }
 .section-bottom {
     position: relative;
@@ -121,10 +125,12 @@ a.navbar-item.active {
     background-color: #ffffff;
     margin: 34px 80px;
     position: relative;
+    left: 18%;
 }
 .section-image-2 {
     width: 325px;
-    height: 271px;
+    /*height: 271px;*/
+    height: auto;
     position: absolute;
     bottom: 0;
     left: 15px;
@@ -174,7 +180,8 @@ a.navbar-item.active {
 .text-3 {
     /*width: 503px;*/
     width: 590px;
-    height: 254px;
+    height: 81%;
+    /*height: 254px;*/
     background-color: #ccccccb8;
     position: absolute;
     /*left: 100px;*/
@@ -277,7 +284,16 @@ a.navbar-item.active {
     background-position: bottom;
     position: relative;
 }
-
+.section-5 .container {
+    width: 75%;
+    border-top: 5px solid #c52228;
+    border-bottom: 5px solid #c52228;
+    height: 100%;
+    background-image: url('../images/layer_7_1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .section-5:before {
     content: "";
     position: absolute;
@@ -308,14 +324,15 @@ a.navbar-item.active {
 }
 .section-content-5 {
     width: 917px;
-    height: 489px;
+    height: 475px;
     background-color: #ccccccad;
     color: #000000;
-    left: 131px;
-    position: absolute;
     border-right: 2px solid #c52228;
     border-left: 2px solid #c52228;
-    z-index: 10;
+    margin: auto;
+}
+.image-3 {
+    padding: 0;
 }
 .text-5-1 {
     padding: 20px 20px 20px 40px;
@@ -347,7 +364,7 @@ a.navbar-item.active {
 .description-6 {
     /*margin: 0 130px 0 140px;*/
     margin: 0 135px 0 147px;
-    border-top: 5px solid #c52228;
+    /*border-top: 5px solid #c52228;*/
 }
 .description-6 p {
     font-family: "Malgun Gothic Bold";

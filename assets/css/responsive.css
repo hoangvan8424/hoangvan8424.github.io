@@ -1,23 +1,40 @@
+@media all and (min-width: 1800px){
+    .img-box {
+        left: 27%;
+    }
+}
+@media all and (min-width: 2000px){
+    .img-box {
+        left: 32%;
+    }
+}
 @media all and (min-width: 1408px){
+    .navbar-burger {
+        display: none!important;
+    }
     .text-1 {
         left: 24%;
     }
     .section-bottom {
-        width: 75%;
+        width: 65%;
     }
     .img-box {
-        left: 112px;
+        /*left: 148px;*/
+        height: 353px;
     }
+
+
     .section-content-5 {
         left: 220px;
     }
     .text-3 {
-        width: 590px;
-        left: 0;
+        width: 44%;
+        left: 100px;
+        top: 82px;
     }
     .box-img-3 {
-        width: 538px;
-        height: 348px;
+        position: absolute;
+        right: 113px;
     }
     .box-img-3 img {
         height: 100%;
@@ -26,10 +43,10 @@
         padding: 65px 0;
     }
     .section-4 .container {
-        width: 75%;
+        width: 65%;
     }
     .section-4 .container.description {
-        width: 76%;
+        width: 66%;
     }
     .hr-4-bottom {
         margin: auto!important;
@@ -37,20 +54,50 @@
     .section-3 .container {
         width: 80%;
     }
-
     .description-6 {
         margin: 0 138px 0 148px;
     }
+    .text-3 {
+        height: auto;
+    }
+    .container-7 {
+        width: 65%;
+    }
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .footer .container {
+        width: 65%;
+    }
+    .section-5 .container {
+        width: 65%;
+    }
+    .section-content-5 {
+        margin: auto!important;
+        left: 7%;
+    }
 }
-/*@media all and (min-width: 1024px) and (max-width: 1407px) {*/
-/*    .img-box {*/
-/*        left: 18%;*/
-/*    }*/
-/*    .text-1 {*/
-/*        left: 20%;*/
-/*    }*/
-/*}*/
+@media all and (min-width: 1200px) and (max-width: 1407px) {
+    /*.img-box {*/
+    /*    left: 18%;*/
+    /*}*/
+    /*.text-1 {*/
+    /*    left: 20%;*/
+    /*}*/
+    .navbar-burger {
+        display: none!important;
+    }
+    .text-3 {
+        width: 564px;
+        height: 62%;
+        left: -13px;
+    }
+}
 @media all and (min-width: 992px) and (max-width: 1200px){
+    .navbar-burger {
+        display: none!important;
+    }
     .img-box {
         left: 0;
     }
@@ -100,8 +147,14 @@
 
 @media all and(min-width: 577px) and (max-width: 768px) {
 
+    .navbar-burger {
+        display: none!important;
+    }
 }
 @media all and (max-width: 576px) {
+    .navbar-burger {
+        display: block!important;
+    }
     .menu-top {
         padding: 0;
         position: relative;
@@ -120,7 +173,7 @@
         display: inline;
         width: unset;
         position: absolute;
-        left: 18px;
+        left: 10px;
         bottom: 0;
     }
     .navbar-end {
@@ -132,7 +185,7 @@
     .menu-center {
         padding: 0!important;
     }
-    .menu-header-item {
+    .navbar-menu .menu-header-item {
         background-color: #d7d7d7;
         width: 110px;
         text-align: center;
@@ -165,6 +218,7 @@
         width: 310px;
         height: 220px;
         margin-left: 33px;
+        margin-top: 15px;
     }
     .text-1 p:nth-child(2) {
         word-spacing: unset;
@@ -183,12 +237,15 @@
     }
     .img-box {
         height: 312px;
-        width: 90%;
+        width: 98%;
         margin: auto;
+    }
+    .img-box img {
+        padding: 0 10px;
     }
 
     .text-bottom {
-        bottom: 0;
+        bottom: -30px;
     }
 
     .text-2 {
@@ -198,10 +255,10 @@
     }
 
     .text-2 p:last-child {
-
         width: 100%;
         margin-left: 0;
-        padding: 0 73px;
+        padding: 0 23px;
+        margin-bottom: 32px;
     }
 
     .hr-text-2 {
@@ -210,6 +267,10 @@
         width: 58%;
     }
 
+    .section-image-2 {
+        width: 100%;
+        left: unset;
+    }
     /*section 3*/
     .section-3 {
         height: 600px;
@@ -223,7 +284,7 @@
         margin: 40px auto;
     }
     .text-3 {
-        width: 83%;
+        width: 84%;
         padding: 40px;
         top: 237px;
         z-index: 100;
@@ -287,7 +348,7 @@
 
     /*section 5*/
     .section-5 {
-        height: 1065px;
+        height: 1111px;
         background-color: #C0BDB8;
     }
     .section-5:before {
@@ -310,10 +371,10 @@
     }
 
     .text-5-1 {
-        padding: 20px 20px 0 20px;
+        padding: 20px 10px 0 10px;
     }
     .text-5-2 {
-        padding: 20px 20px 0 20px;
+        padding: 0 10px 0 10px;
     }
 
     /*section-6*/
@@ -327,7 +388,7 @@
     }
 
     .description-6 p {
-        padding: 15px 40px 0 40px;
+        padding: 15px 20px 0 20px;
     }
     .hr-text-6 {
         width: 37%;
@@ -335,14 +396,14 @@
     }
 
     .section-7 {
-        height: 374px;
+        height: auto;
 
     }
     .container-7 {
         width: 95%;
         padding: 40px 20px;
         margin: auto;
-        height: 374px;
+        height: auto;
     }
     .text-7 {
         padding: 0 20px;
@@ -373,7 +434,7 @@
         width: 100%;
     }
     .img-8-left {
-        margin-top: 30px;
+        margin-top: unset!important;
     }
     .box-img-8 {
         width: 90%;
@@ -387,7 +448,7 @@
     .form-input {
         width: 100%;
         height: 198px;
-        padding: 30px 40px 20px;
+        padding: 23px;
     }
     .input-1 {
         height: 27px;
@@ -399,9 +460,11 @@
     }
     .form-input .field:first-child {
         display: flex;
+        justify-content: space-evenly;
     }
     .form-input .field:nth-child(2) {
         display: flex;
+        justify-content: space-evenly;
     }
     .btn-save {
         margin: auto;
