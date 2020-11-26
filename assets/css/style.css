@@ -580,8 +580,9 @@ a.navbar-item.active {
     margin-left: 5px;
 }
 .header-fix {
-    position: fixed;
+    position: fixed!important;
     top: 0;
+    left: 0;
     transition: top 1s ease-in-out;
     z-index: 1000;
 }

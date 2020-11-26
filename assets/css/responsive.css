@@ -79,12 +79,6 @@
     }
 }
 @media all and (min-width: 1200px) and (max-width: 1407px) {
-    /*.img-box {*/
-    /*    left: 18%;*/
-    /*}*/
-    /*.text-1 {*/
-    /*    left: 20%;*/
-    /*}*/
     .navbar-burger {
         display: none!important;
     }
@@ -103,6 +97,7 @@
     }
     .box-img-3 {
         width: 392px;
+        margin-top: 56px;
     }
     .section-content-5 {
         width: 734px;
@@ -142,13 +137,83 @@
 
     .text-3 {
         width: 436px;
+        height: auto;
     }
 }
 
-@media all and(min-width: 577px) and (max-width: 768px) {
-
+@media all and (min-width: 577px) and (max-width: 768px) {
+    .menu-top {
+        padding: 0;
+        position: relative;
+    }
+    .logo {
+        margin-top: 0;
+        text-align: center;
+    }
+    .navbar-menu.is-active {
+        display: inline-block!important;
+    }
+    .navbar-menu {
+        display: none;
+    }
     .navbar-burger {
-        display: none!important;
+        display: inline;
+        width: unset;
+        position: absolute;
+        left: 10px;
+        bottom: 0;
+    }
+    .navbar-end {
+        display: inline;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .menu-center {
+        padding: 0!important;
+    }
+    .navbar-menu .menu-header-item {
+        background-color: #d7d7d7;
+        width: 110px;
+        text-align: center;
+    }
+    .menu-header-item a {
+        font-size: 12.5px;
+        font-family: "Malgun Gothic";
+        padding-left: 0!important;
+        padding-right: 0!important;
+        color: #000000;
+    }
+    .menu-header-item a.active {
+        border-bottom: unset;
+        background-color: #cccccc;
+        border-left: 2px solid #c52228;
+    }
+    a.navbar-item:hover, a.navbar-item:focus, a.navbar-item:active {
+        border-bottom: unset;
+        background-color: #cccccc;
+        border-left: 2px solid #c52228;
+        color: #000000;
+    }
+    .box-img-1 {
+        position: absolute;
+        right: 0;
+        top: 14px;
+    }
+    .section-bottom {
+        width: 100%;
+    }
+    .img-box {
+        left: 0;
+        height: 347px;
+        width: 350px;
+    }
+    .text-bottom {
+        width: auto!important;
+        right: 26px;
+    }
+    .text-1 {
+        left: 11%;
     }
 }
 @media all and (max-width: 576px) {
