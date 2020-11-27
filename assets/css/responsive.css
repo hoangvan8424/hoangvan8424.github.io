@@ -28,13 +28,14 @@
         left: 220px;
     }
     .text-3 {
-        width: 44%;
-        left: 100px;
-        top: 82px;
+        /*width: 44%;*/
+        /*left: 100px;*/
+        /*top: 82px;*/
+        /*height: auto;*/
     }
     .box-img-3 {
         position: absolute;
-        right: 113px;
+        /*right: 114px;*/
     }
     .box-img-3 img {
         height: 100%;
@@ -56,9 +57,6 @@
     }
     .description-6 {
         margin: 0 138px 0 148px;
-    }
-    .text-3 {
-        height: auto;
     }
     .container-7 {
         width: 65%;
@@ -85,7 +83,6 @@
     .text-3 {
         width: 564px;
         height: 62%;
-        left: -13px;
     }
 }
 @media all and (min-width: 992px) and (max-width: 1200px){
@@ -228,6 +225,9 @@
         margin-top: 0;
         text-align: center;
     }
+    .logo-img {
+        width: 80px;
+    }
     .navbar-menu.is-active {
         display: inline-block!important;
     }
@@ -282,8 +282,11 @@
     .section-image-1 {
         width: 310px;
         height: 220px;
-        margin-left: 33px;
-        margin-top: 15px;
+        /*margin-left: 33px;*/
+        /*margin-top: 15px;*/
+        flex-grow: 1!important;
+        margin: 0 auto!important;
+
     }
     .text-1 p:nth-child(2) {
         word-spacing: unset;
@@ -355,7 +358,8 @@
         top: 237px;
         z-index: 100;
         left: 34px;
-        height: 20rem;
+        /*height: 20rem;*/
+        height: auto;
     }
     .text-3 p {
         width: auto!important;
@@ -511,7 +515,10 @@
         margin: auto;
         height: 157px;
     }
-
+    .form {
+        position: relative;
+        bottom: -18px;
+    }
     .form-title {
         text-align: center;
     }

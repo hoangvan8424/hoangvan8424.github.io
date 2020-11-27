@@ -115,7 +115,7 @@ a.navbar-item.active {
     width: 75%;
     top: 15px;
     /*padding: 0 165px;*/
-    height: 428px;
+    height: 440px;
     background-color: #ffffff52;
     border-bottom: 5px solid #c52228;
 }
@@ -166,30 +166,41 @@ a.navbar-item.active {
     height: 2px;
     margin: 0.5rem 2rem;
 }
+
 .section-3 {
     height: 450px;
     background-image: url("../images/body.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
-    position: relative;
+    background-position: inherit;
 }
 .section-3 .container {
     width: 80%;
+    height: 100%;
+    position: unset!important;
 }
+.section-3 .container .columns {
+    height: 100%;
+}
+.section-3 .container .columns .column:first-child {
+    position: relative;
+}
+
+.section-3 .container .columns .column:nth-child(2) {
+    position: relative;
+}
+
+
 .text-3 {
-    /*width: 503px;*/
     width: 590px;
-    height: 81%;
-    /*height: 254px;*/
-    background-color: #ccccccb8;
+    height: auto;
     position: absolute;
-    /*left: 100px;*/
-    left: 0;
-    top: 100px;
+    right: 0;
+    top: 82px;
     color: #000000;
     font-size: 16px;
     padding: 55px 20px 55px 55px;
+    background-color: #ccccccb8;
 }
 .box-img-3 img {
     height: 100%;
@@ -212,12 +223,11 @@ a.navbar-item.active {
     float: right;
 }
 .box-img-3 {
-    /*width: 442px;*/
-    /*height: 338px;*/
+    position: absolute;
     width: 538px;
     height: 348px;
-    margin-left: 15px;
     margin-top: 40px;
+    left: 0;
 }
 .section-4 {
     height: 545px;
