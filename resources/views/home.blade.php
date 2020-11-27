@@ -112,14 +112,13 @@
                         <!-- Categories 1 -->
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="categories-detail lighting">
-                                <a href="" class="images"><img src="{{ asset('public/images/hp-1-categories-1.jpg') }}" alt="Lighting"></a>
+                                <a href="{{ route('get.product.category', 'den') }}" class="images"><img src="{{ asset('public/images/hp-1-categories-1.jpg') }}" alt="Lighting"></a>
                                 <div class="product">
-                                    <a href="">
-                                            <span class="name">
-                                                <span class="line">- </span>
-                                                Đèn
-                                            </span>
-                                        <span class="quantity">- 12 sản phẩm</span>
+                                    <a href="{{ route('get.product.category', 'den') }}">
+                                        <span class="name">
+                                            <span class="line">- </span>
+                                            Đèn
+                                        </span>
                                     </a>
                                 </div>
                             </div>
@@ -127,14 +126,13 @@
                         <!-- Categories 2 -->
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="categories-detail furniture">
-                                <a href="" class="images"><img src="{{ asset('public/images/hp-1-categories-2.jpg') }}" alt="Furniture"></a>
+                                <a href="{{ route('get.product.category', 'ghe') }}" class="images"><img src="{{ asset('public/images/hp-1-categories-2.jpg') }}" alt="Furniture"></a>
                                 <div class="product">
-                                    <a href="">
-                                            <span class="name">
-                                                <span class="line">- </span>
-                                                Nội thất
-                                            </span>
-                                        <span class="quantity">- 15 sản phẩm</span>
+                                    <a href="{{ route('get.product.category', 'ghe') }}">
+                                        <span class="name">
+                                            <span class="line">- </span>
+                                            Ghế
+                                        </span>
                                     </a>
                                 </div>
                             </div>
@@ -142,14 +140,13 @@
                         <!-- Categories 3 -->
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="categories-detail decoration">
-                                <a href="" class="images"><img src="{{ asset('public/images/hp-1-categories-3.jpg') }}" alt="Decoration"></a>
+                                <a href="{{ route('get.product.category', 'do-trang-tri') }}" class="images"><img src="{{ asset('public/images/hp-1-categories-3.jpg') }}" alt="Decoration"></a>
                                 <div class="product">
-                                    <a href="">
-                                            <span class="name">
-                                                <span class="line">- </span>
+                                    <a href="{{ route('get.product.category', 'do-trang-tri') }}">
+                                        <span class="name">
+                                            <span class="line">- </span>
                                                 Trang trí
-                                            </span>
-                                        <span class="quantity">- 20 sản phẩm</span>
+                                        </span>
                                     </a>
                                 </div>
                             </div>

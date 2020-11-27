@@ -13,8 +13,9 @@
                         <ul>
                             <li class="menu-item mega-menu">
 
-                                <span>DANH MỤC</span>
-
+                                <a href="#" class="{{ request()->is('danh-muc/*') ? 'current':''}}">
+                                    <span>DANH MỤC</span>
+                                </a>
                                 <ul class="sub-menu">
                                     <li class="sub-menu-item">
                                         @if(count($category) > 0)
@@ -36,12 +37,12 @@
                                 </ul>
                             </li>
                             <li class="menu-item mega-menu">
-                                <a href="{{ route('product.all') }}">
+                                <a href="{{ route('product.all') }}" class="{{ request()->is('tat-ca-san-pham/*') || request()->is('tat-ca-san-pham') ? 'current':''}}">
                                     TẤT CẢ SẢN PHẨM
                                 </a>
                             </li>
                             <li class="menu-item mega-menu">
-                                <a href="{{ route('about.us') }}">
+                                <a href="{{ route('about.us') }}" class="{{ request()->is('gioi-thieu') ? 'current':'' }}">
                                     GIỚI THIỆU
                                 </a>
                             </li>
@@ -51,9 +52,9 @@
                     <div class="header-right">
                         <!-- Cart -->
                         <div class="site-header-cart">
-                            <div class="cart-contents">
-                                <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart" class="mb-1">
-                            </div>
+{{--                            <div class="cart-contents">--}}
+{{--                                <img src="{{ asset('public/images/icons/shopping-cart-black-icon.png') }}" alt="cart" class="mb-1">--}}
+{{--                            </div>--}}
                             <div class="widget_shopping_cart">
                                 <div class="widget_shopping_cart_content">
                                     <ul class="woocommerce-mini-cart cart_list product_list_widget ">

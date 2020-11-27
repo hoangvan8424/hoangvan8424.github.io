@@ -17,6 +17,10 @@
                                         </button>
                                     </form>
                                 </div>
+
+                                <div class="mb-5">
+                                    <button class="btn btn-outline-danger btn-block" id="delete-filter" data-url="{{ request()->url() }}">Xóa bộ lọc</button>
+                                </div>
                                 <!-- Filter -->
                                 <div class="widget_price_filter">
                                     <h3 class="widget-title">Giá bán</h3>
@@ -209,6 +213,12 @@
                 }
                 window.location.href = url;
             })
+        });
+
+        $('#delete-filter').click(function () {
+            let url = $(this).attr('data-url');
+
+            window.location.href = url;
         });
     </script>
 @endpush

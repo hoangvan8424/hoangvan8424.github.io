@@ -95,10 +95,11 @@
                                 </div>
                             </div>
                         </div>
+                        @if(isset($productSameCategory) and count($productSameCategory) > 0)
                         <div class="related">
                             <h2 class="special-heading">Sản phẩm cùng danh mục</h2>
                             <div class="owl-carousel owl-theme" id="related-products">
-                                @if(isset($productSameCategory))
+
                                     @foreach($productSameCategory as $product)
                                         <div class="item">
                                             <div class="product type-product">
@@ -139,9 +140,10 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                @endif
+
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

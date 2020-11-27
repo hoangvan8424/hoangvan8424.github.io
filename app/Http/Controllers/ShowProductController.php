@@ -67,14 +67,9 @@ class ShowProductController extends Controller
             $product = $product->orderByDesc('id')->paginate(9);
         }
 
-        $category = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->select(array('categories.id as id', 'categories.name as name', 'categories.slug as slug', DB::raw('COUNT(products.id) as total')))
-            ->where([
-                ['products.active', '=', true],
-            ])
-            ->groupBy(['categories.id', 'name', 'slug'])
-            ->get();
+        $category = Category::where([
+            'active' => true,
+        ])->get();
 
         $productNew = Product::where([
             'type' => 1,
@@ -95,14 +90,9 @@ class ShowProductController extends Controller
             'slug' => $slug,
         ])->first();
 
-        $category = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->select(array('categories.name as name', 'categories.slug as slug', DB::raw('COUNT(products.id) as total')))
-            ->where([
-                ['products.active', '=', true],
-            ])
-            ->groupBy('name', 'slug')
-            ->get();
+        $category = Category::where([
+            'active' => true,
+        ])->get();
 
         $productSameCategory = Product::where([
             ['category_id', '=', $detail->category_id],
@@ -177,14 +167,9 @@ class ShowProductController extends Controller
         }
 
 
-        $category = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->select(array('categories.name as name', 'categories.slug as slug', DB::raw('COUNT(products.id) as total')))
-            ->where([
-                ['products.active', '=', true],
-            ])
-            ->groupBy('name', 'slug')
-            ->get();
+        $category = Category::where([
+            'active' => true,
+        ])->get();
 
         $productNew = Product::where([
             ['type', '=', 1],

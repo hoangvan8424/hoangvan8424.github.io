@@ -17,6 +17,9 @@
                                         </button>
                                     </form>
                                 </div>
+                                <div class="mb-5">
+                                    <button class="btn btn-outline-danger btn-block" id="delete-filter" data-url="{{ route('product.all') }}">Xóa bộ lọc</button>
+                                </div>
                                 <!-- Filter -->
                                 <div class="widget_price_filter">
                                     <h3 class="widget-title">Giá bán</h3>
@@ -53,7 +56,7 @@
                                         @if(isset($category))
                                             @foreach($category as $key => $categories)
                                                 <li class="cat-item cat-parent param-search {{ Request::get('c_'.$key) == $categories->id ? "active":""}}"
-                                                data-param="c_{{ $key }} = {{ $categories->id }}">
+                                                data-param="c_{{ $key }}={{ $categories->id }}">
                                                     <a href="{{ request()->fullUrlWithQuery(['c_'.$key => $categories->id]) }}"
                                                        class="w-100">
                                                         <label class="checkbox-container">{{ $categories->name }}
@@ -239,7 +242,13 @@
                     url = url.replace(param, "");
                 }
                 window.location.href = url;
-            })
+            });
+
+            $('#delete-filter').click(function () {
+                let url = $(this).attr('data-url');
+
+                window.location.href = url;
+            });
         });
     </script>
 @endpush

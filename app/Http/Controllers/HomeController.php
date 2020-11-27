@@ -27,15 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $category = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->select(array('categories.name as name', 'categories.slug as slug', DB::raw('COUNT(products.id) as total')))
-            ->where([
-                ['products.active', '=', true],
-            ])
-            ->groupBy(['name', 'slug'])
-            ->get();
+        $category = Category::where([
+            'active' => true,
+        ])->get();
 
         $slide = Slide::where([
             'active' => true,
@@ -55,14 +49,9 @@ class HomeController extends Controller
     }
 
     public function getAboutUs() {
-        $category = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->select(array('categories.name as name', 'categories.slug as slug', DB::raw('COUNT(products.id) as total')))
-            ->where([
-                ['products.active', '=', true],
-            ])
-            ->groupBy('name', 'slug')
-            ->get();
+        $category = Category::where([
+            'active' => true,
+        ])->get();
         return view('about-us', compact('category'));
     }
 }
