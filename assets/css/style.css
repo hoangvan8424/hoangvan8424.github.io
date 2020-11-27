@@ -373,12 +373,12 @@ a.navbar-item.active {
     padding: 15px 184px 0 184px;
 }
 .hr-text-6 {
-    margin: 0!important;
+    margin: 0 auto!important;
     background-color: #c52228;
     height: 1px!important;
     width: 22%;
     position: relative;
-    left: 39%;
+    /*left: 39%;*/
 }
 .img-6 {
     padding: 25px 0;

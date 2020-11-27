@@ -291,7 +291,7 @@
     .section-bottom {
         width: 95%;
         padding: 50px 10px 0 10px;
-        height: 620px;
+        height: 632px;
         top: 74px;
     }
     .img-box {
@@ -305,7 +305,7 @@
     }
 
     .text-bottom {
-        bottom: -30px;
+        bottom: -16px;
     }
 
     .text-2 {
@@ -334,6 +334,7 @@
     /*section 3*/
     .section-3 {
         height: 600px;
+        background-position: bottom;
     }
     .section-3 .container {
         width: 100%;
@@ -410,7 +411,7 @@
 
     /*section 5*/
     .section-5 {
-        height: 1111px;
+        height: auto;
         background-color: #C0BDB8;
     }
     .section-5:before {
@@ -431,17 +432,21 @@
         margin: auto;
     }
 
-    .text-5-1 {
-        padding: 20px 10px 0 10px;
-    }
-    .text-5-2 {
-        padding: 0 10px 0 10px;
-    }
-
     .section-5 .container {
         width: 95%;
         background-image: unset;
+        padding-bottom: 40px;
     }
+    .text-5-1 {
+        padding: 20px 10px 0 10px;
+        height: auto;
+    }
+    .text-5-2 {
+        padding: 0 10px 0 10px;
+        height: auto;
+    }
+
+
     /*section-6*/
     .section-6 {
         height: 919px;
@@ -457,7 +462,7 @@
     }
     .hr-text-6 {
         width: 37%;
-        left: 29%;
+        /*left: 29%;*/
     }
 
     .section-7 {
@@ -623,7 +628,7 @@
         padding: 0;
     }
     .section-5 {
-        height: 1231px!important;
+        height: auto!important;
     }
     .description-6 p {
         padding-top: 10px;
@@ -652,6 +657,6 @@
 }
 @media all and (max-width: 375px) and (min-width: 319px){
     .section-5 {
-        height: 1191px;
+        height: auto;
     }
 }
