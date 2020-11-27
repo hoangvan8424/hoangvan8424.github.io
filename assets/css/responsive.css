@@ -19,7 +19,6 @@
         width: 65%;
     }
     .img-box {
-        /*left: 148px;*/
         height: 353px;
     }
 
@@ -28,14 +27,9 @@
         left: 220px;
     }
     .text-3 {
-        /*width: 44%;*/
-        /*left: 100px;*/
-        /*top: 82px;*/
-        /*height: auto;*/
     }
     .box-img-3 {
         position: absolute;
-        /*right: 114px;*/
     }
     .box-img-3 img {
         height: 100%;
@@ -116,7 +110,6 @@
 
     .section-7 {
         height: 449px;
-        /*padding: 0 95px;*/
     }
     .form {
          padding: 0;
@@ -282,8 +275,6 @@
     .section-image-1 {
         width: 310px;
         height: 220px;
-        /*margin-left: 33px;*/
-        /*margin-top: 15px;*/
         flex-grow: 1!important;
         margin: 0 auto!important;
 
@@ -351,6 +342,7 @@
         width: 90%;
         height: 245px;
         margin: 40px auto;
+        position: unset;
     }
     .text-3 {
         width: 84%;
@@ -358,7 +350,6 @@
         top: 237px;
         z-index: 100;
         left: 34px;
-        /*height: 20rem;*/
         height: auto;
     }
     .text-3 p {
