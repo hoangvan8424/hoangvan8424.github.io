@@ -319,6 +319,9 @@
     }
     .navbar-menu.is-active {
         display: inline-block!important;
+        position: absolute;
+        top: 55px;
+        height: auto;
     }
     .navbar-menu {
         display: none;
@@ -796,8 +799,11 @@
     .logo-img {
         width: 80px;
     }
-    .navbar-menu.is-active {
+     .navbar-menu.is-active {
         display: inline-block!important;
+         position: absolute;
+         top: 55px;
+         height: auto;
     }
     .navbar-menu {
         display: none;
