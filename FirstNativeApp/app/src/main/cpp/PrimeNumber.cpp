@@ -21,10 +21,10 @@ bool PrimeNumber::isPrime() {
     }
     clock_t end = clock();
 
-    timeExecute = (double) (end-start)/CLOCKS_PER_SEC;
+    timeExecute = (float) (end-start)/CLOCKS_PER_SEC;
     return isPrime;
 }
 
-double PrimeNumber::getTimeExecute() {
+float PrimeNumber::getTimeExecute() {
     return timeExecute;
 }

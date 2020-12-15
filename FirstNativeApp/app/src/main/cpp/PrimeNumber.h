@@ -12,6 +12,6 @@ class PrimeNumber {
 public:
     PrimeNumber(int x);
     bool isPrime();
-    double getTimeExecute();
+    float getTimeExecute();
 };
 

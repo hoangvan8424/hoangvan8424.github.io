@@ -8,7 +8,7 @@ Java_com_example_firstnativeapp_MainActivity_isPrime(JNIEnv* env, jobject, jint 
     return primeNumber.isPrime();
 }
 
-extern "C" JNIEXPORT jdouble JNICALL
+extern "C" JNIEXPORT jfloat JNICALL
 Java_com_example_firstnativeapp_MainActivity_getTimeExecute(JNIEnv* env, jobject, jint number) {
     PrimeNumber primeNumber(number);
     primeNumber.isPrime();

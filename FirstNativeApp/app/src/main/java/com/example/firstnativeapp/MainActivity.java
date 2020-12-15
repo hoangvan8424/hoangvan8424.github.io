@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
                     int number = Integer.parseInt(textNumber.getText().toString());
                     if(isPrime(number)) {
                         Toast.makeText(MainActivity.this, number+" is prime number", Toast.LENGTH_LONG).show();
-                        txtTime.setText("Time Execute: " + getTimeExecute(number));
+                        txtTime.setText("Time Execute: " + String.format("%.10f", getTimeExecute(number)));
                     } else {
                         Toast.makeText(MainActivity.this, number+" is not prime number", Toast.LENGTH_LONG).show();
-                        txtTime.setText("Time Execute: " + getTimeExecute(number));
+                        txtTime.setText("Time Execute: " + String.format("%.10f", getTimeExecute(number)));
                     }
                 }
             }
@@ -55,5 +55,5 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native boolean isPrime(int number);
-    public native double getTimeExecute(int number);
+    public native float getTimeExecute(int number);
 }
