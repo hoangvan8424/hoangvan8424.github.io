@@ -31,19 +31,14 @@ public class MainActivity extends AppCompatActivity {
         txtTime = (TextView) findViewById(R.id.txt_time);
 
         txtTime.setText("");
+
         btnCheckPrime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 txtTime.setText("");
                 if(!textNumber.getText().toString().isEmpty()) {
-                    int number = Integer.parseInt(textNumber.getText().toString());
-                    if(isPrime(number)) {
-                        Toast.makeText(MainActivity.this, number+" is prime number", Toast.LENGTH_LONG).show();
-                        txtTime.setText("Time Execute: " + String.format("%.10f", getTimeExecute(number)));
-                    } else {
-                        Toast.makeText(MainActivity.this, number+" is not prime number", Toast.LENGTH_LONG).show();
-                        txtTime.setText("Time Execute: " + String.format("%.10f", getTimeExecute(number)));
-                    }
+                    long number = Long.parseLong(textNumber.getText().toString());
+                    txtTime.setText("Time Execute: " +getTimeExecute(number) + "ms");
                 }
             }
         });
@@ -54,6 +49,5 @@ public class MainActivity extends AppCompatActivity {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native boolean isPrime(int number);
-    public native float getTimeExecute(int number);
+    public native int getTimeExecute(long number);
 }
