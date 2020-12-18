@@ -3,9 +3,11 @@
 #include <time.h>
 #include <math.h>
 
-extern "C" JNIEXPORT jint JNICALL
-Java_com_example_firstnativeapp_MainActivity_getTimeExecute(JNIEnv* env, jobject, jlong number) {
-    jint i,j;
+extern "C"
+JNIEXPORT jint JNICALL
+Java_com_example_firstnativeapp_CheckPrimeNumberNative_getTimeExecute(JNIEnv *env, jobject thiz,
+                                                                      jlong number) {
+    jint i;
     jint check = 0;
     clock_t t_start, t_end;
     float timeExecute = 0;
