@@ -1,7 +1,7 @@
 package com.example.firstnativeapp;
 
-public class CheckPrimeNumberJava {
-    public long getTimeExecute(long number) {
+public class JavaLibrary {
+    public long checkPrime(long number) {
         int i;
         int check = 0;
         long tStart = System.currentTimeMillis();
@@ -16,6 +16,14 @@ public class CheckPrimeNumberJava {
 
         long tEnd = System.currentTimeMillis();
 
+        return (tEnd-tStart);
+    }
+
+    public long squareArea(long number) {
+        long acreage = 0;
+        long tStart = System.currentTimeMillis();
+        acreage =  number * number;
+        long tEnd = System.currentTimeMillis();
         return (tEnd-tStart);
     }
 }

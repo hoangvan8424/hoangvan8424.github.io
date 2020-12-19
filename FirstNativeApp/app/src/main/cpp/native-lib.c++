@@ -5,12 +5,11 @@
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_example_firstnativeapp_CheckPrimeNumberNative_getTimeExecute(JNIEnv *env, jobject thiz,
-                                                                      jlong number) {
+Java_com_example_firstnativeapp_NativeLibrary_checkPrime(JNIEnv *env, jobject thiz,
+                                                             jlong number) {
     jint i;
     jint check = 0;
     clock_t t_start, t_end;
-    float timeExecute = 0;
 
     t_start = clock()/(CLOCKS_PER_SEC/1000);
 
@@ -23,5 +22,18 @@ Java_com_example_firstnativeapp_CheckPrimeNumberNative_getTimeExecute(JNIEnv *en
     }
     t_end = clock()/(CLOCKS_PER_SEC/1000);
 
+    return t_end-t_start;
+}
+
+extern "C"
+JNIEXPORT jint JNICALL
+Java_com_example_firstnativeapp_NativeLibrary_squareArea(JNIEnv *env, jobject thiz,
+        jlong number) {
+    clock_t t_start, t_end;
+    long acreage = 0;
+
+    t_start = clock()/(CLOCKS_PER_SEC/1000);
+    acreage = number * number;
+    t_end = clock()/(CLOCKS_PER_SEC/1000);
     return t_end-t_start;
 }
